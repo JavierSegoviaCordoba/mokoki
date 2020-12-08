@@ -1,0 +1,67 @@
+site:
+  theme: 'Editorial'
+  baseUrl: 'http://logger.javiersc.com'
+  about:
+    siteName: Logger
+    siteDescription: Logger is a Logging tool for Kotlin
+
+theme:
+  primaryColor: '#2EB719'
+  legacySearch: false
+  social:
+    github: 'JavierSegoviaCordoba/logger'
+  metaComponents:
+    - type: 'orchidSearch'
+  extraCss:
+    - 'assets/css/code.css'
+  menu:
+    - type: 'separator'
+      title: 'API Docs'
+
+    - type: 'sourcedocPages'
+      moduleType: 'kotlindoc'
+      moduleName: 'LoggerCommon'
+      node: 'classes'
+      asSubmenu: true
+      submenuTitle: 'Classes'
+    - type: 'sourcedocPages'
+      moduleType: 'kotlindoc'
+      moduleName: 'LogerCommon'
+      node: 'packages'
+      asSubmenu: true
+      submenuTitle: 'Packages'
+    - type: 'sourcedocPages'
+      moduleType: 'kotlindoc'
+      moduleName: 'LoggerJVM'
+      node: 'classes'
+      asSubmenu: true
+      submenuTitle: 'JVM Classes'
+    - type: 'sourcedocPages'
+      moduleType: 'kotlindoc'
+      moduleName: 'LoggerJVM'
+      node: 'packages'
+      asSubmenu: true
+      submenuTitle: 'JVM Packages'
+
+kotlindoc:
+  modules:
+    - { name: 'LoggerCommon',  sourceDirs: ['./../../../../logger-core/src/commonMain/kotlin']}
+    - { name: 'LoggerJVM',  sourceDirs: ['./../../../../logger-core/src/jvmMain/kotlin']}
+  pages:
+    menu:
+      - type: 'sourcedocPageLinks'
+        moduleType: 'kotlindoc'
+        itemTitleType: 'SIGNATURE'
+        includeItems: true
+
+allPages:
+  metaComponents:
+    - type: 'kotlinPlayground'
+      selector: "pre code[class='language-run-kotlin']"
+
+services:
+  publications:
+    stages:
+      - type: 'githubPages'
+        username: 'JavierSegoviaCordoba'
+        repo: 'JavierSegoviaCordoba/Logger'
