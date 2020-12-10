@@ -1,6 +1,6 @@
-package com.javiersc.logger.core.internal
+package com.javiersc.logger.core
 
-internal enum class Color(val value: String) {
+public enum class LoggerForegroundColor(public val value: String) {
     Reset("\u001B[0m"),
     Black("\u001B[30m"),
     Red("\u001B[31m"),
@@ -10,15 +10,6 @@ internal enum class Color(val value: String) {
     Purple("\u001B[35m"),
     Cyan("\u001B[36m"),
     White("\u001B[37m"),
-
-    BlackBG("\u001B[40m"),
-    RedBG("\u001B[41m"),
-    GreenBG("\u001B[42m"),
-    YellowBG("\u001b[43m"),
-    BlueBG("\u001B[44m"),
-    PurpleBG("\u001B[45m"),
-    CyanBG("\u001B[46m"),
-    GrayBG("\u001B[47m"),
 
     BrightBlack("\u001B[90m"),
     BrightRed("\u001B[91m"),
@@ -30,10 +21,14 @@ internal enum class Color(val value: String) {
     BrightWhite("\u001B[97m"),
 }
 
-internal enum class Level {
-    Verbose,
-    Debug,
-    Info,
-    Warning,
-    Error,
+public enum class LoggerBackgroundColor(public val value: String) {
+    Reset("\u001B[0m"),
+    Black("\u001B[40m"),
+    Red("\u001B[41m"),
+    Green("\u001B[42m"),
+    Yellow("\u001b[43m"),
+    Blue("\u001B[44m"),
+    Purple("\u001B[45m"),
+    Cyan("\u001B[46m"),
+    Gray("\u001B[47m"),
 }

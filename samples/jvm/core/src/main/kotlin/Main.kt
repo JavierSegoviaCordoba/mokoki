@@ -1,7 +1,10 @@
 package com.javiersc.logger.samples.jvm.core
 
 import com.javiersc.logger.core.Logger
+import com.javiersc.logger.core.LoggerBackgroundColor
+import com.javiersc.logger.core.LoggerForegroundColor
 import com.javiersc.logger.core.Mode
+import com.javiersc.logger.core.extensions.logC
 import com.javiersc.logger.core.extensions.logD
 import com.javiersc.logger.core.extensions.logE
 import com.javiersc.logger.core.extensions.logI
@@ -28,6 +31,7 @@ class App {
         logI("SomeTag", "Unlucky bug")
         logW("SomeTag", "Unlucky bug")
         logE("SomeTag", "Unlucky bug")
+        logC("SomeTag", "Unlucky bug", LoggerBackgroundColor.Yellow, LoggerForegroundColor.BrightBlue)
 
         Logger.apply {
             mode = Mode.Background

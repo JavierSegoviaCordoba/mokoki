@@ -3,12 +3,16 @@
 package com.javiersc.logger.samples.jvm.serialization
 
 import com.javiersc.logger.core.Logger
+import com.javiersc.logger.core.LoggerBackgroundColor.Yellow
+import com.javiersc.logger.core.LoggerForegroundColor.BrightBlue
 import com.javiersc.logger.core.Mode
+import com.javiersc.logger.serialization.extensions.logJsonC
 import com.javiersc.logger.serialization.extensions.logJsonD
 import com.javiersc.logger.serialization.extensions.logJsonE
 import com.javiersc.logger.serialization.extensions.logJsonI
 import com.javiersc.logger.serialization.extensions.logJsonV
 import com.javiersc.logger.serialization.extensions.logJsonW
+import com.javiersc.logger.serialization.extensions.logSerializableC
 import com.javiersc.logger.serialization.extensions.logSerializableD
 import com.javiersc.logger.serialization.extensions.logSerializableE
 import com.javiersc.logger.serialization.extensions.logSerializableI
@@ -41,6 +45,8 @@ class App {
         logSerializableW("SomeTag", User.serializer(), user)
         logJsonE("SomeTag", userString)
         logSerializableE("SomeTag", User.serializer(), user)
+        logJsonC("SomeTag", userString, Yellow, BrightBlue)
+        logSerializableC("SomeTag", User.serializer(), user, Yellow, BrightBlue)
 
         Logger.apply {
             mode = Mode.Background
