@@ -67,6 +67,7 @@ jobs:
           ossUser: ${{ secrets.ossUser }}
           ossToken: ${{ secrets.ossToken }}
         run: ./gradlew closeRepository
+        continue-on-error: true
 
       - name: Publish docs
         env:
