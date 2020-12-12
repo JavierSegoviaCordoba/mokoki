@@ -15,22 +15,20 @@ internal fun print(
     print("${background.value}${foreground.value}")
     println(
         """ 
-            ┌$SEPARATOR
+            ┌$InternalSeparator
             │ $tagToPrint$level.$fileLink │ $fileName │ $className │ $methodName │ $lineNumber
-            ├$SEPARATOR
+            ├$InternalSeparator
         """.trimIndent()
     )
-    messageToPrint.forEach { line -> println("│ $line") }
-    println("└$SEPARATOR")
+    messageToPrint.forEach { line -> if (line.startsWith("├")) println(line) else println("│ $line") }
+    println("└$InternalSeparator")
     print(LoggerForegroundColor.Reset.value)
 }
 
-internal const val SEPARATOR = "───────────────────────────────────────────────────────────────" +
-        "────────────────────────────────────────────────────────────────────────────────────────" +
-        "────────────────────────────────────────────────────────────────────────────────────────" +
-        "────────────────────────────────────────────────────────────────────────────────────────" +
-        "────────────────────────────────────────────────────────────────────────────────────────" +
-        "────────────────────────────────────────────────────────────────────────────────────────" +
-        "────────────────────────────────────────────────────────────────────────────────────────" +
-        "────────────────────────────────────────────────────────────────────────────────────────" +
-        "────────────────────────────────────────────────────────────────────────────────────────"
+public const val SeparatorSymbolStart: String = "├"
+
+public const val SeparatorSymbol: String = "─"
+
+internal val InternalSeparator = SeparatorSymbol.repeat(1000)
+
+public val Separator: String = SeparatorSymbolStart + InternalSeparator.removeRange(0, 1)

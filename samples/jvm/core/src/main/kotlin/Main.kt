@@ -10,6 +10,8 @@ import com.javiersc.logger.core.extensions.logE
 import com.javiersc.logger.core.extensions.logI
 import com.javiersc.logger.core.extensions.logV
 import com.javiersc.logger.core.extensions.logW
+import com.javiersc.logger.core.internal.Separator
+import com.javiersc.logger.core.internal.SeparatorSymbolStart
 
 fun main() {
     App()
@@ -44,5 +46,23 @@ class App {
         logV("This example should not appear")
 
         Log.isEnabled = true.also { println("isEnabled = true") }
+
+        Log.mode = Mode.Normal
+
+        val textWithSeparator =
+            """
+                | Text before separator
+                |$Separator
+                | Text after separator
+            """.trimMargin()
+        logV(textWithSeparator)
+
+        val textWithCustomSeparator =
+            """
+                | Text before separator
+                |$SeparatorSymbolStart${"#".repeat(200)}
+                | Text after separator
+            """.trimMargin()
+        logV(textWithCustomSeparator)
     }
 }
