@@ -14,11 +14,11 @@ val finalVersion = loggerVersion.generateVersion(isLoggerReleaseEnv ?: isLoggerR
 group = "com.javiersc.logger"
 version = finalVersion
 
- val dokkaJar by tasks.creating(Jar::class) {
+val dokkaJar by tasks.creating(Jar::class) {
     archiveClassifier.set("javadoc")
     dependsOn(tasks.dokkaHtml)
     dependsOn(tasks.dokkaJavadoc)
- }
+}
 
 kotlin {
     explicitApi()
@@ -34,8 +34,6 @@ kotlin {
 
         named("jvmMain") { }
 
-        all {
-            languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
-        }
+        defaultLanguageSettings
     }
 }

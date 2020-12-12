@@ -22,9 +22,7 @@ class App {
     }
 
     private fun showColors() {
-        Log.apply {
-            mode = Mode.Normal
-        }
+        Log.mode = Mode.Normal
 
         logV("SomeTag", "Unlucky bug")
         logD("SomeTag", "Unlucky bug")
@@ -33,14 +31,18 @@ class App {
         logE("SomeTag", "Unlucky bug")
         logC("SomeTag", "Unlucky bug", LoggerBackgroundColor.Yellow, LoggerForegroundColor.BrightBlue)
 
-        Log.apply {
-            mode = Mode.Background
-        }
+        Log.mode = Mode.Background
 
         logV("Example without TAG")
         logD("Example without TAG")
         logI("Example without TAG")
         logW("Example without TAG")
         logE("Example without TAG")
+
+        Log.isEnabled = false.also { println("isEnabled = false") }
+
+        logV("This example should not appear")
+
+        Log.isEnabled = true.also { println("isEnabled = true") }
     }
 }
