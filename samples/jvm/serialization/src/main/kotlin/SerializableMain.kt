@@ -2,10 +2,10 @@
 
 package com.javiersc.logger.samples.jvm.serialization
 
-import com.javiersc.logger.core.Logger
 import com.javiersc.logger.core.LoggerBackgroundColor.Yellow
 import com.javiersc.logger.core.LoggerForegroundColor.BrightBlue
 import com.javiersc.logger.core.Mode
+import com.javiersc.logger.serialization.LogSerialization
 import com.javiersc.logger.serialization.extensions.logJsonC
 import com.javiersc.logger.serialization.extensions.logJsonD
 import com.javiersc.logger.serialization.extensions.logJsonE
@@ -31,7 +31,7 @@ class App {
     }
 
     private fun showColors() {
-        Logger.apply {
+        LogSerialization.apply {
             mode = Mode.Normal
         }
 
@@ -48,7 +48,7 @@ class App {
         logJsonC("SomeTag", userString, Yellow, BrightBlue)
         logSerializableC("SomeTag", User.serializer(), user, Yellow, BrightBlue)
 
-        Logger.apply {
+        LogSerialization.apply {
             mode = Mode.Background
         }
 

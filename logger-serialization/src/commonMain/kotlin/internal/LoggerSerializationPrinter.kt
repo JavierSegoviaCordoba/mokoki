@@ -2,7 +2,7 @@
 
 package com.javiersc.logger.serialization.internal
 
-import com.javiersc.logger.core.Logger
+import com.javiersc.logger.core.Log
 import kotlinx.serialization.InternalSerializationApi
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.encodeToString
@@ -18,6 +18,6 @@ internal fun prettyPrint(jsonToPrint: String): String = json.encodeToString(json
 internal inline fun <reified T> prettyPrint(tag: String?, message: T): String = try {
     json.encodeToString(message)
 } catch (exception: SerializationException) {
-    Logger.e(tag, exception)
+    Log.e(tag, exception)
     "$message"
 }

@@ -1,6 +1,6 @@
 package com.javiersc.logger.samples.jvm.core
 
-import com.javiersc.logger.core.Logger
+import com.javiersc.logger.core.Log
 import com.javiersc.logger.core.LoggerBackgroundColor
 import com.javiersc.logger.core.LoggerForegroundColor
 import com.javiersc.logger.core.Mode
@@ -22,7 +22,7 @@ class App {
     }
 
     private fun showColors() {
-        Logger.apply {
+        Log.apply {
             mode = Mode.Normal
         }
 
@@ -33,7 +33,7 @@ class App {
         logE("SomeTag", "Unlucky bug")
         logC("SomeTag", "Unlucky bug", LoggerBackgroundColor.Yellow, LoggerForegroundColor.BrightBlue)
 
-        Logger.apply {
+        Log.apply {
             mode = Mode.Background
         }
 

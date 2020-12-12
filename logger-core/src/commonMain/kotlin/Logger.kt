@@ -1,9 +1,6 @@
 package com.javiersc.logger.core
 
-import kotlin.native.concurrent.ThreadLocal
-
-@ThreadLocal
-public expect object Logger {
+public expect class Logger internal constructor() {
 
     public var mode: Mode
     public var isEnabled: Boolean

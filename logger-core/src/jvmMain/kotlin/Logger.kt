@@ -17,7 +17,7 @@ import com.javiersc.logger.core.LoggerBackgroundColor.Red as RedBG
 import com.javiersc.logger.core.LoggerBackgroundColor.Reset as ResetBG
 import com.javiersc.logger.core.LoggerBackgroundColor.Yellow as YellowBG
 
-public actual object Logger {
+public actual class Logger {
 
     public actual var mode: Mode = Normal
     public actual var isEnabled: Boolean = true
