@@ -6,6 +6,7 @@ import kotlin.native.concurrent.ThreadLocal
 public expect object Logger {
 
     public var mode: Mode
+    public var isEnabled: Boolean
 
     public fun v(tag: String? = null, message: Any)
     public fun d(tag: String? = null, message: Any)

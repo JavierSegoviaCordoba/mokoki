@@ -7,8 +7,8 @@ internal fun print(
     tag: String?,
     message: Any,
     level: Level,
-    background: LoggerBackgroundColor = LoggerBackgroundColor.Reset,
-    foreground: LoggerForegroundColor = LoggerForegroundColor.Reset,
+    background: LoggerBackgroundColor,
+    foreground: LoggerForegroundColor,
 ) {
     val tagToPrint = if (tag != null) "$tag | " else ""
     val messageToPrint = message.toString().lines()
