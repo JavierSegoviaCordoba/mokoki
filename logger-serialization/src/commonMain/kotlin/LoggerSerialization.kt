@@ -32,37 +32,37 @@ public class LoggerSerialization(
 
     public fun v(tag: String?, message: Any): Unit = logger.v(tag, message)
 
-    public fun vJson(tag: String?, message: String): Unit = logger.v(tag, prettyPrint(json, tag, message))
+    public fun jsonV(tag: String?, message: String): Unit = logger.v(tag, prettyPrint(json, tag, message))
 
-    public fun <T> vSerializable(tag: String?, serializer: KSerializer<T>, message: T): Unit =
+    public fun <T> serializableV(tag: String?, serializer: KSerializer<T>, message: T): Unit =
         logger.v(tag, prettyPrint(json, tag, serializer, message))
 
     public fun d(tag: String?, message: Any): Unit = logger.d(tag, message)
 
-    public fun dJson(tag: String?, message: String): Unit = logger.d(tag, prettyPrint(json, tag, message))
+    public fun jsonD(tag: String?, message: String): Unit = logger.d(tag, prettyPrint(json, tag, message))
 
-    public fun <T> dSerializable(tag: String?, serializer: KSerializer<T>, message: T): Unit =
+    public fun <T> serializableD(tag: String?, serializer: KSerializer<T>, message: T): Unit =
         logger.d(tag, prettyPrint(json, tag, serializer, message))
 
     public fun i(tag: String?, message: Any): Unit = logger.i(tag, message)
 
-    public fun iJson(tag: String?, message: String): Unit = logger.i(tag, prettyPrint(json, tag, message))
+    public fun jsonI(tag: String?, message: String): Unit = logger.i(tag, prettyPrint(json, tag, message))
 
-    public fun <T> iSerializable(tag: String?, serializer: KSerializer<T>, message: T): Unit =
+    public fun <T> serializableI(tag: String?, serializer: KSerializer<T>, message: T): Unit =
         logger.i(tag, prettyPrint(json, tag, serializer, message))
 
     public fun w(tag: String?, message: Any): Unit = logger.w(tag, message)
 
-    public fun wJson(tag: String?, message: String): Unit = logger.w(tag, prettyPrint(json, tag, message))
+    public fun jsonW(tag: String?, message: String): Unit = logger.w(tag, prettyPrint(json, tag, message))
 
-    public fun <T> wSerializable(tag: String?, serializer: KSerializer<T>, message: T): Unit =
+    public fun <T> serializableW(tag: String?, serializer: KSerializer<T>, message: T): Unit =
         logger.w(tag, prettyPrint(json, tag, serializer, message))
 
     public fun e(tag: String?, message: Any): Unit = logger.e(tag, message)
 
-    public fun eJson(tag: String?, message: String): Unit = logger.e(tag, prettyPrint(json, tag, message))
+    public fun jsonE(tag: String?, message: String): Unit = logger.e(tag, prettyPrint(json, tag, message))
 
-    public fun <T> eSerializable(tag: String?, serializer: KSerializer<T>, message: T): Unit =
+    public fun <T> serializableE(tag: String?, serializer: KSerializer<T>, message: T): Unit =
         logger.e(tag, prettyPrint(json, tag, serializer, message))
 
     public fun c(
@@ -72,14 +72,14 @@ public class LoggerSerialization(
         foregroundColor: LoggerForegroundColor,
     ): Unit = logger.c(tag, message, backgroundColor, foregroundColor)
 
-    public fun cJson(
+    public fun jsonC(
         tag: String?,
         message: String,
         backgroundColor: LoggerBackgroundColor,
         foregroundColor: LoggerForegroundColor,
     ): Unit = logger.c(tag, prettyPrint(json, tag, message), backgroundColor, foregroundColor)
 
-    public fun <T> cSerializable(
+    public fun <T> serializableC(
         tag: String?,
         serializer: KSerializer<T>,
         message: T,
