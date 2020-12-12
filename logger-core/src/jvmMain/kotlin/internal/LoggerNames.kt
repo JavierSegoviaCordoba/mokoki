@@ -15,8 +15,8 @@ private val stackTrace: StackTraceElement?
     get() = try {
         val trace = Thread.currentThread().stackTrace
         val index = trace.indexOfLast { traceElement ->
-            val basePackage = "com.javiersc.logger"
-            with(traceElement.className) { contains("$basePackage.core") || contains("$basePackage.serialization") }
+            Regex("^(com.javiersc.*(logger|serialization).*(core|logger|serialization).*)$")
+                .matches(traceElement.className)
         }
         trace[index + 1]
     } catch (throwable: Throwable) {

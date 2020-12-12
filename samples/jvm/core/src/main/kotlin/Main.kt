@@ -1,5 +1,3 @@
-package com.javiersc.logger.samples.jvm.core
-
 import com.javiersc.logger.core.Log
 import com.javiersc.logger.core.LoggerBackgroundColor
 import com.javiersc.logger.core.LoggerForegroundColor

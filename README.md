@@ -21,5 +21,5 @@ implementation("com.javiersc.logger:logger-core:$version")
   - Serialization
 
 ```kotlin
-implementation("com.javiersc.logger:logger-core:$version")
+implementation("com.javiersc.logger:logger-serialization:$version")
 ```
