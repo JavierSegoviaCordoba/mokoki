@@ -1,18 +1,10 @@
 plugins {
     KotlinMultiplatform
     JaCoCo
-    MavenPublish
+    NexusPublish
     Dokka
+    LoggerVersioning
 }
-
-val loggerVersion: String by project
-val isLoggerReleaseEnv: Boolean? = System.getenv("isLoggerReleaseEnv")?.toBoolean()
-val isLoggerRelease: String by project
-
-val finalVersion = loggerVersion.generateVersion(isLoggerReleaseEnv ?: isLoggerRelease.toBoolean())
-
-group = "com.javiersc.logger"
-version = finalVersion
 
 val dokkaJar by tasks.creating(Jar::class) {
     archiveClassifier.set("javadoc")

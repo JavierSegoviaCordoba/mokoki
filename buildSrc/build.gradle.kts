@@ -13,12 +13,16 @@ repositories {
 dependencies {
     implementation(gradleApi())
     implementation(localGroovy())
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}")
-    implementation("org.jetbrains.kotlin:kotlin-serialization:${versions.kotlin}")
-    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${versions.detekt}")
-    implementation("com.github.ben-manes:gradle-versions-plugin:${versions.dependencyUpdates}")
-    implementation("io.codearte.gradle.nexus:gradle-nexus-staging-plugin:${versions.nexus}")
-    implementation("org.jetbrains.dokka:dokka-gradle-plugin:${versions.dokka}")
+
+    Dependencies.Plugins.apply {
+        implementation(dependencyUpdates)
+        implementation(detekt)
+        implementation(dokka)
+        implementation(kotlin)
+        implementation(kotlinSerialization)
+        implementation(nexusStaging)
+        implementation(nexusPublish)
+    }
 }
 
 kotlinDslPluginOptions {

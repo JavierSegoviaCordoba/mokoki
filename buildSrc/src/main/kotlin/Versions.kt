@@ -8,6 +8,7 @@ object Versions {
     const val jacoco = "0.8.6"
     const val kotest = "4.3.1"
     const val kotlin = "1.4.21"
-    const val nexus = "0.22.0"
+    const val nexusPublish = "0.4.0"
+    const val nexusStaging = "0.22.0"
     const val serialization = "1.0.1"
 }
