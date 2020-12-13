@@ -6,4 +6,5 @@ internal enum class Level {
     Info,
     Warning,
     Error,
+    Custom,
 }

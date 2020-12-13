@@ -8,7 +8,12 @@ import com.javiersc.logger.core.LoggerForegroundColor.Reset
 import com.javiersc.logger.core.LoggerForegroundColor.Yellow
 import com.javiersc.logger.core.Mode.Background
 import com.javiersc.logger.core.Mode.Normal
+import com.javiersc.logger.core.internal.Level.Custom
+import com.javiersc.logger.core.internal.Level.Debug
+import com.javiersc.logger.core.internal.Level.Error
+import com.javiersc.logger.core.internal.Level.Info
 import com.javiersc.logger.core.internal.Level.Verbose
+import com.javiersc.logger.core.internal.Level.Warning
 import com.javiersc.logger.core.internal.print
 import com.javiersc.logger.core.LoggerBackgroundColor.Blue as BlueBG
 import com.javiersc.logger.core.LoggerBackgroundColor.Gray as GrayBG
@@ -35,8 +40,8 @@ public actual class Logger {
         if (!isEnabled) return
 
         when (mode) {
-            Normal -> print(tag, message, Verbose, ResetBG, Green)
-            Background -> print(tag, message, Verbose, GreenBG, Black)
+            Normal -> print(tag, message, Debug, ResetBG, Green)
+            Background -> print(tag, message, Debug, GreenBG, Black)
         }
     }
 
@@ -44,8 +49,8 @@ public actual class Logger {
         if (!isEnabled) return
 
         when (mode) {
-            Normal -> print(tag, message, Verbose, ResetBG, Blue)
-            Background -> print(tag, message, Verbose, BlueBG, Black)
+            Normal -> print(tag, message, Info, ResetBG, Blue)
+            Background -> print(tag, message, Info, BlueBG, Black)
         }
     }
 
@@ -53,8 +58,8 @@ public actual class Logger {
         if (!isEnabled) return
 
         when (mode) {
-            Normal -> print(tag, message, Verbose, ResetBG, Yellow)
-            Background -> print(tag, message, Verbose, YellowBG, Black)
+            Normal -> print(tag, message, Warning, ResetBG, Yellow)
+            Background -> print(tag, message, Warning, YellowBG, Black)
         }
     }
 
@@ -62,8 +67,8 @@ public actual class Logger {
         if (!isEnabled) return
 
         when (mode) {
-            Normal -> print(tag, message, Verbose, ResetBG, Red)
-            Background -> print(tag, message, Verbose, RedBG, Black)
+            Normal -> print(tag, message, Error, ResetBG, Red)
+            Background -> print(tag, message, Error, RedBG, Black)
         }
     }
 
@@ -75,6 +80,6 @@ public actual class Logger {
     ) {
         if (!isEnabled) return
 
-        print(tag, message, Verbose, backgroundColor, foregroundColor)
+        print(tag, message, Custom, backgroundColor, foregroundColor)
     }
 }

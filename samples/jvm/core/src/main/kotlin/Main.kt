@@ -1,6 +1,7 @@
 import com.javiersc.logger.core.Log
 import com.javiersc.logger.core.LoggerBackgroundColor
 import com.javiersc.logger.core.LoggerForegroundColor
+import com.javiersc.logger.core.LoggerSeparator
 import com.javiersc.logger.core.Mode
 import com.javiersc.logger.core.extensions.logC
 import com.javiersc.logger.core.extensions.logD
@@ -8,8 +9,6 @@ import com.javiersc.logger.core.extensions.logE
 import com.javiersc.logger.core.extensions.logI
 import com.javiersc.logger.core.extensions.logV
 import com.javiersc.logger.core.extensions.logW
-import com.javiersc.logger.core.internal.Separator
-import com.javiersc.logger.core.internal.SeparatorSymbolStart
 
 fun main() {
     App()
@@ -49,18 +48,12 @@ class App {
 
         val textWithSeparator =
             """
-                | Text before separator
-                |$Separator
-                | Text after separator
+                |Text before first separator
+                |$LoggerSeparator
+                |Text after first separator and before last separator
+                |$LoggerSeparator
+                |Text after last separator
             """.trimMargin()
         logV(textWithSeparator)
-
-        val textWithCustomSeparator =
-            """
-                | Text before separator
-                |$SeparatorSymbolStart${"#".repeat(200)}
-                | Text after separator
-            """.trimMargin()
-        logV(textWithCustomSeparator)
     }
 }

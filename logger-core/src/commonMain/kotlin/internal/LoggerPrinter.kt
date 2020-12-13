@@ -2,6 +2,7 @@ package com.javiersc.logger.core.internal
 
 import com.javiersc.logger.core.LoggerBackgroundColor
 import com.javiersc.logger.core.LoggerForegroundColor
+import com.javiersc.logger.core.LoggerSeparator
 
 internal fun print(
     tag: String?,
@@ -11,24 +12,30 @@ internal fun print(
     foreground: LoggerForegroundColor,
 ) {
     val tagToPrint = if (tag != null) "$tag | " else ""
-    val messageToPrint = message.toString().lines()
-    print("${background.value}${foreground.value}")
-    println(
-        """ 
-            ┌$InternalSeparator
-            │ $tagToPrint$level.$fileLink │ $fileName │ $className │ $methodName │ $lineNumber
-            ├$InternalSeparator
-        """.trimIndent()
-    )
-    messageToPrint.forEach { line -> if (line.startsWith("├")) println(line) else println("│ $line") }
-    println("└$InternalSeparator")
-    print(LoggerForegroundColor.Reset.value)
+    val messageLines: List<String> = message.toString().lines()
+    val colors = "${background.value}${foreground.value}"
+    val header = "$tagToPrint$level.$fileLink │ $fileName │ $className │ $methodName │ $lineNumber"
+
+    val maxLineSize = (listOf(header) + messageLines).maxOf(String::length)
+
+    val internalSeparator = SeparatorSymbol.repeat(maxLineSize + 2)
+
+    coloredPrint(colors, " ┌$internalSeparator┐ ")
+    coloredPrint(colors, " │ $header │ ")
+    coloredPrint(colors, " ├$internalSeparator┤ ")
+
+    messageLines.forEach { line ->
+        if (line.startsWith("├")) coloredPrint(colors, " $LoggerSeparator$internalSeparator│ ")
+        else coloredPrint(colors, " │ $line${" ".repeat(maxLineSize - line.length)} │ ")
+    }
+    coloredPrint(colors, " └$internalSeparator┘ ")
 }
 
-public const val SeparatorSymbolStart: String = "├"
+internal const val SeparatorSymbolStart: String = "├"
 
-public const val SeparatorSymbol: String = "─"
+private const val SeparatorSymbol: String = "─"
 
-internal val InternalSeparator = SeparatorSymbol.repeat(1000)
-
-public val Separator: String = SeparatorSymbolStart + InternalSeparator.removeRange(0, 1)
+private fun coloredPrint(colors: String, message: String) {
+    val resetColors = LoggerForegroundColor.Reset.value
+    println("$colors$message$resetColors")
+}

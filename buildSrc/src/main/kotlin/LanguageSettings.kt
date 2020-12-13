@@ -13,6 +13,7 @@ val NamedDomainObjectContainer<KotlinSourceSet>.defaultLanguageSettings: Unit
                 useExperimentalAnnotation("kotlinx.coroutines.ObsoleteCoroutinesApi")
                 useExperimentalAnnotation("kotlinx.serialization.ExperimentalSerializationApi")
                 useExperimentalAnnotation("kotlinx.serialization.InternalSerializationApi")
+                useExperimentalAnnotation("kotlin.ExperimentalStdlibApi")
                 useExperimentalAnnotation("kotlin.RequiresOptIn")
                 useExperimentalAnnotation("kotlin.time.ExperimentalTime")
             }
