@@ -5,7 +5,7 @@
 
 
 # [Logger](/logger-core/src/commonMain/kotlin)
-![logV-1](/docs/src/orchid/resources/screenshots/log_v_1.png)
+![logV-1](/screenshots/log_v_1.png)
 
 ## Download
 

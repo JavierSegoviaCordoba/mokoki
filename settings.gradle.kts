@@ -1,4 +1,3 @@
-
 rootProject.name = "logger"
 
 enableFeaturePreview("GRADLE_METADATA")
@@ -14,9 +13,6 @@ dependencyResolutionManagement {
 /** Libraries */
 include(":logger-core")
 include(":logger-serialization")
-
-/** Docs */
-include(":docs")
 
 /** Samples */
 include(":samples:jvm:core")
