@@ -1,9 +1,9 @@
 @file:Suppress("TooManyFunctions")
 
-package com.javiersc.logger.core.extensions
+package com.javiersc.logger.extensions
 
-import com.javiersc.logger.core.LoggerBackgroundColor
-import com.javiersc.logger.core.LoggerForegroundColor
+import com.javiersc.logger.LoggerBackgroundColor
+import com.javiersc.logger.LoggerForegroundColor
 
 public expect fun logV(tag: String, message: Any)
 public expect fun logV(message: Any)

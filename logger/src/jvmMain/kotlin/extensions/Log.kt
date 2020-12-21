@@ -1,10 +1,10 @@
 @file:Suppress("TooManyFunctions")
 
-package com.javiersc.logger.core.extensions
+package com.javiersc.logger.extensions
 
-import com.javiersc.logger.core.Log
-import com.javiersc.logger.core.LoggerBackgroundColor
-import com.javiersc.logger.core.LoggerForegroundColor
+import com.javiersc.logger.Log
+import com.javiersc.logger.LoggerBackgroundColor
+import com.javiersc.logger.LoggerForegroundColor
 
 public actual fun logV(tag: String, message: Any): Unit = Log.v(tag, message)
 public actual fun logV(message: Any): Unit = Log.v(null, message)

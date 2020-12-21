@@ -1,14 +1,14 @@
-import com.javiersc.logger.core.Log
-import com.javiersc.logger.core.LoggerBackgroundColor
-import com.javiersc.logger.core.LoggerForegroundColor
-import com.javiersc.logger.core.LoggerSeparator
-import com.javiersc.logger.core.Mode
-import com.javiersc.logger.core.extensions.logC
-import com.javiersc.logger.core.extensions.logD
-import com.javiersc.logger.core.extensions.logE
-import com.javiersc.logger.core.extensions.logI
-import com.javiersc.logger.core.extensions.logV
-import com.javiersc.logger.core.extensions.logW
+import com.javiersc.logger.Log
+import com.javiersc.logger.LoggerBackgroundColor
+import com.javiersc.logger.LoggerForegroundColor
+import com.javiersc.logger.LoggerSeparator
+import com.javiersc.logger.Mode
+import com.javiersc.logger.extensions.logC
+import com.javiersc.logger.extensions.logD
+import com.javiersc.logger.extensions.logE
+import com.javiersc.logger.extensions.logI
+import com.javiersc.logger.extensions.logV
+import com.javiersc.logger.extensions.logW
 
 fun main() {
     App()

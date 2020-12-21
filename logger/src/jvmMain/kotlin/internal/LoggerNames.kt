@@ -1,4 +1,4 @@
-package com.javiersc.logger.core.internal
+package com.javiersc.logger.internal
 
 internal actual val fileName get() = "file ${stackTrace?.fileName ?: "Unknown"}"
 
@@ -15,8 +15,7 @@ private val stackTrace: StackTraceElement?
     get() = try {
         val trace = Thread.currentThread().stackTrace
         val index = trace.indexOfLast { traceElement ->
-            Regex("^(com.javiersc.*(logger|serialization).*(core|logger|serialization).*)$")
-                .matches(traceElement.className)
+            Regex("^(com.javiersc.*logger.*)$").matches(traceElement.className)
         }
         trace[index + 1]
     } catch (throwable: Throwable) {

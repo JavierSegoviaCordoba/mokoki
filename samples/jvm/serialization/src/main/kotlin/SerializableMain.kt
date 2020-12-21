@@ -1,8 +1,8 @@
 @file:Suppress("MagicNumber")
 
-import com.javiersc.logger.core.LoggerBackgroundColor.Yellow
-import com.javiersc.logger.core.LoggerForegroundColor.BrightBlue
-import com.javiersc.logger.core.Mode
+import com.javiersc.logger.LoggerBackgroundColor.Yellow
+import com.javiersc.logger.LoggerForegroundColor.BrightBlue
+import com.javiersc.logger.Mode
 import com.javiersc.logger.serialization.LogSerialization
 import com.javiersc.logger.serialization.extensions.logJsonC
 import com.javiersc.logger.serialization.extensions.logJsonD

@@ -2,10 +2,10 @@
 
 package com.javiersc.logger.serialization
 
-import com.javiersc.logger.core.Log
-import com.javiersc.logger.core.LoggerBackgroundColor
-import com.javiersc.logger.core.LoggerForegroundColor
-import com.javiersc.logger.core.Mode
+import com.javiersc.logger.Log
+import com.javiersc.logger.LoggerBackgroundColor
+import com.javiersc.logger.LoggerForegroundColor
+import com.javiersc.logger.Mode
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.modules.EmptySerializersModule
 import kotlinx.serialization.modules.SerializersModule

@@ -25,10 +25,10 @@ kotlin {
         commonMain {
             dependencies {
                 projects.apply {
-                    api(loggerCore)
+                    api(logger)
                 }
 
-                libs.common.main.apply{
+                libs.common.main.apply {
                     api(serialization.json)
                 }
             }

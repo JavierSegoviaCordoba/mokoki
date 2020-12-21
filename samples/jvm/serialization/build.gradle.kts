@@ -4,5 +4,5 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":logger-serialization"))
+    implementation(projects.loggerSerialization)
 }

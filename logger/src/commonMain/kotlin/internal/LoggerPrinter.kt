@@ -1,8 +1,8 @@
-package com.javiersc.logger.core.internal
+package com.javiersc.logger.internal
 
-import com.javiersc.logger.core.LoggerBackgroundColor
-import com.javiersc.logger.core.LoggerForegroundColor
-import com.javiersc.logger.core.LoggerSeparator
+import com.javiersc.logger.LoggerBackgroundColor
+import com.javiersc.logger.LoggerForegroundColor
+import com.javiersc.logger.LoggerSeparator
 
 internal fun print(
     tag: String?,

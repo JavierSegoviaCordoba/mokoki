@@ -11,7 +11,7 @@ dependencyResolutionManagement {
 }
 
 /** Libraries */
-include(":logger-core")
+include(":logger")
 include(":logger-serialization")
 
 /** Samples */

@@ -1,7 +1,7 @@
 package com.javiersc.logger.serialization.extensions
 
-import com.javiersc.logger.core.LoggerBackgroundColor
-import com.javiersc.logger.core.LoggerForegroundColor
+import com.javiersc.logger.LoggerBackgroundColor
+import com.javiersc.logger.LoggerForegroundColor
 import com.javiersc.logger.serialization.LogSerialization
 import kotlinx.serialization.KSerializer
 

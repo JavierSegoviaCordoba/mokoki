@@ -1,4 +1,4 @@
-package com.javiersc.logger.core.internal
+package com.javiersc.logger.internal
 
 internal expect val fileName: String
 

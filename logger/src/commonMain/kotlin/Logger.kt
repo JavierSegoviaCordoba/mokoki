@@ -1,4 +1,4 @@
-package com.javiersc.logger.core
+package com.javiersc.logger
 
 public expect class Logger internal constructor() {
 

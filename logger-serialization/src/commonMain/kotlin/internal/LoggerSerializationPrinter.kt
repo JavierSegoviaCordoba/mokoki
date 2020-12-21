@@ -2,7 +2,7 @@
 
 package com.javiersc.logger.serialization.internal
 
-import com.javiersc.logger.core.Log
+import com.javiersc.logger.Log
 import kotlinx.serialization.InternalSerializationApi
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.SerializationException
