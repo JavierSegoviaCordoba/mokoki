@@ -1,13 +1,15 @@
+
+rootProject.name = "logger"
+
+enableFeaturePreview("GRADLE_METADATA")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
         jcenter()
     }
 }
-
-rootProject.name = "logger"
-
-enableFeaturePreview("GRADLE_METADATA")
 
 /** Libraries */
 include(":logger-core")

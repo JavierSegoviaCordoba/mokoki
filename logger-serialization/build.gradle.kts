@@ -22,10 +22,15 @@ kotlin {
     }
 
     sourceSets {
-        named("commonMain") {
+        commonMain {
             dependencies {
-                api(project(":logger-core"))
-                api(commonDependencies.kotlinSerializationJson)
+                projects.apply {
+                    api(loggerCore)
+                }
+
+                libs.common.main.apply{
+                    api(serialization.json)
+                }
             }
         }
 

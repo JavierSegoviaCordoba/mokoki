@@ -4,11 +4,11 @@ plugins {
 }
 
 jacoco {
-    toolVersion = versions.jacoco
+    toolVersion = jacocoVersion
 }
 
 tasks.withType<JacocoReport> {
-    dependsOn("jvmTest")
+    dependsOn("allTests")
     val coverageSourceDirs = arrayOf(
         "commonMain/src",
         "jvmMain/src"
@@ -29,3 +29,9 @@ tasks.withType<JacocoReport> {
         csv.isEnabled = false
     }
 }
+
+internal val Project.jacocoVersion: String
+    get() = File("$rootDir/gradle/gradle-plugin-dependencies.toml")
+        .readLines()
+        .first { it.contains("jacoco") }
+        .split("\"")[1]

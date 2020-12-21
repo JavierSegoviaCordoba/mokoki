@@ -3,28 +3,25 @@ plugins {
 }
 
 repositories {
-    jcenter()
     mavenCentral()
+    jcenter()
     google()
     gradlePluginPortal()
-    maven("https://dl.bintray.com/kotlin/kotlin-eap")
 }
 
 dependencies {
     implementation(gradleApi())
     implementation(localGroovy())
 
-    Dependencies.Plugins.apply {
+    gradlePluginLibs.apply {
         implementation(dependencyUpdates)
         implementation(detekt)
-        implementation(dokka)
-        implementation(kotlin)
-        implementation(kotlinSerialization)
-        implementation(nexusStaging)
-        implementation(nexusPublish)
+        implementation(dokka.core)
+        implementation(dokka.plugin)
+        implementation(kotlin.plugin)
+        implementation(kotlin.serialization)
+        implementation(jacoco)
+        implementation(nexus.staging)
+        implementation(nexus.publish)
     }
-}
-
-kotlinDslPluginOptions {
-    experimentalWarning.set(false)
 }

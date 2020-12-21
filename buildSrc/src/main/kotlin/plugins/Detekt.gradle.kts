@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    detektPlugins(Dependencies.detektFormatting)
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")
 }
 
 val detekt by tasks.named<Detekt>("detekt") {
@@ -25,3 +25,9 @@ val detekt by tasks.named<Detekt>("detekt") {
         xml { enabled = false }
     }
 }
+
+internal val Project.detektVersion: String
+    get() = File("$rootDir/gradle/gradle-plugin-dependencies.toml")
+        .readLines()
+        .first { it.contains("detekt") }
+        .split("\"")[1]

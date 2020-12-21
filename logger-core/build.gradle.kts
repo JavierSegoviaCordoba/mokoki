@@ -22,7 +22,7 @@ kotlin {
     }
 
     sourceSets {
-        named("commonMain") { }
+        commonMain
 
         named("jvmMain") { }
 

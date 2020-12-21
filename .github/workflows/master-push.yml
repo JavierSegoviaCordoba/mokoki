@@ -38,14 +38,15 @@ jobs:
         run: ./gradlew jacocoTestReport
 
       - uses: codecov/codecov-action@v1
-        with:
-          files: core/build/reports/jacoco/report.xml, serialization/build/reports/jacoco/report.xml
 
       - name: GPG setup
         env:
           gpgKey: ${{ secrets.gpgKey }}
         run: |
           cat <(echo -e "${{ secrets.gpgKey }}") | gpg --batch --import
+
+      - name: Generate docs
+        run: ./gradlew dokkaHtmlMultiModule
 
       - name: Maven publish
         env:
@@ -61,7 +62,10 @@ jobs:
           ossToken: ${{ secrets.ossToken }}
         run: ./gradlew closeRepository
 
-      - name: Publish docs
-        env:
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew docs:orchidDeploy
+      - name: Deploy docs to Github Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build/dokka
+
