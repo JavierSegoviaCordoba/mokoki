@@ -11,6 +11,9 @@ public inline fun <reified T> logSerializableV(tag: String? = null, message: T):
 public inline fun <reified T> logSerializableD(tag: String? = null, message: T): Unit =
     LogSerialization.serializableD(tag, serializer(), message)
 
+public inline fun <reified T> logSerializableS(tag: String? = null, message: T): Unit =
+    LogSerialization.serializableS(tag, serializer(), message)
+
 public inline fun <reified T> logSerializableI(tag: String? = null, message: T): Unit =
     LogSerialization.serializableI(tag, serializer(), message)
 

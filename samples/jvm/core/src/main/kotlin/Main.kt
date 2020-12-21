@@ -7,6 +7,7 @@ import com.javiersc.logger.extensions.logC
 import com.javiersc.logger.extensions.logD
 import com.javiersc.logger.extensions.logE
 import com.javiersc.logger.extensions.logI
+import com.javiersc.logger.extensions.logS
 import com.javiersc.logger.extensions.logV
 import com.javiersc.logger.extensions.logW
 
@@ -25,6 +26,7 @@ class App {
 
         logV("SomeTag", "Unlucky bug")
         logD("SomeTag", "Unlucky bug")
+        logS("SomeTag", "Unlucky bug")
         logI("SomeTag", "Unlucky bug")
         logW("SomeTag", "Unlucky bug")
         logE("SomeTag", "Unlucky bug")
@@ -34,6 +36,7 @@ class App {
 
         logV("Example without TAG")
         logD("Example without TAG")
+        logS("Example without TAG")
         logI("Example without TAG")
         logW("Example without TAG")
         logE("Example without TAG")

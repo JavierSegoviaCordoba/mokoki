@@ -43,6 +43,13 @@ public object LogSerialization {
     public fun <T> serializableD(tag: String?, serializer: KSerializer<T>, message: T): Unit =
         logger.serializableD(tag, serializer, message)
 
+    public fun s(tag: String?, message: Any): Unit = logger.s(tag, message)
+
+    public fun jsonS(tag: String?, message: String): Unit = logger.jsonS(tag, message)
+
+    public fun <T> serializableS(tag: String?, serializer: KSerializer<T>, message: T): Unit =
+        logger.serializableS(tag, serializer, message)
+
     public fun i(tag: String?, message: Any): Unit = logger.i(tag, message)
 
     public fun jsonI(tag: String?, message: String): Unit = logger.jsonI(tag, message)

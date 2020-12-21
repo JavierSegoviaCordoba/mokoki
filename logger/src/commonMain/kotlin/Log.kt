@@ -21,6 +21,8 @@ public object Log {
 
     public fun i(tag: String?, message: Any): Unit = logger.i(tag, message)
 
+    public fun s(tag: String?, message: Any): Unit = logger.s(tag, message)
+
     public fun w(tag: String?, message: Any): Unit = logger.w(tag, message)
 
     public fun e(tag: String?, message: Any): Unit = logger.e(tag, message)

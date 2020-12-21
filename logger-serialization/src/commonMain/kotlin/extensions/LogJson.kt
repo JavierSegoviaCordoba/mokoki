@@ -12,6 +12,9 @@ public fun logJsonV(json: String): Unit = LogSerialization.jsonV(null, json)
 public fun logJsonD(tag: String, json: String): Unit = LogSerialization.jsonD(tag, json)
 public fun logJsonD(json: String): Unit = LogSerialization.jsonD(null, json)
 
+public fun logJsonS(tag: String, json: String): Unit = LogSerialization.jsonS(tag, json)
+public fun logJsonS(json: String): Unit = LogSerialization.jsonS(null, json)
+
 public fun logJsonI(tag: String, json: String): Unit = LogSerialization.jsonI(tag, json)
 public fun logJsonI(json: String): Unit = LogSerialization.jsonI(null, json)
 

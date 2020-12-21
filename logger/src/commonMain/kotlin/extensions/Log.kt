@@ -2,33 +2,34 @@
 
 package com.javiersc.logger.extensions
 
+import com.javiersc.logger.Log
 import com.javiersc.logger.LoggerBackgroundColor
 import com.javiersc.logger.LoggerForegroundColor
 
-public expect fun logV(tag: String, message: Any)
-public expect fun logV(message: Any)
+public fun logV(tag: String, message: Any): Unit = Log.v(tag, message)
+public fun logV(message: Any): Unit = Log.v(null, message)
 
-public expect fun logD(tag: String, message: Any)
-public expect fun logD(message: Any)
+public fun logD(tag: String, message: Any): Unit = Log.d(tag, message)
+public fun logD(message: Any): Unit = Log.d(null, message)
 
-public expect fun logI(tag: String, message: Any)
-public expect fun logI(message: Any)
+public fun logS(tag: String, message: Any): Unit = Log.s(tag, message)
+public fun logS(message: Any): Unit = Log.s(null, message)
 
-public expect fun logW(tag: String, message: Any)
-public expect fun logW(message: Any)
+public fun logI(tag: String, message: Any): Unit = Log.i(tag, message)
+public fun logI(message: Any): Unit = Log.i(null, message)
 
-public expect fun logE(tag: String, message: Any)
-public expect fun logE(message: Any)
+public fun logW(tag: String, message: Any): Unit = Log.w(tag, message)
+public fun logW(message: Any): Unit = Log.w(null, message)
 
-public expect fun logC(
+public fun logE(tag: String, message: Any): Unit = Log.e(tag, message)
+public fun logE(message: Any): Unit = Log.e(null, message)
+
+public fun logC(
     tag: String,
     message: Any,
-    backgroundColor: LoggerBackgroundColor = LoggerBackgroundColor.Gray,
+    backgroundColor: LoggerBackgroundColor,
     foregroundColor: LoggerForegroundColor
-)
+): Unit = Log.c(tag, message, backgroundColor, foregroundColor)
 
-public expect fun logC(
-    message: Any,
-    backgroundColor: LoggerBackgroundColor = LoggerBackgroundColor.Gray,
-    foregroundColor: LoggerForegroundColor
-)
+public fun logC(message: Any, backgroundColor: LoggerBackgroundColor, foregroundColor: LoggerForegroundColor): Unit =
+    Log.c(null, message, backgroundColor, foregroundColor)

@@ -11,6 +11,9 @@ public fun <T> logSerializableV(tag: String? = null, serializer: KSerializer<T>,
 public fun <T> logSerializableD(tag: String? = null, serializer: KSerializer<T>, message: T): Unit =
     LogSerialization.serializableD(tag, serializer, message)
 
+public fun <T> logSerializableS(tag: String? = null, serializer: KSerializer<T>, message: T): Unit =
+    LogSerialization.serializableS(tag, serializer, message)
+
 public fun <T> logSerializableI(tag: String? = null, serializer: KSerializer<T>, message: T): Unit =
     LogSerialization.serializableI(tag, serializer, message)
 

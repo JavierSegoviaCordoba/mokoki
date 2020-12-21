@@ -8,12 +8,14 @@ import com.javiersc.logger.serialization.extensions.logJsonC
 import com.javiersc.logger.serialization.extensions.logJsonD
 import com.javiersc.logger.serialization.extensions.logJsonE
 import com.javiersc.logger.serialization.extensions.logJsonI
+import com.javiersc.logger.serialization.extensions.logJsonS
 import com.javiersc.logger.serialization.extensions.logJsonV
 import com.javiersc.logger.serialization.extensions.logJsonW
 import com.javiersc.logger.serialization.extensions.logSerializableC
 import com.javiersc.logger.serialization.extensions.logSerializableD
 import com.javiersc.logger.serialization.extensions.logSerializableE
 import com.javiersc.logger.serialization.extensions.logSerializableI
+import com.javiersc.logger.serialization.extensions.logSerializableS
 import com.javiersc.logger.serialization.extensions.logSerializableV
 import com.javiersc.logger.serialization.extensions.logSerializableW
 import kotlinx.serialization.Contextual
@@ -69,6 +71,8 @@ class App {
         logSerializableV("SomeTag", User.serializer(), user)
         logJsonD("SomeTag", userString)
         logSerializableD("SomeTag", User.serializer(), user)
+        logJsonS("SomeTag", userString)
+        logSerializableS("SomeTag", User.serializer(), user)
         logJsonI("SomeTag", userString)
         logSerializableI("SomeTag", User.serializer(), user)
         logJsonW("SomeTag", userString)
