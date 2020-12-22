@@ -4,18 +4,25 @@
 
 
 
-# [Logger](/logger/src/commonMain/kotlin)
-![logV-1](/screenshots/log_v_1.png)
+# [Logger](https://logger.javiersc.com)
+
+  - Normal
+
+![log-normal](/screenshots/log_normal.png)
+
+  - Json or Kotlin Serialization
+
+![log-normal-json](/screenshots/log_normal_json.png)
 
 ## Download
 
 This library is Kotlin Multiplatform but at this moment jvm is the only artifact generated. It is 
 available at Maven Central.
 
-  - Core:
+  - Logger:
 
 ```kotlin
-implementation("com.javiersc.logger:logger-core:$version")
+implementation("com.javiersc.logger:logger:$version")
 ```
 
   - Serialization

@@ -68,18 +68,18 @@ class App {
 
     private fun commonLogs() {
         logJsonV("SomeTag", userString)
-        logSerializableV("SomeTag", User.serializer(), user)
         logJsonD("SomeTag", userString)
-        logSerializableD("SomeTag", User.serializer(), user)
         logJsonS("SomeTag", userString)
-        logSerializableS("SomeTag", User.serializer(), user)
         logJsonI("SomeTag", userString)
-        logSerializableI("SomeTag", User.serializer(), user)
         logJsonW("SomeTag", userString)
-        logSerializableW("SomeTag", User.serializer(), user)
         logJsonE("SomeTag", userString)
-        logSerializableE("SomeTag", User.serializer(), user)
         logJsonC("SomeTag", userString, Yellow, BrightBlue)
+        logSerializableV("SomeTag", User.serializer(), user)
+        logSerializableD("SomeTag", User.serializer(), user)
+        logSerializableS("SomeTag", User.serializer(), user)
+        logSerializableI("SomeTag", User.serializer(), user)
+        logSerializableW("SomeTag", User.serializer(), user)
+        logSerializableE("SomeTag", User.serializer(), user)
         logSerializableC("SomeTag", User.serializer(), user, Yellow, BrightBlue)
     }
 }
