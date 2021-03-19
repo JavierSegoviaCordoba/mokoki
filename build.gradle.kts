@@ -1,17 +1,12 @@
-import tasks.baseKotlinOptions
-
 plugins {
-    DependencyUpdates
-    Detekt
-    Dokka
-    NexusStaging
-}
-
-allprojects {
-    tasks {
-        withType<Delete> { delete(buildDir) }
-        baseKotlinOptions
-    }
+    `javiersc-versioning`
+    `javiersc-changelog`
+    `javiersc-code-analysis`
+    `javiersc-dependency-updates`
+    `javiersc-docs`
+//    `kotlinx-binary-compatibility-validator`
+    `javiersc-nexus`
+    `javiersc-readme-badges-generator`
 }
 
 tasks {
