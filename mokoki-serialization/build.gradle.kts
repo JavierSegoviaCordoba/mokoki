@@ -25,7 +25,7 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                api(projects.mokoki)
+                api(projects.mokokiCore)
 
                 api(libs.jetbrains.kotlinx.kotlinxSerializationJson)
             }

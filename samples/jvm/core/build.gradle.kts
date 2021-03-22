@@ -8,5 +8,5 @@ application {
 }
 
 dependencies {
-    implementation(projects.mokoki)
+    implementation(projects.mokokiCore)
 }

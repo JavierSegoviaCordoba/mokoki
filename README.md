@@ -1,6 +1,6 @@
 ![Kotlin version](https://img.shields.io/badge/kotlin-1.4.31-blueviolet?logo=kotlin&logoColor=white)
-[![MavenCentral](https://img.shields.io/maven-central/v/com.javiersc.mokoki/mokoki?label=MavenCentral)](https://repo1.maven.org/maven2/com/javiersc/mokoki/mokoki/)
-[![Snapshot](https://img.shields.io/nexus/s/com.javiersc.mokoki/mokoki?server=https%3A%2F%2Foss.sonatype.org%2F&label=Snapshot)](https://oss.sonatype.org/content/repositories/snapshots/com/javiersc/mokoki/mokoki/)
+[![MavenCentral](https://img.shields.io/maven-central/v/com.javiersc.mokoki/mokoki-core?label=MavenCentral)](https://repo1.maven.org/maven2/com/javiersc/mokoki/mokoki-core/)
+[![Snapshot](https://img.shields.io/nexus/s/com.javiersc.mokoki/mokoki-core?server=https%3A%2F%2Foss.sonatype.org%2F&label=Snapshot)](https://oss.sonatype.org/content/repositories/snapshots/com/javiersc/mokoki/mokoki-core/)
 
 [![Build](https://img.shields.io/github/workflow/status/JavierSegoviaCordoba/mokoki/build?label=Build&logo=GitHub)](https://github.com/JavierSegoviaCordoba/mokoki/tree/main)
 [![Quality](https://img.shields.io/sonar/quality_gate/JavierSegoviaCordoba_mokoki?label=Quality&logo=SonarCloud&logoColor=white&server=https%3A%2F%2Fsonarcloud.io)](https://sonarcloud.io/dashboard?id=JavierSegoviaCordoba_mokoki)
@@ -24,7 +24,7 @@ available at Maven Central.
   - Logger:
 
 ```kotlin
-implementation("com.javiersc.mokoki:mokoki:$version")
+implementation("com.javiersc.mokoki:mokoki-core:$version")
 ```
 
   - Serialization

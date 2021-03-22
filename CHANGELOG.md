@@ -6,6 +6,8 @@
 
 ### Changed
 
+- Rename `mokoki` subproject to `mokoki-core`
+
 ### Deprecated
 
 ### Removed

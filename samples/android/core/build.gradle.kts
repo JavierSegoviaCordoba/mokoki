@@ -13,7 +13,7 @@ android {
 }
 
 dependencies {
-    implementation(projects.mokoki)
+    implementation(projects.mokokiCore)
     implementation(projects.mokokiSerialization)
 
     implementation("androidx.appcompat:appcompat:1.2.0")
