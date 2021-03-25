@@ -11,12 +11,12 @@ import kotlinx.serialization.json.Json
 
 @PublishedApi
 internal fun buildMokokiMessage(tag: String, json: Json, jsonToPrint: String): String =
-        try {
-            json.encodeToString(json.parseToJsonElement(jsonToPrint))
-        } catch (exception: SerializationException) {
-            Mokoki.e(tag, exception)
-            jsonToPrint
-        }
+    try {
+        json.encodeToString(json.parseToJsonElement(jsonToPrint))
+    } catch (exception: SerializationException) {
+        Mokoki.e(tag, exception)
+        jsonToPrint
+    }
 
 @PublishedApi
 internal fun <T> buildMokokiMessage(
@@ -25,9 +25,9 @@ internal fun <T> buildMokokiMessage(
     serializer: KSerializer<T>,
     message: T
 ): String =
-        try {
-            json.encodeToString(serializer, message)
-        } catch (exception: SerializationException) {
-            Mokoki.e(tag, exception)
-            "$message"
-        }
+    try {
+        json.encodeToString(serializer, message)
+    } catch (exception: SerializationException) {
+        Mokoki.e(tag, exception)
+        "$message"
+    }

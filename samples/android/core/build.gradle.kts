@@ -1,9 +1,10 @@
 @file:Suppress("MagicNumber")
 
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    kotlin("plugin.serialization")
+    `android-application`
+    `kotlin-android`
+    `kotlinx-serialization`
+    `javiersc-code-formatter`
 }
 
 android {

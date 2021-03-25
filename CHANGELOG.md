@@ -4,6 +4,8 @@
 
 ### Added
 
+- Add iOS target
+
 ### Changed
 
 - Rename `mokoki` subproject to `mokoki-core`

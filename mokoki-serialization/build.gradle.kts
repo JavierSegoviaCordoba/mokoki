@@ -5,6 +5,7 @@ plugins {
     `javiersc-kotlin-multiplatform`
     `kotlinx-serialization`
     `javiersc-publish-kotlin-multiplatform`
+    `javiersc-code-formatter`
 }
 
 android {

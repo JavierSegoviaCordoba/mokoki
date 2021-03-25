@@ -1,6 +1,7 @@
 plugins {
-    kotlin("jvm")
+    `kotlin-jvm`
     application
+    `javiersc-code-formatter`
 }
 
 application {

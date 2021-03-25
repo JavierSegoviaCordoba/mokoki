@@ -1,7 +1,8 @@
 plugins {
-    kotlin("jvm")
-    kotlin("plugin.serialization")
+    `kotlin-serialization`
+    `kotlinx-serialization`
     application
+    `javiersc-code-formatter`
 }
 
 application {

@@ -23,10 +23,10 @@ public actual class MokokiLogger {
             level = Level.ALL
             useParentHandlers = false
             addHandler(
-                    ConsoleHandler().apply {
-                        level = Level.ALL
-                        formatter = LogFormatter()
-                    },
+                ConsoleHandler().apply {
+                    level = Level.ALL
+                    formatter = LogFormatter()
+                },
             )
         }
     }

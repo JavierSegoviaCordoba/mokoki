@@ -10,7 +10,6 @@ public enum class LoggerForegroundColor(public val value: String) {
     Purple("\u001B[35m"),
     Cyan("\u001B[36m"),
     White("\u001B[37m"),
-
     BrightBlack("\u001B[90m"),
     BrightRed("\u001B[91m"),
     BrightGreen("\u001B[92m"),

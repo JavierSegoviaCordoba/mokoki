@@ -4,8 +4,6 @@ package com.javiersc.mokoki
 
 import kotlin.native.concurrent.ThreadLocal
 
-// balok, sekac, mokoki, injira, hakisto,
-
 @ThreadLocal
 public object Mokoki {
 
@@ -24,7 +22,7 @@ public object Mokoki {
     public fun v(tag: String = MokokiName, message: String): Unit = logger.v(tag, message)
 
     public fun v(tag: String = MokokiName, throwable: Throwable): Unit =
-            logger.v(tag, throwable.stackTraceToString())
+        logger.v(tag, throwable.stackTraceToString())
 
     public fun v(message: String): Unit = logger.v(MokokiName, message)
 
@@ -33,7 +31,7 @@ public object Mokoki {
     public fun d(tag: String = MokokiName, message: String): Unit = logger.d(tag, message)
 
     public fun d(tag: String = MokokiName, throwable: Throwable): Unit =
-            logger.d(tag, throwable.stackTraceToString())
+        logger.d(tag, throwable.stackTraceToString())
 
     public fun d(message: String): Unit = logger.d(MokokiName, message)
 
@@ -42,7 +40,7 @@ public object Mokoki {
     public fun i(tag: String = MokokiName, message: String): Unit = logger.i(tag, message)
 
     public fun i(tag: String = MokokiName, throwable: Throwable): Unit =
-            logger.i(tag, throwable.stackTraceToString())
+        logger.i(tag, throwable.stackTraceToString())
 
     public fun i(message: String): Unit = logger.i(MokokiName, message)
     public fun i(throwable: Throwable): Unit = logger.i(MokokiName, throwable.stackTraceToString())
@@ -50,7 +48,7 @@ public object Mokoki {
     public fun w(tag: String = MokokiName, message: String): Unit = logger.w(tag, message)
 
     public fun w(tag: String = MokokiName, throwable: Throwable): Unit =
-            logger.w(tag, throwable.stackTraceToString())
+        logger.w(tag, throwable.stackTraceToString())
 
     public fun w(message: String): Unit = logger.w(MokokiName, message)
 
@@ -59,7 +57,7 @@ public object Mokoki {
     public fun e(tag: String = MokokiName, message: String): Unit = logger.e(tag, message)
 
     public fun e(tag: String = MokokiName, throwable: Throwable): Unit =
-            logger.e(tag, throwable.stackTraceToString())
+        logger.e(tag, throwable.stackTraceToString())
 
     public fun e(message: String): Unit = logger.e(MokokiName, message)
 

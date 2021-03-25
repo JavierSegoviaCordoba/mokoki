@@ -4,6 +4,7 @@ plugins {
     `android-library`
     `javiersc-kotlin-multiplatform`
     `javiersc-publish-kotlin-multiplatform`
+    `javiersc-code-formatter`
 }
 
 android {
@@ -21,6 +22,8 @@ kotlin {
 
     jvm()
 
+    ios()
+
     sourceSets {
         commonMain
 
@@ -29,5 +32,7 @@ kotlin {
         }
 
         named("jvmMain")
+
+        named("iosMain")
     }
 }

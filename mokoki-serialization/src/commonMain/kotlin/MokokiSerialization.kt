@@ -28,64 +28,64 @@ public object MokokiSerialization {
         }
 
     public fun jsonV(tag: String, json: String): Unit =
-            Mokoki.v(tag, buildMokokiMessage(tag, this.json, json))
+        Mokoki.v(tag, buildMokokiMessage(tag, this.json, json))
 
     public fun <T> serializableV(tag: String, serializer: KSerializer<T>, serializable: T): Unit =
-            Mokoki.v(tag, buildMokokiMessage(tag, json, serializer, serializable))
+        Mokoki.v(tag, buildMokokiMessage(tag, json, serializer, serializable))
 
     public fun jsonV(json: String): Unit =
-            Mokoki.v(MokokiName, buildMokokiMessage(MokokiName, this.json, json))
+        Mokoki.v(MokokiName, buildMokokiMessage(MokokiName, this.json, json))
 
     public fun <T> serializableV(serializer: KSerializer<T>, serializable: T): Unit =
-            Mokoki.v(MokokiName, buildMokokiMessage(MokokiName, json, serializer, serializable))
+        Mokoki.v(MokokiName, buildMokokiMessage(MokokiName, json, serializer, serializable))
 
     public fun jsonD(tag: String, json: String): Unit =
-            Mokoki.d(tag, buildMokokiMessage(tag, this.json, json))
+        Mokoki.d(tag, buildMokokiMessage(tag, this.json, json))
 
     public fun <T> serializableD(tag: String, serializer: KSerializer<T>, serializable: T): Unit =
-            Mokoki.d(tag, buildMokokiMessage(tag, json, serializer, serializable))
+        Mokoki.d(tag, buildMokokiMessage(tag, json, serializer, serializable))
 
     public fun jsonD(json: String): Unit =
-            Mokoki.d(MokokiName, buildMokokiMessage(MokokiName, this.json, json))
+        Mokoki.d(MokokiName, buildMokokiMessage(MokokiName, this.json, json))
 
     public fun <T> serializableD(serializer: KSerializer<T>, serializable: T): Unit =
-            Mokoki.d(MokokiName, buildMokokiMessage(MokokiName, json, serializer, serializable))
+        Mokoki.d(MokokiName, buildMokokiMessage(MokokiName, json, serializer, serializable))
 
     public fun jsonI(tag: String, json: String): Unit =
-            Mokoki.i(tag, buildMokokiMessage(tag, this.json, json))
+        Mokoki.i(tag, buildMokokiMessage(tag, this.json, json))
 
     public fun <T> serializableI(tag: String, serializer: KSerializer<T>, serializable: T): Unit =
-            Mokoki.i(tag, buildMokokiMessage(tag, json, serializer, serializable))
+        Mokoki.i(tag, buildMokokiMessage(tag, json, serializer, serializable))
 
     public fun jsonI(json: String): Unit =
-            Mokoki.i(MokokiName, buildMokokiMessage(MokokiName, this.json, json))
+        Mokoki.i(MokokiName, buildMokokiMessage(MokokiName, this.json, json))
 
     public fun <T> serializableI(serializer: KSerializer<T>, serializable: T): Unit =
-            Mokoki.i(MokokiName, buildMokokiMessage(MokokiName, json, serializer, serializable))
+        Mokoki.i(MokokiName, buildMokokiMessage(MokokiName, json, serializer, serializable))
 
     public fun jsonW(tag: String, json: String): Unit =
-            Mokoki.w(tag, buildMokokiMessage(tag, this.json, json))
+        Mokoki.w(tag, buildMokokiMessage(tag, this.json, json))
 
     public fun <T> serializableW(tag: String, serializer: KSerializer<T>, serializable: T): Unit =
-            Mokoki.w(tag, buildMokokiMessage(tag, json, serializer, serializable))
+        Mokoki.w(tag, buildMokokiMessage(tag, json, serializer, serializable))
 
     public fun jsonW(json: String): Unit =
-            Mokoki.w(MokokiName, buildMokokiMessage(MokokiName, this.json, json))
+        Mokoki.w(MokokiName, buildMokokiMessage(MokokiName, this.json, json))
 
     public fun <T> serializableW(serializer: KSerializer<T>, serializable: T): Unit =
-            Mokoki.w(MokokiName, buildMokokiMessage(MokokiName, json, serializer, serializable))
+        Mokoki.w(MokokiName, buildMokokiMessage(MokokiName, json, serializer, serializable))
 
     public fun jsonE(tag: String, json: String): Unit =
-            Mokoki.e(tag, buildMokokiMessage(tag, this.json, json))
+        Mokoki.e(tag, buildMokokiMessage(tag, this.json, json))
 
     public fun <T> serializableE(tag: String, serializer: KSerializer<T>, serializable: T): Unit =
-            Mokoki.e(tag, buildMokokiMessage(tag, json, serializer, serializable))
+        Mokoki.e(tag, buildMokokiMessage(tag, json, serializer, serializable))
 
     public fun jsonE(json: String): Unit =
-            Mokoki.e(MokokiName, buildMokokiMessage(MokokiName, this.json, json))
+        Mokoki.e(MokokiName, buildMokokiMessage(MokokiName, this.json, json))
 
     public fun <T> serializableE(serializer: KSerializer<T>, serializable: T): Unit =
-            Mokoki.e(MokokiName, buildMokokiMessage(MokokiName, json, serializer, serializable))
+        Mokoki.e(MokokiName, buildMokokiMessage(MokokiName, json, serializer, serializable))
 }
 
 private const val MokokiName = "Mokoki"

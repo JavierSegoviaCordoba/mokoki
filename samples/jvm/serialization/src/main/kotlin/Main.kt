@@ -68,8 +68,7 @@ class App {
     }
 }
 
-@Serializable
-data class User(val name: String, val age: Int, val hobbies: List<String>)
+@Serializable data class User(val name: String, val age: Int, val hobbies: List<String>)
 
 private val user = User("John", 19, listOf("Tennis", "Coding"))
 private val userString =
@@ -81,8 +80,7 @@ private val userString =
        | }
     """.trimMargin()
 
-@Serializable
-data class Dog(val name: String, @Contextual val birthday: Date)
+@Serializable data class Dog(val name: String, @Contextual val birthday: Date)
 
 // 1362870000000 -> 2013-03-10
 private val dog = Dog("Auri", Date(1362870000000))
@@ -90,11 +88,11 @@ private val dog = Dog("Auri", Date(1362870000000))
 object DateSerializer : KSerializer<Date> {
 
     override val descriptor: SerialDescriptor =
-            PrimitiveSerialDescriptor("Dog", PrimitiveKind.STRING)
+        PrimitiveSerialDescriptor("Dog", PrimitiveKind.STRING)
 
     override fun deserialize(decoder: Decoder): Date =
-            SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(decoder.decodeString())!!
+        SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(decoder.decodeString())!!
 
     override fun serialize(encoder: Encoder, value: Date) =
-            encoder.encodeString(SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(value))
+        encoder.encodeString(SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(value))
 }
