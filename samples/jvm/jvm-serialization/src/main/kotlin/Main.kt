@@ -1,6 +1,6 @@
 @file:Suppress("MagicNumber")
 
-package com.javiersc.mokoki
+package com.javiersc.mokoki.jvm.serialization
 
 import com.javiersc.mokoki.serialization.MokokiSerialization
 import com.javiersc.mokoki.serialization.extensions.logJsonD

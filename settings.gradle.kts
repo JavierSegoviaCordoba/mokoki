@@ -1,6 +1,7 @@
-rootProject.name = providers.gradleProperty("libName").forUseAtConfigurationTime().get()
+rootProject.name = providers.gradleProperty("allProjects.name").forUseAtConfigurationTime().get()
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 enableFeaturePreview("VERSION_CATALOGS")
 
 dependencyResolutionManagement {
@@ -26,8 +27,8 @@ include(":mokoki-core")
 include(":mokoki-serialization")
 
 /** Samples */
-include(":samples:jvm:core")
+include(":samples:android:android-core")
 
-include(":samples:jvm:serialization")
+include(":samples:jvm:jvm-core")
 
-include(":samples:android:core")
+include(":samples:jvm:jvm-serialization")

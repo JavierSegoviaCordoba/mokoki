@@ -1,4 +1,4 @@
-# Module mokoki
+# Module mokoki-core
 
 Core module which contains the abstractions and pure Kotlin logic.
 

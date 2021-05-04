@@ -1,5 +1,8 @@
-package com.javiersc.mokoki
+package com.javiersc.mokoki.jvm.core
 
+import com.javiersc.mokoki.LoggerSeparator
+import com.javiersc.mokoki.Mokoki
+import com.javiersc.mokoki.MokokiLogger
 import com.javiersc.mokoki.extensions.logD
 import com.javiersc.mokoki.extensions.logE
 import com.javiersc.mokoki.extensions.logI

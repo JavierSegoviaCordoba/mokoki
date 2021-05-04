@@ -10,11 +10,11 @@
 
 - Normal
 
-![log-normal](/screenshots/log_normal.png)
+![log-normal](.docs/docs/assets/log-verbose.png)
 
 - Json or Kotlin Serialization
 
-![log-normal-json](/screenshots/log_normal_json.png)
+![log-normal-json](.docs/docs/assets/log-verbose-json.png)
 
 ## Download
 
