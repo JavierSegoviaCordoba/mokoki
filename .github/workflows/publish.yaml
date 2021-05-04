@@ -46,8 +46,9 @@ jobs:
       - name: Gradle build
         run: ./gradlew build
 
-      - name: Generate docs
-        run: ./gradlew dokkaHtmlMultiModule
+      - name: Generate Site docs
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        run: ./gradlew buildDocs
 
       - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@v3
@@ -63,22 +64,12 @@ jobs:
         id: tags
         run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}
 
-      - name: Deploy release docs to Github Pages inside specific version folder
-        if: ${{ matrix.os == 'ubuntu-latest' }}
-        uses: JamesIves/github-pages-deploy-action@4.1.0
-        with:
-          target-folder: 'versions/${{ steps.tags.outputs.version }}'
-          branch: 'gh-pages'
-          folder: 'build/dokka'
-          clean: false
-          single-commit: true
-
       - name: Deploy release docs to Github Pages
         if: ${{ matrix.os == 'ubuntu-latest' && !contains(github.ref, 'alpha') && !contains(github.ref, 'beta') && !contains(github.ref, 'rc') }}
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+        uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: 'gh-pages'
-          folder: 'build/dokka'
+          folder: 'build/docs/_site'
           clean: false
           single-commit: true
 
