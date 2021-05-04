@@ -1,4 +1,4 @@
-![Kotlin version](https://img.shields.io/badge/kotlin-1.4.31-blueviolet?logo=kotlin&logoColor=white)
+![Kotlin version](https://img.shields.io/badge/kotlin-1.5.0-blueviolet?logo=kotlin&logoColor=white)
 [![MavenCentral](https://img.shields.io/maven-central/v/com.javiersc.mokoki/mokoki-core?label=MavenCentral)](https://repo1.maven.org/maven2/com/javiersc/mokoki/mokoki-core/)
 [![Snapshot](https://img.shields.io/nexus/s/com.javiersc.mokoki/mokoki-core?server=https%3A%2F%2Foss.sonatype.org%2F&label=Snapshot)](https://oss.sonatype.org/content/repositories/snapshots/com/javiersc/mokoki/mokoki-core/)
 
@@ -8,26 +8,26 @@
 
 # [Mokoki](https://mokoki.javiersc.com)
 
-  - Normal
+- Normal
 
 ![log-normal](/screenshots/log_normal.png)
 
-  - Json or Kotlin Serialization
+- Json or Kotlin Serialization
 
 ![log-normal-json](/screenshots/log_normal_json.png)
 
 ## Download
 
-This library is Kotlin Multiplatform but at this moment jvm is the only artifact generated. It is 
+This library is Kotlin Multiplatform but at this moment jvm is the only artifact generated. It is
 available at Maven Central.
 
-  - Logger:
+- Logger:
 
 ```kotlin
 implementation("com.javiersc.mokoki:mokoki-core:$version")
 ```
 
-  - Serialization
+- Serialization
 
 ```kotlin
 implementation("com.javiersc.mokoki:mokoki-serialization:$version")
