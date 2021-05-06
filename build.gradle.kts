@@ -3,6 +3,7 @@ plugins {
     `javiersc-all-projects`
     `javiersc-changelog`
     `javiersc-code-analysis`
+    `javiersc-code-formatter`
     `javiersc-dependency-updates`
     `javiersc-docs`
     //    `kotlinx-binary-compatibility-validator`
@@ -11,12 +12,6 @@ plugins {
 }
 
 tasks {
-    withType<Test> {
-        maxParallelForks = Runtime.getRuntime().availableProcessors()
-        useJUnitPlatform()
-        useTestNG()
-    }
-
     dokkaHtmlMultiModule {
         removeChildTasks(
             listOf(
