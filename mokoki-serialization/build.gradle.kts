@@ -22,6 +22,8 @@ kotlin {
 
     android { publishAllLibraryVariants() }
 
+    ios()
+
     sourceSets {
         commonMain {
             dependencies {
