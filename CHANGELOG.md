@@ -3,14 +3,23 @@
 ## [Unreleased]
 
 ### Added
-- iOS targets to `mokoki-serialization`
-- prints a message when Mokoki has not been able to get the `StackTraceElement`
 
 ### Changed
 
 ### Deprecated
 
 ### Removed
+
+### Fixed
+
+### Updated
+
+
+## [0.1.0-alpha.3] - 2021-05-07
+
+### Added
+- iOS targets to `mokoki-serialization`
+- prints a message when Mokoki has not been able to get the `StackTraceElement`
 
 ### Fixed
 - iOS was throwing an exception instead of `null`
