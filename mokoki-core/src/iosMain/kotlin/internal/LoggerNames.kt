@@ -68,5 +68,6 @@ private val stackTrace: StackTraceElement?
                 lineNumber = "1"
             )
         } catch (throwable: Throwable) {
-            throw throwable
+            println("Mokoki has not been able to get the StackTrace")
+            null
         }

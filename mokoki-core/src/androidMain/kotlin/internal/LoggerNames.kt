@@ -1,5 +1,7 @@
 package com.javiersc.mokoki.internal
 
+import android.util.Log
+
 internal actual val fileName
     get() = "file ${stackTrace?.fileName ?: "Unknown"}"
 
@@ -27,5 +29,6 @@ private val stackTrace: StackTraceElement?
                 }
             trace[index + 1]
         } catch (throwable: Throwable) {
+            Log.i("Mokoki", "Mokoki has not been able to get the StackTrace")
             null
         }

@@ -17,7 +17,7 @@ internal actual val lineNumber
 internal actual val fileLink
     get() = "(${stackTrace?.fileName}:${stackTrace?.lineNumber})"
 
-@Suppress("TooGenericExceptionCaught")
+@Suppress("TooGenericExceptionCaught", "SwallowedException")
 private val stackTrace: StackTraceElement?
     get() =
         try {
@@ -29,5 +29,6 @@ private val stackTrace: StackTraceElement?
                 }
             trace[index + 1]
         } catch (throwable: Throwable) {
+            println("Mokoki has not been able to get the StackTrace")
             null
         }
