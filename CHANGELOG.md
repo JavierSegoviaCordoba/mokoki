@@ -5,7 +5,6 @@
 ### Added
 
 ### Changed
-- only use iOS 64 targets 
 
 ### Deprecated
 
@@ -15,6 +14,11 @@
 
 ### Updated
 
+
+## [0.1.0-alpha.4] - 2021-06-23
+
+### Changed
+- only use iOS 64 targets 
 
 ## [0.1.0-alpha.3] - 2021-05-07
 
