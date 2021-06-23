@@ -5,6 +5,7 @@
 ### Added
 
 ### Changed
+- only use iOS 64 targets 
 
 ### Deprecated
 

@@ -18,11 +18,12 @@ android {
 kotlin {
     explicitApi()
 
-    jvm()
-
     android { publishAllLibraryVariants() }
 
-    ios()
+    iosArm64()
+    iosX64()
+
+    jvm()
 
     sourceSets {
         commonMain {

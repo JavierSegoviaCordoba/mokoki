@@ -19,19 +19,30 @@ kotlin {
 
     android { publishAllLibraryVariants() }
 
+    iosArm64()
+    iosX64()
+
     jvm()
 
-    ios()
-
     sourceSets {
-        commonMain
+        val commonMain by getting
 
         named("androidMain") {
             dependencies { implementation(libs.jetbrains.kotlinx.kotlinxCoroutinesCore) }
         }
 
+        val iosArm64Main by getting
+        val iosX64Main by getting
+
         named("jvmMain")
 
-        named("iosMain")
+        val ios64Main by creating {
+            dependsOn(commonMain)
+
+            iosArm64Main.dependsOn(this)
+            iosX64Main.dependsOn(this)
+        }
+
+        create("ios64Test") { dependsOn(ios64Main) }
     }
 }
