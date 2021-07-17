@@ -26,23 +26,31 @@ kotlin {
 
     sourceSets {
         val commonMain by getting
+        val commonTest by getting
 
         named("androidMain") {
             dependencies { implementation(libs.jetbrains.kotlinx.kotlinxCoroutinesCore) }
         }
 
         val iosArm64Main by getting
+        val iosArm64Test by getting
         val iosX64Main by getting
+        val iosX64Test by getting
 
         named("jvmMain")
 
-        val ios64Main by creating {
+        create("ios64Main") {
             dependsOn(commonMain)
 
             iosArm64Main.dependsOn(this)
             iosX64Main.dependsOn(this)
         }
 
-        create("ios64Test") { dependsOn(ios64Main) }
+        create("ios64Test") {
+            dependsOn(commonTest)
+
+            iosArm64Test.dependsOn(this)
+            iosX64Test.dependsOn(this)
+        }
     }
 }
