@@ -4,31 +4,44 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 enableFeaturePreview("VERSION_CATALOGS")
 
+pluginManagement {
+    repositories {
+        mavenCentral()
+        google()
+        gradlePluginPortal()
+    }
+
+    plugins {
+        val buildVersionCatalogs: String by settings
+
+        id("com.javiersc.gradle.plugins.build.version.catalogs") version buildVersionCatalogs
+    }
+}
+
+plugins {
+    id("com.javiersc.gradle.plugins.build.version.catalogs")
+}
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
         google()
-        jcenter()
-    }
-
-    versionCatalogs {
-        val massiveCatalogs: String by settings
-
-        create("libs") { from("com.javiersc.massive-catalogs:libs-catalog:$massiveCatalogs") }
-        create("pluginLibs") {
-            from("com.javiersc.massive-catalogs:plugins-catalog:$massiveCatalogs")
-        }
+        gradlePluginPortal()
     }
 }
 
-/** Libraries */
-include(":mokoki-core")
+include(
+    ":a--catalogs:libs",
+    ":a--catalogs:plugins",
+)
 
-include(":mokoki-serialization")
+include(
+    ":mokoki-core",
+    ":mokoki-serialization",
+)
 
-/** Samples */
-include(":samples:android:android-core")
-
-include(":samples:jvm:jvm-core")
-
-include(":samples:jvm:jvm-serialization")
+include(
+    ":samples:android:android-core",
+    ":samples:jvm:jvm-core",
+    ":samples:jvm:jvm-serialization",
+)

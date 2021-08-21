@@ -5,7 +5,6 @@ plugins {
 
 repositories {
     mavenCentral()
-    jcenter()
     google()
     gradlePluginPortal()
 }
@@ -18,6 +17,8 @@ dependencies {
 
     pluginLibs.apply {
         implementation(javiersc.gradlePlugins.allProjects)
+        implementation(javiersc.gradlePlugins.androidLibrary)
+        implementation(javiersc.gradlePlugins.buildVersionCatalogsUpdater)
         implementation(javiersc.gradlePlugins.changelog)
         implementation(javiersc.gradlePlugins.codeAnalysis)
         implementation(javiersc.gradlePlugins.codeFormatter)
@@ -25,14 +26,12 @@ dependencies {
         implementation(javiersc.gradlePlugins.docs)
         implementation(javiersc.gradlePlugins.gradleWrapperUpdater)
         implementation(javiersc.gradlePlugins.kotlinMultiplatform)
-        implementation(javiersc.gradlePlugins.massiveCatalogsUpdater)
         implementation(javiersc.gradlePlugins.pluginAccessors)
         implementation(javiersc.gradlePlugins.publishKotlinMultiplatform)
         implementation(javiersc.gradlePlugins.nexus)
         implementation(javiersc.gradlePlugins.readmeBadges)
         implementation(javiersc.gradlePlugins.versioning)
 
-        implementation(android.toolsBuild.gradle)
         implementation(jetbrains.kotlin.kotlinSerialization)
         implementation(jetbrains.kotlinx.binaryCompatibilityValidator)
     }

@@ -22,6 +22,6 @@ dependencies {
     implementation(projects.mokokiCore)
     implementation(projects.mokokiSerialization)
 
-    implementation(libs.appcompat.appcompat)
-    implementation(libs.core.coreKtx)
+    implementation(libs.androidx.appcompat.appcompat)
+    implementation(libs.androidx.core.coreKtx)
 }
