@@ -1,7 +1,7 @@
 [versions]
 javierscGradlePlugins = "0.1.0-alpha.53"
 kotlin = "1.5.30"
-kotlinBinaryValidator = "0.7.0"
+kotlinBinaryValidator = "0.7.1"
 
 [libraries]
 javiersc-gradlePlugins-allProjects = { module = "com.javiersc.gradle-plugins:all-projects", version.ref = "javierscGradlePlugins" }
