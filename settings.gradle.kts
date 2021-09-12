@@ -4,36 +4,18 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 enableFeaturePreview("VERSION_CATALOGS")
 
-pluginManagement {
-    repositories {
-        mavenCentral()
-        google()
-        gradlePluginPortal()
-    }
-
-    plugins {
-        val buildVersionCatalogs: String by settings
-
-        id("com.javiersc.gradle.plugins.build.version.catalogs") version buildVersionCatalogs
-    }
-}
-
-plugins {
-    id("com.javiersc.gradle.plugins.build.version.catalogs")
-}
-
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
         google()
         gradlePluginPortal()
     }
-}
 
-include(
-    ":a--catalogs:libs",
-    ":a--catalogs:plugins",
-)
+    versionCatalogs {
+        create("libs") { from(files("gradle/libs.toml")) }
+        create("pluginLibs") { from(files("gradle/pluginLibs.toml")) }
+    }
+}
 
 include(
     ":mokoki-core",
