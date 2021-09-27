@@ -16,6 +16,8 @@ dependencies {
     implementation(files(pluginLibs.javaClass.protectionDomain.codeSource.location))
 
     pluginLibs.apply {
+        implementation(android.toolsBuild.gradle)
+
         implementation(javiersc.gradlePlugins.allProjects)
         implementation(javiersc.gradlePlugins.androidLibrary)
         implementation(javiersc.gradlePlugins.changelog)
