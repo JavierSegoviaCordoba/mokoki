@@ -1,5 +1,3 @@
-@file:Suppress("MagicNumber")
-
 plugins {
     `javiersc-kotlin-multiplatform`
     `javiersc-publish-kotlin-multiplatform`
