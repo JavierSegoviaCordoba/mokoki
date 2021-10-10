@@ -14,13 +14,16 @@
 
 ### Updated
 
+## [0.1.0-alpha.6] - 2021-10-10
+- No changes
+
 ## [0.1.0-alpha.5] - 2021-07-23
 - No changes
 
 ## [0.1.0-alpha.4] - 2021-06-23
 
 ### Changed
-- only use iOS 64 targets 
+- only use iOS 64 targets
 
 ## [0.1.0-alpha.3] - 2021-05-07
 
