@@ -8,9 +8,9 @@ plugins {
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdk = AndroidSdk.compileSdk
 
-    defaultConfig { minSdkVersion(21) }
+    defaultConfig { minSdk = AndroidSdk.minSdk }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
