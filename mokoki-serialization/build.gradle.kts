@@ -1,9 +1,11 @@
 @file:Suppress("MagicNumber")
 
 plugins {
-    `javiersc-kotlin-multiplatform`
+    `kotlin-multiplatform`
+    `android-library`
     `kotlinx-serialization`
-    `javiersc-publish-kotlin-multiplatform`
+    `javiersc-kotlin-library`
+    `javiersc-publish`
 }
 
 kotlin {

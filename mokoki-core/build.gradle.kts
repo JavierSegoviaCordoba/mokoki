@@ -1,6 +1,8 @@
 plugins {
-    `javiersc-kotlin-multiplatform`
-    `javiersc-publish-kotlin-multiplatform`
+    `kotlin-multiplatform`
+    `android-library`
+    `javiersc-kotlin-library`
+    `javiersc-publish`
 }
 
 kotlin {
