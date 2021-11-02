@@ -13,6 +13,7 @@
 ### Fixed
 
 ### Updated
+- `androidx.core:core-ktx -> 1.7.0`
 - `com.javiersc.gradle-plugins:all-plugins -> 0.1.0-rc.4`
 
 ## [0.1.0-alpha.6] - 2021-10-10
