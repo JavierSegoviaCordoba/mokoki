@@ -1,0 +1,84 @@
+public final class com/javiersc/mokoki/jvm/serialization/App {
+	public fun <init> ()V
+}
+
+public final class com/javiersc/mokoki/jvm/serialization/DateSerializer : kotlinx/serialization/KSerializer {
+	public static final field INSTANCE Lcom/javiersc/mokoki/jvm/serialization/DateSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/util/Date;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/util/Date;)V
+}
+
+public final class com/javiersc/mokoki/jvm/serialization/Dog {
+	public static final field Companion Lcom/javiersc/mokoki/jvm/serialization/Dog$Companion;
+	public synthetic fun <init> (ILjava/lang/String;Ljava/util/Date;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;Ljava/util/Date;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/Date;
+	public final fun copy (Ljava/lang/String;Ljava/util/Date;)Lcom/javiersc/mokoki/jvm/serialization/Dog;
+	public static synthetic fun copy$default (Lcom/javiersc/mokoki/jvm/serialization/Dog;Ljava/lang/String;Ljava/util/Date;ILjava/lang/Object;)Lcom/javiersc/mokoki/jvm/serialization/Dog;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBirthday ()Ljava/util/Date;
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Lcom/javiersc/mokoki/jvm/serialization/Dog;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class com/javiersc/mokoki/jvm/serialization/Dog$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/javiersc/mokoki/jvm/serialization/Dog$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/javiersc/mokoki/jvm/serialization/Dog;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/javiersc/mokoki/jvm/serialization/Dog;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/javiersc/mokoki/jvm/serialization/Dog$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/javiersc/mokoki/jvm/serialization/MainKt {
+	public static final fun main ()V
+	public static synthetic fun main ([Ljava/lang/String;)V
+}
+
+public final class com/javiersc/mokoki/jvm/serialization/User {
+	public static final field Companion Lcom/javiersc/mokoki/jvm/serialization/User$Companion;
+	public synthetic fun <init> (ILjava/lang/String;ILjava/util/List;Lkotlinx/serialization/internal/SerializationConstructorMarker;)V
+	public fun <init> (Ljava/lang/String;ILjava/util/List;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()I
+	public final fun component3 ()Ljava/util/List;
+	public final fun copy (Ljava/lang/String;ILjava/util/List;)Lcom/javiersc/mokoki/jvm/serialization/User;
+	public static synthetic fun copy$default (Lcom/javiersc/mokoki/jvm/serialization/User;Ljava/lang/String;ILjava/util/List;ILjava/lang/Object;)Lcom/javiersc/mokoki/jvm/serialization/User;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAge ()I
+	public final fun getHobbies ()Ljava/util/List;
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public static final fun write$Self (Lcom/javiersc/mokoki/jvm/serialization/User;Lkotlinx/serialization/encoding/CompositeEncoder;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
+}
+
+public final class com/javiersc/mokoki/jvm/serialization/User$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/javiersc/mokoki/jvm/serialization/User$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/javiersc/mokoki/jvm/serialization/User;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/javiersc/mokoki/jvm/serialization/User;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/javiersc/mokoki/jvm/serialization/User$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+

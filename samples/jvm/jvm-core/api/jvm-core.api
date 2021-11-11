@@ -1,0 +1,9 @@
+public final class com/javiersc/mokoki/jvm/core/App {
+	public fun <init> ()V
+}
+
+public final class com/javiersc/mokoki/jvm/core/MainKt {
+	public static final fun main ()V
+	public static synthetic fun main ([Ljava/lang/String;)V
+}
+

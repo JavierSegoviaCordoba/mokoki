@@ -5,7 +5,7 @@ plugins {
     `javiersc-code-analysis`
     `javiersc-code-formatter`
     `javiersc-docs`
-//    `kotlinx-binary-compatibility-validator`
+    `kotlinx-binary-compatibility-validator`
     `javiersc-nexus`
     `javiersc-readme-badges-generator`
 }

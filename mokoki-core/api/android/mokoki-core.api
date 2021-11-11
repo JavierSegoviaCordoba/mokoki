@@ -1,0 +1,143 @@
+public final class com/javiersc/mokoki/BuildConfig {
+	public static final field BUILD_TYPE Ljava/lang/String;
+	public static final field DEBUG Z
+	public static final field LIBRARY_PACKAGE_NAME Ljava/lang/String;
+	public fun <init> ()V
+}
+
+public final class com/javiersc/mokoki/LoggerBackgroundColor : java/lang/Enum {
+	public static final field Black Lcom/javiersc/mokoki/LoggerBackgroundColor;
+	public static final field Blue Lcom/javiersc/mokoki/LoggerBackgroundColor;
+	public static final field Cyan Lcom/javiersc/mokoki/LoggerBackgroundColor;
+	public static final field Gray Lcom/javiersc/mokoki/LoggerBackgroundColor;
+	public static final field Green Lcom/javiersc/mokoki/LoggerBackgroundColor;
+	public static final field Purple Lcom/javiersc/mokoki/LoggerBackgroundColor;
+	public static final field Red Lcom/javiersc/mokoki/LoggerBackgroundColor;
+	public static final field Reset Lcom/javiersc/mokoki/LoggerBackgroundColor;
+	public static final field Yellow Lcom/javiersc/mokoki/LoggerBackgroundColor;
+	public final fun getValue ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lcom/javiersc/mokoki/LoggerBackgroundColor;
+	public static fun values ()[Lcom/javiersc/mokoki/LoggerBackgroundColor;
+}
+
+public final class com/javiersc/mokoki/LoggerForegroundColor : java/lang/Enum {
+	public static final field Black Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field Blue Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field BrightBlack Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field BrightBlue Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field BrightCyan Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field BrightGreen Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field BrightPurple Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field BrightRed Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field BrightWhite Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field BrightYellow Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field Cyan Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field Green Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field Purple Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field Red Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field Reset Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field White Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static final field Yellow Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public final fun getValue ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lcom/javiersc/mokoki/LoggerForegroundColor;
+	public static fun values ()[Lcom/javiersc/mokoki/LoggerForegroundColor;
+}
+
+public final class com/javiersc/mokoki/LoggerSeparatorKt {
+	public static final field LoggerSeparator Ljava/lang/String;
+}
+
+public final class com/javiersc/mokoki/Mokoki {
+	public static final field INSTANCE Lcom/javiersc/mokoki/Mokoki;
+	public final fun d (Ljava/lang/String;)V
+	public final fun d (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun d (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public final fun d (Ljava/lang/Throwable;)V
+	public static synthetic fun d$default (Lcom/javiersc/mokoki/Mokoki;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
+	public static synthetic fun d$default (Lcom/javiersc/mokoki/Mokoki;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Object;)V
+	public final fun e (Ljava/lang/String;)V
+	public final fun e (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun e (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public final fun e (Ljava/lang/Throwable;)V
+	public static synthetic fun e$default (Lcom/javiersc/mokoki/Mokoki;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
+	public static synthetic fun e$default (Lcom/javiersc/mokoki/Mokoki;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Object;)V
+	public final fun i (Ljava/lang/String;)V
+	public final fun i (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun i (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public final fun i (Ljava/lang/Throwable;)V
+	public static synthetic fun i$default (Lcom/javiersc/mokoki/Mokoki;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
+	public static synthetic fun i$default (Lcom/javiersc/mokoki/Mokoki;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Object;)V
+	public final fun init (Lcom/javiersc/mokoki/MokokiLogger;)V
+	public final fun isEnabled ()Z
+	public final fun setEnabled (Z)V
+	public final fun v (Ljava/lang/String;)V
+	public final fun v (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun v (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public final fun v (Ljava/lang/Throwable;)V
+	public static synthetic fun v$default (Lcom/javiersc/mokoki/Mokoki;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
+	public static synthetic fun v$default (Lcom/javiersc/mokoki/Mokoki;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Object;)V
+	public final fun w (Ljava/lang/String;)V
+	public final fun w (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun w (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public final fun w (Ljava/lang/Throwable;)V
+	public static synthetic fun w$default (Lcom/javiersc/mokoki/Mokoki;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
+	public static synthetic fun w$default (Lcom/javiersc/mokoki/Mokoki;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Object;)V
+}
+
+public final class com/javiersc/mokoki/MokokiLogger {
+	public static final field Companion Lcom/javiersc/mokoki/MokokiLogger$Companion;
+	public fun <init> ()V
+	public final fun d (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun e (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun getMode ()Lcom/javiersc/mokoki/MokokiMode;
+	public final fun i (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun isEnabled ()Z
+	public final fun setEnabled (Z)V
+	public final fun setMode (Lcom/javiersc/mokoki/MokokiMode;)V
+	public final fun v (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun w (Ljava/lang/String;Ljava/lang/String;)V
+}
+
+public final class com/javiersc/mokoki/MokokiLogger$Companion {
+}
+
+public final class com/javiersc/mokoki/MokokiMode : java/lang/Enum {
+	public static final field Logcat Lcom/javiersc/mokoki/MokokiMode;
+	public static final field Run Lcom/javiersc/mokoki/MokokiMode;
+	public static fun valueOf (Ljava/lang/String;)Lcom/javiersc/mokoki/MokokiMode;
+	public static fun values ()[Lcom/javiersc/mokoki/MokokiMode;
+}
+
+public final class com/javiersc/mokoki/extensions/MokokiExtensionsKt {
+	public static final fun logD (Ljava/lang/Object;)V
+	public static final fun logD (Ljava/lang/String;)V
+	public static final fun logD (Ljava/lang/String;Ljava/lang/Object;)V
+	public static final fun logD (Ljava/lang/String;Ljava/lang/String;)V
+	public static final fun logD (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public static final fun logD (Ljava/lang/Throwable;)V
+	public static final fun logE (Ljava/lang/Object;)V
+	public static final fun logE (Ljava/lang/String;)V
+	public static final fun logE (Ljava/lang/String;Ljava/lang/Object;)V
+	public static final fun logE (Ljava/lang/String;Ljava/lang/String;)V
+	public static final fun logE (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public static final fun logE (Ljava/lang/Throwable;)V
+	public static final fun logI (Ljava/lang/Object;)V
+	public static final fun logI (Ljava/lang/String;)V
+	public static final fun logI (Ljava/lang/String;Ljava/lang/Object;)V
+	public static final fun logI (Ljava/lang/String;Ljava/lang/String;)V
+	public static final fun logI (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public static final fun logI (Ljava/lang/Throwable;)V
+	public static final fun logV (Ljava/lang/Object;)V
+	public static final fun logV (Ljava/lang/String;)V
+	public static final fun logV (Ljava/lang/String;Ljava/lang/Object;)V
+	public static final fun logV (Ljava/lang/String;Ljava/lang/String;)V
+	public static final fun logV (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public static final fun logV (Ljava/lang/Throwable;)V
+	public static final fun logW (Ljava/lang/Object;)V
+	public static final fun logW (Ljava/lang/String;)V
+	public static final fun logW (Ljava/lang/String;Ljava/lang/Object;)V
+	public static final fun logW (Ljava/lang/String;Ljava/lang/String;)V
+	public static final fun logW (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public static final fun logW (Ljava/lang/Throwable;)V
+}
+
