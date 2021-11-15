@@ -13,10 +13,10 @@
 ### Fixed
 
 ### Updated
+- `com.javiersc.gradle-plugins:all-plugins -> 0.1.0-rc.11`
 - `org.jetbrains.kotlin:kotlin-serialization -> 1.6.0`
 - `org.jetbrains.kotlinx:kotlinx-serialization-json -> 1.3.1`
 - `gradle -> 7.3`
-- `com.javiersc.gradle-plugins:all-plugins -> 0.1.0-rc.8`
 - `org.jetbrains.kotlinx:binary-compatibility-validator -> 0.8.0`
 - `androidx.core:core-ktx -> 1.7.0`
 
