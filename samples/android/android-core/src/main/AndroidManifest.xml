@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.javiersc.mokoki.core">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.javiersc.mokoki.core">
 
     <application
         android:label="Mokoki"
@@ -8,14 +8,15 @@
         tools:ignore="AllowBackup,MissingApplicationIcon">
 
         <activity
+            android:exported="true"
             android:name="com.javiersc.mokoki.core.MainActivity"
             android:label="Mokoki">
 
             <intent-filter>
 
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
 
             </intent-filter>
 
