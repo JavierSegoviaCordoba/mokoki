@@ -14,6 +14,10 @@
 
 ### Updated
 
+## [0.1.0-alpha.7] - 2021-12-02
+
+### Updated
+
 - `io.kotest:kotest-assertions-core -> 5.0.1`
 - `gradle -> 7.3.1`
 - `androidx.appcompat:appcompat -> 1.4.0`
