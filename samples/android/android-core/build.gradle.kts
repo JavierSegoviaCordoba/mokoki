@@ -1,5 +1,7 @@
 @file:Suppress("MagicNumber")
 
+import com.javiersc.gradle.plugins.kotlin.library.AndroidSdk
+
 plugins {
     `android-application`
     `kotlin-android`
