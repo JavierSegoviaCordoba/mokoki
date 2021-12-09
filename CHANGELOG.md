@@ -14,6 +14,8 @@
 
 ### Updated
 
+- `com.android.tools.build:gradle -> 7.0.4`
+
 ## [0.1.0-alpha.7] - 2021-12-02
 
 ### Updated
