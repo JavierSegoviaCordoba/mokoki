@@ -6,7 +6,6 @@ plugins {
     `android-application`
     `kotlin-android`
     `kotlinx-serialization`
-    `javiersc-code-formatter`
 }
 
 android {
