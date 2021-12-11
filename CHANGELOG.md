@@ -14,6 +14,7 @@
 
 ### Updated
 
+- `com.javiersc.gradle-plugins:all-plugins -> 0.1.0-rc.23`
 - `io.kotest:kotest-assertions-core -> 5.0.2`
 - `com.android.tools.build:gradle -> 7.0.4`
 
