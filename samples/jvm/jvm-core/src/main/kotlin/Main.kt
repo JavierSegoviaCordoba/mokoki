@@ -19,11 +19,13 @@ fun main() {
 class App {
 
     init {
-        showColors()
+        showColors(false)
+        showColors(true)
     }
 
-    private fun showColors() {
+    private fun showColors(enableCompatibleMode: Boolean) {
         Mokoki.isEnabled = true
+        Mokoki.enableCompatibleMode = enableCompatibleMode
 
         logV("SomeTag", "Unlucky bug")
         logD("SomeTag", "Unlucky bug")
@@ -47,12 +49,12 @@ class App {
 
         val textWithSeparator =
             """
-                |Text before first separator
-                |$LoggerSeparator
-                |Text after first separator and before last separator
-                |$LoggerSeparator
-                |Text after last separator
-            """.trimMargin()
+                Text before first separator
+                ${LoggerSeparator(enableCompatibleMode)}
+                Text after first separator and before last separator
+                ${LoggerSeparator(enableCompatibleMode)}
+                Text after last separator
+            """.trimIndent()
         logV(textWithSeparator)
     }
 }

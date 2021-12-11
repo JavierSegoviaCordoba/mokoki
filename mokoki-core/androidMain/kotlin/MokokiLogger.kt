@@ -8,6 +8,9 @@ import com.javiersc.mokoki.internal.buildMokokiMessage
 public actual class MokokiLogger {
 
     public actual var isEnabled: Boolean = true
+
+    public actual var enableCompatibleMode: Boolean = false
+
     public var mode: MokokiMode = MokokiMode.Logcat
 
     init {

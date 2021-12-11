@@ -7,6 +7,8 @@ public actual class MokokiLogger {
 
     public actual var isEnabled: Boolean = true
 
+    public actual var enableCompatibleMode: Boolean = false
+
     public actual fun v(tag: String, message: String) {
         buildMokokiMessage(tag, message, Level.Verbose).forEach { println(it) }
     }

@@ -19,6 +19,12 @@ public object MokokiSerialization {
             Mokoki.isEnabled = value
         }
 
+    public var enableCompatibleMode: Boolean
+        get() = Mokoki.enableCompatibleMode
+        set(value) {
+            Mokoki.enableCompatibleMode = value
+        }
+
     public var serializersModule: SerializersModule = EmptySerializersModule
 
     private val json: Json

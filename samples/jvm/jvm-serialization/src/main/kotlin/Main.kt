@@ -34,12 +34,15 @@ fun main() {
 class App {
 
     init {
-        showColors()
+        showColors(false)
+        showColors(true)
 
         serializersModuleExample()
     }
 
-    private fun showColors() {
+    private fun showColors(enableCompatibleMode: Boolean) {
+        MokokiSerialization.enableCompatibleMode = enableCompatibleMode
+
         commonLogs()
 
         MokokiSerialization.isEnabled = false.also { Logger.getGlobal().info("isEnabled = false") }

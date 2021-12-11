@@ -35,6 +35,7 @@ import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
 import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
+import kotlinx.serialization.json.JsonNull.serializer
 import kotlinx.serialization.modules.serializersModuleOf
 
 class MainActivity : AppCompatActivity(R.layout.main_activity) {
@@ -80,12 +81,12 @@ class App {
 
         val textWithSeparator =
             """
-                |Text before first separator
-                |$LoggerSeparator
-                |Text after first separator and before last separator
-                |$LoggerSeparator
-                |Text after last separator
-            """.trimMargin()
+                Text before first separator
+                ${LoggerSeparator()}
+                Text after first separator and before last separator
+                ${LoggerSeparator()}
+                Text after last separator
+            """.trimIndent()
         logV(textWithSeparator)
     }
 

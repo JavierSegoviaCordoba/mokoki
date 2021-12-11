@@ -2,32 +2,48 @@
 
 package com.javiersc.mokoki.internal
 
-internal fun buildMokokiMessage(
+import com.javiersc.mokoki.MokokiLogger
+
+internal fun MokokiLogger.buildMokokiMessage(
     tag: String?,
     message: Any,
     level: Level,
 ): List<String> {
-    val tagToPrint = if (tag != null) "$tag | " else ""
+    val cornerUpLeft = if (enableCompatibleMode) "-" else "┌"
+    val cornerUpRight = if (enableCompatibleMode) "-" else "┐"
+    val cornerBottomLeft = if (enableCompatibleMode) "-" else "└"
+    val cornerBottomRight = if (enableCompatibleMode) "-" else "┘"
+    val vertical = if (enableCompatibleMode) "|" else "│"
+    val verticalLeft = if (enableCompatibleMode) "|" else "├"
+    val verticalRight = if (enableCompatibleMode) "|" else "┤"
+
+    val separatorSymbol: String = if (enableCompatibleMode) "-" else "─"
+    val separatorSymbolStart: String = if (enableCompatibleMode) "|" else "├"
+
+    val tagToPrint = if (tag != null) "$tag $vertical " else ""
     val messageLines: List<String> = message.toString().lines()
-    val header = "$tagToPrint$level.$fileLink │ $fileName │ $className │ $methodName │ $lineNumber"
+    val header =
+        "$tagToPrint$level.$fileLink $vertical " +
+            "$fileName $vertical " +
+            "$className $vertical " +
+            "$methodName $vertical $lineNumber"
 
     val maxLineSize = (listOf(header) + messageLines).maxOf(String::length)
 
-    val internalSeparator = SeparatorSymbol.repeat(maxLineSize + 2)
+    val internalSeparator = separatorSymbol.repeat(maxLineSize + 2)
 
     return buildList {
-        add(" ┌$internalSeparator┐ ")
-        add(" │ $header │ ")
-        add(" ├$internalSeparator┤ ")
+        add(" $cornerUpLeft$internalSeparator$cornerUpRight ")
+        add(" $vertical $header $vertical ")
+        add(" $verticalLeft$internalSeparator$verticalRight ")
 
         messageLines.forEach { line ->
-            if (line.startsWith("├")) add(" $SeparatorSymbolStart$internalSeparator│ ")
-            else add(" │ $line${" ".repeat(maxLineSize - line.length)} │ ")
+            if (line.startsWith(verticalLeft)) {
+                add(" $separatorSymbolStart$internalSeparator$vertical ")
+            } else {
+                add(" $vertical $line${" ".repeat(maxLineSize - line.length)} $vertical ")
+            }
         }
-        add(" └$internalSeparator┘ ")
+        add(" $cornerBottomLeft$internalSeparator$cornerBottomRight ")
     }
 }
-
-internal const val SeparatorSymbolStart: String = "├"
-
-private const val SeparatorSymbol: String = "─"

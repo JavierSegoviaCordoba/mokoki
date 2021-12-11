@@ -1,5 +1,6 @@
 public final class com/javiersc/mokoki/serialization/MokokiSerialization {
 	public static final field INSTANCE Lcom/javiersc/mokoki/serialization/MokokiSerialization;
+	public final fun getEnableCompatibleMode ()Z
 	public final fun getSerializersModule ()Lkotlinx/serialization/modules/SerializersModule;
 	public final fun isEnabled ()Z
 	public final fun jsonD (Ljava/lang/String;)V
@@ -22,6 +23,7 @@ public final class com/javiersc/mokoki/serialization/MokokiSerialization {
 	public final fun serializableV (Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
 	public final fun serializableW (Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
 	public final fun serializableW (Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
+	public final fun setEnableCompatibleMode (Z)V
 	public final fun setEnabled (Z)V
 	public final fun setSerializersModule (Lkotlinx/serialization/modules/SerializersModule;)V
 }

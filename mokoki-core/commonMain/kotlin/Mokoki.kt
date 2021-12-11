@@ -13,6 +13,12 @@ public object Mokoki {
             logger.isEnabled = value
         }
 
+    public var enableCompatibleMode: Boolean
+        get() = logger.enableCompatibleMode
+        set(value) {
+            logger.enableCompatibleMode = value
+        }
+
     private var logger: MokokiLogger = MokokiLogger()
 
     public fun init(mokokiLogger: MokokiLogger) {

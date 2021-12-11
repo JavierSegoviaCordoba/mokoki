@@ -4,6 +4,8 @@
 
 ### Added
 
+- compatible mode
+
 ### Changed
 
 ### Deprecated

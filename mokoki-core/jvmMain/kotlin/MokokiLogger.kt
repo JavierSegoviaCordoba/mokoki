@@ -15,7 +15,9 @@ public actual class MokokiLogger {
 
     public actual var isEnabled: Boolean = true
 
-    private val logger = Logger.getLogger("Monoki")
+    public actual var enableCompatibleMode: Boolean = false
+
+    private val logger = Logger.getLogger("Mokoki")
 
     init {
         logger.apply {

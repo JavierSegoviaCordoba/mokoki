@@ -37,7 +37,8 @@ public final class com/javiersc/mokoki/LoggerForegroundColor : java/lang/Enum {
 }
 
 public final class com/javiersc/mokoki/LoggerSeparatorKt {
-	public static final field LoggerSeparator Ljava/lang/String;
+	public static final fun LoggerSeparator (Z)Ljava/lang/String;
+	public static synthetic fun LoggerSeparator$default (ZILjava/lang/Object;)Ljava/lang/String;
 }
 
 public final class com/javiersc/mokoki/Mokoki {
@@ -54,6 +55,7 @@ public final class com/javiersc/mokoki/Mokoki {
 	public final fun e (Ljava/lang/Throwable;)V
 	public static synthetic fun e$default (Lcom/javiersc/mokoki/Mokoki;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
 	public static synthetic fun e$default (Lcom/javiersc/mokoki/Mokoki;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Object;)V
+	public final fun getEnableCompatibleMode ()Z
 	public final fun i (Ljava/lang/String;)V
 	public final fun i (Ljava/lang/String;Ljava/lang/String;)V
 	public final fun i (Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -62,6 +64,7 @@ public final class com/javiersc/mokoki/Mokoki {
 	public static synthetic fun i$default (Lcom/javiersc/mokoki/Mokoki;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Object;)V
 	public final fun init (Lcom/javiersc/mokoki/MokokiLogger;)V
 	public final fun isEnabled ()Z
+	public final fun setEnableCompatibleMode (Z)V
 	public final fun setEnabled (Z)V
 	public final fun v (Ljava/lang/String;)V
 	public final fun v (Ljava/lang/String;Ljava/lang/String;)V
@@ -81,8 +84,10 @@ public final class com/javiersc/mokoki/MokokiLogger {
 	public fun <init> ()V
 	public final fun d (Ljava/lang/String;Ljava/lang/String;)V
 	public final fun e (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun getEnableCompatibleMode ()Z
 	public final fun i (Ljava/lang/String;Ljava/lang/String;)V
 	public final fun isEnabled ()Z
+	public final fun setEnableCompatibleMode (Z)V
 	public final fun setEnabled (Z)V
 	public final fun v (Ljava/lang/String;Ljava/lang/String;)V
 	public final fun w (Ljava/lang/String;Ljava/lang/String;)V

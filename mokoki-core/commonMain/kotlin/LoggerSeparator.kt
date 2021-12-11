@@ -1,7 +1,6 @@
-@file:Suppress("TopLevelPropertyNaming")
+@file:Suppress("TopLevelPropertyNaming", "FunctionName")
 
 package com.javiersc.mokoki
 
-import com.javiersc.mokoki.internal.SeparatorSymbolStart
-
-public const val LoggerSeparator: String = SeparatorSymbolStart
+public fun LoggerSeparator(enableCompatibleMode: Boolean = false): String =
+    if (enableCompatibleMode) "|" else "├"
