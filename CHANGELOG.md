@@ -14,6 +14,9 @@
 
 ### Updated
 
+- `org.jetbrains.kotlin:kotlin-serialization -> 1.6.10`
+- `org.jetbrains.kotlin:kotlin-gradle-plugin -> 1.6.10`
+
 ## [0.1.0-alpha.8] - 2021-12-14
 
 ### Added
