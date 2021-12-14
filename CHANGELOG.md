@@ -16,6 +16,8 @@
 
 ### Updated
 
+- `org.jetbrains.kotlin:kotlin-serialization -> 1.6.10`
+- `org.jetbrains.kotlin:kotlin-gradle-plugin -> 1.6.10`
 - `io.kotest:kotest-assertions-core -> 5.0.2`
 - `com.android.tools.build:gradle -> 7.0.4`
 
