@@ -14,6 +14,8 @@
 
 ### Updated
 
+- `gradle -> 7.3.2`
+
 ## [0.1.0-alpha.9] - 2021-12-14
 
 ### Updated
