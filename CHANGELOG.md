@@ -14,6 +14,7 @@
 
 ### Updated
 
+- `io.kotest:kotest-assertions-core -> 5.0.3`
 - `gradle -> 7.3.2`
 
 ## [0.1.0-alpha.9] - 2021-12-14
