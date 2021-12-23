@@ -1,0 +1,9 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:mokoki-core
+com.javiersc.mokoki
+com.javiersc.mokoki.extensions
+module:mokoki-serialization
+com.javiersc.mokoki.serialization
+com.javiersc.mokoki.serialization.extensions
