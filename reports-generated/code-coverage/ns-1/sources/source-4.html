@@ -1,0 +1,190 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Mokoki</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.javiersc.mokoki</a>
+</div>
+
+<h1>Coverage Summary for Class: Mokoki (com.javiersc.mokoki)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Block, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Mokoki</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/31)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/20)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/31)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;TooManyFunctions&quot;, &quot;TopLevelPropertyNaming&quot;)
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;package com.javiersc.mokoki
+<i class="no-highlight">4</i>&nbsp;
+<i class="no-highlight">5</i>&nbsp;import kotlin.native.concurrent.ThreadLocal
+<i class="no-highlight">6</i>&nbsp;
+<i class="no-highlight">7</i>&nbsp;@ThreadLocal
+<i class="no-highlight">8</i>&nbsp;public object Mokoki {
+<i class="no-highlight">9</i>&nbsp;
+<i class="no-highlight">10</i>&nbsp;    public var isEnabled: Boolean
+<b class="nc"><i class="no-highlight">11</i>&nbsp;        get() = logger.isEnabled</b>
+<i class="no-highlight">12</i>&nbsp;        set(value) {
+<b class="nc"><i class="no-highlight">13</i>&nbsp;            logger.isEnabled = value</b>
+<i class="no-highlight">14</i>&nbsp;        }
+<i class="no-highlight">15</i>&nbsp;
+<i class="no-highlight">16</i>&nbsp;    public var enableCompatibleMode: Boolean
+<b class="nc"><i class="no-highlight">17</i>&nbsp;        get() = logger.enableCompatibleMode</b>
+<i class="no-highlight">18</i>&nbsp;        set(value) {
+<b class="nc"><i class="no-highlight">19</i>&nbsp;            logger.enableCompatibleMode = value</b>
+<i class="no-highlight">20</i>&nbsp;        }
+<i class="no-highlight">21</i>&nbsp;
+<b class="nc"><i class="no-highlight">22</i>&nbsp;    private var logger: MokokiLogger = MokokiLogger()</b>
+<i class="no-highlight">23</i>&nbsp;
+<i class="no-highlight">24</i>&nbsp;    public fun init(mokokiLogger: MokokiLogger) {
+<b class="nc"><i class="no-highlight">25</i>&nbsp;        logger = mokokiLogger</b>
+<i class="no-highlight">26</i>&nbsp;    }
+<i class="no-highlight">27</i>&nbsp;
+<b class="nc"><i class="no-highlight">28</i>&nbsp;    public fun v(tag: String = MokokiName, message: String): Unit = logger.v(tag, message)</b>
+<i class="no-highlight">29</i>&nbsp;
+<b class="nc"><i class="no-highlight">30</i>&nbsp;    public fun v(tag: String = MokokiName, throwable: Throwable): Unit =</b>
+<b class="nc"><i class="no-highlight">31</i>&nbsp;        logger.v(tag, throwable.stackTraceToString())</b>
+<i class="no-highlight">32</i>&nbsp;
+<b class="nc"><i class="no-highlight">33</i>&nbsp;    public fun v(message: String): Unit = logger.v(MokokiName, message)</b>
+<i class="no-highlight">34</i>&nbsp;
+<b class="nc"><i class="no-highlight">35</i>&nbsp;    public fun v(throwable: Throwable): Unit = logger.v(MokokiName, throwable.stackTraceToString())</b>
+<i class="no-highlight">36</i>&nbsp;
+<b class="nc"><i class="no-highlight">37</i>&nbsp;    public fun d(tag: String = MokokiName, message: String): Unit = logger.d(tag, message)</b>
+<i class="no-highlight">38</i>&nbsp;
+<b class="nc"><i class="no-highlight">39</i>&nbsp;    public fun d(tag: String = MokokiName, throwable: Throwable): Unit =</b>
+<b class="nc"><i class="no-highlight">40</i>&nbsp;        logger.d(tag, throwable.stackTraceToString())</b>
+<i class="no-highlight">41</i>&nbsp;
+<b class="nc"><i class="no-highlight">42</i>&nbsp;    public fun d(message: String): Unit = logger.d(MokokiName, message)</b>
+<i class="no-highlight">43</i>&nbsp;
+<b class="nc"><i class="no-highlight">44</i>&nbsp;    public fun d(throwable: Throwable): Unit = logger.d(MokokiName, throwable.stackTraceToString())</b>
+<i class="no-highlight">45</i>&nbsp;
+<b class="nc"><i class="no-highlight">46</i>&nbsp;    public fun i(tag: String = MokokiName, message: String): Unit = logger.i(tag, message)</b>
+<i class="no-highlight">47</i>&nbsp;
+<b class="nc"><i class="no-highlight">48</i>&nbsp;    public fun i(tag: String = MokokiName, throwable: Throwable): Unit =</b>
+<b class="nc"><i class="no-highlight">49</i>&nbsp;        logger.i(tag, throwable.stackTraceToString())</b>
+<i class="no-highlight">50</i>&nbsp;
+<b class="nc"><i class="no-highlight">51</i>&nbsp;    public fun i(message: String): Unit = logger.i(MokokiName, message)</b>
+<b class="nc"><i class="no-highlight">52</i>&nbsp;    public fun i(throwable: Throwable): Unit = logger.i(MokokiName, throwable.stackTraceToString())</b>
+<i class="no-highlight">53</i>&nbsp;
+<b class="nc"><i class="no-highlight">54</i>&nbsp;    public fun w(tag: String = MokokiName, message: String): Unit = logger.w(tag, message)</b>
+<i class="no-highlight">55</i>&nbsp;
+<b class="nc"><i class="no-highlight">56</i>&nbsp;    public fun w(tag: String = MokokiName, throwable: Throwable): Unit =</b>
+<b class="nc"><i class="no-highlight">57</i>&nbsp;        logger.w(tag, throwable.stackTraceToString())</b>
+<i class="no-highlight">58</i>&nbsp;
+<b class="nc"><i class="no-highlight">59</i>&nbsp;    public fun w(message: String): Unit = logger.w(MokokiName, message)</b>
+<i class="no-highlight">60</i>&nbsp;
+<b class="nc"><i class="no-highlight">61</i>&nbsp;    public fun w(throwable: Throwable): Unit = logger.w(MokokiName, throwable.stackTraceToString())</b>
+<i class="no-highlight">62</i>&nbsp;
+<b class="nc"><i class="no-highlight">63</i>&nbsp;    public fun e(tag: String = MokokiName, message: String): Unit = logger.e(tag, message)</b>
+<i class="no-highlight">64</i>&nbsp;
+<b class="nc"><i class="no-highlight">65</i>&nbsp;    public fun e(tag: String = MokokiName, throwable: Throwable): Unit =</b>
+<b class="nc"><i class="no-highlight">66</i>&nbsp;        logger.e(tag, throwable.stackTraceToString())</b>
+<i class="no-highlight">67</i>&nbsp;
+<b class="nc"><i class="no-highlight">68</i>&nbsp;    public fun e(message: String): Unit = logger.e(MokokiName, message)</b>
+<i class="no-highlight">69</i>&nbsp;
+<b class="nc"><i class="no-highlight">70</i>&nbsp;    public fun e(throwable: Throwable): Unit = logger.e(MokokiName, throwable.stackTraceToString())</b>
+<i class="no-highlight">71</i>&nbsp;}
+<i class="no-highlight">72</i>&nbsp;
+<i class="no-highlight">73</i>&nbsp;private const val MokokiName = &quot;Mokoki&quot;
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-01-02 17:06</div>
+</div>
+</body>
+</html>

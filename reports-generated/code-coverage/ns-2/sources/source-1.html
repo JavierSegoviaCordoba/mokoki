@@ -1,0 +1,170 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > MokokiExtensionsKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.javiersc.mokoki.extensions</a>
+</div>
+
+<h1>Coverage Summary for Class: MokokiExtensionsKt (com.javiersc.mokoki.extensions)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MokokiExtensionsKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/30)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/30)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;TooManyFunctions&quot;)
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;package com.javiersc.mokoki.extensions
+<i class="no-highlight">4</i>&nbsp;
+<i class="no-highlight">5</i>&nbsp;import com.javiersc.mokoki.Mokoki
+<i class="no-highlight">6</i>&nbsp;
+<b class="nc"><i class="no-highlight">7</i>&nbsp;public fun logV(tag: String, message: String): Unit = Mokoki.v(tag, message)</b>
+<i class="no-highlight">8</i>&nbsp;
+<b class="nc"><i class="no-highlight">9</i>&nbsp;public fun logV(tag: String, throwable: Throwable): Unit = Mokoki.v(tag, throwable)</b>
+<i class="no-highlight">10</i>&nbsp;
+<b class="nc"><i class="no-highlight">11</i>&nbsp;public fun logV(tag: String, any: Any): Unit = Mokoki.v(tag, &quot;$any&quot;)</b>
+<i class="no-highlight">12</i>&nbsp;
+<b class="nc"><i class="no-highlight">13</i>&nbsp;public fun logV(message: String): Unit = Mokoki.v(message)</b>
+<i class="no-highlight">14</i>&nbsp;
+<b class="nc"><i class="no-highlight">15</i>&nbsp;public fun logV(throwable: Throwable): Unit = Mokoki.v(throwable)</b>
+<i class="no-highlight">16</i>&nbsp;
+<b class="nc"><i class="no-highlight">17</i>&nbsp;public fun logV(any: Any): Unit = Mokoki.v(&quot;$any&quot;)</b>
+<i class="no-highlight">18</i>&nbsp;
+<b class="nc"><i class="no-highlight">19</i>&nbsp;public fun logD(tag: String, message: String): Unit = Mokoki.d(tag, message)</b>
+<i class="no-highlight">20</i>&nbsp;
+<b class="nc"><i class="no-highlight">21</i>&nbsp;public fun logD(tag: String, throwable: Throwable): Unit = Mokoki.d(tag, throwable)</b>
+<i class="no-highlight">22</i>&nbsp;
+<b class="nc"><i class="no-highlight">23</i>&nbsp;public fun logD(tag: String, any: Any): Unit = Mokoki.d(tag, &quot;$any&quot;)</b>
+<i class="no-highlight">24</i>&nbsp;
+<b class="nc"><i class="no-highlight">25</i>&nbsp;public fun logD(message: String): Unit = Mokoki.d(message)</b>
+<i class="no-highlight">26</i>&nbsp;
+<b class="nc"><i class="no-highlight">27</i>&nbsp;public fun logD(throwable: Throwable): Unit = Mokoki.d(throwable)</b>
+<i class="no-highlight">28</i>&nbsp;
+<b class="nc"><i class="no-highlight">29</i>&nbsp;public fun logD(any: Any): Unit = Mokoki.d(&quot;$any&quot;)</b>
+<i class="no-highlight">30</i>&nbsp;
+<b class="nc"><i class="no-highlight">31</i>&nbsp;public fun logI(tag: String, message: String): Unit = Mokoki.i(tag, message)</b>
+<i class="no-highlight">32</i>&nbsp;
+<b class="nc"><i class="no-highlight">33</i>&nbsp;public fun logI(tag: String, throwable: Throwable): Unit = Mokoki.i(tag, throwable)</b>
+<i class="no-highlight">34</i>&nbsp;
+<b class="nc"><i class="no-highlight">35</i>&nbsp;public fun logI(tag: String, any: Any): Unit = Mokoki.i(tag, &quot;$any&quot;)</b>
+<i class="no-highlight">36</i>&nbsp;
+<b class="nc"><i class="no-highlight">37</i>&nbsp;public fun logI(message: String): Unit = Mokoki.i(message)</b>
+<i class="no-highlight">38</i>&nbsp;
+<b class="nc"><i class="no-highlight">39</i>&nbsp;public fun logI(throwable: Throwable): Unit = Mokoki.i(throwable)</b>
+<i class="no-highlight">40</i>&nbsp;
+<b class="nc"><i class="no-highlight">41</i>&nbsp;public fun logI(any: Any): Unit = Mokoki.i(&quot;$any&quot;)</b>
+<i class="no-highlight">42</i>&nbsp;
+<b class="nc"><i class="no-highlight">43</i>&nbsp;public fun logW(tag: String, message: String): Unit = Mokoki.w(tag, message)</b>
+<i class="no-highlight">44</i>&nbsp;
+<b class="nc"><i class="no-highlight">45</i>&nbsp;public fun logW(tag: String, throwable: Throwable): Unit = Mokoki.w(tag, throwable)</b>
+<i class="no-highlight">46</i>&nbsp;
+<b class="nc"><i class="no-highlight">47</i>&nbsp;public fun logW(tag: String, any: Any): Unit = Mokoki.w(tag, &quot;$any&quot;)</b>
+<i class="no-highlight">48</i>&nbsp;
+<b class="nc"><i class="no-highlight">49</i>&nbsp;public fun logW(message: String): Unit = Mokoki.w(message)</b>
+<i class="no-highlight">50</i>&nbsp;
+<b class="nc"><i class="no-highlight">51</i>&nbsp;public fun logW(throwable: Throwable): Unit = Mokoki.w(throwable)</b>
+<i class="no-highlight">52</i>&nbsp;
+<b class="nc"><i class="no-highlight">53</i>&nbsp;public fun logW(any: Any): Unit = Mokoki.w(&quot;$any&quot;)</b>
+<i class="no-highlight">54</i>&nbsp;
+<b class="nc"><i class="no-highlight">55</i>&nbsp;public fun logE(tag: String, message: String): Unit = Mokoki.e(tag, message)</b>
+<i class="no-highlight">56</i>&nbsp;
+<b class="nc"><i class="no-highlight">57</i>&nbsp;public fun logE(tag: String, throwable: Throwable): Unit = Mokoki.e(tag, throwable)</b>
+<i class="no-highlight">58</i>&nbsp;
+<b class="nc"><i class="no-highlight">59</i>&nbsp;public fun logE(tag: String, any: Any): Unit = Mokoki.e(tag, &quot;$any&quot;)</b>
+<i class="no-highlight">60</i>&nbsp;
+<b class="nc"><i class="no-highlight">61</i>&nbsp;public fun logE(message: String): Unit = Mokoki.e(message)</b>
+<i class="no-highlight">62</i>&nbsp;
+<b class="nc"><i class="no-highlight">63</i>&nbsp;public fun logE(throwable: Throwable): Unit = Mokoki.e(throwable)</b>
+<i class="no-highlight">64</i>&nbsp;
+<b class="nc"><i class="no-highlight">65</i>&nbsp;public fun logE(any: Any): Unit = Mokoki.e(&quot;$any&quot;)</b>
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-01-02 17:06</div>
+</div>
+</body>
+</html>

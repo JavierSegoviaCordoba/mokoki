@@ -1,0 +1,108 @@
+{
+  "modules": [
+    {
+      "name": "mokoki",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-core",
+      "languageLevel": 8
+    },
+    {
+      "name": "mokoki.mokoki-serialization",
+      "languageLevel": 8
+    },
+    {
+      "name": "mokoki.buildSrc",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-core.iosArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-core.iosArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-core.iosX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-core.iosX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-core.jvmMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-core.jvmTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-core.androidAndroidTestRelease",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-core.commonMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-core.commonTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-core.ios64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-core.ios64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-serialization.iosArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-serialization.iosArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-serialization.iosX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-serialization.iosX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-serialization.jvmMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-serialization.jvmTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-serialization.androidAndroidTestRelease",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-serialization.commonMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.mokoki-serialization.commonTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.buildSrc.test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki.buildSrc.main",
+      "languageLevel": 11
+    }
+  ]
+}
