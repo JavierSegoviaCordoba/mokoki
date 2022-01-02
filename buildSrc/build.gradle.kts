@@ -16,8 +16,8 @@ dependencies {
 
     pluginLibs.apply {
         implementation(android.toolsBuild.gradle)
-        implementation(javiersc.gradlePlugins.allPluginsX)
-        implementation(jetbrains.kotlin.kotlinGradlePluginX)
+        implementation(javiersc.gradlePlugins.allPlugins)
+        implementation(jetbrains.kotlin.kotlinGradlePlugin)
         implementation(jetbrains.kotlin.kotlinSerialization)
         implementation(jetbrains.kotlinx.binaryCompatibilityValidator)
     }

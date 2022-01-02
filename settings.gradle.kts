@@ -22,8 +22,21 @@ include(
     ":mokoki-serialization",
 )
 
-include(
-    ":samples:android:android-core",
-    ":samples:jvm:jvm-core",
-    ":samples:jvm:jvm-serialization",
-)
+file("local.properties").apply {
+    if (exists().not()) {
+        createNewFile()
+        writeText("samples.enabled=false")
+    }
+    inputStream().use { fileInputStream ->
+        java.util.Properties().apply {
+            load(fileInputStream)
+            if (getProperty("samples.enabled")?.toString()?.toBoolean() == true) {
+                include(
+                    ":samples:android:android-core",
+                    ":samples:jvm:jvm-core",
+                    ":samples:jvm:jvm-serialization",
+                )
+            }
+        }
+    }
+}

@@ -4,7 +4,7 @@ plugins {
     `kotlin-multiplatform`
     `android-library`
     `kotlinx-serialization`
-    `javiersc-kotlin-library`
+    `javiersc-kotlin-config`
     `javiersc-publish`
 }
 

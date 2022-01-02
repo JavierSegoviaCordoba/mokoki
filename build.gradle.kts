@@ -3,6 +3,7 @@ plugins {
     `javiersc-all-projects`
     `javiersc-changelog`
     `javiersc-code-analysis`
+    `javiersc-code-coverage`
     `javiersc-code-formatter`
     `javiersc-docs`
     `kotlinx-binary-compatibility-validator`
@@ -10,14 +11,18 @@ plugins {
     `javiersc-readme-badges-generator`
 }
 
-tasks {
-    dokkaHtmlMultiModule {
-        removeChildTasks(
-            listOf(
-                project(":samples:android:android-core"),
-                project(":samples:jvm:jvm-core"),
-                project(":samples:jvm:jvm-serialization"),
-            )
-        )
+removeProjectFromDoc(
+    ":samples:android:android-core",
+    ":samples:jvm:jvm-core",
+    ":samples:jvm:jvm-serialization",
+)
+
+fun removeProjectFromDoc(vararg paths: String) {
+    val projects = mutableListOf<Project>()
+
+    for (path in paths) {
+        if (findProject(path) != null) projects.add(project(path))
     }
+
+    tasks { dokkaHtmlMultiModule { removeChildTasks(projects) } }
 }

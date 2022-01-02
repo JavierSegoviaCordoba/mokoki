@@ -1,3 +1,10 @@
+public final class com/javiersc/mokoki/serialization/BuildConfig {
+	public static final field BUILD_TYPE Ljava/lang/String;
+	public static final field DEBUG Z
+	public static final field LIBRARY_PACKAGE_NAME Ljava/lang/String;
+	public fun <init> ()V
+}
+
 public final class com/javiersc/mokoki/serialization/MokokiSerialization {
 	public static final field INSTANCE Lcom/javiersc/mokoki/serialization/MokokiSerialization;
 	public final fun getEnableCompatibleMode ()Z
@@ -57,12 +64,5 @@ public final class com/javiersc/mokoki/serialization/extensions/MokokiSerializab
 public final class com/javiersc/mokoki/serialization/internal/BuildMokokiSerializationKt {
 	public static final fun buildMokokiMessage (Ljava/lang/String;Lkotlinx/serialization/json/Json;Ljava/lang/String;)Ljava/lang/String;
 	public static final fun buildMokokiMessage (Ljava/lang/String;Lkotlinx/serialization/json/Json;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)Ljava/lang/String;
-}
-
-public final class com/javiersc/mokokiSerialization/BuildConfig {
-	public static final field BUILD_TYPE Ljava/lang/String;
-	public static final field DEBUG Z
-	public static final field LIBRARY_PACKAGE_NAME Ljava/lang/String;
-	public fun <init> ()V
 }
 

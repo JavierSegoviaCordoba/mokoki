@@ -1,6 +1,5 @@
-package com.javiersc.example.test
+package com.javiersc.mokoki
 
-import com.javiersc.mokoki.Mokoki
 import com.javiersc.mokoki.extensions.logV
 import kotlin.test.Test
 

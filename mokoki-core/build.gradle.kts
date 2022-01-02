@@ -1,7 +1,7 @@
 plugins {
     `kotlin-multiplatform`
     `android-library`
-    `javiersc-kotlin-library`
+    `javiersc-kotlin-config`
     `javiersc-publish`
 }
 
@@ -17,18 +17,17 @@ kotlin {
 
     sourceSets {
         val commonMain by getting
-        val commonTest by getting
-
-        named("androidMain") {
-            dependencies { implementation(libs.jetbrains.kotlinx.kotlinxCoroutinesCore) }
+        val commonTest by getting {
+            dependencies {
+                implementation(libs.jetbrains.kotlin.kotlinTest)
+                implementation(libs.kotest.kotestAssertionsCore)
+            }
         }
 
         val iosArm64Main by getting
         val iosArm64Test by getting
         val iosX64Main by getting
         val iosX64Test by getting
-
-        named("jvmMain")
 
         create("ios64Main") {
             dependsOn(commonMain)
