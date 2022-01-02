@@ -72,7 +72,7 @@ pre {
 
 <div>
   <ul>
-    <li>91 number of properties</li>
+    <li>90 number of properties</li>
     <li>154 number of functions</li>
     <li>54 number of classes</li>
     <li>10 number of packages</li>
@@ -85,22 +85,22 @@ pre {
 
 <div>
   <ul>
-    <li>1,510 lines of code (loc)</li>
-    <li>1,134 source lines of code (sloc)</li>
-    <li>849 logical lines of code (lloc)</li>
-    <li>3 comment lines of code (cloc)</li>
+    <li>1,491 lines of code (loc)</li>
+    <li>1,118 source lines of code (sloc)</li>
+    <li>837 logical lines of code (lloc)</li>
+    <li>2 comment lines of code (cloc)</li>
     <li>242 cyclomatic complexity (mcc)</li>
     <li>37 cognitive complexity</li>
-    <li>8 number of total code smells</li>
+    <li>3 number of total code smells</li>
     <li>0% comment source ratio</li>
-    <li>285 mcc per 1,000 lloc</li>
-    <li>9 code smells per 1,000 lloc</li>
+    <li>289 mcc per 1,000 lloc</li>
+    <li>3 code smells per 1,000 lloc</li>
   </ul>
 </div>
 
 
 <h2>Findings</h2>
-<div>Total: 8
+<div>Total: 3
   <h3>exceptions: 2</h3>
   <details id="SwallowedException" open="open">
     <summary class="rule-container"><span class="rule">SwallowedException: 2 </span><span class="description">The caught exception is swallowed. The original exception could be lost.</span></summary>
@@ -127,7 +127,7 @@ pre {
       </li>
     </ul>
   </details>
-  <h3>style: 6</h3>
+  <h3>style: 1</h3>
   <details id="MagicNumber" open="open">
     <summary class="rule-container"><span class="rule">MagicNumber: 1 </span><span class="description">Report magic numbers. Magic number is a numeric literal that is not defined as a constant and hence it's unclear what the purpose of this number is. It's better to declare such numbers as constants and give them a proper name. By default, -1, 0, 1, and 2 are not considered to be magic numbers.</span></summary>
     <ul>
@@ -143,65 +143,10 @@ pre {
       </li>
     </ul>
   </details>
-  <details id="MaxLineLength" open="open">
-    <summary class="rule-container"><span class="rule">MaxLineLength: 5 </span><span class="description">Line detected that is longer than the defined maximum line length in the code style.</span></summary>
-    <ul>
-      <li><span class="location">mokoki-core/jvmTest/kotlin/com/javiersc/mokoki/MokokiTest.kt:18:1</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
-        <pre><code><span class="lineno">  15 </span>                .joinToString(&quot;\n&quot;)
-<span class="lineno">  16 </span>        val actual =
-<span class="lineno">  17 </span>            &quot;&quot;&quot;
-<span class="lineno">  18 </span><span class="error">                | ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────┐ </span>
-<span class="lineno">  19 </span>                | │ Some tag │ Verbose.(Thread.java:1607) │ file Thread.java │ class Thread │ fun getStackTrace │ line 1607 │ 
-<span class="lineno">  20 </span>                | ├─────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<span class="lineno">  21 </span>                | │ Some message                                                                                            │ 
-</code></pre>
-      </li>
-      <li><span class="location">mokoki-core/jvmTest/kotlin/com/javiersc/mokoki/MokokiTest.kt:19:1</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
-        <pre><code><span class="lineno">  16 </span>        val actual =
-<span class="lineno">  17 </span>            &quot;&quot;&quot;
-<span class="lineno">  18 </span>                | ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<span class="lineno">  19 </span><span class="error">                | │ Some tag │ Verbose.(Thread.java:1607) │ file Thread.java │ class Thread │ fun getStackTrace │ line 1607 │ </span>
-<span class="lineno">  20 </span>                | ├─────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<span class="lineno">  21 </span>                | │ Some message                                                                                            │ 
-<span class="lineno">  22 </span>                | └─────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-</code></pre>
-      </li>
-      <li><span class="location">mokoki-core/jvmTest/kotlin/com/javiersc/mokoki/MokokiTest.kt:20:1</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
-        <pre><code><span class="lineno">  17 </span>            &quot;&quot;&quot;
-<span class="lineno">  18 </span>                | ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<span class="lineno">  19 </span>                | │ Some tag │ Verbose.(Thread.java:1607) │ file Thread.java │ class Thread │ fun getStackTrace │ line 1607 │ 
-<span class="lineno">  20 </span><span class="error">                | ├─────────────────────────────────────────────────────────────────────────────────────────────────────────┤ </span>
-<span class="lineno">  21 </span>                | │ Some message                                                                                            │ 
-<span class="lineno">  22 </span>                | └─────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<span class="lineno">  23 </span>            &quot;&quot;&quot;.trimMargin()
-</code></pre>
-      </li>
-      <li><span class="location">mokoki-core/jvmTest/kotlin/com/javiersc/mokoki/MokokiTest.kt:21:1</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
-        <pre><code><span class="lineno">  18 </span>                | ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<span class="lineno">  19 </span>                | │ Some tag │ Verbose.(Thread.java:1607) │ file Thread.java │ class Thread │ fun getStackTrace │ line 1607 │ 
-<span class="lineno">  20 </span>                | ├─────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<span class="lineno">  21 </span><span class="error">                | │ Some message                                                                                            │ </span>
-<span class="lineno">  22 </span>                | └─────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<span class="lineno">  23 </span>            &quot;&quot;&quot;.trimMargin()
-<span class="lineno">  24 </span>
-</code></pre>
-      </li>
-      <li><span class="location">mokoki-core/jvmTest/kotlin/com/javiersc/mokoki/MokokiTest.kt:22:1</span><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
-        <pre><code><span class="lineno">  19 </span>                | │ Some tag │ Verbose.(Thread.java:1607) │ file Thread.java │ class Thread │ fun getStackTrace │ line 1607 │ 
-<span class="lineno">  20 </span>                | ├─────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<span class="lineno">  21 </span>                | │ Some message                                                                                            │ 
-<span class="lineno">  22 </span><span class="error">                | └─────────────────────────────────────────────────────────────────────────────────────────────────────────┘ </span>
-<span class="lineno">  23 </span>            &quot;&quot;&quot;.trimMargin()
-<span class="lineno">  24 </span>
-<span class="lineno">  25 </span>        expect.shouldBe(actual)
-</code></pre>
-      </li>
-    </ul>
-  </details>
 </div>
 
 
-generated with <a href="https://detekt.github.io/">detekt version 1.19.0</a> on 2022-01-02 17:29:20 UTC.
+generated with <a href="https://detekt.github.io/">detekt version 1.19.0</a> on 2022-01-02 20:40:21 UTC.
 
 </body>
 </html>

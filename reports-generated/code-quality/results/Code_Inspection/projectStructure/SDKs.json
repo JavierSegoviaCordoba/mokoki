@@ -75,7 +75,12 @@
     },
     {
       "name": "Android API 31 Platform",
-      "roots": []
+      "roots": [
+        "jar:///opt/android-sdk/platforms/android-31/android.jar!/",
+        "file:///opt/android-sdk/platforms/android-31/data/res"
+      ],
+      "sdkType": "Android SDK",
+      "sdkVersion": "java version \"11.0.11\""
     }
   ]
 }

@@ -46,10 +46,18 @@ Current scope:     <a href="../../index.html">all classes</a>
   <td class="name">LogFormatter</td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/2)
   </span>
 </td>
 <td class="coverageStat">
@@ -57,23 +65,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/3)
+    (0/4)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    30%
   </span>
   <span class="absValue">
-    (0/8)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/11)
+    (3/10)
   </span>
 </td>
 </tr>
@@ -92,10 +92,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 <i class="no-highlight">5</i>&nbsp;import java.util.logging.Formatter
 <i class="no-highlight">6</i>&nbsp;import java.util.logging.LogRecord
 <i class="no-highlight">7</i>&nbsp;
-<b class="nc"><i class="no-highlight">8</i>&nbsp;internal class LogFormatter(</b>
-<b class="nc"><i class="no-highlight">9</i>&nbsp;    private val loggerForegroundColor: LoggerForegroundColor = LoggerForegroundColor.White,</b>
-<b class="nc"><i class="no-highlight">10</i>&nbsp;    private val loggerBackgroundColor: LoggerBackgroundColor? = null,</b>
-<b class="nc"><i class="no-highlight">11</i>&nbsp;) : Formatter() {</b>
+<i class="no-highlight">8</i>&nbsp;internal class LogFormatter(
+<b class="fc"><i class="no-highlight">9</i>&nbsp;    private val loggerForegroundColor: LoggerForegroundColor = LoggerForegroundColor.White,</b>
+<b class="fc"><i class="no-highlight">10</i>&nbsp;    private val loggerBackgroundColor: LoggerBackgroundColor? = null,</b>
+<b class="fc"><i class="no-highlight">11</i>&nbsp;) : Formatter() {</b>
 <i class="no-highlight">12</i>&nbsp;
 <b class="nc"><i class="no-highlight">13</i>&nbsp;    override fun format(record: LogRecord): String = buildString {</b>
 <b class="nc"><i class="no-highlight">14</i>&nbsp;        append(loggerForegroundColor.value)</b>
@@ -131,7 +131,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-01-02 17:49</div>
+    <div style="float:right;">generated on 2022-01-02 20:40</div>
 </div>
 </body>
 </html>
