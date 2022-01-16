@@ -1,0 +1,151 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > LoggerNamesKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.javiersc.mokoki.internal</a>
+</div>
+
+<h1>Coverage Summary for Class: LoggerNamesKt (com.javiersc.mokoki.internal)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Block, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LoggerNamesKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (15/30)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (12/16)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.javiersc.mokoki.internal
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;internal actual val fileName
+<b class="pc"><i class="no-highlight">4</i>&nbsp;    get() = &quot;file ${stackTrace?.fileName ?: &quot;Unknown&quot;}&quot;</b>
+<i class="no-highlight">5</i>&nbsp;
+<i class="no-highlight">6</i>&nbsp;internal actual val className
+<b class="fc"><i class="no-highlight">7</i>&nbsp;    get() = &quot;class ${</b>
+<b class="pc"><i class="no-highlight">8</i>&nbsp;        stackTrace?.className?.split(&quot;.&quot;)?.lastOrNull() ?: &quot;Unknown&quot;</b>
+<i class="no-highlight">9</i>&nbsp;    }&quot;
+<i class="no-highlight">10</i>&nbsp;
+<i class="no-highlight">11</i>&nbsp;internal actual val methodName
+<b class="pc"><i class="no-highlight">12</i>&nbsp;    get() = &quot;fun ${stackTrace?.methodName ?: &quot;Unknown&quot;}&quot;</b>
+<i class="no-highlight">13</i>&nbsp;
+<i class="no-highlight">14</i>&nbsp;internal actual val lineNumber
+<b class="pc"><i class="no-highlight">15</i>&nbsp;    get() = &quot;line ${stackTrace?.lineNumber ?: &quot;Unknown&quot;}&quot;</b>
+<i class="no-highlight">16</i>&nbsp;
+<i class="no-highlight">17</i>&nbsp;internal actual val fileLink
+<b class="pc"><i class="no-highlight">18</i>&nbsp;    get() = &quot;(${stackTrace?.fileName}:${stackTrace?.lineNumber})&quot;</b>
+<i class="no-highlight">19</i>&nbsp;
+<i class="no-highlight">20</i>&nbsp;@Suppress(&quot;TooGenericExceptionCaught&quot;, &quot;SwallowedException&quot;)
+<i class="no-highlight">21</i>&nbsp;private val stackTrace: StackTraceElement?
+<i class="no-highlight">22</i>&nbsp;    get() =
+<b class="fc"><i class="no-highlight">23</i>&nbsp;        try {</b>
+<b class="fc"><i class="no-highlight">24</i>&nbsp;            val trace = Thread.currentThread().stackTrace</b>
+<b class="fc"><i class="no-highlight">25</i>&nbsp;            val index =</b>
+<b class="fc"><i class="no-highlight">26</i>&nbsp;                trace.indexOfLast { traceElement -&gt;</b>
+<b class="pc"><i class="no-highlight">27</i>&nbsp;                    Regex(&quot;^(Mokoki.kt)$&quot;).matches(traceElement.fileName ?: &quot;&quot;) &amp;&amp;</b>
+<b class="nc"><i class="no-highlight">28</i>&nbsp;                        Regex(&quot;^(com.javiersc.mokoki.Mokoki)$&quot;).matches(traceElement.className)</b>
+<i class="no-highlight">29</i>&nbsp;                }
+<b class="fc"><i class="no-highlight">30</i>&nbsp;            trace[index + 1]</b>
+<b class="nc"><i class="no-highlight">31</i>&nbsp;        } catch (throwable: Throwable) {</b>
+<b class="nc"><i class="no-highlight">32</i>&nbsp;            println(&quot;Mokoki has not been able to get the StackTrace&quot;)</b>
+<b class="nc"><i class="no-highlight">33</i>&nbsp;            null</b>
+<i class="no-highlight">34</i>&nbsp;        }
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-01-16 23:30</div>
+</div>
+</body>
+</html>

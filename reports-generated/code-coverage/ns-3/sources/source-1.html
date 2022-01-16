@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > BuildMokokiMessageKt</title>
+  <title>Coverage Report > AndroidLoggingHandler</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/highlight-idea.css";
@@ -20,15 +20,12 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">com.javiersc.mokoki.internal</a>
 </div>
 
-<h1>Coverage Summary for Class: BuildMokokiMessageKt (com.javiersc.mokoki.internal)</h1>
+<h1>Coverage Summary for Class: AndroidLoggingHandler (com.javiersc.mokoki.internal)</h1>
 
 <table class="coverageStats">
+
 <tr>
   <th class="name">Class</th>
-<th class="coverageStat 
-">
-  Class, %
-</th>
 <th class="coverageStat 
 ">
   Method, %
@@ -43,41 +40,86 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">BuildMokokiMessageKt</td>
+  <td class="name">AndroidLoggingHandler</td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/1)
+    (0/2)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    0%
   </span>
   <span class="absValue">
-    (1/1)
+    (0/6)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    53.6%
+    0%
   </span>
   <span class="absValue">
-    (15/28)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    96.6%
-  </span>
-  <span class="absValue">
-    (28/29)
+    (0/12)
   </span>
 </td>
 </tr>
-
+  <tr>
+    <td class="name">AndroidLoggingHandler$Companion</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/24)
+  </span>
+</td>
+</tr>
 </table>
 
 <br/>
@@ -85,55 +127,59 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;TopLevelPropertyNaming&quot;)
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;EmptyFunctionBlock&quot;, &quot;MagicNumber&quot;, &quot;TooGenericExceptionCaught&quot;)
 <i class="no-highlight">2</i>&nbsp;
 <i class="no-highlight">3</i>&nbsp;package com.javiersc.mokoki.internal
 <i class="no-highlight">4</i>&nbsp;
-<i class="no-highlight">5</i>&nbsp;import com.javiersc.mokoki.MokokiLogger
-<i class="no-highlight">6</i>&nbsp;
-<i class="no-highlight">7</i>&nbsp;internal fun MokokiLogger.buildMokokiMessage(
-<i class="no-highlight">8</i>&nbsp;    tag: String?,
-<i class="no-highlight">9</i>&nbsp;    message: Any,
-<i class="no-highlight">10</i>&nbsp;    level: Level,
-<i class="no-highlight">11</i>&nbsp;): List&lt;String&gt; {
-<b class="pc"><i class="no-highlight">12</i>&nbsp;    val cornerUpLeft = if (enableCompatibleMode) &quot;-&quot; else &quot;┌&quot;</b>
-<b class="pc"><i class="no-highlight">13</i>&nbsp;    val cornerUpRight = if (enableCompatibleMode) &quot;-&quot; else &quot;┐&quot;</b>
-<b class="pc"><i class="no-highlight">14</i>&nbsp;    val cornerBottomLeft = if (enableCompatibleMode) &quot;-&quot; else &quot;└&quot;</b>
-<b class="pc"><i class="no-highlight">15</i>&nbsp;    val cornerBottomRight = if (enableCompatibleMode) &quot;-&quot; else &quot;┘&quot;</b>
-<b class="pc"><i class="no-highlight">16</i>&nbsp;    val vertical = if (enableCompatibleMode) &quot;|&quot; else &quot;│&quot;</b>
-<b class="pc"><i class="no-highlight">17</i>&nbsp;    val verticalLeft = if (enableCompatibleMode) &quot;|&quot; else &quot;├&quot;</b>
-<b class="pc"><i class="no-highlight">18</i>&nbsp;    val verticalRight = if (enableCompatibleMode) &quot;|&quot; else &quot;┤&quot;</b>
-<i class="no-highlight">19</i>&nbsp;
-<b class="pc"><i class="no-highlight">20</i>&nbsp;    val separatorSymbol: String = if (enableCompatibleMode) &quot;-&quot; else &quot;─&quot;</b>
-<b class="pc"><i class="no-highlight">21</i>&nbsp;    val separatorSymbolStart: String = if (enableCompatibleMode) &quot;|&quot; else &quot;├&quot;</b>
-<i class="no-highlight">22</i>&nbsp;
-<b class="pc"><i class="no-highlight">23</i>&nbsp;    val tagToPrint = if (tag != null) &quot;$tag $vertical &quot; else &quot;&quot;</b>
-<b class="fc"><i class="no-highlight">24</i>&nbsp;    val messageLines: List&lt;String&gt; = message.toString().lines()</b>
-<b class="fc"><i class="no-highlight">25</i>&nbsp;    val header =</b>
-<b class="fc"><i class="no-highlight">26</i>&nbsp;        &quot;$tagToPrint$level.$fileLink $vertical &quot; +</b>
-<b class="fc"><i class="no-highlight">27</i>&nbsp;            &quot;$fileName $vertical &quot; +</b>
-<b class="fc"><i class="no-highlight">28</i>&nbsp;            &quot;$className $vertical &quot; +</b>
-<b class="fc"><i class="no-highlight">29</i>&nbsp;            &quot;$methodName $vertical $lineNumber&quot;</b>
-<i class="no-highlight">30</i>&nbsp;
-<b class="pc"><i class="no-highlight">31</i>&nbsp;    val maxLineSize = (listOf(header) + messageLines).maxOf(String::length)</b>
+<i class="no-highlight">5</i>&nbsp;import android.util.Log
+<i class="no-highlight">6</i>&nbsp;import java.util.logging.Handler
+<i class="no-highlight">7</i>&nbsp;import java.util.logging.Level
+<i class="no-highlight">8</i>&nbsp;import java.util.logging.Level.INFO
+<i class="no-highlight">9</i>&nbsp;import java.util.logging.Level.SEVERE
+<i class="no-highlight">10</i>&nbsp;import java.util.logging.Level.WARNING
+<i class="no-highlight">11</i>&nbsp;import java.util.logging.LogManager
+<i class="no-highlight">12</i>&nbsp;import java.util.logging.LogRecord
+<i class="no-highlight">13</i>&nbsp;
+<b class="nc"><i class="no-highlight">14</i>&nbsp;internal class AndroidLoggingHandler : Handler() {</b>
+<i class="no-highlight">15</i>&nbsp;    override fun close() {}
+<i class="no-highlight">16</i>&nbsp;    override fun flush() {}
+<i class="no-highlight">17</i>&nbsp;    override fun publish(record: LogRecord) {
+<b class="nc"><i class="no-highlight">18</i>&nbsp;        if (!super.isLoggable(record)) return</b>
+<b class="nc"><i class="no-highlight">19</i>&nbsp;        val name = record.loggerName</b>
+<b class="nc"><i class="no-highlight">20</i>&nbsp;        val maxLength = 30</b>
+<b class="nc"><i class="no-highlight">21</i>&nbsp;        val tag = if (name.length &gt; maxLength) name.substring(name.length - maxLength) else name</b>
+<b class="nc"><i class="no-highlight">22</i>&nbsp;        try {</b>
+<b class="nc"><i class="no-highlight">23</i>&nbsp;            val level = getAndroidLevel(record.level)</b>
+<b class="nc"><i class="no-highlight">24</i>&nbsp;            Log.println(level, tag, record.message)</b>
+<b class="nc"><i class="no-highlight">25</i>&nbsp;            if (record.thrown != null) {</b>
+<b class="nc"><i class="no-highlight">26</i>&nbsp;                Log.println(level, tag, Log.getStackTraceString(record.thrown))</b>
+<i class="no-highlight">27</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">28</i>&nbsp;        } catch (throwable: Throwable) {</b>
+<b class="nc"><i class="no-highlight">29</i>&nbsp;            Log.e(&quot;AndroidLoggingHandler&quot;, &quot;Error logging message.&quot;, throwable)</b>
+<i class="no-highlight">30</i>&nbsp;        }
+<i class="no-highlight">31</i>&nbsp;    }
 <i class="no-highlight">32</i>&nbsp;
-<b class="fc"><i class="no-highlight">33</i>&nbsp;    val internalSeparator = separatorSymbol.repeat(maxLineSize + 2)</b>
-<i class="no-highlight">34</i>&nbsp;
-<b class="fc"><i class="no-highlight">35</i>&nbsp;    return buildList {</b>
-<b class="fc"><i class="no-highlight">36</i>&nbsp;        add(&quot; $cornerUpLeft$internalSeparator$cornerUpRight &quot;)</b>
-<b class="fc"><i class="no-highlight">37</i>&nbsp;        add(&quot; $vertical $header $vertical &quot;)</b>
-<b class="fc"><i class="no-highlight">38</i>&nbsp;        add(&quot; $verticalLeft$internalSeparator$verticalRight &quot;)</b>
-<i class="no-highlight">39</i>&nbsp;
-<b class="fc"><i class="no-highlight">40</i>&nbsp;        messageLines.forEach { line -&gt;</b>
-<b class="pc"><i class="no-highlight">41</i>&nbsp;            if (line.startsWith(verticalLeft)) {</b>
-<b class="nc"><i class="no-highlight">42</i>&nbsp;                add(&quot; $separatorSymbolStart$internalSeparator$vertical &quot;)</b>
-<i class="no-highlight">43</i>&nbsp;            } else {
-<b class="fc"><i class="no-highlight">44</i>&nbsp;                add(&quot; $vertical $line${&quot; &quot;.repeat(maxLineSize - line.length)} $vertical &quot;)</b>
-<i class="no-highlight">45</i>&nbsp;            }
-<b class="fc"><i class="no-highlight">46</i>&nbsp;        }</b>
-<b class="fc"><i class="no-highlight">47</i>&nbsp;        add(&quot; $cornerBottomLeft$internalSeparator$cornerBottomRight &quot;)</b>
-<b class="fc"><i class="no-highlight">48</i>&nbsp;    }</b>
-<i class="no-highlight">49</i>&nbsp;}
+<b class="nc"><i class="no-highlight">33</i>&nbsp;    internal companion object {</b>
+<i class="no-highlight">34</i>&nbsp;        internal fun reset(rootHandler: Handler?) {
+<b class="nc"><i class="no-highlight">35</i>&nbsp;            val rootLogger = LogManager.getLogManager().getLogger(&quot;&quot;)</b>
+<b class="nc"><i class="no-highlight">36</i>&nbsp;            val handlers = rootLogger.handlers</b>
+<b class="nc"><i class="no-highlight">37</i>&nbsp;            for (handler in handlers) {</b>
+<b class="nc"><i class="no-highlight">38</i>&nbsp;                rootLogger.removeHandler(handler)</b>
+<i class="no-highlight">39</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">40</i>&nbsp;            rootHandler?.let(rootLogger::addHandler)</b>
+<i class="no-highlight">41</i>&nbsp;        }
+<i class="no-highlight">42</i>&nbsp;
+<i class="no-highlight">43</i>&nbsp;        internal fun getAndroidLevel(level: Level): Int {
+<b class="nc"><i class="no-highlight">44</i>&nbsp;            val value: Int = level.intValue()</b>
+<b class="nc"><i class="no-highlight">45</i>&nbsp;            return when {</b>
+<b class="nc"><i class="no-highlight">46</i>&nbsp;                value &gt;= SEVERE.intValue() -&gt; Log.ERROR</b>
+<b class="nc"><i class="no-highlight">47</i>&nbsp;                value &gt;= WARNING.intValue() -&gt; Log.WARN</b>
+<b class="nc"><i class="no-highlight">48</i>&nbsp;                value &gt;= INFO.intValue() -&gt; Log.INFO</b>
+<b class="nc"><i class="no-highlight">49</i>&nbsp;                else -&gt; Log.DEBUG</b>
+<i class="no-highlight">50</i>&nbsp;            }
+<i class="no-highlight">51</i>&nbsp;        }
+<i class="no-highlight">52</i>&nbsp;    }
+<i class="no-highlight">53</i>&nbsp;}
 </div>
 </pre>
 </div>
@@ -160,7 +206,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-01-13 09:49</div>
+    <div style="float:right;">generated on 2022-01-16 23:30</div>
 </div>
 </body>
 </html>
