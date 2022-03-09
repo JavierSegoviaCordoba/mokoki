@@ -1,1 +1,141 @@
-{"version":"3","listProblem":[]}
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "Android",
+  "type": "Android Resources Validation",
+  "severity": "Critical",
+  "comment": "Unresolved class 'MainActivity'",
+  "detailsInfo": "Validates resource references inside Android XML files.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "samples/android/android-core/src/main/AndroidManifest.xml",
+      "language": "XML",
+      "line": 12,
+      "offset": 52,
+      "length": 12,
+      "code": {
+        "startLine": 10,
+        "length": 12,
+        "offset": 105,
+        "surroundingCode": "        <activity\n            android:exported=\"true\"\n            android:name=\"com.javiersc.mokoki.core.MainActivity\"\n            android:label=\"Mokoki\">\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki",
+    "inspectionName": "AndroidDomInspection"
+  },
+  "hash": "085ad1ee65e7a0f5b9d1b32cbc08bc0d7afc0d1a5e834761cda0ff820743ae35"
+},{
+  "tool": "Code Inspection",
+  "category": "Android",
+  "type": "Android Resources Validation",
+  "severity": "Critical",
+  "comment": "Unresolved package 'core'",
+  "detailsInfo": "Validates resource references inside Android XML files.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "samples/android/android-core/src/main/AndroidManifest.xml",
+      "language": "XML",
+      "line": 12,
+      "offset": 47,
+      "length": 4,
+      "code": {
+        "startLine": 10,
+        "length": 4,
+        "offset": 100,
+        "surroundingCode": "        <activity\n            android:exported=\"true\"\n            android:name=\"com.javiersc.mokoki.core.MainActivity\"\n            android:label=\"Mokoki\">\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki",
+    "inspectionName": "AndroidDomInspection"
+  },
+  "hash": "1046147b370706ec09f5bb3e5e377dc5732ebecc709229bc8c0db1574cf7b1ce"
+},{
+  "tool": "Code Inspection",
+  "category": "Java interop issues",
+  "type": "Package name does not match containing directory",
+  "severity": "Critical",
+  "comment": "Package directive does not match the file location",
+  "detailsInfo": "Reports `package` directives that do not match the location of the file.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/BuildMokokiSerialization.kt",
+      "language": "kotlin",
+      "line": 3,
+      "offset": 1,
+      "length": 50,
+      "code": {
+        "startLine": 1,
+        "length": 50,
+        "offset": 46,
+        "surroundingCode": "@file:OptIn(InternalSerializationApi::class)\n\npackage com.javiersc.mokoki.serialization.internal\n\nimport com.javiersc.mokoki.Mokoki"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "PackageDirectoryMismatch"
+  },
+  "hash": "ea617070cfce11a650236644e9f5796c4f77fc7684deb322aeec132ca8dd760b"
+},{
+  "tool": "Code Inspection",
+  "category": "JVM languages",
+  "type": "Unstable API Usage",
+  "severity": "High",
+  "comment": "'repositories(org.gradle.api.Action)' is declared in unstable interface 'org.gradle.api.initialization.resolve.DependencyResolutionManagement' marked with @Incubating",
+  "detailsInfo": "Reports usages of an API marked with one of the annotations as unstable. Such an API may be changed or removed in future versions, breaking the code that uses it.\n\nThe annotations which are used to mark unstable APIs are shown in the list below.\n\nBy default, the inspection ignores usages of unstable APIs\nif their declarations are located in sources of the same project. In such cases it'll be possible to update the usages when you change APIs.\nHowever, it may be inconvenient if the project is big, so one can switch off the **Ignore API declared in this project** option to report\nthe usages of unstable APIs declared in both the project sources and libraries.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "settings.gradle.kts",
+      "language": "kotlin",
+      "line": 8,
+      "offset": 5,
+      "length": 12,
+      "code": {
+        "startLine": 6,
+        "length": 12,
+        "offset": 38,
+        "surroundingCode": "\ndependencyResolutionManagement {\n    repositories {\n        mavenCentral()\n        google()"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki",
+    "inspectionName": "UnstableApiUsage"
+  },
+  "hash": "2ffa9f85bb6c3991fff931c812fe1a354f234eb335e5ab051e5e354a70506f24"
+},{
+  "tool": "Code Inspection",
+  "category": "JVM languages",
+  "type": "Unstable API Usage",
+  "severity": "High",
+  "comment": "'versionCatalogs(org.gradle.api.Action)' is declared in unstable interface 'org.gradle.api.initialization.resolve.DependencyResolutionManagement' marked with @Incubating",
+  "detailsInfo": "Reports usages of an API marked with one of the annotations as unstable. Such an API may be changed or removed in future versions, breaking the code that uses it.\n\nThe annotations which are used to mark unstable APIs are shown in the list below.\n\nBy default, the inspection ignores usages of unstable APIs\nif their declarations are located in sources of the same project. In such cases it'll be possible to update the usages when you change APIs.\nHowever, it may be inconvenient if the project is big, so one can switch off the **Ignore API declared in this project** option to report\nthe usages of unstable APIs declared in both the project sources and libraries.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "settings.gradle.kts",
+      "language": "kotlin",
+      "line": 14,
+      "offset": 5,
+      "length": 15,
+      "code": {
+        "startLine": 12,
+        "length": 15,
+        "offset": 11,
+        "surroundingCode": "    }\n\n    versionCatalogs {\n        create(\"libs\") { from(files(\"gradle/libs.toml\")) }\n        create(\"pluginLibs\") { from(files(\"gradle/pluginLibs.toml\")) }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki",
+    "inspectionName": "UnstableApiUsage"
+  },
+  "hash": "393b13f3ce3971fc962f5cf689e1434514e8bfcf64dc34a64a2fcd8e654b7fb6"
+}]}

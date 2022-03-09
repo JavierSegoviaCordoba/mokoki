@@ -15,12 +15,12 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "mokoki-core/androidMain/kotlin/com/javiersc/mokoki/internal/LoggerNames.kt",
+                  "uri": "mokoki-core/ios64Main/kotlin/com/javiersc/mokoki/internal/LoggerNames.kt",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
                   "startColumn": 18,
-                  "startLine": 31
+                  "startLine": 70
                 }
               }
             }
@@ -36,12 +36,12 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "mokoki-core/ios64Main/kotlin/com/javiersc/mokoki/internal/LoggerNames.kt",
+                  "uri": "mokoki-core/androidMain/kotlin/com/javiersc/mokoki/internal/LoggerNames.kt",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
                   "startColumn": 18,
-                  "startLine": 70
+                  "startLine": 31
                 }
               }
             }

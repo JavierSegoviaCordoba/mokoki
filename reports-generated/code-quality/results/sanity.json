@@ -1,0 +1,321 @@
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: platform",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-core/ios64Main/kotlin/com/javiersc/mokoki/internal/LoggerNames.kt",
+      "language": "kotlin",
+      "line": 3,
+      "offset": 7,
+      "length": 8,
+      "code": {
+        "startLine": 1,
+        "length": 8,
+        "offset": 45,
+        "surroundingCode": "package com.javiersc.mokoki.internal\n\nimport platform.Foundation.NSThread\n\ninternal actual val fileName"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-core.ios64Main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "6168000607587198903"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: NSThread",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-core/ios64Main/kotlin/com/javiersc/mokoki/internal/LoggerNames.kt",
+      "language": "kotlin",
+      "line": 33,
+      "offset": 39,
+      "length": 8,
+      "code": {
+        "startLine": 31,
+        "length": 8,
+        "offset": 65,
+        "surroundingCode": "    get() =\n        try {\n            val lines: List<String?> = NSThread.callStackSymbols.map { it?.toString() }\n            val index = 6\n            val fileName ="
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-core.ios64Main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "3681243724704077838"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[EXPRESSION_EXPECTED_PACKAGE_FOUND] Expression expected, but a package name found",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-core/ios64Main/kotlin/com/javiersc/mokoki/internal/LoggerNames.kt",
+      "language": "kotlin",
+      "line": 33,
+      "offset": 71,
+      "length": 2,
+      "code": {
+        "startLine": 31,
+        "length": 2,
+        "offset": 97,
+        "surroundingCode": "    get() =\n        try {\n            val lines: List<String?> = NSThread.callStackSymbols.map { it?.toString() }\n            val index = 6\n            val fileName ="
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-core.ios64Main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "8680224034987305393"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: toString",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-core/ios64Main/kotlin/com/javiersc/mokoki/internal/LoggerNames.kt",
+      "language": "kotlin",
+      "line": 33,
+      "offset": 75,
+      "length": 8,
+      "code": {
+        "startLine": 31,
+        "length": 8,
+        "offset": 101,
+        "surroundingCode": "    get() =\n        try {\n            val lines: List<String?> = NSThread.callStackSymbols.map { it?.toString() }\n            val index = 6\n            val fileName ="
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-core.ios64Main",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-7658007246642503878"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[MISSING_DEPENDENCY_CLASS] Cannot access class 'org.gradle.accessors.dm.LibrariesForLibs.JetbrainsLibraryAccessors'. Check your module classpath for missing or conflicting dependencies",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-core/build.gradle.kts",
+      "language": "kotlin",
+      "line": 22,
+      "offset": 36,
+      "length": 9,
+      "code": {
+        "startLine": 20,
+        "length": 9,
+        "offset": 99,
+        "surroundingCode": "        val commonTest by getting {\n            dependencies {\n                implementation(libs.jetbrains.kotlin.kotlinTest)\n                implementation(libs.kotest.kotestAssertionsCore)\n            }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-core",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "5839223780874441806"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE_WRONG_RECEIVER] Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: \npublic val <T : Any> Class<TypeVariable(T)>.kotlin: KClass<TypeVariable(T)> defined in kotlin.jvm\npublic val Project.kotlin: KotlinMultiplatformExtension defined in org.gradle.kotlin.dsl\npublic val ComJavierscGradlePluginsPluginGroup.kotlin: ComJavierscGradlePluginsKotlinPluginGroup defined in org.gradle.kotlin.dsl\npublic val OrgJetbrainsPluginGroup.kotlin: OrgJetbrainsKotlinPluginGroup defined in org.gradle.kotlin.dsl\npublic val PluginDependenciesSpec.kotlin: PluginDependencySpec defined in org.gradle.kotlin.dsl",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-core/build.gradle.kts",
+      "language": "kotlin",
+      "line": 22,
+      "offset": 46,
+      "length": 6,
+      "code": {
+        "startLine": 20,
+        "length": 6,
+        "offset": 109,
+        "surroundingCode": "        val commonTest by getting {\n            dependencies {\n                implementation(libs.jetbrains.kotlin.kotlinTest)\n                implementation(libs.kotest.kotestAssertionsCore)\n            }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-core",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "6132002678915678355"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[MISSING_DEPENDENCY_CLASS] Cannot access class 'org.gradle.accessors.dm.LibrariesForLibs.KotestLibraryAccessors'. Check your module classpath for missing or conflicting dependencies",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-core/build.gradle.kts",
+      "language": "kotlin",
+      "line": 23,
+      "offset": 36,
+      "length": 6,
+      "code": {
+        "startLine": 21,
+        "length": 6,
+        "offset": 128,
+        "surroundingCode": "            dependencies {\n                implementation(libs.jetbrains.kotlin.kotlinTest)\n                implementation(libs.kotest.kotestAssertionsCore)\n            }\n        }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-core",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "96024801852243529"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: kotestAssertionsCore",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-core/build.gradle.kts",
+      "language": "kotlin",
+      "line": 23,
+      "offset": 43,
+      "length": 20,
+      "code": {
+        "startLine": 21,
+        "length": 20,
+        "offset": 135,
+        "surroundingCode": "            dependencies {\n                implementation(libs.jetbrains.kotlin.kotlinTest)\n                implementation(libs.kotest.kotestAssertionsCore)\n            }\n        }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-core",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "2189795438794249531"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[MISSING_DEPENDENCY_CLASS] Cannot access class 'org.gradle.accessors.dm.LibrariesForLibs.JetbrainsLibraryAccessors'. Check your module classpath for missing or conflicting dependencies",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/build.gradle.kts",
+      "language": "kotlin",
+      "line": 26,
+      "offset": 25,
+      "length": 9,
+      "code": {
+        "startLine": 24,
+        "length": 9,
+        "offset": 67,
+        "surroundingCode": "                api(projects.mokokiCore)\n\n                api(libs.jetbrains.kotlinx.kotlinxSerializationJson)\n            }\n        }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-7234214579591063612"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE_WRONG_RECEIVER] Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: \npublic val OrgJetbrainsPluginGroup.kotlinx: OrgJetbrainsKotlinxPluginGroup defined in org.gradle.kotlin.dsl",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/build.gradle.kts",
+      "language": "kotlin",
+      "line": 26,
+      "offset": 35,
+      "length": 7,
+      "code": {
+        "startLine": 24,
+        "length": 7,
+        "offset": 77,
+        "surroundingCode": "                api(projects.mokokiCore)\n\n                api(libs.jetbrains.kotlinx.kotlinxSerializationJson)\n            }\n        }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "4399019229630697783"
+}]}
