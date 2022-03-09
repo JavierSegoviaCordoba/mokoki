@@ -14,7 +14,7 @@
 
 ### Updated
 
-- `gradle -> 7.4`
+- `gradle -> 7.4.1`
 - `io.kotest:kotest-assertions-core -> 5.1.0`
 - `com.javiersc.gradle-plugins:all-plugins -> 0.1.0-rc.40`
 - `androidx.appcompat:appcompat -> 1.4.1`
