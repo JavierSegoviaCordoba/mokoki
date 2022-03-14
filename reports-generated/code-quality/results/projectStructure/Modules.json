@@ -26,33 +26,13 @@
           "path": "file://$PROJECT_DIR$/mokoki-core",
           "sourceFolders": [
             {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidMain/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidDebug/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/debug/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/debug/java",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidDebug/resources",
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidMain/resources",
               "type": "Resource",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/debug/resources",
-              "type": "Resource",
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidRelease/kotlin",
+              "type": "Source",
               "packagePrefix": ""
             },
             {
@@ -61,123 +41,8 @@
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/main/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/main/java",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidMain/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/main/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidMain/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidDebugAndroidTest/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidDebugAndroidTest/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidAndroidTest/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidTest/java",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidAndroidTest/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidTest/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidAndroidTest/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidAndroidTestDebug/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidTestDebug/java",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidAndroidTestDebug/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidTestDebug/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidAndroidTestDebug/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidDebugUnitTest/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidDebugUnitTest/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
               "path": "file://$PROJECT_DIR$/mokoki-core/androidTest/kotlin",
               "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/test/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/test/java",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidTest/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/test/resources",
-              "type": "TestResource",
               "packagePrefix": ""
             },
             {
@@ -186,17 +51,12 @@
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/testDebug/kotlin",
-              "type": "TestSource",
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/main/java",
+              "type": "Source",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/testDebug/java",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidTestDebug/resources",
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidAndroidTest/resources",
               "type": "TestResource",
               "packagePrefix": ""
             },
@@ -206,28 +66,28 @@
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidRelease/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/release/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/release/java",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
               "path": "file://$PROJECT_DIR$/mokoki-core/androidRelease/resources",
               "type": "Resource",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/release/resources",
-              "type": "Resource",
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidDebugUnitTest/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidDebug/kotlin",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/testRelease/java",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidTestRelease/resources",
+              "type": "TestResource",
               "packagePrefix": ""
             },
             {
@@ -236,7 +96,112 @@
               "packagePrefix": ""
             },
             {
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidDebugAndroidTest/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/debug/java",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/test/java",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidTestDebug/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/testDebug/java",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidTest/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/testRelease/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidAndroidTestDebug/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidTestDebug/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidDebugAndroidTest/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidTestDebug/java",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidMain/kotlin",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidTest/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
               "path": "file://$PROJECT_DIR$/mokoki-core/androidReleaseUnitTest/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/testRelease/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidAndroidTestDebug/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/debug/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/test/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/testDebug/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/main/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/release/kotlin",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidAndroidTest/kotlin",
               "type": "TestSource",
               "packagePrefix": ""
             },
@@ -246,17 +211,12 @@
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-core/androidTestRelease/kotlin",
-              "type": "TestSource",
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidAndroidTest/resources",
+              "type": "TestResource",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/testRelease/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/testRelease/java",
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidTest/java",
               "type": "TestSource",
               "packagePrefix": ""
             },
@@ -266,13 +226,53 @@
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/testRelease/resources",
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/test/resources",
               "type": "TestResource",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidTestRelease/resources",
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidDebugUnitTest/resources",
               "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidDebug/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/release/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidTestRelease/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/androidAndroidTestDebug/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/debug/kotlin",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/androidMain/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/release/java",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-core/src/main/kotlin",
+              "type": "Source",
               "packagePrefix": ""
             }
           ]
@@ -352,62 +352,7 @@
           "path": "file://$PROJECT_DIR$/mokoki-serialization",
           "sourceFolders": [
             {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidDebug/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/debug/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/debug/java",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidDebug/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/debug/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidDebug/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidMain/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/main/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/main/java",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidMain/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/main/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidMain/resources",
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidRelease/resources",
               "type": "Resource",
               "packagePrefix": ""
             },
@@ -417,107 +362,7 @@
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidDebugAndroidTest/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidAndroidTest/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidTest/java",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidAndroidTest/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidTest/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidAndroidTest/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidAndroidTestDebug/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidTestDebug/java",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidAndroidTestDebug/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidTestDebug/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidAndroidTestDebug/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidDebugUnitTest/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidDebugUnitTest/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidTest/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/test/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
               "path": "file://$PROJECT_DIR$/mokoki-serialization/src/test/java",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidTest/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/test/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidTestDebug/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/testDebug/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/testDebug/java",
               "type": "TestSource",
               "packagePrefix": ""
             },
@@ -527,18 +372,23 @@
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/testDebug/resources",
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidDebug/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidTest/resources",
               "type": "TestResource",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidRelease/kotlin",
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/main/kotlin",
               "type": "Source",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/release/kotlin",
-              "type": "Source",
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidDebugAndroidTest/resources",
+              "type": "TestResource",
               "packagePrefix": ""
             },
             {
@@ -547,32 +397,7 @@
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidRelease/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/release/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidRelease/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidReleaseUnitTest/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidReleaseUnitTest/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidTestRelease/kotlin",
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/testDebug/java",
               "type": "TestSource",
               "packagePrefix": ""
             },
@@ -582,7 +407,87 @@
               "packagePrefix": ""
             },
             {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidAndroidTestDebug/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidTestDebug/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidRelease/kotlin",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidTestDebug/java",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/testRelease/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidAndroidTestDebug/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidDebug/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/testDebug/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/main/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidReleaseUnitTest/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/test/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidTest/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidReleaseUnitTest/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidAndroidTest/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidAndroidTest/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
               "path": "file://$PROJECT_DIR$/mokoki-serialization/src/testRelease/java",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidTest/java",
               "type": "TestSource",
               "packagePrefix": ""
             },
@@ -592,8 +497,103 @@
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/testRelease/resources",
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/test/resources",
               "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidDebugUnitTest/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/testDebug/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidMain/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/main/java",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/release/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidTestRelease/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidAndroidTestDebug/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/debug/kotlin",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidMain/kotlin",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidTestDebug/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidMain/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidDebug/kotlin",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidTest/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/debug/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/androidAndroidTest/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/debug/java",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidRelease/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/src/release/kotlin",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/mokoki-serialization/androidDebugUnitTest/kotlin",
+              "type": "TestSource",
               "packagePrefix": ""
             },
             {

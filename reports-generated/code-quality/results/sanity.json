@@ -135,21 +135,21 @@
     "Sanity"
   ],
   "severity": "Critical",
-  "comment": "[MISSING_DEPENDENCY_CLASS] Cannot access class 'org.gradle.accessors.dm.LibrariesForLibs.JetbrainsLibraryAccessors'. Check your module classpath for missing or conflicting dependencies",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: util",
   "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
   "sources": [
     {
       "type": "file",
-      "path": "mokoki-core/build.gradle.kts",
+      "path": "mokoki-core/androidMain/kotlin/com/javiersc/mokoki/internal/LoggerNames.kt",
       "language": "kotlin",
-      "line": 22,
-      "offset": 36,
-      "length": 9,
+      "line": 3,
+      "offset": 15,
+      "length": 4,
       "code": {
-        "startLine": 20,
-        "length": 9,
-        "offset": 99,
-        "surroundingCode": "        val commonTest by getting {\n            dependencies {\n                implementation(libs.jetbrains.kotlin.kotlinTest)\n                implementation(libs.kotest.kotestAssertionsCore)\n            }"
+        "startLine": 1,
+        "length": 4,
+        "offset": 53,
+        "surroundingCode": "package com.javiersc.mokoki.internal\n\nimport android.util.Log\n\ninternal actual val fileName"
       }
     }
   ],
@@ -157,7 +157,7 @@
     "module": "mokoki.mokoki-core",
     "inspectionName": "KotlinAnnotator"
   },
-  "hash": "5839223780874441806"
+  "hash": "-6677515153210442634"
 },{
   "tool": "Code Inspection",
   "category": "General",
@@ -167,21 +167,53 @@
     "Sanity"
   ],
   "severity": "Critical",
-  "comment": "[UNRESOLVED_REFERENCE_WRONG_RECEIVER] Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: \npublic val <T : Any> Class<TypeVariable(T)>.kotlin: KClass<TypeVariable(T)> defined in kotlin.jvm\npublic val Project.kotlin: KotlinMultiplatformExtension defined in org.gradle.kotlin.dsl\npublic val ComJavierscGradlePluginsPluginGroup.kotlin: ComJavierscGradlePluginsKotlinPluginGroup defined in org.gradle.kotlin.dsl\npublic val OrgJetbrainsPluginGroup.kotlin: OrgJetbrainsKotlinPluginGroup defined in org.gradle.kotlin.dsl\npublic val PluginDependenciesSpec.kotlin: PluginDependencySpec defined in org.gradle.kotlin.dsl",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: StackTraceElement",
   "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
   "sources": [
     {
-      "type": "file",
-      "path": "mokoki-core/build.gradle.kts",
+      "type": "method",
+      "path": "mokoki-core/androidMain/kotlin/com/javiersc/mokoki/internal/LoggerNames.kt",
       "language": "kotlin",
-      "line": 22,
-      "offset": 46,
+      "line": 21,
+      "offset": 24,
+      "length": 17,
+      "code": {
+        "startLine": 19,
+        "length": 17,
+        "offset": 64,
+        "surroundingCode": "\n@Suppress(\"TooGenericExceptionCaught\")\nprivate val stackTrace: StackTraceElement?\n    get() =\n        try {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-core",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-6721677364068561013"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: Thread",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "mokoki-core/androidMain/kotlin/com/javiersc/mokoki/internal/LoggerNames.kt",
+      "language": "kotlin",
+      "line": 24,
+      "offset": 24,
       "length": 6,
       "code": {
-        "startLine": 20,
+        "startLine": 22,
         "length": 6,
-        "offset": 109,
-        "surroundingCode": "        val commonTest by getting {\n            dependencies {\n                implementation(libs.jetbrains.kotlin.kotlinTest)\n                implementation(libs.kotest.kotestAssertionsCore)\n            }"
+        "offset": 50,
+        "surroundingCode": "    get() =\n        try {\n            val trace = Thread.currentThread().stackTrace\n            val index =\n                trace.indexOfLast { traceElement ->"
       }
     }
   ],
@@ -189,7 +221,7 @@
     "module": "mokoki.mokoki-core",
     "inspectionName": "KotlinAnnotator"
   },
-  "hash": "6132002678915678355"
+  "hash": "7551070118296504604"
 },{
   "tool": "Code Inspection",
   "category": "General",
@@ -199,53 +231,21 @@
     "Sanity"
   ],
   "severity": "Critical",
-  "comment": "[MISSING_DEPENDENCY_CLASS] Cannot access class 'org.gradle.accessors.dm.LibrariesForLibs.KotestLibraryAccessors'. Check your module classpath for missing or conflicting dependencies",
+  "comment": "[MISSING_DEPENDENCY_SUPERCLASS] Cannot access 'java.io.Serializable' which is a supertype of 'kotlin.text.Regex'. Check your module classpath for missing or conflicting dependencies",
   "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
   "sources": [
     {
-      "type": "file",
-      "path": "mokoki-core/build.gradle.kts",
+      "type": "method",
+      "path": "mokoki-core/androidMain/kotlin/com/javiersc/mokoki/internal/LoggerNames.kt",
       "language": "kotlin",
-      "line": 23,
-      "offset": 36,
-      "length": 6,
-      "code": {
-        "startLine": 21,
-        "length": 6,
-        "offset": 128,
-        "surroundingCode": "            dependencies {\n                implementation(libs.jetbrains.kotlin.kotlinTest)\n                implementation(libs.kotest.kotestAssertionsCore)\n            }\n        }"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "mokoki.mokoki-core",
-    "inspectionName": "KotlinAnnotator"
-  },
-  "hash": "96024801852243529"
-},{
-  "tool": "Code Inspection",
-  "category": "General",
-  "type": "Kotlin annotator",
-  "tags": [
-    "kotlin",
-    "Sanity"
-  ],
-  "severity": "Critical",
-  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: kotestAssertionsCore",
-  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "mokoki-core/build.gradle.kts",
-      "language": "kotlin",
-      "line": 23,
+      "line": 27,
       "offset": 43,
-      "length": 20,
+      "length": 7,
       "code": {
-        "startLine": 21,
-        "length": 20,
-        "offset": 135,
-        "surroundingCode": "            dependencies {\n                implementation(libs.jetbrains.kotlin.kotlinTest)\n                implementation(libs.kotest.kotestAssertionsCore)\n            }\n        }"
+        "startLine": 25,
+        "length": 7,
+        "offset": 119,
+        "surroundingCode": "            val index =\n                trace.indexOfLast { traceElement ->\n                    Regex(\"^(Mokoki.kt)$\").matches(traceElement.fileName ?: \"\") &&\n                        Regex(\"^(com.javiersc.mokoki.Mokoki)$\").matches(traceElement.className)\n                }"
       }
     }
   ],
@@ -253,7 +253,7 @@
     "module": "mokoki.mokoki-core",
     "inspectionName": "KotlinAnnotator"
   },
-  "hash": "2189795438794249531"
+  "hash": "573301584240362968"
 },{
   "tool": "Code Inspection",
   "category": "General",
@@ -263,7 +263,551 @@
     "Sanity"
   ],
   "severity": "Critical",
-  "comment": "[MISSING_DEPENDENCY_CLASS] Cannot access class 'org.gradle.accessors.dm.LibrariesForLibs.JetbrainsLibraryAccessors'. Check your module classpath for missing or conflicting dependencies",
+  "comment": "[NOTHING_TO_OVERRIDE] 'close' overrides nothing",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "mokoki-core/androidMain/kotlin/com/javiersc/mokoki/internal/AndroidLoggingHandler.kt",
+      "language": "kotlin",
+      "line": 15,
+      "offset": 4,
+      "length": 8,
+      "code": {
+        "startLine": 13,
+        "length": 8,
+        "offset": 56,
+        "surroundingCode": "\ninternal class AndroidLoggingHandler : Handler() {\n    override fun close() {}\n    override fun flush() {}\n    override fun publish(record: LogRecord) {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-core",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-4252920894775822169"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: Handler",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "mokoki-core/androidMain/kotlin/com/javiersc/mokoki/internal/AndroidLoggingHandler.kt",
+      "language": "kotlin",
+      "line": 34,
+      "offset": 40,
+      "length": 7,
+      "code": {
+        "startLine": 32,
+        "length": 7,
+        "offset": 73,
+        "surroundingCode": "\n    internal companion object {\n        internal fun reset(rootHandler: Handler?) {\n            val rootLogger = LogManager.getLogManager().getLogger(\"\")\n            val handlers = rootLogger.handlers"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-core",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-7366136230590649719"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: LogManager",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "mokoki-core/androidMain/kotlin/com/javiersc/mokoki/internal/AndroidLoggingHandler.kt",
+      "language": "kotlin",
+      "line": 35,
+      "offset": 29,
+      "length": 10,
+      "code": {
+        "startLine": 33,
+        "length": 10,
+        "offset": 113,
+        "surroundingCode": "    internal companion object {\n        internal fun reset(rootHandler: Handler?) {\n            val rootLogger = LogManager.getLogManager().getLogger(\"\")\n            val handlers = rootLogger.handlers\n            for (handler in handlers) {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-core",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-1639501404353647059"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[EXCEPTION_FROM_ANALYZER] Internal Error occurred while analyzing this expression:\njava.lang.AssertionError: Not a callable reflection type: kotlin.reflect.KFunction0<[ERROR : <ERROR FUNCTION RETURN TYPE>]>\n\tat org.jetbrains.kotlin.builtins.FunctionTypesKt.getValueParameterTypesFromCallableReflectionType(functionTypes.kt:158)\n\tat org.jetbrains.kotlin.resolve.calls.results.FlatSignatureUtilsKt.createFromReflectionType(FlatSignatureUtils.kt:30)\n\tat org.jetbrains.kotlin.resolve.calls.components.CallableReferenceOverloadConflictResolver$Companion.createFlatSignature(CallableReferenceResolver.kt:61)\n\tat org.jetbrains.kotlin.resolve.calls.components.CallableReferenceOverloadConflictResolver$Companion.access$createFlatSignature(CallableReferenceResolver.kt:59)\n\tat org.jetbrains.kotlin.resolve.calls.components.CallableReferenceOverloadConflictResolver$3.invoke(CallableReferenceResolver.kt:53)\n\tat org.jetbrains.kotlin.resolve.calls.components.CallableReferenceOverloadConflictResolver$3.invoke(CallableReferenceResolver.kt:53)\n\tat org.jetbrains.kotlin.resolve.calls.results.OverloadingConflictResolver.findMaximallySpecificCall(OverloadingConflictResolver.kt:216)\n\tat org.jetbrains.kotlin.resolve.calls.results.OverloadingConflictResolver.findMaximallySpecific(OverloadingConflictResolver.kt:179)\n\tat org.jetbrains.kotlin.resolve.calls.results.OverloadingConflictResolver.chooseMaximallySpecificCandidates(OverloadingConflictResolver.kt:108)\n\tat org.jetbrains.kotlin.resolve.calls.components.CallableReferenceResolver.runRHSResolution(CallableReferenceResolver.kt:155)\n\tat org.jetbrains.kotlin.resolve.calls.components.CallableReferenceResolver.processCallableReferenceArgument(CallableReferenceResolver.kt:85)\n\tat org.jetbrains.kotlin.resolve.calls.components.PostponedArgumentsAnalyzer.analyze(PostponedArgumentsAnalyzer.kt:50)\n\tat org.jetbrains.kotlin.resolve.calls.components.KotlinCallCompleter$runCompletion$1.invoke(KotlinCallCompleter.kt:229)\n\tat org.jetbrains.kotlin.resolve.calls.components.KotlinCallCompleter$runCompletion$1.invoke(KotlinCallCompleter.kt:225)\n\tat org.jetbrains.kotlin.resolve.calls.inference.compo...",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "method",
+      "path": "mokoki-core/androidMain/kotlin/com/javiersc/mokoki/internal/AndroidLoggingHandler.kt",
+      "language": "kotlin",
+      "line": 40,
+      "offset": 12,
+      "length": 11,
+      "code": {
+        "startLine": 38,
+        "length": 11,
+        "offset": 76,
+        "surroundingCode": "                rootLogger.removeHandler(handler)\n            }\n            rootHandler?.let(rootLogger::addHandler)\n        }\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-core",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-1573123509140092619"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: KSerializer",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/extensions/MokokiSerializableExtensions.kt",
+      "language": "kotlin",
+      "line": 4,
+      "offset": 29,
+      "length": 11,
+      "code": {
+        "startLine": 2,
+        "length": 11,
+        "offset": 91,
+        "surroundingCode": "\nimport com.javiersc.mokoki.serialization.MokokiSerialization\nimport kotlinx.serialization.KSerializer\n\npublic fun <T> logSerializableV(tag: String, serializer: KSerializer<T>, message: T): Unit =\n    MokokiSerialization.serializableV(tag, serializer, message)\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-1393021946396550844"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: KSerializer",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/extensions/MokokiSerializableExtensions.kt",
+      "language": "kotlin",
+      "line": 6,
+      "offset": 57,
+      "length": 11,
+      "code": {
+        "startLine": 4,
+        "length": 11,
+        "offset": 99,
+        "surroundingCode": "import kotlinx.serialization.KSerializer\n\npublic fun <T> logSerializableV(tag: String, serializer: KSerializer<T>, message: T): Unit =\n    MokokiSerialization.serializableV(tag, serializer, message)\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-8175550975956207704"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: KSerializer",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/extensions/MokokiSerializableExtensions.kt",
+      "language": "kotlin",
+      "line": 9,
+      "offset": 44,
+      "length": 11,
+      "code": {
+        "startLine": 7,
+        "length": 11,
+        "offset": 109,
+        "surroundingCode": "    MokokiSerialization.serializableV(tag, serializer, message)\n\npublic fun <T> logSerializableV(serializer: KSerializer<T>, message: T): Unit =\n    MokokiSerialization.serializableV(serializer, message)\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "9029650406264026493"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: KSerializer",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/extensions/MokokiSerializableExtensions.kt",
+      "language": "kotlin",
+      "line": 12,
+      "offset": 57,
+      "length": 11,
+      "code": {
+        "startLine": 10,
+        "length": 11,
+        "offset": 117,
+        "surroundingCode": "    MokokiSerialization.serializableV(serializer, message)\n\npublic fun <T> logSerializableD(tag: String, serializer: KSerializer<T>, message: T): Unit =\n    MokokiSerialization.serializableD(tag, serializer, message)\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "408347086904709569"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: serializer",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/extensions/MokokiSerializableInlineExtensions.kt",
+      "language": "kotlin",
+      "line": 4,
+      "offset": 29,
+      "length": 10,
+      "code": {
+        "startLine": 2,
+        "length": 10,
+        "offset": 91,
+        "surroundingCode": "\nimport com.javiersc.mokoki.serialization.MokokiSerialization\nimport kotlinx.serialization.serializer\n\npublic inline fun <reified T> logSerializableV(tag: String, message: T): Unit =\n    MokokiSerialization.serializableV(tag, serializer(), message)\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-583571941229760188"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: serializer",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/extensions/MokokiSerializableInlineExtensions.kt",
+      "language": "kotlin",
+      "line": 7,
+      "offset": 43,
+      "length": 10,
+      "code": {
+        "startLine": 5,
+        "length": 10,
+        "offset": 124,
+        "surroundingCode": "\npublic inline fun <reified T> logSerializableV(tag: String, message: T): Unit =\n    MokokiSerialization.serializableV(tag, serializer(), message)\n\npublic inline fun <reified T> logSerializableV(message: T): Unit ="
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-6996806379279517918"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: serializer",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/extensions/MokokiSerializableInlineExtensions.kt",
+      "language": "kotlin",
+      "line": 10,
+      "offset": 38,
+      "length": 10,
+      "code": {
+        "startLine": 8,
+        "length": 10,
+        "offset": 106,
+        "surroundingCode": "\npublic inline fun <reified T> logSerializableV(message: T): Unit =\n    MokokiSerialization.serializableV(serializer(), message)\n\npublic inline fun <reified T> logSerializableD(tag: String, message: T): Unit ="
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "-6859984850890876283"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: serializer",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/extensions/MokokiSerializableInlineExtensions.kt",
+      "language": "kotlin",
+      "line": 13,
+      "offset": 43,
+      "length": 10,
+      "code": {
+        "startLine": 11,
+        "length": 10,
+        "offset": 124,
+        "surroundingCode": "\npublic inline fun <reified T> logSerializableD(tag: String, message: T): Unit =\n    MokokiSerialization.serializableD(tag, serializer(), message)\n\npublic inline fun <reified T> logSerializableD(message: T): Unit ="
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "3296133167599714404"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: KSerializer",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/MokokiSerialization.kt",
+      "language": "kotlin",
+      "line": 8,
+      "offset": 29,
+      "length": 11,
+      "code": {
+        "startLine": 6,
+        "length": 11,
+        "offset": 142,
+        "surroundingCode": "import com.javiersc.mokoki.serialization.internal.buildMokokiMessage\nimport kotlin.native.concurrent.ThreadLocal\nimport kotlinx.serialization.KSerializer\nimport kotlinx.serialization.json.Json\nimport kotlinx.serialization.modules.EmptySerializersModule\nimport kotlinx.serialization.modules.SerializersModule"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "3291186147567402397"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: Json",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/MokokiSerialization.kt",
+      "language": "kotlin",
+      "line": 9,
+      "offset": 34,
+      "length": 4,
+      "code": {
+        "startLine": 7,
+        "length": 4,
+        "offset": 119,
+        "surroundingCode": "import kotlin.native.concurrent.ThreadLocal\nimport kotlinx.serialization.KSerializer\nimport kotlinx.serialization.json.Json\nimport kotlinx.serialization.modules.EmptySerializersModule\nimport kotlinx.serialization.modules.SerializersModule\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "7564538954851669926"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[MISSING_DEPENDENCY_CLASS] Cannot access class 'org.gradle.accessors.dm.RootProjectAccessor'. Check your module classpath for missing or conflicting dependencies",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/build.gradle.kts",
+      "language": "kotlin",
+      "line": 24,
+      "offset": 20,
+      "length": 8,
+      "code": {
+        "startLine": 22,
+        "length": 8,
+        "offset": 68,
+        "surroundingCode": "        commonMain {\n            dependencies {\n                api(projects.mokokiCore)\n\n                api(libs.jetbrains.kotlinx.kotlinxSerializationJson)"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "6007990182543761073"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE] Unresolved reference: mokokiCore",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/build.gradle.kts",
+      "language": "kotlin",
+      "line": 24,
+      "offset": 29,
+      "length": 10,
+      "code": {
+        "startLine": 22,
+        "length": 10,
+        "offset": 77,
+        "surroundingCode": "        commonMain {\n            dependencies {\n                api(projects.mokokiCore)\n\n                api(libs.jetbrains.kotlinx.kotlinxSerializationJson)"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "8993644322736439779"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[MISSING_DEPENDENCY_CLASS] Cannot access class 'org.gradle.accessors.dm.LibrariesForLibs'. Check your module classpath for missing or conflicting dependencies",
+  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/build.gradle.kts",
+      "language": "kotlin",
+      "line": 26,
+      "offset": 20,
+      "length": 4,
+      "code": {
+        "startLine": 24,
+        "length": 4,
+        "offset": 62,
+        "surroundingCode": "                api(projects.mokokiCore)\n\n                api(libs.jetbrains.kotlinx.kotlinxSerializationJson)\n            }\n        }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization",
+    "inspectionName": "KotlinAnnotator"
+  },
+  "hash": "2289614646086061411"
+},{
+  "tool": "Code Inspection",
+  "category": "General",
+  "type": "Kotlin annotator",
+  "tags": [
+    "kotlin",
+    "Sanity"
+  ],
+  "severity": "Critical",
+  "comment": "[UNRESOLVED_REFERENCE_WRONG_RECEIVER] Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: \npublic val OrgPluginGroup.jetbrains: OrgJetbrainsPluginGroup defined in org.gradle.kotlin.dsl",
   "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
   "sources": [
     {
@@ -285,37 +829,5 @@
     "module": "mokoki.mokoki-serialization",
     "inspectionName": "KotlinAnnotator"
   },
-  "hash": "-7234214579591063612"
-},{
-  "tool": "Code Inspection",
-  "category": "General",
-  "type": "Kotlin annotator",
-  "tags": [
-    "kotlin",
-    "Sanity"
-  ],
-  "severity": "Critical",
-  "comment": "[UNRESOLVED_REFERENCE_WRONG_RECEIVER] Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: \npublic val OrgJetbrainsPluginGroup.kotlinx: OrgJetbrainsKotlinxPluginGroup defined in org.gradle.kotlin.dsl",
-  "detailsInfo": "Allows viewing the problems reported by the Kotlin annotator: compilation problems, references unresolved by the IDE, and so on.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "mokoki-serialization/build.gradle.kts",
-      "language": "kotlin",
-      "line": 26,
-      "offset": 35,
-      "length": 7,
-      "code": {
-        "startLine": 24,
-        "length": 7,
-        "offset": 77,
-        "surroundingCode": "                api(projects.mokokiCore)\n\n                api(libs.jetbrains.kotlinx.kotlinxSerializationJson)\n            }\n        }"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "mokoki.mokoki-serialization",
-    "inspectionName": "KotlinAnnotator"
-  },
-  "hash": "4399019229630697783"
+  "hash": "3062424243065085319"
 }]}
