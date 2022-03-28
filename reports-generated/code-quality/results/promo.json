@@ -1,0 +1,63 @@
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "tags": [
+    "kotlin"
+  ],
+  "severity": "High",
+  "comment": "Property \"isEnabled\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/MokokiSerialization.kt",
+      "language": "kotlin",
+      "line": 16,
+      "offset": 15,
+      "length": 9,
+      "code": {
+        "startLine": 14,
+        "length": 9,
+        "offset": 52,
+        "surroundingCode": "public object MokokiSerialization {\n\n    public var isEnabled: Boolean\n        get() = Mokoki.isEnabled\n        set(value) {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "8009197349060715826"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "tags": [
+    "kotlin"
+  ],
+  "severity": "High",
+  "comment": "Property \"enableCompatibleMode\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/MokokiSerialization.kt",
+      "language": "kotlin",
+      "line": 22,
+      "offset": 15,
+      "length": 20,
+      "code": {
+        "startLine": 20,
+        "length": 20,
+        "offset": 26,
+        "surroundingCode": "        }\n\n    public var enableCompatibleMode: Boolean\n        get() = Mokoki.enableCompatibleMode\n        set(value) {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "5073179918648624852"
+}]}

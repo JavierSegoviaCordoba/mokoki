@@ -72,10 +72,6 @@
       "roots": [],
       "sdkType": "KotlinSDK",
       "sdkVersion": "1.5.10-release-949"
-    },
-    {
-      "name": "Android API 31 Platform",
-      "roots": []
     }
   ]
 }
