@@ -14,9 +14,9 @@
 
 ### Updated
 
+- `com.javiersc.gradle-plugins:all-plugins -> 0.1.0-rc.42`
 - `io.kotest:kotest-assertions-core -> 5.2.2`
 - `gradle -> 7.4.1`
-- `com.javiersc.gradle-plugins:all-plugins -> 0.1.0-rc.40`
 - `androidx.appcompat:appcompat -> 1.4.1`
 - `org.jetbrains.kotlinx:kotlinx-serialization-json -> 1.3.2`
 
