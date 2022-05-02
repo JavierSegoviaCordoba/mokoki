@@ -1,5 +1,33 @@
 {"version":"3","listProblem":[{
   "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Redundant assignment",
+  "severity": "High",
+  "comment": "Variable 'serializersModule' is assigned to itself",
+  "detailsInfo": "Reports assignments of a variable to itself.\n\nThe quick-fix removes the redundant assignment.\n\n**Example:**\n\n\n      fun test() {\n          var bar = 1\n          bar = bar\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test() {\n          var bar = 1\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "mokoki-serialization/commonMain/kotlin/com/javiersc/mokoki/serialization/MokokiSerialization.kt",
+      "language": "kotlin",
+      "line": 33,
+      "offset": 33,
+      "length": 42,
+      "code": {
+        "startLine": 31,
+        "length": 42,
+        "offset": 86,
+        "surroundingCode": "        get() = Json {\n            prettyPrint = true\n            serializersModule = this@MokokiSerialization.serializersModule\n        }\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "mokoki.mokoki-serialization.commonMain",
+    "inspectionName": "SelfAssignment"
+  },
+  "hash": "cd0b6aaa2c9dba6b85495771eb675d874d974d9fa4c2fb61f58023e6dfd5238d"
+},{
+  "tool": "Code Inspection",
   "category": "Java interop issues",
   "type": "Package name does not match containing directory",
   "severity": "Critical",
