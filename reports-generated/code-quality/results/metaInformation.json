@@ -1,13 +1,13 @@
 {
-  "total": 4,
+  "total": 1,
   "tools inspection": {
-    "Code Inspection": 4
+    "Code Inspection": 1
   },
   "attributes": {
     "vcs": {
       "sarifIdea": {
         "repositoryUri": "https://github.com/JavierSegoviaCordoba/mokoki",
-        "revisionId": "00393df94cf433d373c0f835c55c5466236ce90c",
+        "revisionId": "7c5cdff779c64485c8e57b66894b7ba539a54a7b",
         "branch": "main"
       }
     },
