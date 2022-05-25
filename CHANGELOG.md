@@ -14,6 +14,7 @@
 
 ### Updated
 
+- `com.android.tools.build:gradle -> 7.2.1`
 - `org.jetbrains.kotlinx:binary-compatibility-validator -> 0.10.0`
 - `io.kotest:kotest-assertions-core -> 5.3.0`
 - `gradle -> 7.4.1`
