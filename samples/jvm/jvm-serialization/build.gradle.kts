@@ -1,9 +1,21 @@
 plugins {
-    `kotlin-jvm`
-    `kotlinx-serialization`
-    application
+    alias(libs.plugins.javiersc.hubdle)
 }
 
-application { mainClass.set("com.javiersc.mokoki.jvm.serialization.MainKt") }
-
-dependencies { implementation(projects.mokokiSerialization) }
+hubdle {
+    kotlin {
+        jvm {
+            application {
+                mainClass.set("com.javiersc.mokoki.jvm.serialization.MainKt")
+            }
+            features {
+                serialization()
+            }
+            main {
+                dependencies {
+                    implementation(projects.mokokiSerialization)
+                }
+            }
+        }
+    }
+}

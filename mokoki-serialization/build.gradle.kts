@@ -1,30 +1,40 @@
-@file:Suppress("MagicNumber")
-
 plugins {
-    `kotlin-multiplatform`
-    `android-library`
-    `kotlinx-serialization`
-    `javiersc-kotlin-config`
-    `javiersc-publish`
+    alias(libs.plugins.javiersc.hubdle)
 }
 
-kotlin {
-    explicitApi()
-
-    android { publishAllLibraryVariants() }
-
-    iosArm64()
-    iosX64()
-
-    jvm()
-
-    sourceSets {
-        commonMain {
-            dependencies {
-                api(projects.mokokiCore)
-
-                api(libs.jetbrains.kotlinx.kotlinxSerializationJson)
+hubdle {
+    config {
+        explicitApi()
+        languageSettings {
+            optIn("kotlinx.serialization.ExperimentalSerializationApi")
+        }
+        publishing()
+    }
+    kotlin {
+        multiplatform {
+            features {
+                serialization()
             }
+
+            common {
+                main {
+                    dependencies {
+                        api(projects.mokokiCore)
+                    }
+                }
+                test {
+                    dependencies {
+                        implementation(projects.mokokiTest)
+                    }
+                }
+            }
+
+            android()
+            ios()
+            iosArm64()
+            iosSimulatorArm64()
+            iosX64()
+            jvm()
         }
     }
 }

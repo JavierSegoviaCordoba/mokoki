@@ -1,5 +1,5 @@
 public final class com/javiersc/mokoki/jvm/serialization/App {
-	public fun <init> ()V
+	public fun <init> (Z)V
 }
 
 public final class com/javiersc/mokoki/jvm/serialization/DateSerializer : kotlinx/serialization/KSerializer {

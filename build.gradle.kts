@@ -1,28 +1,33 @@
-plugins {
-    `javiersc-versioning`
-    `javiersc-all-projects`
-    `javiersc-changelog`
-    `javiersc-code-analysis`
-    `javiersc-code-coverage`
-    `javiersc-code-formatter`
-    `javiersc-docs`
-    `kotlinx-binary-compatibility-validator`
-    `javiersc-nexus`
-    `javiersc-readme-badges-generator`
+buildscript {
+    dependencies {
+        classpath(libs.android.toolsBuild.gradle)
+        classpath(libs.jetbrains.kotlin.kotlinGradlePlugin)
+    }
 }
 
-removeProjectFromDoc(
-    ":samples:android:android-core",
-    ":samples:jvm:jvm-core",
-    ":samples:jvm:jvm-serialization",
-)
+plugins {
+    alias(libs.plugins.javiersc.hubdle)
+}
 
-fun removeProjectFromDoc(vararg paths: String) {
-    val projects = mutableListOf<Project>()
-
-    for (path in paths) {
-        if (findProject(path) != null) projects.add(project(path))
+hubdle {
+    config {
+        analysis()
+        binaryCompatibilityValidator()
+        // coverage()
+        documentation {
+            changelog()
+            readme {
+                badges()
+            }
+            site {
+                excludes(
+                    projects.mokokiTest,
+                    projects.samples.android.androidCore,
+                    projects.samples.jvm.jvmCore,
+                    projects.samples.jvm.jvmSerialization,
+                )
+            }
+        }
+        nexus()
     }
-
-    tasks { dokkaHtmlMultiModule { removeChildTasks(projects) } }
 }

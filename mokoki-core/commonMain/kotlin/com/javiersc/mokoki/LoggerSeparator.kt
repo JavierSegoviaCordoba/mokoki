@@ -2,5 +2,5 @@
 
 package com.javiersc.mokoki
 
-public fun LoggerSeparator(enableCompatibleMode: Boolean = false): String =
-    if (enableCompatibleMode) "|" else "├"
+public fun LoggerSeparator(useCompatibleMode: Boolean = false): String =
+    if (useCompatibleMode) "|" else "├"
