@@ -1,28 +1,24 @@
-@file:Suppress("MagicNumber")
-
-import com.javiersc.gradle.plugins.kotlin.library.AndroidSdk
-
 plugins {
-    `android-application`
-    `kotlin-android`
-    `kotlinx-serialization`
+    alias(libs.plugins.javiersc.hubdle)
 }
 
-android {
-    compileSdk = AndroidSdk.compileSdk
+hubdle {
+    kotlin {
+        android {
+            application {
+                features {
+                    serialization()
+                }
+                main {
+                    dependencies {
+                        implementation(androidxAppcompat())
+                        implementation(androidxCoreKtx())
 
-    defaultConfig { minSdk = AndroidSdk.minSdk }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+                        implementation(projects.mokokiCore)
+                        implementation(projects.mokokiSerialization)
+                    }
+                }
+            }
+        }
     }
-}
-
-dependencies {
-    implementation(projects.mokokiCore)
-    implementation(projects.mokokiSerialization)
-
-    implementation(libs.androidx.appcompat.appcompat)
-    implementation(libs.androidx.core.coreKtx)
 }

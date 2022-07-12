@@ -1,20 +1,37 @@
-@file:Suppress("EmptyDefaultConstructor")
-
 package com.javiersc.mokoki
 
-public expect class MokokiLogger constructor() {
+import kotlin.reflect.KClass
+import kotlin.reflect.KType
 
-    public var isEnabled: Boolean
+public interface MokokiLogger {
 
-    public var enableCompatibleMode: Boolean
+    public var useCompatibleMode: Boolean
 
-    public fun v(tag: String, message: String)
+    public fun isLoggable(priority: Priority): Boolean
 
-    public fun d(tag: String, message: String)
+    public fun <T : Any> log(
+        priority: Priority,
+        tag: String?,
+        kClass: KClass<T>,
+        kType: KType,
+        message: T,
+    )
 
-    public fun i(tag: String, message: String)
+    public companion object {
 
-    public fun w(tag: String, message: String)
+        @PublishedApi
+        @Suppress("ObjectPropertyName")
+        internal val internalloggers: MutableList<MokokiLogger> = mutableListOf()
 
-    public fun e(tag: String, message: String)
+        public val loggers: List<MokokiLogger>
+            get() = internalloggers
+
+        public fun install(vararg loggers: MokokiLogger) {
+            this.internalloggers.addAll(loggers)
+        }
+
+        public fun uninstallAllLoggers() {
+            internalloggers.clear()
+        }
+    }
 }

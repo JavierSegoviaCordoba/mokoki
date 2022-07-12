@@ -1,61 +1,17 @@
-public final class com/javiersc/mokoki/serialization/MokokiSerialization {
-	public static final field INSTANCE Lcom/javiersc/mokoki/serialization/MokokiSerialization;
-	public final fun getEnableCompatibleMode ()Z
+public class com/javiersc/mokoki/serialization/PrintSerializableMokokiLogger : com/javiersc/mokoki/MokokiLogger {
+	public fun <init> ()V
+	public fun <init> (Lcom/javiersc/mokoki/Priority;)V
+	public synthetic fun <init> (Lcom/javiersc/mokoki/Priority;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun getSerializersModule ()Lkotlinx/serialization/modules/SerializersModule;
-	public final fun isEnabled ()Z
-	public final fun jsonD (Ljava/lang/String;)V
-	public final fun jsonD (Ljava/lang/String;Ljava/lang/String;)V
-	public final fun jsonE (Ljava/lang/String;)V
-	public final fun jsonE (Ljava/lang/String;Ljava/lang/String;)V
-	public final fun jsonI (Ljava/lang/String;)V
-	public final fun jsonI (Ljava/lang/String;Ljava/lang/String;)V
-	public final fun jsonV (Ljava/lang/String;)V
-	public final fun jsonV (Ljava/lang/String;Ljava/lang/String;)V
-	public final fun jsonW (Ljava/lang/String;)V
-	public final fun jsonW (Ljava/lang/String;Ljava/lang/String;)V
-	public final fun serializableD (Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public final fun serializableD (Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public final fun serializableE (Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public final fun serializableE (Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public final fun serializableI (Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public final fun serializableI (Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public final fun serializableV (Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public final fun serializableV (Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public final fun serializableW (Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public final fun serializableW (Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public final fun setEnableCompatibleMode (Z)V
-	public final fun setEnabled (Z)V
+	public fun getUseCompatibleMode ()Z
+	public fun isLoggable (Lcom/javiersc/mokoki/Priority;)Z
+	public fun log (Lcom/javiersc/mokoki/Priority;Ljava/lang/String;Lkotlin/reflect/KClass;Lkotlin/reflect/KType;Ljava/lang/Object;)V
 	public final fun setSerializersModule (Lkotlinx/serialization/modules/SerializersModule;)V
-}
-
-public final class com/javiersc/mokoki/serialization/extensions/MokokiJsonExtensionsKt {
-	public static final fun logJsonD (Ljava/lang/String;)V
-	public static final fun logJsonD (Ljava/lang/String;Ljava/lang/String;)V
-	public static final fun logJsonE (Ljava/lang/String;)V
-	public static final fun logJsonE (Ljava/lang/String;Ljava/lang/String;)V
-	public static final fun logJsonI (Ljava/lang/String;)V
-	public static final fun logJsonI (Ljava/lang/String;Ljava/lang/String;)V
-	public static final fun logJsonV (Ljava/lang/String;)V
-	public static final fun logJsonV (Ljava/lang/String;Ljava/lang/String;)V
-	public static final fun logJsonW (Ljava/lang/String;)V
-	public static final fun logJsonW (Ljava/lang/String;Ljava/lang/String;)V
-}
-
-public final class com/javiersc/mokoki/serialization/extensions/MokokiSerializableExtensionsKt {
-	public static final fun logSerializableD (Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public static final fun logSerializableD (Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public static final fun logSerializableE (Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public static final fun logSerializableE (Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public static final fun logSerializableI (Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public static final fun logSerializableI (Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public static final fun logSerializableV (Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public static final fun logSerializableV (Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public static final fun logSerializableW (Ljava/lang/String;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
-	public static final fun logSerializableW (Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)V
+	public fun setUseCompatibleMode (Z)V
 }
 
 public final class com/javiersc/mokoki/serialization/internal/BuildMokokiSerializationKt {
-	public static final fun buildMokokiMessage (Ljava/lang/String;Lkotlinx/serialization/json/Json;Ljava/lang/String;)Ljava/lang/String;
-	public static final fun buildMokokiMessage (Ljava/lang/String;Lkotlinx/serialization/json/Json;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)Ljava/lang/String;
+	public static final fun buildMokokiSerializationMessage (Lcom/javiersc/mokoki/MokokiLogger;Lcom/javiersc/mokoki/Priority;Ljava/lang/String;Lkotlinx/serialization/json/Json;Ljava/lang/String;)Ljava/util/List;
+	public static final fun buildMokokiSerializationMessage (Lcom/javiersc/mokoki/MokokiLogger;Lcom/javiersc/mokoki/Priority;Ljava/lang/String;Lkotlinx/serialization/json/Json;Lkotlinx/serialization/KSerializer;Ljava/lang/Object;)Ljava/util/List;
 }
 

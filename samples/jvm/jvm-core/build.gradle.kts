@@ -1,8 +1,18 @@
 plugins {
-    `kotlin-jvm`
-    application
+    alias(libs.plugins.javiersc.hubdle)
 }
 
-application { mainClass.set("com.javiersc.mokoki.jvm.core.MainKt") }
-
-dependencies { implementation(projects.mokokiCore) }
+hubdle {
+    kotlin {
+        jvm {
+            application {
+                mainClass.set("com.javiersc.mokoki.jvm.core.MainKt")
+            }
+            main {
+                dependencies {
+                    implementation(projects.mokokiCore)
+                }
+            }
+        }
+    }
+}

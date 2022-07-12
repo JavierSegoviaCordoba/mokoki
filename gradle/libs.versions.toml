@@ -1,0 +1,11 @@
+[versions]
+android = "7.2.0"
+hubdle = "0.2.0-alpha.21"
+kotlin = "1.6.10"
+
+[libraries]
+android-toolsBuild-gradle = { module = "com.android.tools.build:gradle", version.ref = "android" }
+jetbrains-kotlin-kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
+[plugins]
+javiersc-hubdle = { id = "com.javiersc.hubdle", version.ref = "hubdle" }
