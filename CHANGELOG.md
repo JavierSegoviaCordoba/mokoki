@@ -16,10 +16,9 @@
 
 ### Updated
 
+- `gradle -> 7.5`
 - `com.android.tools.build:gradle -> 7.2.1`
-- `org.jetbrains.kotlin:kotlin-serialization -> 1.7.10`
 - `org.jetbrains.kotlin:kotlin-gradle-plugin -> 1.7.10`
-- `gradle -> 7.4.1`
 
 ## [0.1.0-alpha.9] - 2021-12-14
 
@@ -90,7 +89,7 @@
 
 ### Changed
 
-- Rename `mokoki` subproject to `mokoki`
+- Rename `mokoki` subproject to `mokoki-core`
 
 ## [0.1.0-alpha.1] - 2021-03-22
 
