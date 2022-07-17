@@ -9,13 +9,20 @@ hubdle {
     }
     kotlin {
         multiplatform {
+            common()
+
             android()
-            ios()
-            iosArm64()
-            iosSimulatorArm64()
-            iosX64()
+
+            darwin {
+                enableAll()
+            }
+
             jvm()
             jvmAndAndroid()
+
+            mingw {
+                enableAll()
+            }
         }
     }
 }

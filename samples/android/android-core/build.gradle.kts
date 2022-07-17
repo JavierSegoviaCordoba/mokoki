@@ -14,7 +14,7 @@ hubdle {
                         implementation(androidxAppcompat())
                         implementation(androidxCoreKtx())
 
-                        implementation(projects.mokokiCore)
+                        implementation(projects.mokoki)
                         implementation(projects.mokokiSerialization)
                     }
                 }
