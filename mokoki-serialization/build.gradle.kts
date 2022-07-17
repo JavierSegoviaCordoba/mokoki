@@ -6,7 +6,7 @@ hubdle {
     config {
         explicitApi()
         languageSettings {
-            optIn("kotlinx.serialization.ExperimentalSerializationApi")
+            experimentalSerializationApi()
         }
         publishing()
     }
@@ -19,7 +19,7 @@ hubdle {
             common {
                 main {
                     dependencies {
-                        api(projects.mokokiCore)
+                        api(projects.mokoki)
                     }
                 }
                 test {
@@ -30,11 +30,17 @@ hubdle {
             }
 
             android()
-            ios()
-            iosArm64()
-            iosSimulatorArm64()
-            iosX64()
+
+            darwin {
+                enableAll()
+            }
+
             jvm()
+            jvmAndAndroid()
+
+            mingw {
+                enableAll()
+            }
         }
     }
 }

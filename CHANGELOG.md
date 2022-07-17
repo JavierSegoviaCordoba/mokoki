@@ -6,6 +6,8 @@
 
 ### Changed
 
+- artifact to `com.javiersc.mokoki:mokoki`
+
 ### Deprecated
 
 ### Removed
@@ -14,12 +16,10 @@
 
 ### Updated
 
-- `org.jetbrains.kotlinx:binary-compatibility-validator -> 0.10.0`
-- `io.kotest:kotest-assertions-core -> 5.3.0`
+- `com.android.tools.build:gradle -> 7.2.1`
+- `org.jetbrains.kotlin:kotlin-serialization -> 1.7.10`
+- `org.jetbrains.kotlin:kotlin-gradle-plugin -> 1.7.10`
 - `gradle -> 7.4.1`
-- `com.javiersc.gradle-plugins:all-plugins -> 0.1.0-rc.40`
-- `androidx.appcompat:appcompat -> 1.4.1`
-- `org.jetbrains.kotlinx:kotlinx-serialization-json -> 1.3.2`
 
 ## [0.1.0-alpha.9] - 2021-12-14
 
@@ -90,7 +90,7 @@
 
 ### Changed
 
-- Rename `mokoki` subproject to `mokoki-core`
+- Rename `mokoki` subproject to `mokoki`
 
 ## [0.1.0-alpha.1] - 2021-03-22
 

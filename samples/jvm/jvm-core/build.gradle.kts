@@ -10,7 +10,7 @@ hubdle {
             }
             main {
                 dependencies {
-                    implementation(projects.mokokiCore)
+                    implementation(projects.mokoki)
                 }
             }
         }
