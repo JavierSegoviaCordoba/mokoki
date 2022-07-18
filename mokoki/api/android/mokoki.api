@@ -15,6 +15,10 @@ public final class com/javiersc/mokoki/LoggerSeparatorKt {
 	public static synthetic fun LoggerSeparator$default (ZILjava/lang/Object;)Ljava/lang/String;
 }
 
+public final class com/javiersc/mokoki/MokokiException : java/lang/Exception {
+	public fun <init> ()V
+}
+
 public abstract interface class com/javiersc/mokoki/MokokiLogger {
 	public static final field Companion Lcom/javiersc/mokoki/MokokiLogger$Companion;
 	public abstract fun getUseCompatibleMode ()Z

@@ -1,5 +1,7 @@
 package com.javiersc.mokoki.internal
 
+import com.javiersc.mokoki.MokokiException
+
 internal actual val fileName
     get() = "file ${stackTrace?.fileName ?: "Unknown"}"
 
@@ -27,8 +29,8 @@ private data class StackTraceElement(
 private val stackTrace: StackTraceElement?
     get() =
         try {
-            throw IllegalStateException("MOKOKI INTERNAL ERROR")
-        } catch (exception: IllegalStateException) {
+            throw MokokiException()
+        } catch (exception: MokokiException) {
             val lines = exception.getStackTrace().toList()
             val line =
                 lines
@@ -37,8 +39,8 @@ private val stackTrace: StackTraceElement?
                     .firstOrNull()
 
             val fileName = line?.substringAfterLast("/")?.substringBefore(":")
-            val className = line?.substringAfter("\$")?.substringBefore("\$")
-            val methodName = line?.substringBefore("\$FUNCTION_REFERENCE")?.substringAfterLast("\$")
+            val className = line?.substringBefore("#")?.substringAfterLast(".")
+            val methodName = line?.substringAfter("#")?.substringBefore("(")
             val lineNumber = line?.substringAfterLast(".kt:")?.substringBefore(":")
 
             if (fileName != null && className != null && methodName != null && lineNumber != null) {

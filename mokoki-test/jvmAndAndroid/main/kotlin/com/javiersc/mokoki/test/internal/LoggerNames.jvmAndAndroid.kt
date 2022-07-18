@@ -15,4 +15,4 @@ private val stackTraceForTests: StackTraceElement?
         }
 
 private val StackTraceElement.isTestClass: Boolean
-    get() = Regex("^(com.javiersc.mokoki)*.(Mokoki).*(Test)$").matches(className)
+    get() = Regex("""^(com.javiersc.mokoki).*(Test)$""").matches(className)
