@@ -1,8 +1,16 @@
 @file:Suppress("MaxLineLength")
 
-package com.javiersc.mokoki
+package com.javiersc.mokoki.serialization
 
 import com.javiersc.kotlin.test.IgnoreMINGW
+import com.javiersc.mokoki.MokokiLogger
+import com.javiersc.mokoki.Priority
+import com.javiersc.mokoki.logD
+import com.javiersc.mokoki.logE
+import com.javiersc.mokoki.logI
+import com.javiersc.mokoki.logV
+import com.javiersc.mokoki.logW
+import com.javiersc.mokoki.logWTF
 import com.javiersc.mokoki.test.internal.lineNumberForTest
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
@@ -96,22 +104,22 @@ internal class MokokiSerializationTest {
     @Test
     fun json_log_W() {
         logW("Some tag") { userString }
-        val n = testLogger.lastMessage.lineNumberForTest
+        val nu = testLogger.lastMessage.lineNumberForTest
 
         testLogger.assert(
             """
-                ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-                │ Some tag │ WARN.(MokokiSerializationTest.kt:$n) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_W │ line $n │ 
-                ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-                │ {                                                                                                                                            │ 
-                │     "name": "Mike",                                                                                                                          │ 
-                │     "age": 22,                                                                                                                               │ 
-                │     "hobbies": [                                                                                                                             │ 
-                │         "Football",                                                                                                                          │ 
-                │         "Reading"                                                                                                                            │ 
-                │     ]                                                                                                                                        │ 
-                │ }                                                                                                                                            │ 
-                └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+                ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+                │ Some tag │ WARN.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_W │ line $nu │ 
+                ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
+                │ {                                                                                                                                              │ 
+                │     "name": "Mike",                                                                                                                            │ 
+                │     "age": 22,                                                                                                                                 │ 
+                │     "hobbies": [                                                                                                                               │ 
+                │         "Football",                                                                                                                            │ 
+                │         "Reading"                                                                                                                              │ 
+                │     ]                                                                                                                                          │ 
+                │ }                                                                                                                                              │ 
+                └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
             """.trimIndent()
         )
     }

@@ -19,7 +19,7 @@ private val stackTrace: StackTraceElement?
     get() =
         try {
             val trace = Thread.currentThread().stackTrace
-            val index = trace.indexOfLast { it.isLogFunction || it.isLogger }
+            val index = trace.indexOfLast { it.isLogFunction }
             trace[index + 1]
         } catch (throwable: Throwable) {
             println("Mokoki has not been able to get the StackTrace")
@@ -28,8 +28,5 @@ private val stackTrace: StackTraceElement?
 
 private val StackTraceElement.isLogFunction: Boolean
     get() =
-        Regex("^(Mokoki.kt)$").matches(fileName ?: "") &&
-            Regex("^(com.javiersc.mokoki.MokokiKt)$").matches(className)
-
-private val StackTraceElement.isLogger: Boolean
-    get() = Regex("""Logger$""").containsMatchIn(className ?: "")
+        Regex("""^(com.javiersc.mokoki.+)*(.log\()""").containsMatchIn("$this") &&
+            Regex("""(.kt:)+(\d)+(\))+$""").containsMatchIn("$this")

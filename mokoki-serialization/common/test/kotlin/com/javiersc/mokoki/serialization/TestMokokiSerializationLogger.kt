@@ -1,6 +1,6 @@
-package com.javiersc.mokoki
+package com.javiersc.mokoki.serialization
 
-import com.javiersc.mokoki.serialization.PrintSerializableMokokiLogger
+import com.javiersc.mokoki.Priority
 import io.kotest.matchers.shouldBe
 import kotlin.reflect.KClass
 import kotlin.reflect.KType
