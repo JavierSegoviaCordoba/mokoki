@@ -6,13 +6,19 @@
 
 ### Changed
 
-- artifact to `com.javiersc.mokoki:mokoki`
-
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+### Updated
+
+## [0.2.0-alpha.1] - 2022-07-19
+
+### Changed
+
+- artifact to `com.javiersc.mokoki:mokoki`
 
 ### Updated
 
