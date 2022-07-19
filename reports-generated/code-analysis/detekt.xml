@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="4.3">
+<file name="mokoki/darwin/main/kotlin/com/javiersc/mokoki/internal/LoggerNames.darwin.kt">
+	<error line="46" column="17" severity="warning" message="This condition is too complex (4). Defined complexity threshold for conditions is set to &apos;4&apos;" source="detekt.ComplexCondition" />
+</file>
+<file name="mokoki/mingw/main/kotlin/com/javiersc/mokoki/internal/LoggerNames.mingw.kt">
+	<error line="48" column="17" severity="warning" message="This condition is too complex (4). Defined complexity threshold for conditions is set to &apos;4&apos;" source="detekt.ComplexCondition" />
+</file>
+<file name="mokoki-serialization/common/main/kotlin/com/javiersc/mokoki/serialization/internal/BuildMokokiSerialization.kt">
+	<error line="21" column="18" severity="warning" message="The caught exception is swallowed. The original exception could be lost." source="detekt.SwallowedException" />
+	<error line="38" column="18" severity="warning" message="The caught exception is swallowed. The original exception could be lost." source="detekt.SwallowedException" />
+</file>
+<file name="mokoki-test/jvmAndAndroid/main/kotlin/com/javiersc/mokoki/test/internal/LoggerNames.jvmAndAndroid.kt">
+	<error line="12" column="18" severity="warning" message="The caught exception is swallowed. The original exception could be lost." source="detekt.SwallowedException" />
+</file>
+<file name="mokoki/jvmAndAndroid/main/kotlin/com/javiersc/mokoki/internal/LoggerNames.jvmAndAndroid.kt">
+	<error line="24" column="18" severity="warning" message="The caught exception is too generic. Prefer catching specific exceptions to the case that is currently handled." source="detekt.TooGenericExceptionCaught" />
+	<error line="24" column="18" severity="warning" message="The caught exception is swallowed. The original exception could be lost." source="detekt.SwallowedException" />
+</file>
+<file name="samples/android/android-core/main/kotlin/MainActivity.kt">
+	<error line="3" column="1" severity="warning" message="The package declaration does not match the actual file location." source="detekt.InvalidPackageDeclaration" />
+</file>
+<file name="samples/jvm/jvm-serialization/main/kotlin/Main.kt">
+	<error line="3" column="1" severity="warning" message="The package declaration does not match the actual file location." source="detekt.InvalidPackageDeclaration" />
+</file>
+<file name="samples/jvm/jvm-core/main/kotlin/Main.kt">
+	<error line="1" column="1" severity="warning" message="The package declaration does not match the actual file location." source="detekt.InvalidPackageDeclaration" />
+</file>
+<file name="mokoki/mingw/test/kotlin/com/javiersc/mokoki/MokokiMingGWTest.mingw.kt">
+	<error line="9" column="7" severity="warning" message="The file name &apos;MokokiMingGWTest.mingw&apos; does not match the name of the single top-level declaration &apos;MokokiMingGWTest&apos;." source="detekt.MatchingDeclarationName" />
+</file>
+<file name="mokoki/darwin/main/kotlin/com/javiersc/mokoki/DefaultMokokiLogger.darwin.kt">
+	<error line="3" column="1" severity="warning" message="This comment contains &apos;TODO:&apos; that has been defined as forbidden in detekt." source="detekt.ForbiddenComment" />
+</file>
+</checkstyle>
