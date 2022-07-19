@@ -1,108 +1,660 @@
 {
   "modules": [
     {
-      "name": "mokoki",
+      "name": "mokoki-project",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-core",
+      "name": "mokoki-project.mokoki",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-serialization",
+      "name": "mokoki-project.mokoki-serialization",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.buildSrc",
+      "name": "mokoki-project.mokoki-test",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-core.iosArm64Main",
+      "name": "mokoki-project.samples",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-core.iosArm64Test",
+      "name": "mokoki-project.samples.android",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-core.iosX64Main",
+      "name": "mokoki-project.samples.jvm",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-core.iosX64Test",
+      "name": "mokoki-project.samples.android.android-core",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-core.jvmMain",
+      "name": "mokoki-project.samples.jvm.jvm-core",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-core.jvmTest",
+      "name": "mokoki-project.samples.jvm.jvm-serialization",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-core.androidAndroidTestRelease",
+      "name": "mokoki-project.mokoki.iosArm32Main",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-core.commonMain",
+      "name": "mokoki-project.mokoki.iosArm32Test",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-core.commonTest",
+      "name": "mokoki-project.mokoki.iosArm64Main",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-core.ios64Main",
+      "name": "mokoki-project.mokoki.iosArm64Test",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-core.ios64Test",
+      "name": "mokoki-project.mokoki.iosSimulatorArm64Main",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-serialization.iosArm64Main",
+      "name": "mokoki-project.mokoki.iosSimulatorArm64Test",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-serialization.iosArm64Test",
+      "name": "mokoki-project.mokoki.iosX64Main",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-serialization.iosX64Main",
+      "name": "mokoki-project.mokoki.iosX64Test",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-serialization.iosX64Test",
+      "name": "mokoki-project.mokoki.jvmMain",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-serialization.jvmMain",
+      "name": "mokoki-project.mokoki.jvmTest",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-serialization.jvmTest",
+      "name": "mokoki-project.mokoki.macosArm64Main",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-serialization.androidAndroidTestRelease",
+      "name": "mokoki-project.mokoki.macosArm64Test",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-serialization.commonMain",
+      "name": "mokoki-project.mokoki.macosX64Main",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.mokoki-serialization.commonTest",
+      "name": "mokoki-project.mokoki.macosX64Test",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.buildSrc.test",
+      "name": "mokoki-project.mokoki.mingwX64Main",
       "languageLevel": 11
     },
     {
-      "name": "mokoki.buildSrc.main",
+      "name": "mokoki-project.mokoki.mingwX64Test",
       "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.mingwX86Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.mingwX86Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.tvosArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.tvosArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.tvosSimulatorArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.tvosSimulatorArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.tvosX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.tvosX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.watchosArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.watchosArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.watchosSimulatorArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.watchosSimulatorArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.watchosX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.watchosX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.watchosX86Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.watchosX86Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.androidAndroidTestRelease",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.androidTestFixtures",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.androidTestFixturesDebug",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.androidTestFixturesRelease",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.commonMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.commonTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.darwinMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.darwinTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.iosMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.iosTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.macosMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.macosTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.mingwMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.mingwTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.tvosMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.tvosTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.watchosMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki.watchosTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.iosArm32Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.iosArm32Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.iosArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.iosArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.iosSimulatorArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.iosSimulatorArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.iosX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.iosX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.jvmMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.jvmTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.macosArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.macosArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.macosX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.macosX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.mingwX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.mingwX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.mingwX86Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.mingwX86Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.tvosArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.tvosArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.tvosSimulatorArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.tvosSimulatorArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.tvosX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.tvosX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.watchosArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.watchosArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.watchosSimulatorArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.watchosSimulatorArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.watchosX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.watchosX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.watchosX86Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.watchosX86Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.androidAndroidTestRelease",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.androidTestFixtures",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.androidTestFixturesDebug",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.androidTestFixturesRelease",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.commonMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.commonTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.darwinMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.darwinTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.iosMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.iosTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.macosMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.macosTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.mingwMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.mingwTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.tvosMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.tvosTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.watchosMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-serialization.watchosTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.iosArm32Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.iosArm32Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.iosArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.iosArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.iosSimulatorArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.iosSimulatorArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.iosX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.iosX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.jvmMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.jvmTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.macosArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.macosArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.macosX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.macosX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.mingwX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.mingwX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.mingwX86Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.mingwX86Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.tvosArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.tvosArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.tvosSimulatorArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.tvosSimulatorArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.tvosX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.tvosX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.watchosArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.watchosArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.watchosSimulatorArm64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.watchosSimulatorArm64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.watchosX64Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.watchosX64Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.watchosX86Main",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.watchosX86Test",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.androidAndroidTestRelease",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.androidTestFixtures",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.androidTestFixturesDebug",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.androidTestFixturesRelease",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.commonMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.commonTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.darwinMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.darwinTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.iosMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.iosTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.macosMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.macosTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.mingwMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.mingwTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.tvosMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.tvosTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.watchosMain",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.mokoki-test.watchosTest",
+      "languageLevel": 11
+    },
+    {
+      "name": "mokoki-project.samples.jvm.jvm-core.test",
+      "languageLevel": 8
+    },
+    {
+      "name": "mokoki-project.samples.jvm.jvm-core.main",
+      "languageLevel": 8
+    },
+    {
+      "name": "mokoki-project.samples.jvm.jvm-serialization.test",
+      "languageLevel": 8
+    },
+    {
+      "name": "mokoki-project.samples.jvm.jvm-serialization.main",
+      "languageLevel": 8
     }
   ]
 }

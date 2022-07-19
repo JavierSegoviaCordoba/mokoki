@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > BuildMokokiMessageKt</title>
+  <title>Coverage Report > LoggerNames_jvmAndAndroidKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/highlight-idea.css";
@@ -20,7 +20,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">com.javiersc.mokoki.internal</a>
 </div>
 
-<h1>Coverage Summary for Class: BuildMokokiMessageKt (com.javiersc.mokoki.internal)</h1>
+<h1>Coverage Summary for Class: LoggerNames_jvmAndAndroidKt (com.javiersc.mokoki.internal)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -35,15 +35,19 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 <th class="coverageStat 
 ">
-  Block, %
+  Branch, %
 </th>
 <th class="coverageStat 
 ">
   Line, %
 </th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
 </tr>
 <tr>
-  <td class="name">BuildMokokiMessageKt</td>
+  <td class="name">LoggerNames_jvmAndAndroidKt</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -57,23 +61,31 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (1/1)
+    (7/7)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    53.6%
+    57.1%
   </span>
   <span class="absValue">
-    (15/28)
+    (16/28)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    96.6%
+    78.6%
   </span>
   <span class="absValue">
-    (28/29)
+    (11/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    84.5%
+  </span>
+  <span class="absValue">
+    (142/168)
   </span>
 </td>
 </tr>
@@ -85,55 +97,38 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;TopLevelPropertyNaming&quot;)
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.javiersc.mokoki.internal
 <i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;package com.javiersc.mokoki.internal
-<i class="no-highlight">4</i>&nbsp;
-<i class="no-highlight">5</i>&nbsp;import com.javiersc.mokoki.MokokiLogger
-<i class="no-highlight">6</i>&nbsp;
-<i class="no-highlight">7</i>&nbsp;internal fun MokokiLogger.buildMokokiMessage(
-<i class="no-highlight">8</i>&nbsp;    tag: String?,
-<i class="no-highlight">9</i>&nbsp;    message: Any,
-<i class="no-highlight">10</i>&nbsp;    level: Level,
-<i class="no-highlight">11</i>&nbsp;): List&lt;String&gt; {
-<b class="pc"><i class="no-highlight">12</i>&nbsp;    val cornerUpLeft = if (enableCompatibleMode) &quot;-&quot; else &quot;┌&quot;</b>
-<b class="pc"><i class="no-highlight">13</i>&nbsp;    val cornerUpRight = if (enableCompatibleMode) &quot;-&quot; else &quot;┐&quot;</b>
-<b class="pc"><i class="no-highlight">14</i>&nbsp;    val cornerBottomLeft = if (enableCompatibleMode) &quot;-&quot; else &quot;└&quot;</b>
-<b class="pc"><i class="no-highlight">15</i>&nbsp;    val cornerBottomRight = if (enableCompatibleMode) &quot;-&quot; else &quot;┘&quot;</b>
-<b class="pc"><i class="no-highlight">16</i>&nbsp;    val vertical = if (enableCompatibleMode) &quot;|&quot; else &quot;│&quot;</b>
-<b class="pc"><i class="no-highlight">17</i>&nbsp;    val verticalLeft = if (enableCompatibleMode) &quot;|&quot; else &quot;├&quot;</b>
-<b class="pc"><i class="no-highlight">18</i>&nbsp;    val verticalRight = if (enableCompatibleMode) &quot;|&quot; else &quot;┤&quot;</b>
-<i class="no-highlight">19</i>&nbsp;
-<b class="pc"><i class="no-highlight">20</i>&nbsp;    val separatorSymbol: String = if (enableCompatibleMode) &quot;-&quot; else &quot;─&quot;</b>
-<b class="pc"><i class="no-highlight">21</i>&nbsp;    val separatorSymbolStart: String = if (enableCompatibleMode) &quot;|&quot; else &quot;├&quot;</b>
-<i class="no-highlight">22</i>&nbsp;
-<b class="pc"><i class="no-highlight">23</i>&nbsp;    val tagToPrint = if (tag != null) &quot;$tag $vertical &quot; else &quot;&quot;</b>
-<b class="fc"><i class="no-highlight">24</i>&nbsp;    val messageLines: List&lt;String&gt; = message.toString().lines()</b>
-<b class="fc"><i class="no-highlight">25</i>&nbsp;    val header =</b>
-<b class="fc"><i class="no-highlight">26</i>&nbsp;        &quot;$tagToPrint$level.$fileLink $vertical &quot; +</b>
-<b class="fc"><i class="no-highlight">27</i>&nbsp;            &quot;$fileName $vertical &quot; +</b>
-<b class="fc"><i class="no-highlight">28</i>&nbsp;            &quot;$className $vertical &quot; +</b>
-<b class="fc"><i class="no-highlight">29</i>&nbsp;            &quot;$methodName $vertical $lineNumber&quot;</b>
-<i class="no-highlight">30</i>&nbsp;
-<b class="pc"><i class="no-highlight">31</i>&nbsp;    val maxLineSize = (listOf(header) + messageLines).maxOf(String::length)</b>
-<i class="no-highlight">32</i>&nbsp;
-<b class="fc"><i class="no-highlight">33</i>&nbsp;    val internalSeparator = separatorSymbol.repeat(maxLineSize + 2)</b>
-<i class="no-highlight">34</i>&nbsp;
-<b class="fc"><i class="no-highlight">35</i>&nbsp;    return buildList {</b>
-<b class="fc"><i class="no-highlight">36</i>&nbsp;        add(&quot; $cornerUpLeft$internalSeparator$cornerUpRight &quot;)</b>
-<b class="fc"><i class="no-highlight">37</i>&nbsp;        add(&quot; $vertical $header $vertical &quot;)</b>
-<b class="fc"><i class="no-highlight">38</i>&nbsp;        add(&quot; $verticalLeft$internalSeparator$verticalRight &quot;)</b>
-<i class="no-highlight">39</i>&nbsp;
-<b class="fc"><i class="no-highlight">40</i>&nbsp;        messageLines.forEach { line -&gt;</b>
-<b class="pc"><i class="no-highlight">41</i>&nbsp;            if (line.startsWith(verticalLeft)) {</b>
-<b class="nc"><i class="no-highlight">42</i>&nbsp;                add(&quot; $separatorSymbolStart$internalSeparator$vertical &quot;)</b>
-<i class="no-highlight">43</i>&nbsp;            } else {
-<b class="fc"><i class="no-highlight">44</i>&nbsp;                add(&quot; $vertical $line${&quot; &quot;.repeat(maxLineSize - line.length)} $vertical &quot;)</b>
-<i class="no-highlight">45</i>&nbsp;            }
-<b class="fc"><i class="no-highlight">46</i>&nbsp;        }</b>
-<b class="fc"><i class="no-highlight">47</i>&nbsp;        add(&quot; $cornerBottomLeft$internalSeparator$cornerBottomRight &quot;)</b>
-<b class="fc"><i class="no-highlight">48</i>&nbsp;    }</b>
-<i class="no-highlight">49</i>&nbsp;}
+<i class="no-highlight">3</i>&nbsp;internal actual val fileName
+<b class="pc"><i class="no-highlight">4</i>&nbsp;    get() = &quot;file ${stackTrace?.fileName ?: &quot;Unknown&quot;}&quot;</b>
+<i class="no-highlight">5</i>&nbsp;
+<i class="no-highlight">6</i>&nbsp;internal actual val className
+<b class="pc"><i class="no-highlight">7</i>&nbsp;    get() = &quot;class ${stackTrace?.className?.split(&quot;.&quot;)?.lastOrNull() ?: &quot;Unknown&quot;}&quot;</b>
+<i class="no-highlight">8</i>&nbsp;
+<i class="no-highlight">9</i>&nbsp;internal actual val methodName
+<b class="pc"><i class="no-highlight">10</i>&nbsp;    get() = &quot;fun ${stackTrace?.methodName ?: &quot;Unknown&quot;}&quot;</b>
+<i class="no-highlight">11</i>&nbsp;
+<i class="no-highlight">12</i>&nbsp;internal actual val lineNumber
+<b class="pc"><i class="no-highlight">13</i>&nbsp;    get() = &quot;line ${stackTrace?.lineNumber ?: &quot;Unknown&quot;}&quot;</b>
+<i class="no-highlight">14</i>&nbsp;
+<i class="no-highlight">15</i>&nbsp;internal actual val fileLink
+<b class="pc"><i class="no-highlight">16</i>&nbsp;    get() = &quot;(${stackTrace?.fileName}:${stackTrace?.lineNumber})&quot;</b>
+<i class="no-highlight">17</i>&nbsp;
+<i class="no-highlight">18</i>&nbsp;private val stackTrace: StackTraceElement?
+<i class="no-highlight">19</i>&nbsp;    get() =
+<b class="fc"><i class="no-highlight">20</i>&nbsp;        try {</b>
+<b class="fc"><i class="no-highlight">21</i>&nbsp;            val trace = Thread.currentThread().stackTrace</b>
+<b class="fc"><i class="no-highlight">22</i>&nbsp;            val index = trace.indexOfLast { it.isLogFunction }</b>
+<b class="fc"><i class="no-highlight">23</i>&nbsp;            trace[index + 1]</b>
+<b class="nc"><i class="no-highlight">24</i>&nbsp;        } catch (throwable: Throwable) {</b>
+<b class="nc"><i class="no-highlight">25</i>&nbsp;            println(&quot;Mokoki has not been able to get the StackTrace&quot;)</b>
+<b class="nc"><i class="no-highlight">26</i>&nbsp;            null</b>
+<i class="no-highlight">27</i>&nbsp;        }
+<i class="no-highlight">28</i>&nbsp;
+<i class="no-highlight">29</i>&nbsp;private val StackTraceElement.isLogFunction: Boolean
+<i class="no-highlight">30</i>&nbsp;    get() =
+<b class="fc"><i class="no-highlight">31</i>&nbsp;        Regex(&quot;&quot;&quot;^(com.javiersc.mokoki.+)*(.log\()&quot;&quot;&quot;).containsMatchIn(&quot;$this&quot;) &amp;&amp;</b>
+<b class="pc"><i class="no-highlight">32</i>&nbsp;            Regex(&quot;&quot;&quot;(.kt:)+(\d)+(\))+$&quot;&quot;&quot;).containsMatchIn(&quot;$this&quot;)</b>
 </div>
 </pre>
 </div>
@@ -160,7 +155,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-05-18 12:26</div>
+    <div style="float:right;">generated on 2022-07-19 07:50</div>
 </div>
 </body>
 </html>

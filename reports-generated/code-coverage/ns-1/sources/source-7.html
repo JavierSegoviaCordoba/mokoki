@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > MokokiMode</title>
+  <title>Coverage Report > PrintMokokiLogger</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/highlight-idea.css";
@@ -20,52 +20,111 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">com.javiersc.mokoki</a>
 </div>
 
-<h1>Coverage Summary for Class: MokokiMode (com.javiersc.mokoki)</h1>
+<h1>Coverage Summary for Class: PrintMokokiLogger (com.javiersc.mokoki)</h1>
 
 <table class="coverageStats">
+
 <tr>
   <th class="name">Class</th>
-<th class="coverageStat 
-">
-  Class, %
-</th>
 <th class="coverageStat 
 ">
   Method, %
 </th>
 <th class="coverageStat 
 ">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
   Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
 </th>
 </tr>
 <tr>
-  <td class="name">MokokiMode</td>
+  <td class="name">PrintMokokiLogger</td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (4/4)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (2/2)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/2)
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (51/51)
   </span>
 </td>
 </tr>
-
+  <tr>
+    <td class="name">PrintMokokiLogger$log$$inlined$ansiColor$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (4/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (51/51)
+  </span>
+</td>
+</tr>
 </table>
 
 <br/>
@@ -75,86 +134,33 @@ Current scope:     <a href="../../index.html">all classes</a>
 <pre>
 <div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.javiersc.mokoki
 <i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;import com.javiersc.mokoki.internal.Level.Debug
-<i class="no-highlight">4</i>&nbsp;import com.javiersc.mokoki.internal.Level.Error
-<i class="no-highlight">5</i>&nbsp;import com.javiersc.mokoki.internal.Level.Info
-<i class="no-highlight">6</i>&nbsp;import com.javiersc.mokoki.internal.Level.Verbose
-<i class="no-highlight">7</i>&nbsp;import com.javiersc.mokoki.internal.Level.Warning
-<i class="no-highlight">8</i>&nbsp;import com.javiersc.mokoki.internal.LogFormatter
-<i class="no-highlight">9</i>&nbsp;import com.javiersc.mokoki.internal.buildMokokiMessage
-<i class="no-highlight">10</i>&nbsp;import java.util.logging.ConsoleHandler
-<i class="no-highlight">11</i>&nbsp;import java.util.logging.Level
-<i class="no-highlight">12</i>&nbsp;import java.util.logging.Logger
+<i class="no-highlight">3</i>&nbsp;import com.javiersc.kotlin.stdlib.ansiColor
+<i class="no-highlight">4</i>&nbsp;import com.javiersc.mokoki.internal.buildMokokiMessage
+<i class="no-highlight">5</i>&nbsp;import kotlin.reflect.KClass
+<i class="no-highlight">6</i>&nbsp;import kotlin.reflect.KType
+<i class="no-highlight">7</i>&nbsp;
+<b class="fc"><i class="no-highlight">8</i>&nbsp;public open class PrintMokokiLogger(</b>
+<b class="fc"><i class="no-highlight">9</i>&nbsp;    private val minPriority: Priority = Priority.DEBUG,</b>
+<i class="no-highlight">10</i>&nbsp;) : MokokiLogger {
+<i class="no-highlight">11</i>&nbsp;
+<b class="fc"><i class="no-highlight">12</i>&nbsp;    override var useCompatibleMode: Boolean = false</b>
 <i class="no-highlight">13</i>&nbsp;
-<i class="no-highlight">14</i>&nbsp;public actual class MokokiLogger {
+<b class="fc"><i class="no-highlight">14</i>&nbsp;    override fun isLoggable(priority: Priority): Boolean = priority.isLoggable(minPriority)</b>
 <i class="no-highlight">15</i>&nbsp;
-<i class="no-highlight">16</i>&nbsp;    public actual var isEnabled: Boolean = true
-<i class="no-highlight">17</i>&nbsp;
-<i class="no-highlight">18</i>&nbsp;    public actual var enableCompatibleMode: Boolean = false
-<i class="no-highlight">19</i>&nbsp;
-<i class="no-highlight">20</i>&nbsp;    private val logger = Logger.getLogger(&quot;Mokoki&quot;)
-<i class="no-highlight">21</i>&nbsp;
-<i class="no-highlight">22</i>&nbsp;    init {
-<i class="no-highlight">23</i>&nbsp;        logger.apply {
-<i class="no-highlight">24</i>&nbsp;            handlers.forEach(::removeHandler)
-<i class="no-highlight">25</i>&nbsp;            level = Level.ALL
-<i class="no-highlight">26</i>&nbsp;            useParentHandlers = false
-<i class="no-highlight">27</i>&nbsp;            addHandler(
-<i class="no-highlight">28</i>&nbsp;                ConsoleHandler().apply {
-<i class="no-highlight">29</i>&nbsp;                    level = Level.ALL
-<i class="no-highlight">30</i>&nbsp;                    formatter = LogFormatter()
-<i class="no-highlight">31</i>&nbsp;                },
-<i class="no-highlight">32</i>&nbsp;            )
-<i class="no-highlight">33</i>&nbsp;        }
-<i class="no-highlight">34</i>&nbsp;    }
-<i class="no-highlight">35</i>&nbsp;
-<i class="no-highlight">36</i>&nbsp;    public actual fun v(tag: String, message: String) {
-<i class="no-highlight">37</i>&nbsp;        if (!isEnabled) return
-<i class="no-highlight">38</i>&nbsp;        logger.apply {
-<i class="no-highlight">39</i>&nbsp;            colors(LoggerForegroundColor.Green, null)
-<i class="no-highlight">40</i>&nbsp;            buildMokokiMessage(tag, message, Verbose).forEach(::finer)
-<i class="no-highlight">41</i>&nbsp;        }
-<i class="no-highlight">42</i>&nbsp;    }
-<i class="no-highlight">43</i>&nbsp;
-<i class="no-highlight">44</i>&nbsp;    public actual fun d(tag: String, message: String) {
-<i class="no-highlight">45</i>&nbsp;        if (!isEnabled) return
-<i class="no-highlight">46</i>&nbsp;        logger.apply {
-<i class="no-highlight">47</i>&nbsp;            colors(LoggerForegroundColor.White, null)
-<i class="no-highlight">48</i>&nbsp;            buildMokokiMessage(tag, message, Debug).forEach(::fine)
-<i class="no-highlight">49</i>&nbsp;        }
-<i class="no-highlight">50</i>&nbsp;    }
-<i class="no-highlight">51</i>&nbsp;
-<i class="no-highlight">52</i>&nbsp;    public actual fun i(tag: String, message: String) {
-<b class="nc"><i class="no-highlight">53</i>&nbsp;        if (!isEnabled) return</b>
-<b class="nc"><i class="no-highlight">54</i>&nbsp;        logger.apply {</b>
-<i class="no-highlight">55</i>&nbsp;            colors(LoggerForegroundColor.Yellow, null)
-<i class="no-highlight">56</i>&nbsp;            buildMokokiMessage(tag, message, Info).forEach(::info)
-<i class="no-highlight">57</i>&nbsp;        }
-<i class="no-highlight">58</i>&nbsp;    }
-<i class="no-highlight">59</i>&nbsp;
-<i class="no-highlight">60</i>&nbsp;    public actual fun w(tag: String, message: String) {
-<i class="no-highlight">61</i>&nbsp;        if (!isEnabled) return
-<i class="no-highlight">62</i>&nbsp;        logger.apply {
-<i class="no-highlight">63</i>&nbsp;            colors(LoggerForegroundColor.BrightYellow, null)
-<i class="no-highlight">64</i>&nbsp;            buildMokokiMessage(tag, message, Warning).forEach(::warning)
-<i class="no-highlight">65</i>&nbsp;        }
-<i class="no-highlight">66</i>&nbsp;    }
-<i class="no-highlight">67</i>&nbsp;
-<i class="no-highlight">68</i>&nbsp;    public actual fun e(tag: String, message: String) {
-<i class="no-highlight">69</i>&nbsp;        if (!isEnabled) return
-<i class="no-highlight">70</i>&nbsp;        logger.apply {
-<i class="no-highlight">71</i>&nbsp;            colors(LoggerForegroundColor.Red, null)
-<i class="no-highlight">72</i>&nbsp;            buildMokokiMessage(tag, message, Error).forEach(::severe)
-<i class="no-highlight">73</i>&nbsp;        }
-<i class="no-highlight">74</i>&nbsp;    }
-<i class="no-highlight">75</i>&nbsp;
-<i class="no-highlight">76</i>&nbsp;    private fun Logger.colors(
-<i class="no-highlight">77</i>&nbsp;        loggerForegroundColor: LoggerForegroundColor,
-<i class="no-highlight">78</i>&nbsp;        loggerBackgroundColor: LoggerBackgroundColor?,
-<i class="no-highlight">79</i>&nbsp;    ) {
-<i class="no-highlight">80</i>&nbsp;        handlers[0].formatter = LogFormatter(loggerForegroundColor, loggerBackgroundColor)
-<i class="no-highlight">81</i>&nbsp;    }
-<i class="no-highlight">82</i>&nbsp;}
+<i class="no-highlight">16</i>&nbsp;    override fun &lt;T : Any&gt; log(
+<i class="no-highlight">17</i>&nbsp;        priority: Priority,
+<i class="no-highlight">18</i>&nbsp;        tag: String?,
+<i class="no-highlight">19</i>&nbsp;        kClass: KClass&lt;T&gt;,
+<i class="no-highlight">20</i>&nbsp;        kType: KType,
+<i class="no-highlight">21</i>&nbsp;        message: T,
+<i class="no-highlight">22</i>&nbsp;    ) {
+<b class="fc"><i class="no-highlight">23</i>&nbsp;        val lines: List&lt;String&gt; = buildMokokiMessage(priority, tag, message)</b>
+<i class="no-highlight">24</i>&nbsp;
+<b class="fc"><i class="no-highlight">25</i>&nbsp;        for (line in lines) {</b>
+<b class="fc"><i class="no-highlight">26</i>&nbsp;            println(line.ansiColor(priority.ansiColor))</b>
+<i class="no-highlight">27</i>&nbsp;        }
+<i class="no-highlight">28</i>&nbsp;    }
+<i class="no-highlight">29</i>&nbsp;}
 </div>
 </pre>
 </div>
@@ -181,7 +187,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-05-18 12:26</div>
+    <div style="float:right;">generated on 2022-07-19 07:50</div>
 </div>
 </body>
 </html>

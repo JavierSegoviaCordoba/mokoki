@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > MokokiKt</title>
+  <title>Coverage Report > Priority</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/highlight-idea.css";
@@ -20,16 +20,103 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">com.javiersc.mokoki</a>
 </div>
 
-<h1>Coverage Summary for Class: MokokiKt (com.javiersc.mokoki)</h1>
+<h1>Coverage Summary for Class: Priority (com.javiersc.mokoki)</h1>
 
 <table class="coverageStats">
+
 <tr>
   <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
 </tr>
 <tr>
-  <td class="name">MokokiKt</td>
+  <td class="name">Priority</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    87.5%
+  </span>
+  <span class="absValue">
+    (7/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (15/15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    98.9%
+  </span>
+  <span class="absValue">
+    (86/87)
+  </span>
+</td>
 </tr>
-
+  <tr>
+    <td class="name">Priority$WhenMappings</td>
+    <td class="coverageStat"/>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    87.5%
+  </span>
+  <span class="absValue">
+    (7/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (15/15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    98.9%
+  </span>
+  <span class="absValue">
+    (86/87)
+  </span>
+</td>
+</tr>
 </table>
 
 <br/>
@@ -37,79 +124,33 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;TooManyFunctions&quot;, &quot;TopLevelPropertyNaming&quot;)
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;MagicNumber&quot;)
 <i class="no-highlight">2</i>&nbsp;
 <i class="no-highlight">3</i>&nbsp;package com.javiersc.mokoki
 <i class="no-highlight">4</i>&nbsp;
-<i class="no-highlight">5</i>&nbsp;import kotlin.native.concurrent.ThreadLocal
+<i class="no-highlight">5</i>&nbsp;import com.javiersc.kotlin.stdlib.AnsiColor
 <i class="no-highlight">6</i>&nbsp;
-<i class="no-highlight">7</i>&nbsp;@ThreadLocal
-<i class="no-highlight">8</i>&nbsp;public object Mokoki {
-<i class="no-highlight">9</i>&nbsp;
-<i class="no-highlight">10</i>&nbsp;    public var isEnabled: Boolean
-<i class="no-highlight">11</i>&nbsp;        get() = logger.isEnabled
-<i class="no-highlight">12</i>&nbsp;        set(value) {
-<i class="no-highlight">13</i>&nbsp;            logger.isEnabled = value
-<i class="no-highlight">14</i>&nbsp;        }
-<i class="no-highlight">15</i>&nbsp;
-<i class="no-highlight">16</i>&nbsp;    public var enableCompatibleMode: Boolean
-<i class="no-highlight">17</i>&nbsp;        get() = logger.enableCompatibleMode
-<i class="no-highlight">18</i>&nbsp;        set(value) {
-<i class="no-highlight">19</i>&nbsp;            logger.enableCompatibleMode = value
-<i class="no-highlight">20</i>&nbsp;        }
-<i class="no-highlight">21</i>&nbsp;
-<i class="no-highlight">22</i>&nbsp;    private var logger: MokokiLogger = MokokiLogger()
-<i class="no-highlight">23</i>&nbsp;
-<i class="no-highlight">24</i>&nbsp;    public fun init(mokokiLogger: MokokiLogger) {
-<i class="no-highlight">25</i>&nbsp;        logger = mokokiLogger
-<i class="no-highlight">26</i>&nbsp;    }
-<i class="no-highlight">27</i>&nbsp;
-<i class="no-highlight">28</i>&nbsp;    public fun v(tag: String = MokokiName, message: String): Unit = logger.v(tag, message)
-<i class="no-highlight">29</i>&nbsp;
-<i class="no-highlight">30</i>&nbsp;    public fun v(tag: String = MokokiName, throwable: Throwable): Unit =
-<i class="no-highlight">31</i>&nbsp;        logger.v(tag, throwable.stackTraceToString())
-<i class="no-highlight">32</i>&nbsp;
-<i class="no-highlight">33</i>&nbsp;    public fun v(message: String): Unit = logger.v(MokokiName, message)
-<i class="no-highlight">34</i>&nbsp;
-<i class="no-highlight">35</i>&nbsp;    public fun v(throwable: Throwable): Unit = logger.v(MokokiName, throwable.stackTraceToString())
-<i class="no-highlight">36</i>&nbsp;
-<i class="no-highlight">37</i>&nbsp;    public fun d(tag: String = MokokiName, message: String): Unit = logger.d(tag, message)
-<i class="no-highlight">38</i>&nbsp;
-<i class="no-highlight">39</i>&nbsp;    public fun d(tag: String = MokokiName, throwable: Throwable): Unit =
-<i class="no-highlight">40</i>&nbsp;        logger.d(tag, throwable.stackTraceToString())
-<i class="no-highlight">41</i>&nbsp;
-<i class="no-highlight">42</i>&nbsp;    public fun d(message: String): Unit = logger.d(MokokiName, message)
-<i class="no-highlight">43</i>&nbsp;
-<i class="no-highlight">44</i>&nbsp;    public fun d(throwable: Throwable): Unit = logger.d(MokokiName, throwable.stackTraceToString())
-<i class="no-highlight">45</i>&nbsp;
-<i class="no-highlight">46</i>&nbsp;    public fun i(tag: String = MokokiName, message: String): Unit = logger.i(tag, message)
-<i class="no-highlight">47</i>&nbsp;
-<i class="no-highlight">48</i>&nbsp;    public fun i(tag: String = MokokiName, throwable: Throwable): Unit =
-<i class="no-highlight">49</i>&nbsp;        logger.i(tag, throwable.stackTraceToString())
-<i class="no-highlight">50</i>&nbsp;
-<i class="no-highlight">51</i>&nbsp;    public fun i(message: String): Unit = logger.i(MokokiName, message)
-<i class="no-highlight">52</i>&nbsp;    public fun i(throwable: Throwable): Unit = logger.i(MokokiName, throwable.stackTraceToString())
-<i class="no-highlight">53</i>&nbsp;
-<i class="no-highlight">54</i>&nbsp;    public fun w(tag: String = MokokiName, message: String): Unit = logger.w(tag, message)
-<i class="no-highlight">55</i>&nbsp;
-<i class="no-highlight">56</i>&nbsp;    public fun w(tag: String = MokokiName, throwable: Throwable): Unit =
-<i class="no-highlight">57</i>&nbsp;        logger.w(tag, throwable.stackTraceToString())
-<i class="no-highlight">58</i>&nbsp;
-<i class="no-highlight">59</i>&nbsp;    public fun w(message: String): Unit = logger.w(MokokiName, message)
-<i class="no-highlight">60</i>&nbsp;
-<i class="no-highlight">61</i>&nbsp;    public fun w(throwable: Throwable): Unit = logger.w(MokokiName, throwable.stackTraceToString())
-<i class="no-highlight">62</i>&nbsp;
-<i class="no-highlight">63</i>&nbsp;    public fun e(tag: String = MokokiName, message: String): Unit = logger.e(tag, message)
-<i class="no-highlight">64</i>&nbsp;
-<i class="no-highlight">65</i>&nbsp;    public fun e(tag: String = MokokiName, throwable: Throwable): Unit =
-<i class="no-highlight">66</i>&nbsp;        logger.e(tag, throwable.stackTraceToString())
-<i class="no-highlight">67</i>&nbsp;
-<i class="no-highlight">68</i>&nbsp;    public fun e(message: String): Unit = logger.e(MokokiName, message)
-<i class="no-highlight">69</i>&nbsp;
-<i class="no-highlight">70</i>&nbsp;    public fun e(throwable: Throwable): Unit = logger.e(MokokiName, throwable.stackTraceToString())
-<i class="no-highlight">71</i>&nbsp;}
-<i class="no-highlight">72</i>&nbsp;
-<i class="no-highlight">73</i>&nbsp;private const val MokokiName = &quot;Mokoki&quot;
+<b class="fc"><i class="no-highlight">7</i>&nbsp;public enum class Priority(private val value: Int) {</b>
+<b class="fc"><i class="no-highlight">8</i>&nbsp;    VERBOSE(2),</b>
+<b class="fc"><i class="no-highlight">9</i>&nbsp;    DEBUG(3),</b>
+<b class="fc"><i class="no-highlight">10</i>&nbsp;    INFO(4),</b>
+<b class="fc"><i class="no-highlight">11</i>&nbsp;    WARN(5),</b>
+<b class="fc"><i class="no-highlight">12</i>&nbsp;    ERROR(6),</b>
+<b class="fc"><i class="no-highlight">13</i>&nbsp;    ASSERT(7);</b>
+<i class="no-highlight">14</i>&nbsp;
+<i class="no-highlight">15</i>&nbsp;    public val ansiColor: AnsiColor
+<i class="no-highlight">16</i>&nbsp;        get() =
+<b class="fc"><i class="no-highlight">17</i>&nbsp;            when (this) {</b>
+<b class="fc"><i class="no-highlight">18</i>&nbsp;                VERBOSE -&gt; AnsiColor.Reset</b>
+<b class="fc"><i class="no-highlight">19</i>&nbsp;                DEBUG -&gt; AnsiColor.Foreground.BrightGreen</b>
+<b class="fc"><i class="no-highlight">20</i>&nbsp;                INFO -&gt; AnsiColor.Foreground.BrightYellow</b>
+<b class="fc"><i class="no-highlight">21</i>&nbsp;                WARN -&gt; AnsiColor.Foreground.Yellow</b>
+<b class="fc"><i class="no-highlight">22</i>&nbsp;                ERROR -&gt; AnsiColor.Foreground.BrightRed</b>
+<b class="fc"><i class="no-highlight">23</i>&nbsp;                ASSERT -&gt; AnsiColor.Foreground.Red</b>
+<i class="no-highlight">24</i>&nbsp;            }
+<i class="no-highlight">25</i>&nbsp;
+<b class="pc"><i class="no-highlight">26</i>&nbsp;    public fun isLoggable(other: Priority): Boolean = this.value &gt;= other.value</b>
+<i class="no-highlight">27</i>&nbsp;}
 </div>
 </pre>
 </div>
@@ -136,7 +177,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-05-18 12:26</div>
+    <div style="float:right;">generated on 2022-07-19 07:50</div>
 </div>
 </body>
 </html>

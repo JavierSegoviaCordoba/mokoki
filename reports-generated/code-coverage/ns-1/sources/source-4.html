@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > LoggerSeparatorKt</title>
+  <title>Coverage Report > MokokiKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/highlight-idea.css";
@@ -20,7 +20,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">com.javiersc.mokoki</a>
 </div>
 
-<h1>Coverage Summary for Class: LoggerSeparatorKt (com.javiersc.mokoki)</h1>
+<h1>Coverage Summary for Class: MokokiKt (com.javiersc.mokoki)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -35,45 +35,57 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 <th class="coverageStat 
 ">
-  Block, %
+  Branch, %
 </th>
 <th class="coverageStat 
 ">
   Line, %
 </th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
 </tr>
 <tr>
-  <td class="name">LoggerSeparatorKt</td>
+  <td class="name">MokokiKt</td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/1)
+    (1/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    100%
   </span>
   <span class="absValue">
-    (0/2)
+    (7/7)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    37.5%
   </span>
   <span class="absValue">
-    (0/2)
+    (3/8)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    0%
+    62.5%
   </span>
   <span class="absValue">
-    (0/2)
+    (15/24)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    47%
+  </span>
+  <span class="absValue">
+    (93/198)
   </span>
 </td>
 </tr>
@@ -85,12 +97,49 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;TopLevelPropertyNaming&quot;, &quot;FunctionName&quot;)
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.javiersc.mokoki
 <i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;package com.javiersc.mokoki
-<i class="no-highlight">4</i>&nbsp;
-<b class="nc"><i class="no-highlight">5</i>&nbsp;public fun LoggerSeparator(enableCompatibleMode: Boolean = false): String =</b>
-<b class="nc"><i class="no-highlight">6</i>&nbsp;    if (enableCompatibleMode) &quot;|&quot; else &quot;├&quot;</b>
+<i class="no-highlight">3</i>&nbsp;import com.javiersc.mokoki.Priority.ASSERT
+<i class="no-highlight">4</i>&nbsp;import com.javiersc.mokoki.Priority.DEBUG
+<i class="no-highlight">5</i>&nbsp;import com.javiersc.mokoki.Priority.ERROR
+<i class="no-highlight">6</i>&nbsp;import com.javiersc.mokoki.Priority.INFO
+<i class="no-highlight">7</i>&nbsp;import com.javiersc.mokoki.Priority.VERBOSE
+<i class="no-highlight">8</i>&nbsp;import com.javiersc.mokoki.Priority.WARN
+<i class="no-highlight">9</i>&nbsp;import kotlin.reflect.typeOf
+<i class="no-highlight">10</i>&nbsp;
+<b class="nc"><i class="no-highlight">11</i>&nbsp;public inline fun &lt;reified T : Any&gt; log(</b>
+<b class="nc"><i class="no-highlight">12</i>&nbsp;    priority: Priority = DEBUG,</b>
+<b class="nc"><i class="no-highlight">13</i>&nbsp;    tag: String? = null,</b>
+<i class="no-highlight">14</i>&nbsp;    message: () -&gt; T
+<i class="no-highlight">15</i>&nbsp;) {
+<b class="pc"><i class="no-highlight">16</i>&nbsp;    for (logger in MokokiLogger.loggers) {</b>
+<b class="pc"><i class="no-highlight">17</i>&nbsp;        if (logger.isLoggable(priority)) logger.log(priority, tag, T::class, typeOf&lt;T&gt;(), message())</b>
+<i class="no-highlight">18</i>&nbsp;    }
+<b class="fc"><i class="no-highlight">19</i>&nbsp;}</b>
+<i class="no-highlight">20</i>&nbsp;
+<b class="nc"><i class="no-highlight">21</i>&nbsp;public inline fun &lt;reified T : Any&gt; logV(tag: String? = null, message: () -&gt; T) {</b>
+<b class="fc"><i class="no-highlight">22</i>&nbsp;    log(priority = VERBOSE, tag = tag, message = message)</b>
+<b class="fc"><i class="no-highlight">23</i>&nbsp;}</b>
+<i class="no-highlight">24</i>&nbsp;
+<b class="nc"><i class="no-highlight">25</i>&nbsp;public inline fun &lt;reified T : Any&gt; logD(tag: String? = null, message: () -&gt; T) {</b>
+<b class="fc"><i class="no-highlight">26</i>&nbsp;    log(priority = DEBUG, tag = tag, message = message)</b>
+<b class="fc"><i class="no-highlight">27</i>&nbsp;}</b>
+<i class="no-highlight">28</i>&nbsp;
+<b class="nc"><i class="no-highlight">29</i>&nbsp;public inline fun &lt;reified T : Any&gt; logI(tag: String? = null, message: () -&gt; T) {</b>
+<b class="fc"><i class="no-highlight">30</i>&nbsp;    log(priority = INFO, tag = tag, message = message)</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;}</b>
+<i class="no-highlight">32</i>&nbsp;
+<b class="nc"><i class="no-highlight">33</i>&nbsp;public inline fun &lt;reified T : Any&gt; logW(tag: String? = null, message: () -&gt; T) {</b>
+<b class="fc"><i class="no-highlight">34</i>&nbsp;    log(priority = WARN, tag = tag, message = message)</b>
+<b class="fc"><i class="no-highlight">35</i>&nbsp;}</b>
+<i class="no-highlight">36</i>&nbsp;
+<b class="nc"><i class="no-highlight">37</i>&nbsp;public inline fun &lt;reified T : Any&gt; logE(tag: String? = null, message: () -&gt; T) {</b>
+<b class="fc"><i class="no-highlight">38</i>&nbsp;    log(priority = ERROR, tag = tag, message = message)</b>
+<b class="fc"><i class="no-highlight">39</i>&nbsp;}</b>
+<i class="no-highlight">40</i>&nbsp;
+<b class="nc"><i class="no-highlight">41</i>&nbsp;public inline fun &lt;reified T : Any&gt; logWTF(tag: String? = null, message: () -&gt; T) {</b>
+<b class="fc"><i class="no-highlight">42</i>&nbsp;    log(priority = ASSERT, tag = tag, message = message)</b>
+<b class="fc"><i class="no-highlight">43</i>&nbsp;}</b>
 </div>
 </pre>
 </div>
@@ -117,7 +166,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-05-18 12:26</div>
+    <div style="float:right;">generated on 2022-07-19 07:50</div>
 </div>
 </body>
 </html>
