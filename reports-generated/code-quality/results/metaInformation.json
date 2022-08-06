@@ -7,12 +7,12 @@
     "vcs": {
       "sarifIdea": {
         "repositoryUri": "https://github.com/JavierSegoviaCordoba/mokoki",
-        "revisionId": "6f9cf9db934b388ae1546107107a8215a298910f",
+        "revisionId": "a34552e01d9803a6c149f50a7633d44e803b21d6",
         "branch": "main"
       }
     },
     "deviceId": "200820300000000-818f-e2ab-5c7b-bb2195b3536f",
-    "jobUrl": "https://github.com/JavierSegoviaCordoba/mokoki/actions/runs/2791114040",
+    "jobUrl": "https://github.com/JavierSegoviaCordoba/mokoki/actions/runs/2806904788",
     "repoUrl": "https://github.com/JavierSegoviaCordoba/mokoki"
   }
 }
