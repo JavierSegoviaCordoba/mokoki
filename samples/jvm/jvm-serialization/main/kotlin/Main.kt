@@ -103,7 +103,8 @@ class App(useCompatibleMode: Boolean) {
                 Text after first separator and before last separator
                 ${LoggerSeparator(useCompatibleMode)}
                 Text after last separator
-            """.trimIndent()
+            """
+                .trimIndent()
         logV { textWithSeparator }
     }
 }
@@ -118,7 +119,8 @@ private val userString =
        |    "age": 22,
        |    "surnames": ["Football", "Reading"]
        | }
-    """.trimMargin()
+    """
+        .trimMargin()
 
 @Serializable data class Dog(val name: String, @Contextual val birthday: Date)
 
