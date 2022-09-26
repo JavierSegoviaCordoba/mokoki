@@ -68,7 +68,8 @@ class App(useCompatibleMode: Boolean) {
                 Text after first separator and before last separator
                 ${LoggerSeparator(useCompatibleMode)}
                 Text after last separator
-            """.trimIndent()
+            """
+                .trimIndent()
         logV { textWithSeparator }
     }
 }
