@@ -7,9 +7,10 @@
   <title>Coverage Report > User</title>
   <style type="text/css">
     @import "../../css/coverage.css";
-    @import "../../css/highlight-idea.css";
+    @import "../../css/idea.min.css";
   </style>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
 </head>
 
 <body>
@@ -42,41 +43,6 @@ Current scope:     <a href="../../index.html">all classes</a>
 ">
   Instruction, %
 </th>
-</tr>
-<tr>
-  <td class="name">User</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/2)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    74.2%
-  </span>
-  <span class="absValue">
-    (46/62)
-  </span>
-</td>
 </tr>
   <tr>
     <td class="name">User$$serializer</td>
@@ -148,7 +114,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (3/3)
+    (2/2)
   </span>
 </td>
 <td class="coverageStat">
@@ -156,7 +122,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     0%
   </span>
   <span class="absValue">
-    (0/10)
+    (0/8)
   </span>
 </td>
 <td class="coverageStat">
@@ -164,15 +130,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (3/3)
+    (2/2)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    53.6%
+    46.8%
   </span>
   <span class="absValue">
-    (134/250)
+    (88/188)
   </span>
 </td>
 </tr>
@@ -183,330 +149,343 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;MaxLineLength&quot;)
-<i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;package com.javiersc.mokoki.serialization
-<i class="no-highlight">4</i>&nbsp;
-<i class="no-highlight">5</i>&nbsp;import com.javiersc.kotlin.test.IgnoreMINGW
-<i class="no-highlight">6</i>&nbsp;import com.javiersc.mokoki.MokokiLogger
-<i class="no-highlight">7</i>&nbsp;import com.javiersc.mokoki.Priority
-<i class="no-highlight">8</i>&nbsp;import com.javiersc.mokoki.logD
-<i class="no-highlight">9</i>&nbsp;import com.javiersc.mokoki.logE
-<i class="no-highlight">10</i>&nbsp;import com.javiersc.mokoki.logI
-<i class="no-highlight">11</i>&nbsp;import com.javiersc.mokoki.logV
-<i class="no-highlight">12</i>&nbsp;import com.javiersc.mokoki.logW
-<i class="no-highlight">13</i>&nbsp;import com.javiersc.mokoki.logWTF
-<i class="no-highlight">14</i>&nbsp;import com.javiersc.mokoki.test.internal.lineNumberForTest
-<i class="no-highlight">15</i>&nbsp;import kotlin.test.AfterTest
-<i class="no-highlight">16</i>&nbsp;import kotlin.test.BeforeTest
-<i class="no-highlight">17</i>&nbsp;import kotlin.test.Test
-<i class="no-highlight">18</i>&nbsp;import kotlinx.serialization.Serializable
-<i class="no-highlight">19</i>&nbsp;
-<i class="no-highlight">20</i>&nbsp;@IgnoreMINGW
-<i class="no-highlight">21</i>&nbsp;internal class MokokiSerializationTest {
-<i class="no-highlight">22</i>&nbsp;
-<i class="no-highlight">23</i>&nbsp;    private val testLogger = TestMokokiSerializationLogger(minPriority = Priority.VERBOSE)
-<i class="no-highlight">24</i>&nbsp;
-<i class="no-highlight">25</i>&nbsp;    @BeforeTest
-<i class="no-highlight">26</i>&nbsp;    fun install_logger() {
-<i class="no-highlight">27</i>&nbsp;        MokokiLogger.install(testLogger)
-<i class="no-highlight">28</i>&nbsp;    }
-<i class="no-highlight">29</i>&nbsp;
-<i class="no-highlight">30</i>&nbsp;    @AfterTest
-<i class="no-highlight">31</i>&nbsp;    fun uninstallAllLoggers() {
-<i class="no-highlight">32</i>&nbsp;        MokokiLogger.uninstallAllLoggers()
-<i class="no-highlight">33</i>&nbsp;    }
-<i class="no-highlight">34</i>&nbsp;
-<i class="no-highlight">35</i>&nbsp;    @Test
-<i class="no-highlight">36</i>&nbsp;    fun json_log_V() {
-<i class="no-highlight">37</i>&nbsp;        logV(&quot;Some tag&quot;) { userString }
-<i class="no-highlight">38</i>&nbsp;        val n = testLogger.lastMessage.lineNumberForTest
-<i class="no-highlight">39</i>&nbsp;
-<i class="no-highlight">40</i>&nbsp;        testLogger.assert(
-<i class="no-highlight">41</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">42</i>&nbsp;                ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<i class="no-highlight">43</i>&nbsp;                │ Some tag │ VERBOSE.(MokokiSerializationTest.kt:$n) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_V │ line $n │ 
-<i class="no-highlight">44</i>&nbsp;                ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<i class="no-highlight">45</i>&nbsp;                │ {                                                                                                                                               │ 
-<i class="no-highlight">46</i>&nbsp;                │     &quot;name&quot;: &quot;Mike&quot;,                                                                                                                             │ 
-<i class="no-highlight">47</i>&nbsp;                │     &quot;age&quot;: 22,                                                                                                                                  │ 
-<i class="no-highlight">48</i>&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                │ 
-<i class="no-highlight">49</i>&nbsp;                │         &quot;Football&quot;,                                                                                                                             │ 
-<i class="no-highlight">50</i>&nbsp;                │         &quot;Reading&quot;                                                                                                                               │ 
-<i class="no-highlight">51</i>&nbsp;                │     ]                                                                                                                                           │ 
-<i class="no-highlight">52</i>&nbsp;                │ }                                                                                                                                               │ 
-<i class="no-highlight">53</i>&nbsp;                └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<i class="no-highlight">54</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">55</i>&nbsp;        )
-<i class="no-highlight">56</i>&nbsp;    }
-<i class="no-highlight">57</i>&nbsp;
-<i class="no-highlight">58</i>&nbsp;    @Test
-<i class="no-highlight">59</i>&nbsp;    fun json_log_D() {
-<i class="no-highlight">60</i>&nbsp;        logD(&quot;Some tag&quot;) { userString }
-<i class="no-highlight">61</i>&nbsp;        val n = testLogger.lastMessage.lineNumberForTest
-<i class="no-highlight">62</i>&nbsp;
-<i class="no-highlight">63</i>&nbsp;        testLogger.assert(
-<i class="no-highlight">64</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">65</i>&nbsp;                ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<i class="no-highlight">66</i>&nbsp;                │ Some tag │ DEBUG.(MokokiSerializationTest.kt:$n) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_D │ line $n │ 
-<i class="no-highlight">67</i>&nbsp;                ├───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<i class="no-highlight">68</i>&nbsp;                │ {                                                                                                                                             │ 
-<i class="no-highlight">69</i>&nbsp;                │     &quot;name&quot;: &quot;Mike&quot;,                                                                                                                           │ 
-<i class="no-highlight">70</i>&nbsp;                │     &quot;age&quot;: 22,                                                                                                                                │ 
-<i class="no-highlight">71</i>&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                              │ 
-<i class="no-highlight">72</i>&nbsp;                │         &quot;Football&quot;,                                                                                                                           │ 
-<i class="no-highlight">73</i>&nbsp;                │         &quot;Reading&quot;                                                                                                                             │ 
-<i class="no-highlight">74</i>&nbsp;                │     ]                                                                                                                                         │ 
-<i class="no-highlight">75</i>&nbsp;                │ }                                                                                                                                             │ 
-<i class="no-highlight">76</i>&nbsp;                └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<i class="no-highlight">77</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">78</i>&nbsp;        )
-<i class="no-highlight">79</i>&nbsp;    }
-<i class="no-highlight">80</i>&nbsp;
-<i class="no-highlight">81</i>&nbsp;    @Test
-<i class="no-highlight">82</i>&nbsp;    fun json_log_I() {
-<i class="no-highlight">83</i>&nbsp;        logI(&quot;Some tag&quot;) { userString }
-<i class="no-highlight">84</i>&nbsp;        val n = testLogger.lastMessage.lineNumberForTest
-<i class="no-highlight">85</i>&nbsp;
-<i class="no-highlight">86</i>&nbsp;        testLogger.assert(
-<i class="no-highlight">87</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">88</i>&nbsp;                ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<i class="no-highlight">89</i>&nbsp;                │ Some tag │ INFO.(MokokiSerializationTest.kt:$n) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_I │ line $n │ 
-<i class="no-highlight">90</i>&nbsp;                ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<i class="no-highlight">91</i>&nbsp;                │ {                                                                                                                                            │ 
-<i class="no-highlight">92</i>&nbsp;                │     &quot;name&quot;: &quot;Mike&quot;,                                                                                                                          │ 
-<i class="no-highlight">93</i>&nbsp;                │     &quot;age&quot;: 22,                                                                                                                               │ 
-<i class="no-highlight">94</i>&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                             │ 
-<i class="no-highlight">95</i>&nbsp;                │         &quot;Football&quot;,                                                                                                                          │ 
-<i class="no-highlight">96</i>&nbsp;                │         &quot;Reading&quot;                                                                                                                            │ 
-<i class="no-highlight">97</i>&nbsp;                │     ]                                                                                                                                        │ 
-<i class="no-highlight">98</i>&nbsp;                │ }                                                                                                                                            │ 
-<i class="no-highlight">99</i>&nbsp;                └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<i class="no-highlight">100</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">101</i>&nbsp;        )
-<i class="no-highlight">102</i>&nbsp;    }
-<i class="no-highlight">103</i>&nbsp;
-<i class="no-highlight">104</i>&nbsp;    @Test
-<i class="no-highlight">105</i>&nbsp;    fun json_log_W() {
-<i class="no-highlight">106</i>&nbsp;        logW(&quot;Some tag&quot;) { userString }
-<i class="no-highlight">107</i>&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
-<i class="no-highlight">108</i>&nbsp;
-<i class="no-highlight">109</i>&nbsp;        testLogger.assert(
-<i class="no-highlight">110</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">111</i>&nbsp;                ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<i class="no-highlight">112</i>&nbsp;                │ Some tag │ WARN.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_W │ line $nu │ 
-<i class="no-highlight">113</i>&nbsp;                ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<i class="no-highlight">114</i>&nbsp;                │ {                                                                                                                                              │ 
-<i class="no-highlight">115</i>&nbsp;                │     &quot;name&quot;: &quot;Mike&quot;,                                                                                                                            │ 
-<i class="no-highlight">116</i>&nbsp;                │     &quot;age&quot;: 22,                                                                                                                                 │ 
-<i class="no-highlight">117</i>&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                               │ 
-<i class="no-highlight">118</i>&nbsp;                │         &quot;Football&quot;,                                                                                                                            │ 
-<i class="no-highlight">119</i>&nbsp;                │         &quot;Reading&quot;                                                                                                                              │ 
-<i class="no-highlight">120</i>&nbsp;                │     ]                                                                                                                                          │ 
-<i class="no-highlight">121</i>&nbsp;                │ }                                                                                                                                              │ 
-<i class="no-highlight">122</i>&nbsp;                └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<i class="no-highlight">123</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">124</i>&nbsp;        )
-<i class="no-highlight">125</i>&nbsp;    }
-<i class="no-highlight">126</i>&nbsp;
-<i class="no-highlight">127</i>&nbsp;    @Test
-<i class="no-highlight">128</i>&nbsp;    fun json_log_E() {
-<i class="no-highlight">129</i>&nbsp;        logE(&quot;Some tag&quot;) { userString }
-<i class="no-highlight">130</i>&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
-<i class="no-highlight">131</i>&nbsp;
-<i class="no-highlight">132</i>&nbsp;        testLogger.assert(
-<i class="no-highlight">133</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">134</i>&nbsp;                ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<i class="no-highlight">135</i>&nbsp;                │ Some tag │ ERROR.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_E │ line $nu │ 
-<i class="no-highlight">136</i>&nbsp;                ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<i class="no-highlight">137</i>&nbsp;                │ {                                                                                                                                               │ 
-<i class="no-highlight">138</i>&nbsp;                │     &quot;name&quot;: &quot;Mike&quot;,                                                                                                                             │ 
-<i class="no-highlight">139</i>&nbsp;                │     &quot;age&quot;: 22,                                                                                                                                  │ 
-<i class="no-highlight">140</i>&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                │ 
-<i class="no-highlight">141</i>&nbsp;                │         &quot;Football&quot;,                                                                                                                             │ 
-<i class="no-highlight">142</i>&nbsp;                │         &quot;Reading&quot;                                                                                                                               │ 
-<i class="no-highlight">143</i>&nbsp;                │     ]                                                                                                                                           │ 
-<i class="no-highlight">144</i>&nbsp;                │ }                                                                                                                                               │ 
-<i class="no-highlight">145</i>&nbsp;                └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<i class="no-highlight">146</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">147</i>&nbsp;        )
-<i class="no-highlight">148</i>&nbsp;    }
-<i class="no-highlight">149</i>&nbsp;
-<i class="no-highlight">150</i>&nbsp;    @Test
-<i class="no-highlight">151</i>&nbsp;    fun json_log_WTF() {
-<i class="no-highlight">152</i>&nbsp;        logWTF(&quot;Some tag&quot;) { userString }
-<i class="no-highlight">153</i>&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
-<i class="no-highlight">154</i>&nbsp;
-<i class="no-highlight">155</i>&nbsp;        testLogger.assert(
-<i class="no-highlight">156</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">157</i>&nbsp;                ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<i class="no-highlight">158</i>&nbsp;                │ Some tag │ ASSERT.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_WTF │ line $nu │ 
-<i class="no-highlight">159</i>&nbsp;                ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<i class="no-highlight">160</i>&nbsp;                │ {                                                                                                                                                  │ 
-<i class="no-highlight">161</i>&nbsp;                │     &quot;name&quot;: &quot;Mike&quot;,                                                                                                                                │ 
-<i class="no-highlight">162</i>&nbsp;                │     &quot;age&quot;: 22,                                                                                                                                     │ 
-<i class="no-highlight">163</i>&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                   │ 
-<i class="no-highlight">164</i>&nbsp;                │         &quot;Football&quot;,                                                                                                                                │ 
-<i class="no-highlight">165</i>&nbsp;                │         &quot;Reading&quot;                                                                                                                                  │ 
-<i class="no-highlight">166</i>&nbsp;                │     ]                                                                                                                                              │ 
-<i class="no-highlight">167</i>&nbsp;                │ }                                                                                                                                                  │ 
-<i class="no-highlight">168</i>&nbsp;                └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<i class="no-highlight">169</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">170</i>&nbsp;        )
-<i class="no-highlight">171</i>&nbsp;    }
-<i class="no-highlight">172</i>&nbsp;
-<i class="no-highlight">173</i>&nbsp;    @Test
-<i class="no-highlight">174</i>&nbsp;    fun serializable_log_V() {
-<i class="no-highlight">175</i>&nbsp;        logV(&quot;Some tag&quot;) { user }
-<i class="no-highlight">176</i>&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
-<i class="no-highlight">177</i>&nbsp;
-<i class="no-highlight">178</i>&nbsp;        testLogger.assert(
-<i class="no-highlight">179</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">180</i>&nbsp;                ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<i class="no-highlight">181</i>&nbsp;                │ Some tag │ VERBOSE.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun serializable_log_V │ line $nu │ 
-<i class="no-highlight">182</i>&nbsp;                ├───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<i class="no-highlight">183</i>&nbsp;                │ {                                                                                                                                                         │ 
-<i class="no-highlight">184</i>&nbsp;                │     &quot;name&quot;: &quot;John&quot;,                                                                                                                                       │ 
-<i class="no-highlight">185</i>&nbsp;                │     &quot;age&quot;: 19,                                                                                                                                            │ 
-<i class="no-highlight">186</i>&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                          │ 
-<i class="no-highlight">187</i>&nbsp;                │         &quot;Tennis&quot;,                                                                                                                                         │ 
-<i class="no-highlight">188</i>&nbsp;                │         &quot;Coding&quot;                                                                                                                                          │ 
-<i class="no-highlight">189</i>&nbsp;                │     ]                                                                                                                                                     │ 
-<i class="no-highlight">190</i>&nbsp;                │ }                                                                                                                                                         │ 
-<i class="no-highlight">191</i>&nbsp;                └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<i class="no-highlight">192</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">193</i>&nbsp;        )
-<i class="no-highlight">194</i>&nbsp;    }
-<i class="no-highlight">195</i>&nbsp;
-<i class="no-highlight">196</i>&nbsp;    @Test
-<i class="no-highlight">197</i>&nbsp;    fun serializable_log_D() {
-<i class="no-highlight">198</i>&nbsp;        logD(&quot;Some tag&quot;) { user }
-<i class="no-highlight">199</i>&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
-<i class="no-highlight">200</i>&nbsp;
-<i class="no-highlight">201</i>&nbsp;        testLogger.assert(
-<i class="no-highlight">202</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">203</i>&nbsp;                ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<i class="no-highlight">204</i>&nbsp;                │ Some tag │ DEBUG.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun serializable_log_D │ line $nu │ 
-<i class="no-highlight">205</i>&nbsp;                ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<i class="no-highlight">206</i>&nbsp;                │ {                                                                                                                                                       │ 
-<i class="no-highlight">207</i>&nbsp;                │     &quot;name&quot;: &quot;John&quot;,                                                                                                                                     │ 
-<i class="no-highlight">208</i>&nbsp;                │     &quot;age&quot;: 19,                                                                                                                                          │ 
-<i class="no-highlight">209</i>&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                        │ 
-<i class="no-highlight">210</i>&nbsp;                │         &quot;Tennis&quot;,                                                                                                                                       │ 
-<i class="no-highlight">211</i>&nbsp;                │         &quot;Coding&quot;                                                                                                                                        │ 
-<i class="no-highlight">212</i>&nbsp;                │     ]                                                                                                                                                   │ 
-<i class="no-highlight">213</i>&nbsp;                │ }                                                                                                                                                       │ 
-<i class="no-highlight">214</i>&nbsp;                └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<i class="no-highlight">215</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">216</i>&nbsp;        )
-<i class="no-highlight">217</i>&nbsp;    }
-<i class="no-highlight">218</i>&nbsp;
-<i class="no-highlight">219</i>&nbsp;    @Test
-<i class="no-highlight">220</i>&nbsp;    fun serializable_log_I() {
-<i class="no-highlight">221</i>&nbsp;        logI(&quot;Some tag&quot;) { user }
-<i class="no-highlight">222</i>&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
-<i class="no-highlight">223</i>&nbsp;
-<i class="no-highlight">224</i>&nbsp;        testLogger.assert(
-<i class="no-highlight">225</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">226</i>&nbsp;                ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<i class="no-highlight">227</i>&nbsp;                │ Some tag │ INFO.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun serializable_log_I │ line $nu │ 
-<i class="no-highlight">228</i>&nbsp;                ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<i class="no-highlight">229</i>&nbsp;                │ {                                                                                                                                                      │ 
-<i class="no-highlight">230</i>&nbsp;                │     &quot;name&quot;: &quot;John&quot;,                                                                                                                                    │ 
-<i class="no-highlight">231</i>&nbsp;                │     &quot;age&quot;: 19,                                                                                                                                         │ 
-<i class="no-highlight">232</i>&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                       │ 
-<i class="no-highlight">233</i>&nbsp;                │         &quot;Tennis&quot;,                                                                                                                                      │ 
-<i class="no-highlight">234</i>&nbsp;                │         &quot;Coding&quot;                                                                                                                                       │ 
-<i class="no-highlight">235</i>&nbsp;                │     ]                                                                                                                                                  │ 
-<i class="no-highlight">236</i>&nbsp;                │ }                                                                                                                                                      │ 
-<i class="no-highlight">237</i>&nbsp;                └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<i class="no-highlight">238</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">239</i>&nbsp;        )
-<i class="no-highlight">240</i>&nbsp;    }
-<i class="no-highlight">241</i>&nbsp;
-<i class="no-highlight">242</i>&nbsp;    @Test
-<i class="no-highlight">243</i>&nbsp;    fun serializable_log_W() {
-<i class="no-highlight">244</i>&nbsp;        logW(&quot;Some tag&quot;) { user }
-<i class="no-highlight">245</i>&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
-<i class="no-highlight">246</i>&nbsp;
-<i class="no-highlight">247</i>&nbsp;        testLogger.assert(
-<i class="no-highlight">248</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">249</i>&nbsp;                ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<i class="no-highlight">250</i>&nbsp;                │ Some tag │ WARN.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun serializable_log_W │ line $nu │ 
-<i class="no-highlight">251</i>&nbsp;                ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<i class="no-highlight">252</i>&nbsp;                │ {                                                                                                                                                      │ 
-<i class="no-highlight">253</i>&nbsp;                │     &quot;name&quot;: &quot;John&quot;,                                                                                                                                    │ 
-<i class="no-highlight">254</i>&nbsp;                │     &quot;age&quot;: 19,                                                                                                                                         │ 
-<i class="no-highlight">255</i>&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                       │ 
-<i class="no-highlight">256</i>&nbsp;                │         &quot;Tennis&quot;,                                                                                                                                      │ 
-<i class="no-highlight">257</i>&nbsp;                │         &quot;Coding&quot;                                                                                                                                       │ 
-<i class="no-highlight">258</i>&nbsp;                │     ]                                                                                                                                                  │ 
-<i class="no-highlight">259</i>&nbsp;                │ }                                                                                                                                                      │ 
-<i class="no-highlight">260</i>&nbsp;                └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<i class="no-highlight">261</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">262</i>&nbsp;        )
-<i class="no-highlight">263</i>&nbsp;    }
-<i class="no-highlight">264</i>&nbsp;
-<i class="no-highlight">265</i>&nbsp;    @Test
-<i class="no-highlight">266</i>&nbsp;    fun serializable_log_E() {
-<i class="no-highlight">267</i>&nbsp;        logE(&quot;Some tag&quot;) { user }
-<i class="no-highlight">268</i>&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
-<i class="no-highlight">269</i>&nbsp;
-<i class="no-highlight">270</i>&nbsp;        testLogger.assert(
-<i class="no-highlight">271</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">272</i>&nbsp;                ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<i class="no-highlight">273</i>&nbsp;                │ Some tag │ ERROR.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun serializable_log_E │ line $nu │ 
-<i class="no-highlight">274</i>&nbsp;                ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<i class="no-highlight">275</i>&nbsp;                │ {                                                                                                                                                       │ 
-<i class="no-highlight">276</i>&nbsp;                │     &quot;name&quot;: &quot;John&quot;,                                                                                                                                     │ 
-<i class="no-highlight">277</i>&nbsp;                │     &quot;age&quot;: 19,                                                                                                                                          │ 
-<i class="no-highlight">278</i>&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                        │ 
-<i class="no-highlight">279</i>&nbsp;                │         &quot;Tennis&quot;,                                                                                                                                       │ 
-<i class="no-highlight">280</i>&nbsp;                │         &quot;Coding&quot;                                                                                                                                        │ 
-<i class="no-highlight">281</i>&nbsp;                │     ]                                                                                                                                                   │ 
-<i class="no-highlight">282</i>&nbsp;                │ }                                                                                                                                                       │ 
-<i class="no-highlight">283</i>&nbsp;                └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<i class="no-highlight">284</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">285</i>&nbsp;        )
-<i class="no-highlight">286</i>&nbsp;    }
-<i class="no-highlight">287</i>&nbsp;
-<i class="no-highlight">288</i>&nbsp;    @Test
-<i class="no-highlight">289</i>&nbsp;    fun serializable_log_WTF() {
-<i class="no-highlight">290</i>&nbsp;        logWTF(&quot;Some tag&quot;) { user }
-<i class="no-highlight">291</i>&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
-<i class="no-highlight">292</i>&nbsp;
-<i class="no-highlight">293</i>&nbsp;        testLogger.assert(
-<i class="no-highlight">294</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">295</i>&nbsp;                ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
-<i class="no-highlight">296</i>&nbsp;                │ Some tag │ ASSERT.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun serializable_log_WTF │ line $nu │ 
-<i class="no-highlight">297</i>&nbsp;                ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
-<i class="no-highlight">298</i>&nbsp;                │ {                                                                                                                                                          │ 
-<i class="no-highlight">299</i>&nbsp;                │     &quot;name&quot;: &quot;John&quot;,                                                                                                                                        │ 
-<i class="no-highlight">300</i>&nbsp;                │     &quot;age&quot;: 19,                                                                                                                                             │ 
-<i class="no-highlight">301</i>&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                           │ 
-<i class="no-highlight">302</i>&nbsp;                │         &quot;Tennis&quot;,                                                                                                                                          │ 
-<i class="no-highlight">303</i>&nbsp;                │         &quot;Coding&quot;                                                                                                                                           │ 
-<i class="no-highlight">304</i>&nbsp;                │     ]                                                                                                                                                      │ 
-<i class="no-highlight">305</i>&nbsp;                │ }                                                                                                                                                          │ 
-<i class="no-highlight">306</i>&nbsp;                └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
-<i class="no-highlight">307</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">308</i>&nbsp;        )
-<i class="no-highlight">309</i>&nbsp;    }
-<i class="no-highlight">310</i>&nbsp;}
-<i class="no-highlight">311</i>&nbsp;
-<b class="pc"><i class="no-highlight">312</i>&nbsp;@Serializable private data class User(val name: String, val age: Int, val hobbies: List&lt;String&gt;)</b>
-<i class="no-highlight">313</i>&nbsp;
-<i class="no-highlight">314</i>&nbsp;private val user = User(&quot;John&quot;, 19, listOf(&quot;Tennis&quot;, &quot;Coding&quot;))
-<i class="no-highlight">315</i>&nbsp;
-<i class="no-highlight">316</i>&nbsp;private val userString =
-<i class="no-highlight">317</i>&nbsp;    &quot;&quot;&quot;
-<i class="no-highlight">318</i>&nbsp;       | {
-<i class="no-highlight">319</i>&nbsp;       |    &quot;name&quot;: &quot;Mike&quot;,
-<i class="no-highlight">320</i>&nbsp;       |    &quot;age&quot;: 22,
-<i class="no-highlight">321</i>&nbsp;       |    &quot;hobbies&quot;: [&quot;Football&quot;, &quot;Reading&quot;]
-<i class="no-highlight">322</i>&nbsp;       | }
-<i class="no-highlight">323</i>&nbsp;    &quot;&quot;&quot;.trimMargin()
-</div>
+<code class="sourceCode" id="sourceCode">&nbsp;@file:Suppress(&quot;MaxLineLength&quot;)
+&nbsp;
+&nbsp;package com.javiersc.mokoki.serialization
+&nbsp;
+&nbsp;import com.javiersc.kotlin.test.IgnoreMINGW
+&nbsp;import com.javiersc.mokoki.MokokiLogger
+&nbsp;import com.javiersc.mokoki.Priority
+&nbsp;import com.javiersc.mokoki.logD
+&nbsp;import com.javiersc.mokoki.logE
+&nbsp;import com.javiersc.mokoki.logI
+&nbsp;import com.javiersc.mokoki.logV
+&nbsp;import com.javiersc.mokoki.logW
+&nbsp;import com.javiersc.mokoki.logWTF
+&nbsp;import com.javiersc.mokoki.test.internal.lineNumberForTest
+&nbsp;import kotlin.test.AfterTest
+&nbsp;import kotlin.test.BeforeTest
+&nbsp;import kotlin.test.Test
+&nbsp;import kotlinx.serialization.Serializable
+&nbsp;
+&nbsp;@IgnoreMINGW
+&nbsp;internal class MokokiSerializationTest {
+&nbsp;
+&nbsp;    private val testLogger = TestMokokiSerializationLogger(minPriority = Priority.VERBOSE)
+&nbsp;
+&nbsp;    @BeforeTest
+&nbsp;    fun install_logger() {
+&nbsp;        MokokiLogger.install(testLogger)
+&nbsp;    }
+&nbsp;
+&nbsp;    @AfterTest
+&nbsp;    fun uninstallAllLoggers() {
+&nbsp;        MokokiLogger.uninstallAllLoggers()
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun json_log_V() {
+&nbsp;        logV(&quot;Some tag&quot;) { userString }
+&nbsp;        val n = testLogger.lastMessage.lineNumberForTest
+&nbsp;
+&nbsp;        testLogger.assert(
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+&nbsp;                │ Some tag │ VERBOSE.(MokokiSerializationTest.kt:$n) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_V │ line $n │ 
+&nbsp;                ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
+&nbsp;                │ {                                                                                                                                               │ 
+&nbsp;                │     &quot;name&quot;: &quot;Mike&quot;,                                                                                                                             │ 
+&nbsp;                │     &quot;age&quot;: 22,                                                                                                                                  │ 
+&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                │ 
+&nbsp;                │         &quot;Football&quot;,                                                                                                                             │ 
+&nbsp;                │         &quot;Reading&quot;                                                                                                                               │ 
+&nbsp;                │     ]                                                                                                                                           │ 
+&nbsp;                │ }                                                                                                                                               │ 
+&nbsp;                └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun json_log_D() {
+&nbsp;        logD(&quot;Some tag&quot;) { userString }
+&nbsp;        val n = testLogger.lastMessage.lineNumberForTest
+&nbsp;
+&nbsp;        testLogger.assert(
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+&nbsp;                │ Some tag │ DEBUG.(MokokiSerializationTest.kt:$n) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_D │ line $n │ 
+&nbsp;                ├───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
+&nbsp;                │ {                                                                                                                                             │ 
+&nbsp;                │     &quot;name&quot;: &quot;Mike&quot;,                                                                                                                           │ 
+&nbsp;                │     &quot;age&quot;: 22,                                                                                                                                │ 
+&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                              │ 
+&nbsp;                │         &quot;Football&quot;,                                                                                                                           │ 
+&nbsp;                │         &quot;Reading&quot;                                                                                                                             │ 
+&nbsp;                │     ]                                                                                                                                         │ 
+&nbsp;                │ }                                                                                                                                             │ 
+&nbsp;                └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun json_log_I() {
+&nbsp;        logI(&quot;Some tag&quot;) { userString }
+&nbsp;        val n = testLogger.lastMessage.lineNumberForTest
+&nbsp;
+&nbsp;        testLogger.assert(
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+&nbsp;                │ Some tag │ INFO.(MokokiSerializationTest.kt:$n) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_I │ line $n │ 
+&nbsp;                ├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
+&nbsp;                │ {                                                                                                                                            │ 
+&nbsp;                │     &quot;name&quot;: &quot;Mike&quot;,                                                                                                                          │ 
+&nbsp;                │     &quot;age&quot;: 22,                                                                                                                               │ 
+&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                             │ 
+&nbsp;                │         &quot;Football&quot;,                                                                                                                          │ 
+&nbsp;                │         &quot;Reading&quot;                                                                                                                            │ 
+&nbsp;                │     ]                                                                                                                                        │ 
+&nbsp;                │ }                                                                                                                                            │ 
+&nbsp;                └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun json_log_W() {
+&nbsp;        logW(&quot;Some tag&quot;) { userString }
+&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
+&nbsp;
+&nbsp;        testLogger.assert(
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+&nbsp;                │ Some tag │ WARN.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_W │ line $nu │ 
+&nbsp;                ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
+&nbsp;                │ {                                                                                                                                              │ 
+&nbsp;                │     &quot;name&quot;: &quot;Mike&quot;,                                                                                                                            │ 
+&nbsp;                │     &quot;age&quot;: 22,                                                                                                                                 │ 
+&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                               │ 
+&nbsp;                │         &quot;Football&quot;,                                                                                                                            │ 
+&nbsp;                │         &quot;Reading&quot;                                                                                                                              │ 
+&nbsp;                │     ]                                                                                                                                          │ 
+&nbsp;                │ }                                                                                                                                              │ 
+&nbsp;                └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun json_log_E() {
+&nbsp;        logE(&quot;Some tag&quot;) { userString }
+&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
+&nbsp;
+&nbsp;        testLogger.assert(
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+&nbsp;                │ Some tag │ ERROR.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_E │ line $nu │ 
+&nbsp;                ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
+&nbsp;                │ {                                                                                                                                               │ 
+&nbsp;                │     &quot;name&quot;: &quot;Mike&quot;,                                                                                                                             │ 
+&nbsp;                │     &quot;age&quot;: 22,                                                                                                                                  │ 
+&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                │ 
+&nbsp;                │         &quot;Football&quot;,                                                                                                                             │ 
+&nbsp;                │         &quot;Reading&quot;                                                                                                                               │ 
+&nbsp;                │     ]                                                                                                                                           │ 
+&nbsp;                │ }                                                                                                                                               │ 
+&nbsp;                └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun json_log_WTF() {
+&nbsp;        logWTF(&quot;Some tag&quot;) { userString }
+&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
+&nbsp;
+&nbsp;        testLogger.assert(
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+&nbsp;                │ Some tag │ ASSERT.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun json_log_WTF │ line $nu │ 
+&nbsp;                ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
+&nbsp;                │ {                                                                                                                                                  │ 
+&nbsp;                │     &quot;name&quot;: &quot;Mike&quot;,                                                                                                                                │ 
+&nbsp;                │     &quot;age&quot;: 22,                                                                                                                                     │ 
+&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                   │ 
+&nbsp;                │         &quot;Football&quot;,                                                                                                                                │ 
+&nbsp;                │         &quot;Reading&quot;                                                                                                                                  │ 
+&nbsp;                │     ]                                                                                                                                              │ 
+&nbsp;                │ }                                                                                                                                                  │ 
+&nbsp;                └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun serializable_log_V() {
+&nbsp;        logV(&quot;Some tag&quot;) { user }
+&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
+&nbsp;
+&nbsp;        testLogger.assert(
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+&nbsp;                │ Some tag │ VERBOSE.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun serializable_log_V │ line $nu │ 
+&nbsp;                ├───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
+&nbsp;                │ {                                                                                                                                                         │ 
+&nbsp;                │     &quot;name&quot;: &quot;John&quot;,                                                                                                                                       │ 
+&nbsp;                │     &quot;age&quot;: 19,                                                                                                                                            │ 
+&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                          │ 
+&nbsp;                │         &quot;Tennis&quot;,                                                                                                                                         │ 
+&nbsp;                │         &quot;Coding&quot;                                                                                                                                          │ 
+&nbsp;                │     ]                                                                                                                                                     │ 
+&nbsp;                │ }                                                                                                                                                         │ 
+&nbsp;                └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun serializable_log_D() {
+&nbsp;        logD(&quot;Some tag&quot;) { user }
+&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
+&nbsp;
+&nbsp;        testLogger.assert(
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+&nbsp;                │ Some tag │ DEBUG.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun serializable_log_D │ line $nu │ 
+&nbsp;                ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
+&nbsp;                │ {                                                                                                                                                       │ 
+&nbsp;                │     &quot;name&quot;: &quot;John&quot;,                                                                                                                                     │ 
+&nbsp;                │     &quot;age&quot;: 19,                                                                                                                                          │ 
+&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                        │ 
+&nbsp;                │         &quot;Tennis&quot;,                                                                                                                                       │ 
+&nbsp;                │         &quot;Coding&quot;                                                                                                                                        │ 
+&nbsp;                │     ]                                                                                                                                                   │ 
+&nbsp;                │ }                                                                                                                                                       │ 
+&nbsp;                └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun serializable_log_I() {
+&nbsp;        logI(&quot;Some tag&quot;) { user }
+&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
+&nbsp;
+&nbsp;        testLogger.assert(
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+&nbsp;                │ Some tag │ INFO.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun serializable_log_I │ line $nu │ 
+&nbsp;                ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
+&nbsp;                │ {                                                                                                                                                      │ 
+&nbsp;                │     &quot;name&quot;: &quot;John&quot;,                                                                                                                                    │ 
+&nbsp;                │     &quot;age&quot;: 19,                                                                                                                                         │ 
+&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                       │ 
+&nbsp;                │         &quot;Tennis&quot;,                                                                                                                                      │ 
+&nbsp;                │         &quot;Coding&quot;                                                                                                                                       │ 
+&nbsp;                │     ]                                                                                                                                                  │ 
+&nbsp;                │ }                                                                                                                                                      │ 
+&nbsp;                └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun serializable_log_W() {
+&nbsp;        logW(&quot;Some tag&quot;) { user }
+&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
+&nbsp;
+&nbsp;        testLogger.assert(
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+&nbsp;                │ Some tag │ WARN.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun serializable_log_W │ line $nu │ 
+&nbsp;                ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
+&nbsp;                │ {                                                                                                                                                      │ 
+&nbsp;                │     &quot;name&quot;: &quot;John&quot;,                                                                                                                                    │ 
+&nbsp;                │     &quot;age&quot;: 19,                                                                                                                                         │ 
+&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                       │ 
+&nbsp;                │         &quot;Tennis&quot;,                                                                                                                                      │ 
+&nbsp;                │         &quot;Coding&quot;                                                                                                                                       │ 
+&nbsp;                │     ]                                                                                                                                                  │ 
+&nbsp;                │ }                                                                                                                                                      │ 
+&nbsp;                └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun serializable_log_E() {
+&nbsp;        logE(&quot;Some tag&quot;) { user }
+&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
+&nbsp;
+&nbsp;        testLogger.assert(
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+&nbsp;                │ Some tag │ ERROR.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun serializable_log_E │ line $nu │ 
+&nbsp;                ├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
+&nbsp;                │ {                                                                                                                                                       │ 
+&nbsp;                │     &quot;name&quot;: &quot;John&quot;,                                                                                                                                     │ 
+&nbsp;                │     &quot;age&quot;: 19,                                                                                                                                          │ 
+&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                        │ 
+&nbsp;                │         &quot;Tennis&quot;,                                                                                                                                       │ 
+&nbsp;                │         &quot;Coding&quot;                                                                                                                                        │ 
+&nbsp;                │     ]                                                                                                                                                   │ 
+&nbsp;                │ }                                                                                                                                                       │ 
+&nbsp;                └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun serializable_log_WTF() {
+&nbsp;        logWTF(&quot;Some tag&quot;) { user }
+&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest
+&nbsp;
+&nbsp;        testLogger.assert(
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ 
+&nbsp;                │ Some tag │ ASSERT.(MokokiSerializationTest.kt:$nu) │ file MokokiSerializationTest.kt │ class MokokiSerializationTest │ fun serializable_log_WTF │ line $nu │ 
+&nbsp;                ├────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ 
+&nbsp;                │ {                                                                                                                                                          │ 
+&nbsp;                │     &quot;name&quot;: &quot;John&quot;,                                                                                                                                        │ 
+&nbsp;                │     &quot;age&quot;: 19,                                                                                                                                             │ 
+&nbsp;                │     &quot;hobbies&quot;: [                                                                                                                                           │ 
+&nbsp;                │         &quot;Tennis&quot;,                                                                                                                                          │ 
+&nbsp;                │         &quot;Coding&quot;                                                                                                                                           │ 
+&nbsp;                │     ]                                                                                                                                                      │ 
+&nbsp;                │ }                                                                                                                                                          │ 
+&nbsp;                └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ 
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        )
+&nbsp;    }
+&nbsp;}
+&nbsp;
+<b class="pc">&nbsp;@Serializable private data class User(val name: String, val age: Int, val hobbies: List&lt;String&gt;)</b>
+&nbsp;
+&nbsp;private val user = User(&quot;John&quot;, 19, listOf(&quot;Tennis&quot;, &quot;Coding&quot;))
+&nbsp;
+&nbsp;private val userString =
+&nbsp;    &quot;&quot;&quot;
+&nbsp;       | {
+&nbsp;       |    &quot;name&quot;: &quot;Mike&quot;,
+&nbsp;       |    &quot;age&quot;: 22,
+&nbsp;       |    &quot;hobbies&quot;: [&quot;Football&quot;, &quot;Reading&quot;]
+&nbsp;       | }
+&nbsp;    &quot;&quot;&quot;
+&nbsp;        .trimMargin()
+</code>
 </pre>
 </div>
 
@@ -521,18 +500,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     @*/
 
     if (!msie || msie && msie9) {
-        var codeBlock = document.getElementById('sourceCode');
-
-        if (codeBlock) {
-            hljs.highlightBlock(codeBlock);
-        }
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
     }
 })();
 </script>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-06 00:06</div>
+    <div style="float:right;">generated on 2022-09-26 19:40</div>
 </div>
 </body>
 </html>

@@ -7,9 +7,10 @@
   <title>Coverage Report > MainActivity</title>
   <style type="text/css">
     @import "../../css/coverage.css";
-    @import "../../css/highlight-idea.css";
+    @import "../../css/idea.min.css";
   </style>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
 </head>
 
 <body>
@@ -90,81 +91,82 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;MagicNumber&quot;)
-<i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;package com.javiersc.mokoki.core
-<i class="no-highlight">4</i>&nbsp;
-<i class="no-highlight">5</i>&nbsp;import android.os.Bundle
-<i class="no-highlight">6</i>&nbsp;import androidx.appcompat.app.AppCompatActivity
-<i class="no-highlight">7</i>&nbsp;import com.javiersc.mokoki.AndroidMokokiLogger
-<i class="no-highlight">8</i>&nbsp;import com.javiersc.mokoki.LoggerSeparator
-<i class="no-highlight">9</i>&nbsp;import com.javiersc.mokoki.MokokiLogger
-<i class="no-highlight">10</i>&nbsp;import com.javiersc.mokoki.Priority
-<i class="no-highlight">11</i>&nbsp;import com.javiersc.mokoki.logD
-<i class="no-highlight">12</i>&nbsp;import com.javiersc.mokoki.logE
-<i class="no-highlight">13</i>&nbsp;import com.javiersc.mokoki.logI
-<i class="no-highlight">14</i>&nbsp;import com.javiersc.mokoki.logV
-<i class="no-highlight">15</i>&nbsp;import com.javiersc.mokoki.logW
-<i class="no-highlight">16</i>&nbsp;import com.javiersc.mokoki.logWTF
-<i class="no-highlight">17</i>&nbsp;
-<b class="nc"><i class="no-highlight">18</i>&nbsp;class MainActivity : AppCompatActivity(R.layout.main_activity) {</b>
-<i class="no-highlight">19</i>&nbsp;
-<i class="no-highlight">20</i>&nbsp;    override fun onCreate(savedInstanceState: Bundle?) {
-<b class="nc"><i class="no-highlight">21</i>&nbsp;        super.onCreate(savedInstanceState)</b>
-<i class="no-highlight">22</i>&nbsp;
-<b class="nc"><i class="no-highlight">23</i>&nbsp;        App(false)</b>
-<b class="nc"><i class="no-highlight">24</i>&nbsp;        println(&quot;    &quot;)</b>
-<b class="nc"><i class="no-highlight">25</i>&nbsp;        println(&quot;------------------------------------------------------------&quot;)</b>
-<b class="nc"><i class="no-highlight">26</i>&nbsp;        println(&quot;------------------------------------------------------------&quot;)</b>
-<b class="nc"><i class="no-highlight">27</i>&nbsp;        println(&quot;    &quot;)</b>
-<b class="nc"><i class="no-highlight">28</i>&nbsp;        App(true)</b>
-<i class="no-highlight">29</i>&nbsp;    }
-<i class="no-highlight">30</i>&nbsp;}
-<i class="no-highlight">31</i>&nbsp;
-<i class="no-highlight">32</i>&nbsp;class App(useCompatibleMode: Boolean) {
-<i class="no-highlight">33</i>&nbsp;
-<i class="no-highlight">34</i>&nbsp;    init {
-<i class="no-highlight">35</i>&nbsp;        showColors(useCompatibleMode)
-<i class="no-highlight">36</i>&nbsp;    }
-<i class="no-highlight">37</i>&nbsp;
-<i class="no-highlight">38</i>&nbsp;    private fun showColors(useCompatibleMode: Boolean) {
-<i class="no-highlight">39</i>&nbsp;        MokokiLogger.uninstallAllLoggers()
-<i class="no-highlight">40</i>&nbsp;        val androidMokokiLogger =
-<i class="no-highlight">41</i>&nbsp;            AndroidMokokiLogger(minPriority = Priority.VERBOSE).apply {
-<i class="no-highlight">42</i>&nbsp;                this.useCompatibleMode = useCompatibleMode
-<i class="no-highlight">43</i>&nbsp;            }
-<i class="no-highlight">44</i>&nbsp;        MokokiLogger.install(androidMokokiLogger)
-<i class="no-highlight">45</i>&nbsp;
-<i class="no-highlight">46</i>&nbsp;        logV(&quot;SomeTag&quot;) { &quot;Unlucky bug&quot; }
-<i class="no-highlight">47</i>&nbsp;        logD(&quot;SomeTag&quot;) { &quot;Unlucky bug&quot; }
-<i class="no-highlight">48</i>&nbsp;        logI(&quot;SomeTag&quot;) { &quot;Unlucky bug&quot; }
-<i class="no-highlight">49</i>&nbsp;        logW(&quot;SomeTag&quot;) { &quot;Unlucky bug&quot; }
-<i class="no-highlight">50</i>&nbsp;        logE(&quot;SomeTag&quot;) { &quot;Unlucky bug&quot; }
-<i class="no-highlight">51</i>&nbsp;        logWTF(&quot;SomeTag&quot;) { &quot;Unlucky bug&quot; }
-<i class="no-highlight">52</i>&nbsp;
-<i class="no-highlight">53</i>&nbsp;        println(&quot;&quot;)
-<i class="no-highlight">54</i>&nbsp;        println(&quot; ------------------------------------------------------------&quot;)
-<i class="no-highlight">55</i>&nbsp;        println(&quot;&quot;)
-<i class="no-highlight">56</i>&nbsp;
-<i class="no-highlight">57</i>&nbsp;        logV { &quot;Example without TAG&quot; }
-<i class="no-highlight">58</i>&nbsp;        logD { &quot;Example without TAG&quot; }
-<i class="no-highlight">59</i>&nbsp;        logI { &quot;Example without TAG&quot; }
-<i class="no-highlight">60</i>&nbsp;        logW { &quot;Example without TAG&quot; }
-<i class="no-highlight">61</i>&nbsp;        logE { &quot;Example without TAG&quot; }
-<i class="no-highlight">62</i>&nbsp;        logWTF { &quot;Example without TAG&quot; }
-<i class="no-highlight">63</i>&nbsp;
-<i class="no-highlight">64</i>&nbsp;        val textWithSeparator =
-<i class="no-highlight">65</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">66</i>&nbsp;                Text before first separator
-<i class="no-highlight">67</i>&nbsp;                ${LoggerSeparator(useCompatibleMode)}
-<i class="no-highlight">68</i>&nbsp;                Text after first separator and before last separator
-<i class="no-highlight">69</i>&nbsp;                ${LoggerSeparator(useCompatibleMode)}
-<i class="no-highlight">70</i>&nbsp;                Text after last separator
-<i class="no-highlight">71</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">72</i>&nbsp;        logV { textWithSeparator }
-<i class="no-highlight">73</i>&nbsp;    }
-<i class="no-highlight">74</i>&nbsp;}
-</div>
+<code class="sourceCode" id="sourceCode">&nbsp;@file:Suppress(&quot;MagicNumber&quot;)
+&nbsp;
+&nbsp;package com.javiersc.mokoki.core
+&nbsp;
+&nbsp;import android.os.Bundle
+&nbsp;import androidx.appcompat.app.AppCompatActivity
+&nbsp;import com.javiersc.mokoki.AndroidMokokiLogger
+&nbsp;import com.javiersc.mokoki.LoggerSeparator
+&nbsp;import com.javiersc.mokoki.MokokiLogger
+&nbsp;import com.javiersc.mokoki.Priority
+&nbsp;import com.javiersc.mokoki.logD
+&nbsp;import com.javiersc.mokoki.logE
+&nbsp;import com.javiersc.mokoki.logI
+&nbsp;import com.javiersc.mokoki.logV
+&nbsp;import com.javiersc.mokoki.logW
+&nbsp;import com.javiersc.mokoki.logWTF
+&nbsp;
+<b class="nc">&nbsp;class MainActivity : AppCompatActivity(R.layout.main_activity) {</b>
+&nbsp;
+&nbsp;    override fun onCreate(savedInstanceState: Bundle?) {
+<b class="nc">&nbsp;        super.onCreate(savedInstanceState)</b>
+&nbsp;
+<b class="nc">&nbsp;        App(false)</b>
+<b class="nc">&nbsp;        println(&quot;    &quot;)</b>
+<b class="nc">&nbsp;        println(&quot;------------------------------------------------------------&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;------------------------------------------------------------&quot;)</b>
+<b class="nc">&nbsp;        println(&quot;    &quot;)</b>
+<b class="nc">&nbsp;        App(true)</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;class App(useCompatibleMode: Boolean) {
+&nbsp;
+&nbsp;    init {
+&nbsp;        showColors(useCompatibleMode)
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun showColors(useCompatibleMode: Boolean) {
+&nbsp;        MokokiLogger.uninstallAllLoggers()
+&nbsp;        val androidMokokiLogger =
+&nbsp;            AndroidMokokiLogger(minPriority = Priority.VERBOSE).apply {
+&nbsp;                this.useCompatibleMode = useCompatibleMode
+&nbsp;            }
+&nbsp;        MokokiLogger.install(androidMokokiLogger)
+&nbsp;
+&nbsp;        logV(&quot;SomeTag&quot;) { &quot;Unlucky bug&quot; }
+&nbsp;        logD(&quot;SomeTag&quot;) { &quot;Unlucky bug&quot; }
+&nbsp;        logI(&quot;SomeTag&quot;) { &quot;Unlucky bug&quot; }
+&nbsp;        logW(&quot;SomeTag&quot;) { &quot;Unlucky bug&quot; }
+&nbsp;        logE(&quot;SomeTag&quot;) { &quot;Unlucky bug&quot; }
+&nbsp;        logWTF(&quot;SomeTag&quot;) { &quot;Unlucky bug&quot; }
+&nbsp;
+&nbsp;        println(&quot;&quot;)
+&nbsp;        println(&quot; ------------------------------------------------------------&quot;)
+&nbsp;        println(&quot;&quot;)
+&nbsp;
+&nbsp;        logV { &quot;Example without TAG&quot; }
+&nbsp;        logD { &quot;Example without TAG&quot; }
+&nbsp;        logI { &quot;Example without TAG&quot; }
+&nbsp;        logW { &quot;Example without TAG&quot; }
+&nbsp;        logE { &quot;Example without TAG&quot; }
+&nbsp;        logWTF { &quot;Example without TAG&quot; }
+&nbsp;
+&nbsp;        val textWithSeparator =
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                Text before first separator
+&nbsp;                ${LoggerSeparator(useCompatibleMode)}
+&nbsp;                Text after first separator and before last separator
+&nbsp;                ${LoggerSeparator(useCompatibleMode)}
+&nbsp;                Text after last separator
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        logV { textWithSeparator }
+&nbsp;    }
+&nbsp;}
+</code>
 </pre>
 </div>
 
@@ -179,18 +181,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     @*/
 
     if (!msie || msie && msie9) {
-        var codeBlock = document.getElementById('sourceCode');
-
-        if (codeBlock) {
-            hljs.highlightBlock(codeBlock);
-        }
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
     }
 })();
 </script>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-06 00:06</div>
+    <div style="float:right;">generated on 2022-09-26 19:40</div>
 </div>
 </body>
 </html>

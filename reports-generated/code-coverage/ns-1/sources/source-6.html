@@ -7,9 +7,10 @@
   <title>Coverage Report > MokokiTest</title>
   <style type="text/css">
     @import "../../css/coverage.css";
-    @import "../../css/highlight-idea.css";
+    @import "../../css/idea.min.css";
   </style>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
 </head>
 
 <body>
@@ -90,145 +91,152 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;MaxLineLength&quot;)
-<i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;package com.javiersc.mokoki
-<i class="no-highlight">4</i>&nbsp;
-<i class="no-highlight">5</i>&nbsp;import com.javiersc.kotlin.test.IgnoreDARWIN
-<i class="no-highlight">6</i>&nbsp;import com.javiersc.kotlin.test.IgnoreMINGW
-<i class="no-highlight">7</i>&nbsp;import com.javiersc.mokoki.test.internal.lineNumberForTest
-<i class="no-highlight">8</i>&nbsp;import kotlin.test.AfterTest
-<i class="no-highlight">9</i>&nbsp;import kotlin.test.BeforeTest
-<i class="no-highlight">10</i>&nbsp;import kotlin.test.Test
-<i class="no-highlight">11</i>&nbsp;
-<b class="fc"><i class="no-highlight">12</i>&nbsp;@IgnoreMINGW</b>
-<i class="no-highlight">13</i>&nbsp;internal class MokokiTest {
-<i class="no-highlight">14</i>&nbsp;
-<b class="fc"><i class="no-highlight">15</i>&nbsp;    private val testLogger = TestMokokiLogger(minPriority = Priority.VERBOSE)</b>
-<i class="no-highlight">16</i>&nbsp;
-<i class="no-highlight">17</i>&nbsp;    @BeforeTest
-<i class="no-highlight">18</i>&nbsp;    fun install_logger() {
-<b class="fc"><i class="no-highlight">19</i>&nbsp;        MokokiLogger.install(testLogger)</b>
-<i class="no-highlight">20</i>&nbsp;    }
-<i class="no-highlight">21</i>&nbsp;
-<i class="no-highlight">22</i>&nbsp;    @AfterTest
-<i class="no-highlight">23</i>&nbsp;    fun uninstallAllLoggers() {
-<b class="fc"><i class="no-highlight">24</i>&nbsp;        MokokiLogger.uninstallAllLoggers()</b>
-<i class="no-highlight">25</i>&nbsp;    }
-<i class="no-highlight">26</i>&nbsp;
-<i class="no-highlight">27</i>&nbsp;    @Test
-<i class="no-highlight">28</i>&nbsp;    fun log_V() {
-<b class="fc"><i class="no-highlight">29</i>&nbsp;        logV(&quot;Some tag&quot;) { &quot;Some message&quot; }</b>
-<b class="fc"><i class="no-highlight">30</i>&nbsp;        val n = testLogger.lastMessage.lineNumberForTest</b>
-<i class="no-highlight">31</i>&nbsp;
-<b class="fc"><i class="no-highlight">32</i>&nbsp;        testLogger.assert(</b>
-<b class="fc"><i class="no-highlight">33</i>&nbsp;            &quot;&quot;&quot;</b>
-<i class="no-highlight">34</i>&nbsp;               ┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-<b class="fc"><i class="no-highlight">35</i>&nbsp;               │ Some tag │ VERBOSE.(MokokiTest.kt:$n) │ file MokokiTest.kt │ class MokokiTest │ fun log_V │ line $n │</b>
-<i class="no-highlight">36</i>&nbsp;               ├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
-<i class="no-highlight">37</i>&nbsp;               │ Some message                                                                                        │ 
-<i class="no-highlight">38</i>&nbsp;               └─────────────────────────────────────────────────────────────────────────────────────────────────────┘
-<b class="fc"><i class="no-highlight">39</i>&nbsp;            &quot;&quot;&quot;.trimIndent(),</b>
-<i class="no-highlight">40</i>&nbsp;        )
-<i class="no-highlight">41</i>&nbsp;    }
-<i class="no-highlight">42</i>&nbsp;
-<i class="no-highlight">43</i>&nbsp;    @Test
-<i class="no-highlight">44</i>&nbsp;    fun log_D() {
-<b class="fc"><i class="no-highlight">45</i>&nbsp;        logD(&quot;Some tag&quot;) { &quot;Some message&quot; }</b>
-<b class="fc"><i class="no-highlight">46</i>&nbsp;        val n = testLogger.lastMessage.lineNumberForTest</b>
-<i class="no-highlight">47</i>&nbsp;
-<b class="fc"><i class="no-highlight">48</i>&nbsp;        testLogger.assert(</b>
-<b class="fc"><i class="no-highlight">49</i>&nbsp;            &quot;&quot;&quot;</b>
-<i class="no-highlight">50</i>&nbsp;               ┌───────────────────────────────────────────────────────────────────────────────────────────────────┐
-<b class="fc"><i class="no-highlight">51</i>&nbsp;               │ Some tag │ DEBUG.(MokokiTest.kt:$n) │ file MokokiTest.kt │ class MokokiTest │ fun log_D │ line $n │</b>
-<i class="no-highlight">52</i>&nbsp;               ├───────────────────────────────────────────────────────────────────────────────────────────────────┤
-<i class="no-highlight">53</i>&nbsp;               │ Some message                                                                                      │ 
-<i class="no-highlight">54</i>&nbsp;               └───────────────────────────────────────────────────────────────────────────────────────────────────┘
-<b class="fc"><i class="no-highlight">55</i>&nbsp;            &quot;&quot;&quot;.trimIndent(),</b>
-<i class="no-highlight">56</i>&nbsp;        )
-<i class="no-highlight">57</i>&nbsp;    }
-<i class="no-highlight">58</i>&nbsp;
-<i class="no-highlight">59</i>&nbsp;    @Test
-<i class="no-highlight">60</i>&nbsp;    fun log_I() {
-<b class="fc"><i class="no-highlight">61</i>&nbsp;        logI(&quot;Some tag&quot;) { &quot;Some message&quot; }</b>
-<b class="fc"><i class="no-highlight">62</i>&nbsp;        val n = testLogger.lastMessage.lineNumberForTest</b>
-<i class="no-highlight">63</i>&nbsp;
-<b class="fc"><i class="no-highlight">64</i>&nbsp;        testLogger.assert(</b>
-<b class="fc"><i class="no-highlight">65</i>&nbsp;            &quot;&quot;&quot;</b>
-<i class="no-highlight">66</i>&nbsp;               ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
-<b class="fc"><i class="no-highlight">67</i>&nbsp;               │ Some tag │ INFO.(MokokiTest.kt:$n) │ file MokokiTest.kt │ class MokokiTest │ fun log_I │ line $n │</b>
-<i class="no-highlight">68</i>&nbsp;               ├──────────────────────────────────────────────────────────────────────────────────────────────────┤
-<i class="no-highlight">69</i>&nbsp;               │ Some message                                                                                     │ 
-<i class="no-highlight">70</i>&nbsp;               └──────────────────────────────────────────────────────────────────────────────────────────────────┘
-<b class="fc"><i class="no-highlight">71</i>&nbsp;            &quot;&quot;&quot;.trimIndent(),</b>
-<i class="no-highlight">72</i>&nbsp;        )
-<i class="no-highlight">73</i>&nbsp;    }
-<i class="no-highlight">74</i>&nbsp;
-<i class="no-highlight">75</i>&nbsp;    @Test
-<i class="no-highlight">76</i>&nbsp;    fun log_W() {
-<b class="fc"><i class="no-highlight">77</i>&nbsp;        logW(&quot;Some tag&quot;) { &quot;Some message&quot; }</b>
-<b class="fc"><i class="no-highlight">78</i>&nbsp;        val n = testLogger.lastMessage.lineNumberForTest</b>
-<i class="no-highlight">79</i>&nbsp;
-<b class="fc"><i class="no-highlight">80</i>&nbsp;        testLogger.assert(</b>
-<b class="fc"><i class="no-highlight">81</i>&nbsp;            &quot;&quot;&quot;</b>
-<i class="no-highlight">82</i>&nbsp;               ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
-<b class="fc"><i class="no-highlight">83</i>&nbsp;               │ Some tag │ WARN.(MokokiTest.kt:$n) │ file MokokiTest.kt │ class MokokiTest │ fun log_W │ line $n │</b>
-<i class="no-highlight">84</i>&nbsp;               ├──────────────────────────────────────────────────────────────────────────────────────────────────┤
-<i class="no-highlight">85</i>&nbsp;               │ Some message                                                                                     │ 
-<i class="no-highlight">86</i>&nbsp;               └──────────────────────────────────────────────────────────────────────────────────────────────────┘
-<b class="fc"><i class="no-highlight">87</i>&nbsp;            &quot;&quot;&quot;.trimIndent(),</b>
-<i class="no-highlight">88</i>&nbsp;        )
-<i class="no-highlight">89</i>&nbsp;    }
-<i class="no-highlight">90</i>&nbsp;
-<i class="no-highlight">91</i>&nbsp;    @Test
-<i class="no-highlight">92</i>&nbsp;    fun log_E() {
-<b class="fc"><i class="no-highlight">93</i>&nbsp;        logE(&quot;Some tag&quot;) { &quot;Some message&quot; }</b>
-<b class="fc"><i class="no-highlight">94</i>&nbsp;        val n = testLogger.lastMessage.lineNumberForTest</b>
-<i class="no-highlight">95</i>&nbsp;
-<b class="fc"><i class="no-highlight">96</i>&nbsp;        testLogger.assert(</b>
-<b class="fc"><i class="no-highlight">97</i>&nbsp;            &quot;&quot;&quot;</b>
-<i class="no-highlight">98</i>&nbsp;               ┌───────────────────────────────────────────────────────────────────────────────────────────────────┐
-<b class="fc"><i class="no-highlight">99</i>&nbsp;               │ Some tag │ ERROR.(MokokiTest.kt:$n) │ file MokokiTest.kt │ class MokokiTest │ fun log_E │ line $n │</b>
-<i class="no-highlight">100</i>&nbsp;               ├───────────────────────────────────────────────────────────────────────────────────────────────────┤
-<i class="no-highlight">101</i>&nbsp;               │ Some message                                                                                      │ 
-<i class="no-highlight">102</i>&nbsp;               └───────────────────────────────────────────────────────────────────────────────────────────────────┘
-<b class="fc"><i class="no-highlight">103</i>&nbsp;            &quot;&quot;&quot;.trimIndent(),</b>
-<i class="no-highlight">104</i>&nbsp;        )
-<i class="no-highlight">105</i>&nbsp;    }
-<i class="no-highlight">106</i>&nbsp;
-<i class="no-highlight">107</i>&nbsp;    @Test
-<i class="no-highlight">108</i>&nbsp;    fun log_WTF() {
-<b class="fc"><i class="no-highlight">109</i>&nbsp;        logWTF(&quot;Some tag&quot;) { &quot;Some message&quot; }</b>
-<b class="fc"><i class="no-highlight">110</i>&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest</b>
-<i class="no-highlight">111</i>&nbsp;
-<b class="fc"><i class="no-highlight">112</i>&nbsp;        testLogger.assert(</b>
-<b class="fc"><i class="no-highlight">113</i>&nbsp;            &quot;&quot;&quot;</b>
-<i class="no-highlight">114</i>&nbsp;               ┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-<b class="fc"><i class="no-highlight">115</i>&nbsp;               │ Some tag │ ASSERT.(MokokiTest.kt:$nu) │ file MokokiTest.kt │ class MokokiTest │ fun log_WTF │ line $nu │</b>
-<i class="no-highlight">116</i>&nbsp;               ├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-<i class="no-highlight">117</i>&nbsp;               │ Some message                                                                                           │ 
-<i class="no-highlight">118</i>&nbsp;               └────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-<b class="fc"><i class="no-highlight">119</i>&nbsp;            &quot;&quot;&quot;.trimIndent(),</b>
-<i class="no-highlight">120</i>&nbsp;        )
-<i class="no-highlight">121</i>&nbsp;    }
-<i class="no-highlight">122</i>&nbsp;
-<i class="no-highlight">123</i>&nbsp;    @IgnoreDARWIN
-<i class="no-highlight">124</i>&nbsp;    @Test
-<i class="no-highlight">125</i>&nbsp;    fun log_some_throwable() {
-<b class="fc"><i class="no-highlight">126</i>&nbsp;        logE(&quot;Some tag&quot;) { IllegalStateException(&quot;Some message&quot;) }</b>
-<b class="fc"><i class="no-highlight">127</i>&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest</b>
-<i class="no-highlight">128</i>&nbsp;
-<b class="fc"><i class="no-highlight">129</i>&nbsp;        testLogger.assertContains(</b>
-<b class="fc"><i class="no-highlight">130</i>&nbsp;            &quot;&quot;&quot;</b>
-<i class="no-highlight">131</i>&nbsp;                ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-<b class="fc"><i class="no-highlight">132</i>&nbsp;                │ Some tag │ ERROR.(MokokiTest.kt:$nu) │ file MokokiTest.kt │ class MokokiTest │ fun log_some_throwable │ line $nu                          │</b>
-<i class="no-highlight">133</i>&nbsp;                ├───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-<i class="no-highlight">134</i>&nbsp;                │ java.lang.IllegalStateException: Some message                                                                                             │
-<b class="fc"><i class="no-highlight">135</i>&nbsp;            &quot;&quot;&quot;.trimIndent(),</b>
-<i class="no-highlight">136</i>&nbsp;        )
-<i class="no-highlight">137</i>&nbsp;    }
-<i class="no-highlight">138</i>&nbsp;}
-</div>
+<code class="sourceCode" id="sourceCode">&nbsp;@file:Suppress(&quot;MaxLineLength&quot;)
+&nbsp;
+&nbsp;package com.javiersc.mokoki
+&nbsp;
+&nbsp;import com.javiersc.kotlin.test.IgnoreDARWIN
+&nbsp;import com.javiersc.kotlin.test.IgnoreMINGW
+&nbsp;import com.javiersc.mokoki.test.internal.lineNumberForTest
+&nbsp;import kotlin.test.AfterTest
+&nbsp;import kotlin.test.BeforeTest
+&nbsp;import kotlin.test.Test
+&nbsp;
+<b class="fc">&nbsp;@IgnoreMINGW</b>
+&nbsp;internal class MokokiTest {
+&nbsp;
+<b class="fc">&nbsp;    private val testLogger = TestMokokiLogger(minPriority = Priority.VERBOSE)</b>
+&nbsp;
+&nbsp;    @BeforeTest
+&nbsp;    fun install_logger() {
+<b class="fc">&nbsp;        MokokiLogger.install(testLogger)</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @AfterTest
+&nbsp;    fun uninstallAllLoggers() {
+<b class="fc">&nbsp;        MokokiLogger.uninstallAllLoggers()</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun log_V() {
+<b class="fc">&nbsp;        logV(&quot;Some tag&quot;) { &quot;Some message&quot; }</b>
+<b class="fc">&nbsp;        val n = testLogger.lastMessage.lineNumberForTest</b>
+&nbsp;
+<b class="fc">&nbsp;        testLogger.assert(</b>
+<b class="fc">&nbsp;            &quot;&quot;&quot;</b>
+&nbsp;               ┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
+<b class="fc">&nbsp;               │ Some tag │ VERBOSE.(MokokiTest.kt:$n) │ file MokokiTest.kt │ class MokokiTest │ fun log_V │ line $n │</b>
+&nbsp;               ├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
+&nbsp;               │ Some message                                                                                        │ 
+&nbsp;               └─────────────────────────────────────────────────────────────────────────────────────────────────────┘
+&nbsp;            &quot;&quot;&quot;
+<b class="fc">&nbsp;                .trimIndent(),</b>
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun log_D() {
+<b class="fc">&nbsp;        logD(&quot;Some tag&quot;) { &quot;Some message&quot; }</b>
+<b class="fc">&nbsp;        val n = testLogger.lastMessage.lineNumberForTest</b>
+&nbsp;
+<b class="fc">&nbsp;        testLogger.assert(</b>
+<b class="fc">&nbsp;            &quot;&quot;&quot;</b>
+&nbsp;               ┌───────────────────────────────────────────────────────────────────────────────────────────────────┐
+<b class="fc">&nbsp;               │ Some tag │ DEBUG.(MokokiTest.kt:$n) │ file MokokiTest.kt │ class MokokiTest │ fun log_D │ line $n │</b>
+&nbsp;               ├───────────────────────────────────────────────────────────────────────────────────────────────────┤
+&nbsp;               │ Some message                                                                                      │ 
+&nbsp;               └───────────────────────────────────────────────────────────────────────────────────────────────────┘
+&nbsp;            &quot;&quot;&quot;
+<b class="fc">&nbsp;                .trimIndent(),</b>
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun log_I() {
+<b class="fc">&nbsp;        logI(&quot;Some tag&quot;) { &quot;Some message&quot; }</b>
+<b class="fc">&nbsp;        val n = testLogger.lastMessage.lineNumberForTest</b>
+&nbsp;
+<b class="fc">&nbsp;        testLogger.assert(</b>
+<b class="fc">&nbsp;            &quot;&quot;&quot;</b>
+&nbsp;               ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
+<b class="fc">&nbsp;               │ Some tag │ INFO.(MokokiTest.kt:$n) │ file MokokiTest.kt │ class MokokiTest │ fun log_I │ line $n │</b>
+&nbsp;               ├──────────────────────────────────────────────────────────────────────────────────────────────────┤
+&nbsp;               │ Some message                                                                                     │ 
+&nbsp;               └──────────────────────────────────────────────────────────────────────────────────────────────────┘
+&nbsp;            &quot;&quot;&quot;
+<b class="fc">&nbsp;                .trimIndent(),</b>
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun log_W() {
+<b class="fc">&nbsp;        logW(&quot;Some tag&quot;) { &quot;Some message&quot; }</b>
+<b class="fc">&nbsp;        val n = testLogger.lastMessage.lineNumberForTest</b>
+&nbsp;
+<b class="fc">&nbsp;        testLogger.assert(</b>
+<b class="fc">&nbsp;            &quot;&quot;&quot;</b>
+&nbsp;               ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
+<b class="fc">&nbsp;               │ Some tag │ WARN.(MokokiTest.kt:$n) │ file MokokiTest.kt │ class MokokiTest │ fun log_W │ line $n │</b>
+&nbsp;               ├──────────────────────────────────────────────────────────────────────────────────────────────────┤
+&nbsp;               │ Some message                                                                                     │ 
+&nbsp;               └──────────────────────────────────────────────────────────────────────────────────────────────────┘
+&nbsp;            &quot;&quot;&quot;
+<b class="fc">&nbsp;                .trimIndent(),</b>
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun log_E() {
+<b class="fc">&nbsp;        logE(&quot;Some tag&quot;) { &quot;Some message&quot; }</b>
+<b class="fc">&nbsp;        val n = testLogger.lastMessage.lineNumberForTest</b>
+&nbsp;
+<b class="fc">&nbsp;        testLogger.assert(</b>
+<b class="fc">&nbsp;            &quot;&quot;&quot;</b>
+&nbsp;               ┌───────────────────────────────────────────────────────────────────────────────────────────────────┐
+<b class="fc">&nbsp;               │ Some tag │ ERROR.(MokokiTest.kt:$n) │ file MokokiTest.kt │ class MokokiTest │ fun log_E │ line $n │</b>
+&nbsp;               ├───────────────────────────────────────────────────────────────────────────────────────────────────┤
+&nbsp;               │ Some message                                                                                      │ 
+&nbsp;               └───────────────────────────────────────────────────────────────────────────────────────────────────┘
+&nbsp;            &quot;&quot;&quot;
+<b class="fc">&nbsp;                .trimIndent(),</b>
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    fun log_WTF() {
+<b class="fc">&nbsp;        logWTF(&quot;Some tag&quot;) { &quot;Some message&quot; }</b>
+<b class="fc">&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest</b>
+&nbsp;
+<b class="fc">&nbsp;        testLogger.assert(</b>
+<b class="fc">&nbsp;            &quot;&quot;&quot;</b>
+&nbsp;               ┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+<b class="fc">&nbsp;               │ Some tag │ ASSERT.(MokokiTest.kt:$nu) │ file MokokiTest.kt │ class MokokiTest │ fun log_WTF │ line $nu │</b>
+&nbsp;               ├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+&nbsp;               │ Some message                                                                                           │ 
+&nbsp;               └────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+&nbsp;            &quot;&quot;&quot;
+<b class="fc">&nbsp;                .trimIndent(),</b>
+&nbsp;        )
+&nbsp;    }
+&nbsp;
+&nbsp;    @IgnoreDARWIN
+&nbsp;    @Test
+&nbsp;    fun log_some_throwable() {
+<b class="fc">&nbsp;        logE(&quot;Some tag&quot;) { IllegalStateException(&quot;Some message&quot;) }</b>
+<b class="fc">&nbsp;        val nu = testLogger.lastMessage.lineNumberForTest</b>
+&nbsp;
+<b class="fc">&nbsp;        testLogger.assertContains(</b>
+<b class="fc">&nbsp;            &quot;&quot;&quot;</b>
+&nbsp;                ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+<b class="fc">&nbsp;                │ Some tag │ ERROR.(MokokiTest.kt:$nu) │ file MokokiTest.kt │ class MokokiTest │ fun log_some_throwable │ line $nu                          │</b>
+&nbsp;                ├───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+&nbsp;                │ java.lang.IllegalStateException: Some message                                                                                             │
+&nbsp;            &quot;&quot;&quot;
+<b class="fc">&nbsp;                .trimIndent(),</b>
+&nbsp;        )
+&nbsp;    }
+&nbsp;}
+</code>
 </pre>
 </div>
 
@@ -243,18 +251,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     @*/
 
     if (!msie || msie && msie9) {
-        var codeBlock = document.getElementById('sourceCode');
-
-        if (codeBlock) {
-            hljs.highlightBlock(codeBlock);
-        }
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
     }
 })();
 </script>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-06 00:06</div>
+    <div style="float:right;">generated on 2022-09-26 19:40</div>
 </div>
 </body>
 </html>

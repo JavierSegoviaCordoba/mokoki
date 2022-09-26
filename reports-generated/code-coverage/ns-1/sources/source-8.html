@@ -7,9 +7,10 @@
   <title>Coverage Report > Priority</title>
   <style type="text/css">
     @import "../../css/coverage.css";
-    @import "../../css/highlight-idea.css";
+    @import "../../css/idea.min.css";
   </style>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
 </head>
 
 <body>
@@ -124,34 +125,34 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;MagicNumber&quot;)
-<i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;package com.javiersc.mokoki
-<i class="no-highlight">4</i>&nbsp;
-<i class="no-highlight">5</i>&nbsp;import com.javiersc.kotlin.stdlib.AnsiColor
-<i class="no-highlight">6</i>&nbsp;
-<b class="fc"><i class="no-highlight">7</i>&nbsp;public enum class Priority(private val value: Int) {</b>
-<b class="fc"><i class="no-highlight">8</i>&nbsp;    VERBOSE(2),</b>
-<b class="fc"><i class="no-highlight">9</i>&nbsp;    DEBUG(3),</b>
-<b class="fc"><i class="no-highlight">10</i>&nbsp;    INFO(4),</b>
-<b class="fc"><i class="no-highlight">11</i>&nbsp;    WARN(5),</b>
-<b class="fc"><i class="no-highlight">12</i>&nbsp;    ERROR(6),</b>
-<b class="fc"><i class="no-highlight">13</i>&nbsp;    ASSERT(7);</b>
-<i class="no-highlight">14</i>&nbsp;
-<i class="no-highlight">15</i>&nbsp;    public val ansiColor: AnsiColor
-<i class="no-highlight">16</i>&nbsp;        get() =
-<b class="fc"><i class="no-highlight">17</i>&nbsp;            when (this) {</b>
-<b class="fc"><i class="no-highlight">18</i>&nbsp;                VERBOSE -&gt; AnsiColor.Reset</b>
-<b class="fc"><i class="no-highlight">19</i>&nbsp;                DEBUG -&gt; AnsiColor.Foreground.BrightGreen</b>
-<b class="fc"><i class="no-highlight">20</i>&nbsp;                INFO -&gt; AnsiColor.Foreground.BrightYellow</b>
-<b class="fc"><i class="no-highlight">21</i>&nbsp;                WARN -&gt; AnsiColor.Foreground.Yellow</b>
-<b class="fc"><i class="no-highlight">22</i>&nbsp;                ERROR -&gt; AnsiColor.Foreground.BrightRed</b>
-<b class="fc"><i class="no-highlight">23</i>&nbsp;                ASSERT -&gt; AnsiColor.Foreground.Red</b>
-<i class="no-highlight">24</i>&nbsp;            }
-<i class="no-highlight">25</i>&nbsp;
-<b class="pc"><i class="no-highlight">26</i>&nbsp;    public fun isLoggable(other: Priority): Boolean = this.value &gt;= other.value</b>
-<i class="no-highlight">27</i>&nbsp;}
-</div>
+<code class="sourceCode" id="sourceCode">&nbsp;@file:Suppress(&quot;MagicNumber&quot;)
+&nbsp;
+&nbsp;package com.javiersc.mokoki
+&nbsp;
+&nbsp;import com.javiersc.kotlin.stdlib.AnsiColor
+&nbsp;
+<b class="fc">&nbsp;public enum class Priority(private val value: Int) {</b>
+<b class="fc">&nbsp;    VERBOSE(2),</b>
+<b class="fc">&nbsp;    DEBUG(3),</b>
+<b class="fc">&nbsp;    INFO(4),</b>
+<b class="fc">&nbsp;    WARN(5),</b>
+<b class="fc">&nbsp;    ERROR(6),</b>
+<b class="fc">&nbsp;    ASSERT(7);</b>
+&nbsp;
+&nbsp;    public val ansiColor: AnsiColor
+&nbsp;        get() =
+<b class="fc">&nbsp;            when (this) {</b>
+<b class="fc">&nbsp;                VERBOSE -&gt; AnsiColor.Reset</b>
+<b class="fc">&nbsp;                DEBUG -&gt; AnsiColor.Foreground.BrightGreen</b>
+<b class="fc">&nbsp;                INFO -&gt; AnsiColor.Foreground.BrightYellow</b>
+<b class="fc">&nbsp;                WARN -&gt; AnsiColor.Foreground.Yellow</b>
+<b class="fc">&nbsp;                ERROR -&gt; AnsiColor.Foreground.BrightRed</b>
+<b class="fc">&nbsp;                ASSERT -&gt; AnsiColor.Foreground.Red</b>
+&nbsp;            }
+&nbsp;
+<b class="pc">&nbsp;    public fun isLoggable(other: Priority): Boolean = this.value &gt;= other.value</b>
+&nbsp;}
+</code>
 </pre>
 </div>
 
@@ -166,18 +167,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     @*/
 
     if (!msie || msie && msie9) {
-        var codeBlock = document.getElementById('sourceCode');
-
-        if (codeBlock) {
-            hljs.highlightBlock(codeBlock);
-        }
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
     }
 })();
 </script>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-06 00:06</div>
+    <div style="float:right;">generated on 2022-09-26 19:40</div>
 </div>
 </body>
 </html>

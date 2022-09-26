@@ -14,11 +14,11 @@
 
 ## Complexity Report
 
-* 1,792 lines of code (loc)
+* 1,822 lines of code (loc)
 
-* 1,478 source lines of code (sloc)
+* 1,508 source lines of code (sloc)
 
-* 1,149 logical lines of code (lloc)
+* 1,179 logical lines of code (lloc)
 
 * 2 comment lines of code (cloc)
 
@@ -30,7 +30,7 @@
 
 * 0% comment source ratio
 
-* 132 mcc per 1,000 lloc
+* 128 mcc per 1,000 lloc
 
 * 10 code smells per 1,000 lloc
 
@@ -257,4 +257,4 @@ This comment contains 'TODO:' that has been defined as forbidden in detekt.
 
 ```
 
-generated with [detekt version 1.21.0](https://detekt.dev/) on 2022-08-06 00:05:41 UTC
+generated with [detekt version 1.21.0](https://detekt.dev/) on 2022-09-26 19:38:44 UTC

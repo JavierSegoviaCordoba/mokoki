@@ -1,18 +1,18 @@
 {
-  "total": 0,
+  "total": 1,
   "tools inspection": {
-    "Code Inspection": 0
+    "Code Inspection": 1
   },
   "attributes": {
     "vcs": {
       "sarifIdea": {
         "repositoryUri": "https://github.com/JavierSegoviaCordoba/mokoki",
-        "revisionId": "a34552e01d9803a6c149f50a7633d44e803b21d6",
+        "revisionId": "75d02575f772474586144095c3752e53b5fb0173",
         "branch": "main"
       }
     },
     "deviceId": "200820300000000-818f-e2ab-5c7b-bb2195b3536f",
-    "jobUrl": "https://github.com/JavierSegoviaCordoba/mokoki/actions/runs/2806904788",
+    "jobUrl": "https://github.com/JavierSegoviaCordoba/mokoki/actions/runs/3130530794",
     "repoUrl": "https://github.com/JavierSegoviaCordoba/mokoki"
   }
 }

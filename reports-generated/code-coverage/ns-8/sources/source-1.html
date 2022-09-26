@@ -7,9 +7,10 @@
   <title>Coverage Report > LoggerNames_jvmAndAndroidKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
-    @import "../../css/highlight-idea.css";
+    @import "../../css/idea.min.css";
   </style>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
 </head>
 
 <body>
@@ -97,25 +98,25 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.javiersc.mokoki.test.internal
-<i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;public actual val String?.lineNumberForTest: Int
-<b class="pc"><i class="no-highlight">4</i>&nbsp;    get() = (stackTraceForTests?.lineNumber ?: +2) - 1</b>
-<i class="no-highlight">5</i>&nbsp;
-<i class="no-highlight">6</i>&nbsp;private val stackTraceForTests: StackTraceElement?
-<i class="no-highlight">7</i>&nbsp;    get() =
-<b class="fc"><i class="no-highlight">8</i>&nbsp;        try {</b>
-<b class="fc"><i class="no-highlight">9</i>&nbsp;            val trace = Thread.currentThread().stackTrace</b>
-<b class="fc"><i class="no-highlight">10</i>&nbsp;            val index = trace.indexOfLast { it.isTestClass }</b>
-<b class="fc"><i class="no-highlight">11</i>&nbsp;            trace[index]</b>
-<b class="nc"><i class="no-highlight">12</i>&nbsp;        } catch (throwable: Throwable) {</b>
-<b class="nc"><i class="no-highlight">13</i>&nbsp;            println(&quot;Mokoki has not been able to get the StackTrace&quot;)</b>
-<b class="nc"><i class="no-highlight">14</i>&nbsp;            null</b>
-<i class="no-highlight">15</i>&nbsp;        }
-<i class="no-highlight">16</i>&nbsp;
-<i class="no-highlight">17</i>&nbsp;private val StackTraceElement.isTestClass: Boolean
-<b class="fc"><i class="no-highlight">18</i>&nbsp;    get() = Regex(&quot;&quot;&quot;^(com.javiersc.mokoki).*(Test)$&quot;&quot;&quot;).matches(className)</b>
-</div>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.javiersc.mokoki.test.internal
+&nbsp;
+&nbsp;public actual val String?.lineNumberForTest: Int
+<b class="pc">&nbsp;    get() = (stackTraceForTests?.lineNumber ?: +2) - 1</b>
+&nbsp;
+&nbsp;private val stackTraceForTests: StackTraceElement?
+&nbsp;    get() =
+<b class="fc">&nbsp;        try {</b>
+<b class="fc">&nbsp;            val trace = Thread.currentThread().stackTrace</b>
+<b class="fc">&nbsp;            val index = trace.indexOfLast { it.isTestClass }</b>
+<b class="fc">&nbsp;            trace[index]</b>
+<b class="nc">&nbsp;        } catch (throwable: Throwable) {</b>
+<b class="nc">&nbsp;            println(&quot;Mokoki has not been able to get the StackTrace&quot;)</b>
+<b class="nc">&nbsp;            null</b>
+&nbsp;        }
+&nbsp;
+&nbsp;private val StackTraceElement.isTestClass: Boolean
+<b class="fc">&nbsp;    get() = Regex(&quot;&quot;&quot;^(com.javiersc.mokoki).*(Test)$&quot;&quot;&quot;).matches(className)</b>
+</code>
 </pre>
 </div>
 
@@ -130,18 +131,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     @*/
 
     if (!msie || msie && msie9) {
-        var codeBlock = document.getElementById('sourceCode');
-
-        if (codeBlock) {
-            hljs.highlightBlock(codeBlock);
-        }
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
     }
 })();
 </script>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-06 00:06</div>
+    <div style="float:right;">generated on 2022-09-26 19:40</div>
 </div>
 </body>
 </html>

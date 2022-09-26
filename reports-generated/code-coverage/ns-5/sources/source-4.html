@@ -7,9 +7,10 @@
   <title>Coverage Report > MainKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
-    @import "../../css/highlight-idea.css";
+    @import "../../css/idea.min.css";
   </style>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
 </head>
 
 <body>
@@ -90,145 +91,147 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;MagicNumber&quot;)
-<i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;package com.javiersc.mokoki.jvm.serialization
-<i class="no-highlight">4</i>&nbsp;
-<i class="no-highlight">5</i>&nbsp;import com.javiersc.mokoki.LoggerSeparator
-<i class="no-highlight">6</i>&nbsp;import com.javiersc.mokoki.MokokiLogger
-<i class="no-highlight">7</i>&nbsp;import com.javiersc.mokoki.Priority
-<i class="no-highlight">8</i>&nbsp;import com.javiersc.mokoki.logD
-<i class="no-highlight">9</i>&nbsp;import com.javiersc.mokoki.logE
-<i class="no-highlight">10</i>&nbsp;import com.javiersc.mokoki.logI
-<i class="no-highlight">11</i>&nbsp;import com.javiersc.mokoki.logV
-<i class="no-highlight">12</i>&nbsp;import com.javiersc.mokoki.logW
-<i class="no-highlight">13</i>&nbsp;import com.javiersc.mokoki.logWTF
-<i class="no-highlight">14</i>&nbsp;import com.javiersc.mokoki.serialization.PrintSerializableMokokiLogger
-<i class="no-highlight">15</i>&nbsp;import java.text.SimpleDateFormat
-<i class="no-highlight">16</i>&nbsp;import java.util.Date
-<i class="no-highlight">17</i>&nbsp;import java.util.Locale
-<i class="no-highlight">18</i>&nbsp;import kotlinx.serialization.Contextual
-<i class="no-highlight">19</i>&nbsp;import kotlinx.serialization.KSerializer
-<i class="no-highlight">20</i>&nbsp;import kotlinx.serialization.Serializable
-<i class="no-highlight">21</i>&nbsp;import kotlinx.serialization.descriptors.PrimitiveKind
-<i class="no-highlight">22</i>&nbsp;import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
-<i class="no-highlight">23</i>&nbsp;import kotlinx.serialization.descriptors.SerialDescriptor
-<i class="no-highlight">24</i>&nbsp;import kotlinx.serialization.encoding.Decoder
-<i class="no-highlight">25</i>&nbsp;import kotlinx.serialization.encoding.Encoder
-<i class="no-highlight">26</i>&nbsp;import kotlinx.serialization.modules.SerializersModule
-<i class="no-highlight">27</i>&nbsp;import kotlinx.serialization.modules.contextual
-<i class="no-highlight">28</i>&nbsp;
-<i class="no-highlight">29</i>&nbsp;fun main() {
-<b class="nc"><i class="no-highlight">30</i>&nbsp;    App(false)</b>
-<b class="nc"><i class="no-highlight">31</i>&nbsp;    println(&quot;    &quot;)</b>
-<b class="nc"><i class="no-highlight">32</i>&nbsp;    println(&quot;------------------------------------------------------------&quot;)</b>
-<b class="nc"><i class="no-highlight">33</i>&nbsp;    println(&quot;------------------------------------------------------------&quot;)</b>
-<b class="nc"><i class="no-highlight">34</i>&nbsp;    println(&quot;    &quot;)</b>
-<b class="nc"><i class="no-highlight">35</i>&nbsp;    App(true)</b>
-<i class="no-highlight">36</i>&nbsp;}
-<i class="no-highlight">37</i>&nbsp;
-<i class="no-highlight">38</i>&nbsp;class App(useCompatibleMode: Boolean) {
-<i class="no-highlight">39</i>&nbsp;
-<i class="no-highlight">40</i>&nbsp;    init {
-<i class="no-highlight">41</i>&nbsp;        showColors(useCompatibleMode)
-<i class="no-highlight">42</i>&nbsp;    }
-<i class="no-highlight">43</i>&nbsp;
-<i class="no-highlight">44</i>&nbsp;    private fun showColors(useCompatibleMode: Boolean) {
-<i class="no-highlight">45</i>&nbsp;        MokokiLogger.uninstallAllLoggers()
-<i class="no-highlight">46</i>&nbsp;        val printLogger =
-<i class="no-highlight">47</i>&nbsp;            PrintSerializableMokokiLogger(minPriority = Priority.VERBOSE).apply {
-<i class="no-highlight">48</i>&nbsp;                this.useCompatibleMode = useCompatibleMode
-<i class="no-highlight">49</i>&nbsp;                serializersModule = SerializersModule { contextual(DateSerializer) }
-<i class="no-highlight">50</i>&nbsp;            }
-<i class="no-highlight">51</i>&nbsp;        MokokiLogger.install(printLogger)
-<i class="no-highlight">52</i>&nbsp;
-<i class="no-highlight">53</i>&nbsp;        logV(&quot;SomeTag&quot;) { userString }
-<i class="no-highlight">54</i>&nbsp;        logD(&quot;SomeTag&quot;) { userString }
-<i class="no-highlight">55</i>&nbsp;        logI(&quot;SomeTag&quot;) { userString }
-<i class="no-highlight">56</i>&nbsp;        logW(&quot;SomeTag&quot;) { userString }
-<i class="no-highlight">57</i>&nbsp;        logE(&quot;SomeTag&quot;) { userString }
-<i class="no-highlight">58</i>&nbsp;        logWTF(&quot;SomeTag&quot;) { userString }
-<i class="no-highlight">59</i>&nbsp;
-<i class="no-highlight">60</i>&nbsp;        println(&quot;&quot;)
-<i class="no-highlight">61</i>&nbsp;        println(&quot; ------------------------------------------------------------&quot;)
-<i class="no-highlight">62</i>&nbsp;        println(&quot;&quot;)
-<i class="no-highlight">63</i>&nbsp;
-<i class="no-highlight">64</i>&nbsp;        logV(&quot;SomeTag&quot;) { user }
-<i class="no-highlight">65</i>&nbsp;        logD(&quot;SomeTag&quot;) { user }
-<i class="no-highlight">66</i>&nbsp;        logI(&quot;SomeTag&quot;) { user }
-<i class="no-highlight">67</i>&nbsp;        logW(&quot;SomeTag&quot;) { user }
-<i class="no-highlight">68</i>&nbsp;        logE(&quot;SomeTag&quot;) { user }
-<i class="no-highlight">69</i>&nbsp;        logWTF(&quot;SomeTag&quot;) { user }
-<i class="no-highlight">70</i>&nbsp;
-<i class="no-highlight">71</i>&nbsp;        println(&quot;&quot;)
-<i class="no-highlight">72</i>&nbsp;        println(&quot; ------------------------------------------------------------&quot;)
-<i class="no-highlight">73</i>&nbsp;        println(&quot;&quot;)
-<i class="no-highlight">74</i>&nbsp;
-<i class="no-highlight">75</i>&nbsp;        logV { userString }
-<i class="no-highlight">76</i>&nbsp;        logD { userString }
-<i class="no-highlight">77</i>&nbsp;        logI { userString }
-<i class="no-highlight">78</i>&nbsp;        logW { userString }
-<i class="no-highlight">79</i>&nbsp;        logE { userString }
-<i class="no-highlight">80</i>&nbsp;        logWTF { userString }
-<i class="no-highlight">81</i>&nbsp;
-<i class="no-highlight">82</i>&nbsp;        println(&quot;&quot;)
-<i class="no-highlight">83</i>&nbsp;        println(&quot; ------------------------------------------------------------&quot;)
-<i class="no-highlight">84</i>&nbsp;        println(&quot;&quot;)
-<i class="no-highlight">85</i>&nbsp;
-<i class="no-highlight">86</i>&nbsp;        logV { user }
-<i class="no-highlight">87</i>&nbsp;        logD { user }
-<i class="no-highlight">88</i>&nbsp;        logI { user }
-<i class="no-highlight">89</i>&nbsp;        logW { user }
-<i class="no-highlight">90</i>&nbsp;        logE { user }
-<i class="no-highlight">91</i>&nbsp;        logWTF { user }
-<i class="no-highlight">92</i>&nbsp;
-<i class="no-highlight">93</i>&nbsp;        println(&quot;&quot;)
-<i class="no-highlight">94</i>&nbsp;        println(&quot; ------------------------------------------------------------&quot;)
-<i class="no-highlight">95</i>&nbsp;        println(&quot;&quot;)
-<i class="no-highlight">96</i>&nbsp;
-<i class="no-highlight">97</i>&nbsp;        logV(&quot;Dog with Contextual date&quot;) { dog }
-<i class="no-highlight">98</i>&nbsp;
-<i class="no-highlight">99</i>&nbsp;        val textWithSeparator =
-<i class="no-highlight">100</i>&nbsp;            &quot;&quot;&quot;
-<i class="no-highlight">101</i>&nbsp;                Text before first separator
-<i class="no-highlight">102</i>&nbsp;                ${LoggerSeparator(useCompatibleMode)}
-<i class="no-highlight">103</i>&nbsp;                Text after first separator and before last separator
-<i class="no-highlight">104</i>&nbsp;                ${LoggerSeparator(useCompatibleMode)}
-<i class="no-highlight">105</i>&nbsp;                Text after last separator
-<i class="no-highlight">106</i>&nbsp;            &quot;&quot;&quot;.trimIndent()
-<i class="no-highlight">107</i>&nbsp;        logV { textWithSeparator }
-<i class="no-highlight">108</i>&nbsp;    }
-<i class="no-highlight">109</i>&nbsp;}
-<i class="no-highlight">110</i>&nbsp;
-<i class="no-highlight">111</i>&nbsp;@Serializable data class User(val name: String, val age: Int, val hobbies: List&lt;String&gt;)
-<i class="no-highlight">112</i>&nbsp;
-<b class="nc"><i class="no-highlight">113</i>&nbsp;private val user = User(&quot;John&quot;, 19, listOf(&quot;Tennis&quot;, &quot;Coding&quot;))</b>
-<i class="no-highlight">114</i>&nbsp;private val userString =
-<i class="no-highlight">115</i>&nbsp;    &quot;&quot;&quot;
-<i class="no-highlight">116</i>&nbsp;       | {
-<i class="no-highlight">117</i>&nbsp;       |    &quot;name&quot;: &quot;Mike&quot;,
-<i class="no-highlight">118</i>&nbsp;       |    &quot;age&quot;: 22,
-<i class="no-highlight">119</i>&nbsp;       |    &quot;surnames&quot;: [&quot;Football&quot;, &quot;Reading&quot;]
-<i class="no-highlight">120</i>&nbsp;       | }
-<b class="nc"><i class="no-highlight">121</i>&nbsp;    &quot;&quot;&quot;.trimMargin()</b>
-<i class="no-highlight">122</i>&nbsp;
-<i class="no-highlight">123</i>&nbsp;@Serializable data class Dog(val name: String, @Contextual val birthday: Date)
-<i class="no-highlight">124</i>&nbsp;
-<i class="no-highlight">125</i>&nbsp;// 1362870000000 -&gt; 2013-03-10
-<b class="nc"><i class="no-highlight">126</i>&nbsp;private val dog = Dog(&quot;Auri&quot;, Date(1362870000000))</b>
-<i class="no-highlight">127</i>&nbsp;
-<i class="no-highlight">128</i>&nbsp;object DateSerializer : KSerializer&lt;Date&gt; {
-<i class="no-highlight">129</i>&nbsp;
-<i class="no-highlight">130</i>&nbsp;    override val descriptor: SerialDescriptor =
-<i class="no-highlight">131</i>&nbsp;        PrimitiveSerialDescriptor(&quot;Dog&quot;, PrimitiveKind.STRING)
-<i class="no-highlight">132</i>&nbsp;
-<i class="no-highlight">133</i>&nbsp;    override fun deserialize(decoder: Decoder): Date =
-<i class="no-highlight">134</i>&nbsp;        SimpleDateFormat(&quot;yyyy-MM-dd&quot;, Locale.getDefault()).parse(decoder.decodeString())!!
-<i class="no-highlight">135</i>&nbsp;
-<i class="no-highlight">136</i>&nbsp;    override fun serialize(encoder: Encoder, value: Date) =
-<i class="no-highlight">137</i>&nbsp;        encoder.encodeString(SimpleDateFormat(&quot;yyyy-MM-dd&quot;, Locale.getDefault()).format(value))
-<i class="no-highlight">138</i>&nbsp;}
-</div>
+<code class="sourceCode" id="sourceCode">&nbsp;@file:Suppress(&quot;MagicNumber&quot;)
+&nbsp;
+&nbsp;package com.javiersc.mokoki.jvm.serialization
+&nbsp;
+&nbsp;import com.javiersc.mokoki.LoggerSeparator
+&nbsp;import com.javiersc.mokoki.MokokiLogger
+&nbsp;import com.javiersc.mokoki.Priority
+&nbsp;import com.javiersc.mokoki.logD
+&nbsp;import com.javiersc.mokoki.logE
+&nbsp;import com.javiersc.mokoki.logI
+&nbsp;import com.javiersc.mokoki.logV
+&nbsp;import com.javiersc.mokoki.logW
+&nbsp;import com.javiersc.mokoki.logWTF
+&nbsp;import com.javiersc.mokoki.serialization.PrintSerializableMokokiLogger
+&nbsp;import java.text.SimpleDateFormat
+&nbsp;import java.util.Date
+&nbsp;import java.util.Locale
+&nbsp;import kotlinx.serialization.Contextual
+&nbsp;import kotlinx.serialization.KSerializer
+&nbsp;import kotlinx.serialization.Serializable
+&nbsp;import kotlinx.serialization.descriptors.PrimitiveKind
+&nbsp;import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
+&nbsp;import kotlinx.serialization.descriptors.SerialDescriptor
+&nbsp;import kotlinx.serialization.encoding.Decoder
+&nbsp;import kotlinx.serialization.encoding.Encoder
+&nbsp;import kotlinx.serialization.modules.SerializersModule
+&nbsp;import kotlinx.serialization.modules.contextual
+&nbsp;
+&nbsp;fun main() {
+<b class="nc">&nbsp;    App(false)</b>
+<b class="nc">&nbsp;    println(&quot;    &quot;)</b>
+<b class="nc">&nbsp;    println(&quot;------------------------------------------------------------&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;------------------------------------------------------------&quot;)</b>
+<b class="nc">&nbsp;    println(&quot;    &quot;)</b>
+<b class="nc">&nbsp;    App(true)</b>
+&nbsp;}
+&nbsp;
+&nbsp;class App(useCompatibleMode: Boolean) {
+&nbsp;
+&nbsp;    init {
+&nbsp;        showColors(useCompatibleMode)
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun showColors(useCompatibleMode: Boolean) {
+&nbsp;        MokokiLogger.uninstallAllLoggers()
+&nbsp;        val printLogger =
+&nbsp;            PrintSerializableMokokiLogger(minPriority = Priority.VERBOSE).apply {
+&nbsp;                this.useCompatibleMode = useCompatibleMode
+&nbsp;                serializersModule = SerializersModule { contextual(DateSerializer) }
+&nbsp;            }
+&nbsp;        MokokiLogger.install(printLogger)
+&nbsp;
+&nbsp;        logV(&quot;SomeTag&quot;) { userString }
+&nbsp;        logD(&quot;SomeTag&quot;) { userString }
+&nbsp;        logI(&quot;SomeTag&quot;) { userString }
+&nbsp;        logW(&quot;SomeTag&quot;) { userString }
+&nbsp;        logE(&quot;SomeTag&quot;) { userString }
+&nbsp;        logWTF(&quot;SomeTag&quot;) { userString }
+&nbsp;
+&nbsp;        println(&quot;&quot;)
+&nbsp;        println(&quot; ------------------------------------------------------------&quot;)
+&nbsp;        println(&quot;&quot;)
+&nbsp;
+&nbsp;        logV(&quot;SomeTag&quot;) { user }
+&nbsp;        logD(&quot;SomeTag&quot;) { user }
+&nbsp;        logI(&quot;SomeTag&quot;) { user }
+&nbsp;        logW(&quot;SomeTag&quot;) { user }
+&nbsp;        logE(&quot;SomeTag&quot;) { user }
+&nbsp;        logWTF(&quot;SomeTag&quot;) { user }
+&nbsp;
+&nbsp;        println(&quot;&quot;)
+&nbsp;        println(&quot; ------------------------------------------------------------&quot;)
+&nbsp;        println(&quot;&quot;)
+&nbsp;
+&nbsp;        logV { userString }
+&nbsp;        logD { userString }
+&nbsp;        logI { userString }
+&nbsp;        logW { userString }
+&nbsp;        logE { userString }
+&nbsp;        logWTF { userString }
+&nbsp;
+&nbsp;        println(&quot;&quot;)
+&nbsp;        println(&quot; ------------------------------------------------------------&quot;)
+&nbsp;        println(&quot;&quot;)
+&nbsp;
+&nbsp;        logV { user }
+&nbsp;        logD { user }
+&nbsp;        logI { user }
+&nbsp;        logW { user }
+&nbsp;        logE { user }
+&nbsp;        logWTF { user }
+&nbsp;
+&nbsp;        println(&quot;&quot;)
+&nbsp;        println(&quot; ------------------------------------------------------------&quot;)
+&nbsp;        println(&quot;&quot;)
+&nbsp;
+&nbsp;        logV(&quot;Dog with Contextual date&quot;) { dog }
+&nbsp;
+&nbsp;        val textWithSeparator =
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                Text before first separator
+&nbsp;                ${LoggerSeparator(useCompatibleMode)}
+&nbsp;                Text after first separator and before last separator
+&nbsp;                ${LoggerSeparator(useCompatibleMode)}
+&nbsp;                Text after last separator
+&nbsp;            &quot;&quot;&quot;
+&nbsp;                .trimIndent()
+&nbsp;        logV { textWithSeparator }
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;@Serializable data class User(val name: String, val age: Int, val hobbies: List&lt;String&gt;)
+&nbsp;
+<b class="nc">&nbsp;private val user = User(&quot;John&quot;, 19, listOf(&quot;Tennis&quot;, &quot;Coding&quot;))</b>
+&nbsp;private val userString =
+&nbsp;    &quot;&quot;&quot;
+&nbsp;       | {
+&nbsp;       |    &quot;name&quot;: &quot;Mike&quot;,
+&nbsp;       |    &quot;age&quot;: 22,
+&nbsp;       |    &quot;surnames&quot;: [&quot;Football&quot;, &quot;Reading&quot;]
+&nbsp;       | }
+&nbsp;    &quot;&quot;&quot;
+<b class="nc">&nbsp;        .trimMargin()</b>
+&nbsp;
+&nbsp;@Serializable data class Dog(val name: String, @Contextual val birthday: Date)
+&nbsp;
+&nbsp;// 1362870000000 -&gt; 2013-03-10
+<b class="nc">&nbsp;private val dog = Dog(&quot;Auri&quot;, Date(1362870000000))</b>
+&nbsp;
+&nbsp;object DateSerializer : KSerializer&lt;Date&gt; {
+&nbsp;
+&nbsp;    override val descriptor: SerialDescriptor =
+&nbsp;        PrimitiveSerialDescriptor(&quot;Dog&quot;, PrimitiveKind.STRING)
+&nbsp;
+&nbsp;    override fun deserialize(decoder: Decoder): Date =
+&nbsp;        SimpleDateFormat(&quot;yyyy-MM-dd&quot;, Locale.getDefault()).parse(decoder.decodeString())!!
+&nbsp;
+&nbsp;    override fun serialize(encoder: Encoder, value: Date) =
+&nbsp;        encoder.encodeString(SimpleDateFormat(&quot;yyyy-MM-dd&quot;, Locale.getDefault()).format(value))
+&nbsp;}
+</code>
 </pre>
 </div>
 
@@ -243,18 +246,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     @*/
 
     if (!msie || msie && msie9) {
-        var codeBlock = document.getElementById('sourceCode');
-
-        if (codeBlock) {
-            hljs.highlightBlock(codeBlock);
-        }
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
     }
 })();
 </script>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-06 00:06</div>
+    <div style="float:right;">generated on 2022-09-26 19:40</div>
 </div>
 </body>
 </html>

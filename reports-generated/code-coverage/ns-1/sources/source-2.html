@@ -7,9 +7,10 @@
   <title>Coverage Report > LoggerSeparatorKt</title>
   <style type="text/css">
     @import "../../css/coverage.css";
-    @import "../../css/highlight-idea.css";
+    @import "../../css/idea.min.css";
   </style>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
 </head>
 
 <body>
@@ -97,13 +98,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;@file:Suppress(&quot;TopLevelPropertyNaming&quot;, &quot;FunctionName&quot;)
-<i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;package com.javiersc.mokoki
-<i class="no-highlight">4</i>&nbsp;
-<b class="nc"><i class="no-highlight">5</i>&nbsp;public fun LoggerSeparator(useCompatibleMode: Boolean = false): String =</b>
-<b class="nc"><i class="no-highlight">6</i>&nbsp;    if (useCompatibleMode) &quot;|&quot; else &quot;├&quot;</b>
-</div>
+<code class="sourceCode" id="sourceCode">&nbsp;@file:Suppress(&quot;TopLevelPropertyNaming&quot;, &quot;FunctionName&quot;)
+&nbsp;
+&nbsp;package com.javiersc.mokoki
+&nbsp;
+<b class="nc">&nbsp;public fun LoggerSeparator(useCompatibleMode: Boolean = false): String =</b>
+<b class="nc">&nbsp;    if (useCompatibleMode) &quot;|&quot; else &quot;├&quot;</b>
+</code>
 </pre>
 </div>
 
@@ -118,18 +119,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     @*/
 
     if (!msie || msie && msie9) {
-        var codeBlock = document.getElementById('sourceCode');
-
-        if (codeBlock) {
-            hljs.highlightBlock(codeBlock);
-        }
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
     }
 })();
 </script>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-06 00:06</div>
+    <div style="float:right;">generated on 2022-09-26 19:40</div>
 </div>
 </body>
 </html>

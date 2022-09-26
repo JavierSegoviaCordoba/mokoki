@@ -7,9 +7,10 @@
   <title>Coverage Report > PrintSerializableMokokiLogger</title>
   <style type="text/css">
     @import "../../css/coverage.css";
-    @import "../../css/highlight-idea.css";
+    @import "../../css/idea.min.css";
   </style>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
 </head>
 
 <body>
@@ -160,69 +161,69 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.javiersc.mokoki.serialization
-<i class="no-highlight">2</i>&nbsp;
-<i class="no-highlight">3</i>&nbsp;import com.javiersc.kotlin.stdlib.ansiColor
-<i class="no-highlight">4</i>&nbsp;import com.javiersc.mokoki.MokokiLogger
-<i class="no-highlight">5</i>&nbsp;import com.javiersc.mokoki.Priority
-<i class="no-highlight">6</i>&nbsp;import com.javiersc.mokoki.serialization.internal.buildMokokiSerializationMessage
-<i class="no-highlight">7</i>&nbsp;import kotlin.reflect.KClass
-<i class="no-highlight">8</i>&nbsp;import kotlin.reflect.KType
-<i class="no-highlight">9</i>&nbsp;import kotlinx.serialization.KSerializer
-<i class="no-highlight">10</i>&nbsp;import kotlinx.serialization.json.Json
-<i class="no-highlight">11</i>&nbsp;import kotlinx.serialization.modules.EmptySerializersModule
-<i class="no-highlight">12</i>&nbsp;import kotlinx.serialization.modules.SerializersModule
-<i class="no-highlight">13</i>&nbsp;import kotlinx.serialization.serializerOrNull
-<i class="no-highlight">14</i>&nbsp;
-<b class="fc"><i class="no-highlight">15</i>&nbsp;public open class PrintSerializableMokokiLogger(</b>
-<b class="fc"><i class="no-highlight">16</i>&nbsp;    private val minPriority: Priority = Priority.DEBUG,</b>
-<i class="no-highlight">17</i>&nbsp;) : MokokiLogger {
-<i class="no-highlight">18</i>&nbsp;
-<b class="fc"><i class="no-highlight">19</i>&nbsp;    override var useCompatibleMode: Boolean = false</b>
-<i class="no-highlight">20</i>&nbsp;
-<b class="fc"><i class="no-highlight">21</i>&nbsp;    public var serializersModule: SerializersModule = EmptySerializersModule</b>
-<i class="no-highlight">22</i>&nbsp;
-<i class="no-highlight">23</i>&nbsp;    internal val json: Json
-<b class="fc"><i class="no-highlight">24</i>&nbsp;        get() = Json {</b>
-<b class="fc"><i class="no-highlight">25</i>&nbsp;            prettyPrint = true</b>
-<b class="fc"><i class="no-highlight">26</i>&nbsp;            serializersModule = this@PrintSerializableMokokiLogger.serializersModule</b>
-<i class="no-highlight">27</i>&nbsp;        }
-<i class="no-highlight">28</i>&nbsp;
-<b class="fc"><i class="no-highlight">29</i>&nbsp;    override fun isLoggable(priority: Priority): Boolean = priority.isLoggable(minPriority)</b>
-<i class="no-highlight">30</i>&nbsp;
-<i class="no-highlight">31</i>&nbsp;    override fun &lt;T : Any&gt; log(
-<i class="no-highlight">32</i>&nbsp;        priority: Priority,
-<i class="no-highlight">33</i>&nbsp;        tag: String?,
-<i class="no-highlight">34</i>&nbsp;        kClass: KClass&lt;T&gt;,
-<i class="no-highlight">35</i>&nbsp;        kType: KType,
-<i class="no-highlight">36</i>&nbsp;        message: T
-<i class="no-highlight">37</i>&nbsp;    ) {
-<b class="fc"><i class="no-highlight">38</i>&nbsp;        val lines: List&lt;String&gt; = buildLines(serializer(kType, message), priority, tag, message)</b>
-<i class="no-highlight">39</i>&nbsp;
-<b class="fc"><i class="no-highlight">40</i>&nbsp;        for (line in lines) {</b>
-<b class="fc"><i class="no-highlight">41</i>&nbsp;            println(line.ansiColor(priority.ansiColor))</b>
-<i class="no-highlight">42</i>&nbsp;        }
-<i class="no-highlight">43</i>&nbsp;    }
-<i class="no-highlight">44</i>&nbsp;
-<i class="no-highlight">45</i>&nbsp;    internal fun &lt;T : Any&gt; buildLines(
-<i class="no-highlight">46</i>&nbsp;        serializer: KSerializer&lt;Any?&gt;?,
-<i class="no-highlight">47</i>&nbsp;        priority: Priority,
-<i class="no-highlight">48</i>&nbsp;        tag: String?,
-<i class="no-highlight">49</i>&nbsp;        message: T
-<i class="no-highlight">50</i>&nbsp;    ): List&lt;String&gt; {
-<b class="fc"><i class="no-highlight">51</i>&nbsp;        val lines: List&lt;String&gt; =</b>
-<b class="fc"><i class="no-highlight">52</i>&nbsp;            if (serializer != null) {</b>
-<b class="fc"><i class="no-highlight">53</i>&nbsp;                buildMokokiSerializationMessage(priority, tag, json, serializer, message)</b>
-<i class="no-highlight">54</i>&nbsp;            } else {
-<b class="fc"><i class="no-highlight">55</i>&nbsp;                buildMokokiSerializationMessage(priority, tag, json, &quot;$message&quot;)</b>
-<i class="no-highlight">56</i>&nbsp;            }
-<b class="fc"><i class="no-highlight">57</i>&nbsp;        return lines</b>
-<i class="no-highlight">58</i>&nbsp;    }
-<i class="no-highlight">59</i>&nbsp;
-<i class="no-highlight">60</i>&nbsp;    internal fun &lt;T&gt; serializer(kType: KType, message: T): KSerializer&lt;Any?&gt;? =
-<b class="fc"><i class="no-highlight">61</i>&nbsp;        serializerOrNull(kType).takeIf { message !is String }</b>
-<i class="no-highlight">62</i>&nbsp;}
-</div>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.javiersc.mokoki.serialization
+&nbsp;
+&nbsp;import com.javiersc.kotlin.stdlib.ansiColor
+&nbsp;import com.javiersc.mokoki.MokokiLogger
+&nbsp;import com.javiersc.mokoki.Priority
+&nbsp;import com.javiersc.mokoki.serialization.internal.buildMokokiSerializationMessage
+&nbsp;import kotlin.reflect.KClass
+&nbsp;import kotlin.reflect.KType
+&nbsp;import kotlinx.serialization.KSerializer
+&nbsp;import kotlinx.serialization.json.Json
+&nbsp;import kotlinx.serialization.modules.EmptySerializersModule
+&nbsp;import kotlinx.serialization.modules.SerializersModule
+&nbsp;import kotlinx.serialization.serializerOrNull
+&nbsp;
+<b class="fc">&nbsp;public open class PrintSerializableMokokiLogger(</b>
+<b class="fc">&nbsp;    private val minPriority: Priority = Priority.DEBUG,</b>
+&nbsp;) : MokokiLogger {
+&nbsp;
+<b class="fc">&nbsp;    override var useCompatibleMode: Boolean = false</b>
+&nbsp;
+<b class="fc">&nbsp;    public var serializersModule: SerializersModule = EmptySerializersModule</b>
+&nbsp;
+&nbsp;    internal val json: Json
+<b class="fc">&nbsp;        get() = Json {</b>
+<b class="fc">&nbsp;            prettyPrint = true</b>
+<b class="fc">&nbsp;            serializersModule = this@PrintSerializableMokokiLogger.serializersModule</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;    override fun isLoggable(priority: Priority): Boolean = priority.isLoggable(minPriority)</b>
+&nbsp;
+&nbsp;    override fun &lt;T : Any&gt; log(
+&nbsp;        priority: Priority,
+&nbsp;        tag: String?,
+&nbsp;        kClass: KClass&lt;T&gt;,
+&nbsp;        kType: KType,
+&nbsp;        message: T
+&nbsp;    ) {
+<b class="fc">&nbsp;        val lines: List&lt;String&gt; = buildLines(serializer(kType, message), priority, tag, message)</b>
+&nbsp;
+<b class="fc">&nbsp;        for (line in lines) {</b>
+<b class="fc">&nbsp;            println(line.ansiColor(priority.ansiColor))</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    internal fun &lt;T : Any&gt; buildLines(
+&nbsp;        serializer: KSerializer&lt;Any?&gt;?,
+&nbsp;        priority: Priority,
+&nbsp;        tag: String?,
+&nbsp;        message: T
+&nbsp;    ): List&lt;String&gt; {
+<b class="fc">&nbsp;        val lines: List&lt;String&gt; =</b>
+<b class="fc">&nbsp;            if (serializer != null) {</b>
+<b class="fc">&nbsp;                buildMokokiSerializationMessage(priority, tag, json, serializer, message)</b>
+&nbsp;            } else {
+<b class="fc">&nbsp;                buildMokokiSerializationMessage(priority, tag, json, &quot;$message&quot;)</b>
+&nbsp;            }
+<b class="fc">&nbsp;        return lines</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    internal fun &lt;T&gt; serializer(kType: KType, message: T): KSerializer&lt;Any?&gt;? =
+<b class="fc">&nbsp;        serializerOrNull(kType).takeIf { message !is String }</b>
+&nbsp;}
+</code>
 </pre>
 </div>
 
@@ -237,18 +238,15 @@ Current scope:     <a href="../../index.html">all classes</a>
     @*/
 
     if (!msie || msie && msie9) {
-        var codeBlock = document.getElementById('sourceCode');
-
-        if (codeBlock) {
-            hljs.highlightBlock(codeBlock);
-        }
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
     }
 })();
 </script>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-08-06 00:06</div>
+    <div style="float:right;">generated on 2022-09-26 19:40</div>
 </div>
 </body>
 </html>
