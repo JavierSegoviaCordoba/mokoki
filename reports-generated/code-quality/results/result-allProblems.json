@@ -1,29 +1,29 @@
 {"version":"3","listProblem":[{
   "tool": "Code Inspection",
-  "category": "Probable bugs",
-  "type": "Redundant assignment",
+  "category": "Migration",
+  "type": "Usage of redundant or deprecated syntax or deprecated symbols",
   "severity": "High",
-  "comment": "Variable 'serializersModule' is assigned to itself",
-  "detailsInfo": "Reports assignments of a variable to itself.\n\nThe quick-fix removes the redundant assignment.\n\n**Example:**\n\n\n      fun test() {\n          var bar = 1\n          bar = bar\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test() {\n          var bar = 1\n      }\n",
+  "comment": "'EmptySerializersModule: SerializersModule' is deprecated. Deprecated in the favour of 'EmptySerializersModule()'",
+  "detailsInfo": "Reports obsolete language features and unnecessarily verbose code constructs during the code cleanup operation (**Code \\| Code Cleanup** ).\n\n\nA quick-fix automatically replaces usages of obsolete language features or unnecessarily verbose code constructs with compact and up-to-date syntax.\n\n\nIt also replaces deprecated symbols with their proposed substitutions.",
   "sources": [
     {
       "type": "file",
       "path": "mokoki-serialization/common/main/kotlin/com/javiersc/mokoki/serialization/PrintSerializableMokokiLogger.kt",
       "language": "kotlin",
-      "line": 26,
-      "offset": 33,
-      "length": 52,
+      "line": 21,
+      "offset": 55,
+      "length": 22,
       "code": {
-        "startLine": 24,
-        "length": 52,
-        "offset": 86,
-        "surroundingCode": "        get() = Json {\n            prettyPrint = true\n            serializersModule = this@PrintSerializableMokokiLogger.serializersModule\n        }\n"
+        "startLine": 19,
+        "length": 22,
+        "offset": 107,
+        "surroundingCode": "    override var useCompatibleMode: Boolean = false\n\n    public var serializersModule: SerializersModule = EmptySerializersModule\n\n    internal val json: Json"
       }
     }
   ],
   "attributes": {
     "module": "mokoki-project.mokoki-serialization.commonMain",
-    "inspectionName": "SelfAssignment"
+    "inspectionName": "KotlinDeprecation"
   },
-  "hash": "0e28a4179ddae8f874553dede1276e93a0e443bfc14c01dbc1181e2858d0bfe1"
+  "hash": "2a55e17761c74fdff1cf73e9c8d24db15f6d79e61f4d1f0466b9b8be7e1f0e15"
 }]}
