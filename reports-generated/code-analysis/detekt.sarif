@@ -61,29 +61,6 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "mokoki-test/jvmAndAndroid/main/kotlin/com/javiersc/mokoki/test/internal/LoggerNames.jvmAndAndroid.kt",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "endColumn": 38,
-                  "endLine": 12,
-                  "startColumn": 18,
-                  "startLine": 12
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "The caught exception is swallowed. The original exception could be lost."
-          },
-          "ruleId": "detekt.exceptions.SwallowedException"
-        },
-        {
-          "level": "warning",
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
                   "uri": "mokoki-serialization/common/main/kotlin/com/javiersc/mokoki/serialization/internal/BuildMokokiSerialization.kt",
                   "uriBaseId": "%SRCROOT%"
                 },
@@ -176,22 +153,22 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "samples/jvm/jvm-serialization/main/kotlin/Main.kt",
+                  "uri": "mokoki-test/jvmAndAndroid/main/kotlin/com/javiersc/mokoki/test/internal/LoggerNames.jvmAndAndroid.kt",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
-                  "endColumn": 46,
-                  "endLine": 3,
-                  "startColumn": 1,
-                  "startLine": 3
+                  "endColumn": 38,
+                  "endLine": 12,
+                  "startColumn": 18,
+                  "startLine": 12
                 }
               }
             }
           ],
           "message": {
-            "text": "The package declaration does not match the actual file location."
+            "text": "The caught exception is swallowed. The original exception could be lost."
           },
-          "ruleId": "detekt.naming.InvalidPackageDeclaration"
+          "ruleId": "detekt.exceptions.SwallowedException"
         },
         {
           "level": "warning",
@@ -207,6 +184,29 @@
                   "endLine": 1,
                   "startColumn": 1,
                   "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "The package declaration does not match the actual file location."
+          },
+          "ruleId": "detekt.naming.InvalidPackageDeclaration"
+        },
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "samples/jvm/jvm-serialization/main/kotlin/Main.kt",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 46,
+                  "endLine": 3,
+                  "startColumn": 1,
+                  "startLine": 3
                 }
               }
             }

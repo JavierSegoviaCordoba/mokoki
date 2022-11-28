@@ -257,4 +257,4 @@ This comment contains 'TODO:' that has been defined as forbidden in detekt.
 
 ```
 
-generated with [detekt version 1.21.0](https://detekt.dev/) on 2022-10-13 19:02:51 UTC
+generated with [detekt version 1.21.0](https://detekt.dev/) on 2022-11-28 12:03:26 UTC
