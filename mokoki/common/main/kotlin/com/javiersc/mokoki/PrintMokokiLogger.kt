@@ -1,28 +1,43 @@
 package com.javiersc.mokoki
 
 import com.javiersc.kotlin.stdlib.ansiColor
-import com.javiersc.mokoki.internal.buildMokokiMessage
-import kotlin.reflect.KClass
+import com.javiersc.mokoki.Priority.VERBOSE
+import com.javiersc.mokoki._internal.buildMokokiMessage
 import kotlin.reflect.KType
 
-public open class PrintMokokiLogger(
-    private val minPriority: Priority = Priority.DEBUG,
-) : MokokiLogger {
+public open class PrintMokokiLogger(private val minPriority: Priority = VERBOSE) : MokokiLogger {
 
     override var useCompatibleMode: Boolean = false
 
     override fun isLoggable(priority: Priority): Boolean = priority.isLoggable(minPriority)
 
-    override fun <T : Any> log(
+    override fun <T> log(
+        kType: KType,
         priority: Priority,
         tag: String?,
-        kClass: KClass<T>,
-        kType: KType,
+        fileLink: String,
+        fileName: String,
+        classExhaustiveKind: String,
+        className: String,
+        functionName: String,
+        lineNumber: Int,
         message: T,
     ) {
-        val lines: List<String> = buildMokokiMessage(priority, tag, message)
+        val mokokiMessage: String =
+            buildMokokiMessage(
+                priority = priority,
+                tag = tag,
+                fileLink = fileLink,
+                fileName = fileName,
+                classExhaustiveKind = classExhaustiveKind,
+                className = className,
+                functionName = functionName,
+                lineNumber = lineNumber,
+                message = message,
+                useCompatibleMode = useCompatibleMode,
+            )
 
-        for (line in lines) {
+        for (line: String in mokokiMessage.lines()) {
             println(line.ansiColor(priority.ansiColor))
         }
     }

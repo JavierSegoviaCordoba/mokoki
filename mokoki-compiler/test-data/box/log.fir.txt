@@ -1,0 +1,55 @@
+FILE: log.kt
+    package com.javiersc.mokoki.playground
+
+    public final fun box(): R|kotlin/String| {
+        ^box Q|com/javiersc/mokoki/playground/Log|.R|com/javiersc/mokoki/playground/Log.box|()
+    }
+    public final object Log : R|kotlin/Any| {
+        private constructor(): R|com/javiersc/mokoki/playground/Log| {
+            super<R|kotlin/Any|>()
+        }
+
+        init {
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(<L> = log@fun <anonymous>(): R|kotlin/String| <inline=Inline, kind=UNKNOWN>  {
+                ^ String(some message 0)
+            }
+            )
+        }
+
+        public final fun box(): R|kotlin/String| {
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(<L> = log@fun <anonymous>(): R|kotlin/String| <inline=Inline, kind=UNKNOWN>  {
+                ^ String(some message 1)
+            }
+            )
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(tag = String(tag 2), <L> = log@fun <anonymous>(): R|kotlin/String| <inline=Inline, kind=UNKNOWN>  {
+                ^ String(some message 2)
+            }
+            )
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(message = log@fun <anonymous>(): R|kotlin/String| <inline=Inline, kind=UNKNOWN>  {
+                ^ String(some message 3)
+            }
+            )
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(priority = Q|com/javiersc/mokoki/Priority|.R|com/javiersc/mokoki/Priority.DEBUG|, <L> = log@fun <anonymous>(): R|kotlin/String| <inline=Inline, kind=UNKNOWN>  {
+                ^ String(some message 4)
+            }
+            )
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(priority = Q|com/javiersc/mokoki/Priority|.R|com/javiersc/mokoki/Priority.INFO|, tag = String(tag 5), <L> = log@fun <anonymous>(): R|kotlin/String| <inline=Inline, kind=UNKNOWN>  {
+                ^ String(some message 5)
+            }
+            )
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(priority = Q|com/javiersc/mokoki/Priority|.R|com/javiersc/mokoki/Priority.WARN|, tag = String(tag 6), message = log@fun <anonymous>(): R|kotlin/String| <inline=Inline, kind=UNKNOWN>  {
+                ^ String(some message 6)
+            }
+            )
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(message = log@fun <anonymous>(): R|kotlin/String| <inline=Inline, kind=UNKNOWN>  {
+                ^ String(some message 7)
+            }
+            , tag = String(tag 7), priority = Q|com/javiersc/mokoki/Priority|.R|com/javiersc/mokoki/Priority.ERROR|)
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(message = log@fun <anonymous>(): R|kotlin/String| <inline=Inline, kind=UNKNOWN>  {
+                ^ String(some message 8)
+            }
+            , priority = Q|com/javiersc/mokoki/Priority|.R|com/javiersc/mokoki/Priority.ASSERT|, tag = String(tag 8))
+            ^box String(OK)
+        }
+
+    }

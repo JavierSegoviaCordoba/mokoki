@@ -1,46 +1,39 @@
-plugins {
-    alias(libs.plugins.javiersc.hubdle)
-}
-
 hubdle {
     config {
-        explicitApi()
-        languageSettings {
-            experimentalSerializationApi()
+        analysis()
+        coverage()
+        documentation {
+            api()
         }
+        explicitApi()
         publishing()
     }
     kotlin {
         multiplatform {
-            features {
+            features { //
                 serialization()
             }
 
             common {
                 main {
-                    dependencies {
-                        api(projects.mokoki)
-                    }
-                }
-                test {
-                    dependencies {
-                        implementation(projects.mokokiTest)
+                    dependencies { //
+                        implementation(projects.mokoki)
                     }
                 }
             }
 
-            android()
+//            android()
 
-            darwin {
-                enableAll()
-            }
+//            apple {
+//                enableAll()
+//            }
 
             jvm()
-            jvmAndAndroid()
-
-            mingw {
-                enableAll()
-            }
+//            jvmAndAndroid()
+//
+//            mingw {
+//                enableAll()
+//            }
         }
     }
 }

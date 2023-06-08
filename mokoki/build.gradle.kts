@@ -1,35 +1,27 @@
-plugins {
-    alias(libs.plugins.javiersc.hubdle)
-}
-
 hubdle {
     config {
+        analysis()
+        coverage()
+        documentation {
+            api()
+        }
         explicitApi()
         publishing()
     }
     kotlin {
-        multiplatform {
-            common {
-                test {
-                    dependencies {
-                        implementation(javierscKotlinStdlib())
-                        implementation(projects.mokokiTest)
-                    }
-                }
-            }
+        multiplatform { //
+//            android()
 
-            android()
-
-            darwin {
-                enableAll()
-            }
+//            apple {
+//                enableAll()
+//            }
 
             jvm()
-            jvmAndAndroid()
-
-            mingw {
-                enableAll()
-            }
+//            jvmAndAndroid()
+//
+//            mingw {
+//                enableAll()
+//            }
         }
     }
 }

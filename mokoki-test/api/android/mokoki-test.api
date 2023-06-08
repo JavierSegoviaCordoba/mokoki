@@ -1,4 +1,0 @@
-public final class com/javiersc/mokoki/test/internal/LoggerNames_jvmAndAndroidKt {
-	public static final fun getLineNumberForTest (Ljava/lang/String;)I
-}
-

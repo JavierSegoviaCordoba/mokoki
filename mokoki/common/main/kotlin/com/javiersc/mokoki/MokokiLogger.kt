@@ -1,7 +1,5 @@
 package com.javiersc.mokoki
 
-import kotlin.native.concurrent.ThreadLocal
-import kotlin.reflect.KClass
 import kotlin.reflect.KType
 
 public interface MokokiLogger {
@@ -10,15 +8,19 @@ public interface MokokiLogger {
 
     public fun isLoggable(priority: Priority): Boolean
 
-    public fun <T : Any> log(
+    public fun <T> log(
+        kType: KType,
         priority: Priority,
         tag: String?,
-        kClass: KClass<T>,
-        kType: KType,
+        fileLink: String,
+        fileName: String,
+        classExhaustiveKind: String,
+        className: String,
+        functionName: String,
+        lineNumber: Int,
         message: T,
     )
 
-    @ThreadLocal
     public companion object {
 
         @PublishedApi internal val internalLoggers: MutableList<MokokiLogger> = mutableListOf()
