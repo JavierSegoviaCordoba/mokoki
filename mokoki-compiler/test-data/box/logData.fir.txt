@@ -1,0 +1,19 @@
+FILE: logData.kt
+    package com.javiersc.mokoki.playground
+
+    public final fun box(): R|kotlin/String| {
+        R|com/javiersc/mokoki/log|<R|com/javiersc/mokoki/playground/Foo|>(<L> = log@fun <anonymous>(): R|com/javiersc/mokoki/playground/Foo| <inline=CrossInline>  {
+            ^ R|com/javiersc/mokoki/playground/Foo.Foo|(String(bar))
+        }
+        )
+        ^box String(OK)
+    }
+    public final class Foo : R|kotlin/Any| {
+        public constructor(bar: R|kotlin/String|): R|com/javiersc/mokoki/playground/Foo| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final val bar: R|kotlin/String| = R|<local>/bar|
+            public get(): R|kotlin/String|
+
+    }

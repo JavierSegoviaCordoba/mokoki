@@ -1,0 +1,83 @@
+FILE: log.kt
+    package com.javiersc.mokoki.playground
+
+    public final fun box(): R|kotlin/String| {
+        R|com/javiersc/mokoki/log|<R|kotlin/String|>(<L> = log@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+            ^ String(Hello, World)
+        }
+        )
+        R|com/javiersc/mokoki/logV|<R|kotlin/String|>(<L> = logV@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+            ^ String(Hello, World)
+        }
+        )
+        R|com/javiersc/mokoki/logD|<R|kotlin/String|>(<L> = logD@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+            ^ String(Hello, World)
+        }
+        )
+        R|com/javiersc/mokoki/logI|<R|kotlin/String|>(<L> = logI@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+            ^ String(Hello, World)
+        }
+        )
+        R|com/javiersc/mokoki/logW|<R|kotlin/String|>(<L> = logW@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+            ^ String(Hello, World)
+        }
+        )
+        R|com/javiersc/mokoki/logE|<R|kotlin/String|>(<L> = logE@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+            ^ String(Hello, World)
+        }
+        )
+        R|com/javiersc/mokoki/logWTF|<R|kotlin/String|>(<L> = logWTF@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+            ^ String(Hello, World)
+        }
+        )
+        ^box Q|com/javiersc/mokoki/playground/Log|.R|com/javiersc/mokoki/playground/Log.box|()
+    }
+    public final object Log : R|kotlin/Any| {
+        private constructor(): R|com/javiersc/mokoki/playground/Log| {
+            super<R|kotlin/Any|>()
+        }
+
+        init {
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(<L> = log@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+                ^ String(some message 0)
+            }
+            )
+        }
+
+        public final fun box(): R|kotlin/String| {
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(<L> = log@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+                ^ String(some message 1)
+            }
+            )
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(String(tag 2), <L> = log@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+                ^ String(some message 2)
+            }
+            )
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(log@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+                ^ String(some message 3)
+            }
+            )
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(Q|com/javiersc/mokoki/Priority|.R|com/javiersc/mokoki/Priority.DEBUG|, <L> = log@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+                ^ String(some message 4)
+            }
+            )
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(Q|com/javiersc/mokoki/Priority|.R|com/javiersc/mokoki/Priority.INFO|, String(tag 5), <L> = log@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+                ^ String(some message 5)
+            }
+            )
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(Q|com/javiersc/mokoki/Priority|.R|com/javiersc/mokoki/Priority.WARN|, String(tag 6), log@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+                ^ String(some message 6)
+            }
+            )
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(log@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+                ^ String(some message 7)
+            }
+            , String(tag 7), Q|com/javiersc/mokoki/Priority|.R|com/javiersc/mokoki/Priority.ERROR|)
+            R|com/javiersc/mokoki/log|<R|kotlin/String|>(log@fun <anonymous>(): R|kotlin/String| <inline=CrossInline>  {
+                ^ String(some message 8)
+            }
+            , Q|com/javiersc/mokoki/Priority|.R|com/javiersc/mokoki/Priority.ASSERT|, String(tag 8))
+            ^box String(OK)
+        }
+
+    }

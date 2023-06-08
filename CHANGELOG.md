@@ -6,6 +6,8 @@
 
 ### Changed
 
+- implementation to be based on a Kotlin Compiler plugin
+
 ### Deprecated
 
 ### Removed
@@ -14,9 +16,8 @@
 
 ### Updated
 
-- `com.android.tools.build:gradle -> 7.3.1`
-- `com.javiersc.hubdle:com.javiersc.hubdle.gradle.plugin -> 0.2.0-alpha.37`
-- `gradle -> 7.5.1`
+- `gradle -> 8.10.2`
+- `com.javiersc.hubdle:com.javiersc.hubdle.gradle.plugin -> 0.7.16`
 
 ## [0.2.0-alpha.1] - 2022-07-19
 

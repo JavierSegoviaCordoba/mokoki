@@ -4,9 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       gradle-args:
-        description: 'Gradle args for every step'
+        description: 'Gradle args for `build` step'
         default: ''
         required: false
+      gradle-cache:
+        description: 'Use Gradle cache'
+        default: true
+        required: false
+        type: boolean
       publish-all-docs:
         description: 'Publish all docs instead of only API docs and reports'
         required: false
@@ -15,9 +20,10 @@ on:
 
 jobs:
   build:
-    uses: JavierSegoviaCordoba/reusable-workflows/.github/workflows/build-kotlin.yaml@hubdle
+    uses: JavierSegoviaCordoba/reusable-workflows/.github/workflows/build-kotlin.yaml@main
     with:
       gradle-args: '${{ github.event.inputs.gradle-args }}'
+      gradle-cache: '${{ github.event.inputs.gradle-cache }}'
       allow-github-actor-bots: false
       publish-all-docs: '${{ github.event.inputs.publish-all-docs }}'
     secrets: inherit

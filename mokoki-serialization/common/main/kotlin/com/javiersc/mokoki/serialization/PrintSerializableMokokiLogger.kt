@@ -3,8 +3,7 @@ package com.javiersc.mokoki.serialization
 import com.javiersc.kotlin.stdlib.ansiColor
 import com.javiersc.mokoki.MokokiLogger
 import com.javiersc.mokoki.Priority
-import com.javiersc.mokoki.serialization.internal.buildMokokiSerializationMessage
-import kotlin.reflect.KClass
+import com.javiersc.mokoki.serialization._internal.buildMokokiSerializationMessage
 import kotlin.reflect.KType
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.json.Json
@@ -13,14 +12,14 @@ import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.serializerOrNull
 
 public open class PrintSerializableMokokiLogger(
-    private val minPriority: Priority = Priority.DEBUG,
+    private val minPriority: Priority = Priority.VERBOSE
 ) : MokokiLogger {
 
     override var useCompatibleMode: Boolean = false
 
-    public var serializersModule: SerializersModule = EmptySerializersModule
+    public var serializersModule: SerializersModule = EmptySerializersModule()
 
-    internal val json: Json
+    private val json: Json
         get() = Json {
             prettyPrint = true
             serializersModule = this@PrintSerializableMokokiLogger.serializersModule
@@ -28,35 +27,40 @@ public open class PrintSerializableMokokiLogger(
 
     override fun isLoggable(priority: Priority): Boolean = priority.isLoggable(minPriority)
 
-    override fun <T : Any> log(
+    override fun <T> log(
+        kType: KType,
         priority: Priority,
         tag: String?,
-        kClass: KClass<T>,
-        kType: KType,
-        message: T
+        fileLink: String,
+        fileName: String,
+        classExhaustiveKind: String,
+        className: String,
+        functionName: String,
+        lineNumber: Int,
+        message: T,
     ) {
-        val lines: List<String> = buildLines(serializer(kType, message), priority, tag, message)
+        val messageLines: List<String> =
+            buildMokokiSerializationMessage(
+                    priority = priority,
+                    tag = tag,
+                    fileLink = fileLink,
+                    fileName = fileName,
+                    className = className,
+                    classExhaustiveKind = classExhaustiveKind,
+                    functionName = functionName,
+                    lineNumber = lineNumber,
+                    json = json,
+                    serializer = serializer(kType, message),
+                    data = message,
+                    useCompatibleMode = useCompatibleMode,
+                )
+                .lines()
 
-        for (line in lines) {
+        for (line in messageLines) {
             println(line.ansiColor(priority.ansiColor))
         }
     }
 
-    internal fun <T : Any> buildLines(
-        serializer: KSerializer<Any?>?,
-        priority: Priority,
-        tag: String?,
-        message: T
-    ): List<String> {
-        val lines: List<String> =
-            if (serializer != null) {
-                buildMokokiSerializationMessage(priority, tag, json, serializer, message)
-            } else {
-                buildMokokiSerializationMessage(priority, tag, json, "$message")
-            }
-        return lines
-    }
-
-    internal fun <T> serializer(kType: KType, message: T): KSerializer<Any?>? =
+    private fun <T> serializer(kType: KType, message: T): KSerializer<Any?>? =
         serializerOrNull(kType).takeIf { message !is String }
 }

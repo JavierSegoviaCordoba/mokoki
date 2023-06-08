@@ -1,0 +1,20 @@
+package com.javiersc.mokoki.compiler._internal
+
+internal const val KType = "kType"
+internal const val Priority = "priority"
+internal const val Tag = "tag"
+internal const val FileLink = "fileLink"
+internal const val FileName = "fileName"
+internal const val ClassExhaustiveKind = "classExhaustiveKind"
+internal const val ClassName = "className"
+internal const val FunctionName = "functionName"
+internal const val LineNumber = "lineNumber"
+internal const val Message = "message"
+internal const val Log = "log"
+internal const val LogV = "logV"
+internal const val LogD = "logD"
+internal const val LogI = "logI"
+internal const val LogW = "logW"
+internal const val LogE = "logE"
+internal const val LogWTF = "logWTF"
+internal val LogPriority = setOf(LogV, LogD, LogI, LogW, LogE, LogWTF)

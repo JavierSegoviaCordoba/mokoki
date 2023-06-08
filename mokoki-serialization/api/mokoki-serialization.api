@@ -1,0 +1,12 @@
+public class com/javiersc/mokoki/serialization/PrintSerializableMokokiLogger : com/javiersc/mokoki/MokokiLogger {
+	public fun <init> ()V
+	public fun <init> (Lcom/javiersc/mokoki/Priority;)V
+	public synthetic fun <init> (Lcom/javiersc/mokoki/Priority;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getSerializersModule ()Lkotlinx/serialization/modules/SerializersModule;
+	public fun getUseCompatibleMode ()Z
+	public fun isLoggable (Lcom/javiersc/mokoki/Priority;)Z
+	public fun log (Lkotlin/reflect/KType;Lcom/javiersc/mokoki/Priority;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)V
+	public final fun setSerializersModule (Lkotlinx/serialization/modules/SerializersModule;)V
+	public fun setUseCompatibleMode (Z)V
+}
+
