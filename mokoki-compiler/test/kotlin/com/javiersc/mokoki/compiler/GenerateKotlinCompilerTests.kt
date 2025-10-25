@@ -3,8 +3,8 @@
 package com.javiersc.mokoki.compiler
 
 import com.javiersc.kotlin.compiler.test.generateKotlinCompilerTests
-import com.javiersc.kotlin.compiler.test.runners.BoxTest
-import com.javiersc.kotlin.compiler.test.runners.DiagnosticTest
+import com.javiersc.kotlin.compiler.test.runners.JvmBoxTest
+import com.javiersc.kotlin.compiler.test.runners.JvmDiagnosticTest
 import com.javiersc.kotlin.compiler.test.services.MetaRuntimeClasspathProvider
 import org.jetbrains.kotlin.backend.common.extensions.IrGenerationExtension
 import org.jetbrains.kotlin.compiler.plugin.CompilerPluginRegistrar.ExtensionStorage
@@ -21,7 +21,7 @@ fun ExtensionStorage.allExtensions(module: TestModule, configuration: CompilerCo
     IrGenerationExtension.registerExtension(IrMokokiExtension())
 }
 
-open class AbstractDiagnosticTest : DiagnosticTest() {
+open class AbstractDiagnosticTest : JvmDiagnosticTest() {
 
     override fun ExtensionStorage.registerExtensions(
         module: TestModule,
@@ -31,7 +31,7 @@ open class AbstractDiagnosticTest : DiagnosticTest() {
     }
 }
 
-open class AbstractBoxTest : BoxTest() {
+open class AbstractBoxTest : JvmBoxTest() {
 
     override val runtimeClasspathProvider: Constructor<MetaRuntimeClasspathProvider> =
         ::GeneratedMetaRuntimeClasspathProvider

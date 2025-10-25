@@ -11,6 +11,5 @@ hubdle {
             readme { badges() }
             site()
         }
-        nexus()
     }
 }

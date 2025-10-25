@@ -33,8 +33,6 @@ import com.javiersc.mokoki.compiler._internal.typeOfIrFunction
 import org.jetbrains.kotlin.backend.common.extensions.IrGenerationExtension
 import org.jetbrains.kotlin.backend.common.extensions.IrPluginContext
 import org.jetbrains.kotlin.ir.IrElement
-import org.jetbrains.kotlin.ir.backend.js.utils.typeArguments
-import org.jetbrains.kotlin.ir.backend.js.utils.valueArguments
 import org.jetbrains.kotlin.ir.declarations.IrClass
 import org.jetbrains.kotlin.ir.declarations.IrFile
 import org.jetbrains.kotlin.ir.declarations.IrFunction
@@ -117,7 +115,7 @@ private fun IrPluginContext.putValueParametersOnInternalLogCall(
     priorityIrClass: IrClass,
     typeOfIrFunction: IrSimpleFunction,
 ) {
-    for ((index, internalLogValueParameter) in internalLog.valueParameters.withIndex()) {
+    for ((index, internalLogValueParameter) in internalLog.parameters.withIndex()) {
         val irExpression: IrExpression? =
             buildIrExpressionBasedOnValueParameter(
                 internalLogValueParameter = internalLogValueParameter,
@@ -126,7 +124,7 @@ private fun IrPluginContext.putValueParametersOnInternalLogCall(
                 priorityIrClass = priorityIrClass,
                 typeOfIrFunction = typeOfIrFunction,
             )
-        internalLogCall.putValueArgument(index, irExpression)
+        internalLogCall.arguments[index] = irExpression
     }
 }
 
@@ -144,7 +142,7 @@ private fun IrPluginContext.buildIrExpressionBasedOnValueParameter(
 
     val defaultMissingValue = "?"
     val kTypeIrType: IrType = logCall.typeArguments.firstOrNull() ?: irBuiltIns.anyType
-    val kType: IrCall = typeOfIrFunction.toIrCall().apply { putTypeArgument(0, kTypeIrType) }
+    val kType: IrCall = typeOfIrFunction.toIrCall().apply { typeArguments[0] = kTypeIrType }
     val fileName: String = logCallNode.irFile?.name ?: defaultMissingValue
     val classExhaustiveKind = "${parentIrClass?.exhaustiveKind ?: "class"}"
     val className = "${parentIrClass?.name ?: defaultMissingValue}"
@@ -173,7 +171,7 @@ private fun buildLogCallNameToIrExpression(
     logCall: IrCall,
     priorityIrClass: IrClass,
 ): Map<String, IrExpression?> = buildMap {
-    val args: List<IrExpression?> = logCall.valueArguments
+    val args: List<IrExpression?> = logCall.arguments
 
     for ((index: Int, irExpression: IrExpression?) in args.withIndex()) {
         val isLog = "${logCall.name}" == Log
@@ -186,6 +184,7 @@ private fun buildLogCallNameToIrExpression(
                     2 -> put(Message, irExpression)
                 }
             }
+
             isLogPriority -> {
                 val priorityIrExpression: IrExpression =
                     priorityIrClass.priorityIrExpression(logCall)

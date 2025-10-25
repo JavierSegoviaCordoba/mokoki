@@ -11,34 +11,33 @@ hubdle {
         }
         publishing()
     }
-    kotlin {
-        jvm {
-            features {
-                gradle {
-                    plugin {
-                        gradlePlugin {
-                            plugins {
-                                create("mokoki") {
-                                    id = "com.javiersc.mokoki"
-                                    displayName = "Mokoki"
-                                    description = "Kotlin Compile time logger"
-                                    implementationClass =
-                                        "com.javiersc.mokoki.gradle.plugin.MokokiGradlePlugin"
-                                    tags.set(
-                                        listOf(
-                                            "mokoki",
-                                            "logger",
-                                            "kotlin",
-                                            "compile time",
-                                        )
-                                    )
-                                }
-                            }
-                        }
+
+    gradle {
+        plugin {
+            gradlePlugin {
+                plugins {
+                    create("mokoki") {
+                        id = "com.javiersc.mokoki"
+                        displayName = "Mokoki"
+                        description = "Kotlin Compile time logger"
+                        implementationClass =
+                            "com.javiersc.mokoki.gradle.plugin.MokokiGradlePlugin"
+                        tags.set(
+                            listOf(
+                                "mokoki",
+                                "logger",
+                                "kotlin",
+                                "compile time",
+                            )
+                        )
                     }
                 }
             }
+        }
+    }
 
+    kotlin {
+        jvm {
             main { //
                 dependencies { //
                     compileOnly(projects.mokokiCompiler)

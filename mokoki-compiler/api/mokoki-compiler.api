@@ -1,13 +1,19 @@
 public final class com/javiersc/mokoki/compiler/IrMokokiExtension : org/jetbrains/kotlin/backend/common/extensions/IrGenerationExtension {
 	public fun <init> ()V
 	public fun generate (Lorg/jetbrains/kotlin/ir/declarations/IrModuleFragment;Lorg/jetbrains/kotlin/backend/common/extensions/IrPluginContext;)V
-	public fun resolveSymbol (Lorg/jetbrains/kotlin/ir/symbols/IrSymbol;Lorg/jetbrains/kotlin/ir/builders/TranslationPluginContext;)Lorg/jetbrains/kotlin/ir/declarations/IrDeclaration;
+	public fun getPlatformIntrinsicExtension (Lorg/jetbrains/kotlin/backend/common/LoweringContext;)Lorg/jetbrains/kotlin/backend/common/extensions/IrIntrinsicExtension;
+	public fun getShouldAlsoBeAppliedInKaptStubGenerationMode ()Z
 }
 
 public final class com/javiersc/mokoki/compiler/MokokiCommandLineProcessor : org/jetbrains/kotlin/compiler/plugin/CommandLineProcessor {
 	public fun <init> ()V
+	public fun appendList (Lorg/jetbrains/kotlin/config/CompilerConfiguration;Lorg/jetbrains/kotlin/config/CompilerConfigurationKey;Ljava/lang/Object;)V
+	public fun appendList (Lorg/jetbrains/kotlin/config/CompilerConfiguration;Lorg/jetbrains/kotlin/config/CompilerConfigurationKey;Ljava/util/List;)V
+	public fun applyOptionsFrom (Lorg/jetbrains/kotlin/config/CompilerConfiguration;Ljava/util/Map;Ljava/util/Collection;)V
 	public fun getPluginId ()Ljava/lang/String;
 	public fun getPluginOptions ()Ljava/util/Collection;
+	public fun processOption (Lorg/jetbrains/kotlin/compiler/plugin/AbstractCliOption;Ljava/lang/String;Lorg/jetbrains/kotlin/config/CompilerConfiguration;)V
+	public fun processOption (Lorg/jetbrains/kotlin/compiler/plugin/CliOption;Ljava/lang/String;Lorg/jetbrains/kotlin/config/CompilerConfiguration;)V
 }
 
 public final class com/javiersc/mokoki/compiler/MokokiCompilerPluginRegistrar : org/jetbrains/kotlin/compiler/plugin/CompilerPluginRegistrar {
